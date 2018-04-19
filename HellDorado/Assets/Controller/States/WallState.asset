@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88eb3f7b7e0efd146b2abe79de5b9805, type: 3}
+  m_Name: WallState
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
+  SlideSpeed: 5
+  WallCheckDistance: 0.15
+  JumpSpeed: {x: 5, y: 15}
+  InitialWallJumpDistance: 0.1

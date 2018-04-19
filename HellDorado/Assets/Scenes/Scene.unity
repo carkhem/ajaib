@@ -1620,10 +1620,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _states:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c6173755427dab04bb2be0731aece6ef, type: 2}
+  - {fileID: 11400000, guid: bb392211d63a68f43a5e1da933b7ea26, type: 2}
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: -1000, z: 0}
   MaxSpeed: 20
@@ -1632,7 +1630,7 @@ MonoBehaviour:
   InputRequiredToMove: 0.5
   CollisionLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   GroundCheckDistance: 0.05
   SkinWidth: 0.03
   MaxWallAngleDelta: 5
