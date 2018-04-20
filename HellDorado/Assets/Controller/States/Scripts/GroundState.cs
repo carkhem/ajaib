@@ -7,7 +7,8 @@ public class GroundState : State {
 
 	public float Acceleration = 100f;
 	public float ExtraFriction = 30f;
-	private float Friction{ get{ return Acceleration / _controller.MaxSpeed; } }
+    public float pushPower = 2.0F;
+    private float Friction{ get{ return Acceleration / _controller.MaxSpeed; } }
 	public float StopSlidingLimit = 1.5f;
 
 	[Header("Jumping")]
@@ -36,49 +37,55 @@ public class GroundState : State {
 		UpdateLock();
 		UpdateJump();
 		UpdateGravity();
-		RaycastHit[] hits = _controller.DetectHits(true);
-		if (hits.Length == 0)
-		{
-			_controller.TransitionTo<AirState>();
-			return;
-		}
-		UpdateCollisions(hits);
-		UpdateMovement();
-		hits = _controller.DetectHits(true);
+        // RaycastHit[] hits = _controller.DetectHits(true);
+
+        Vector3 groundedPosition = new Vector3(transform.position.x, transform.position.y * 0.5f, transform.position.z);
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (!Physics.Raycast(groundedPosition, Vector3.down, out hit, 0.5f, _controller.CollisionLayers))
+        {
+            _controller.TransitionTo<GroundState>();
+        }
+       
+        //	UpdateCollisions(hits);
+        UpdateMovement();
+		//hits = _controller.DetectHits(true);
 		UpdateFriction();
 		_velocityBeforeNormalForce = Velocity;
-		UpdateNormalForce(hits);
-		transform.position += (Velocity * Time.deltaTime);
+        //UpdateNormalForce(hits);
+        //transform.position += (Velocity * Time.deltaTime);
+        _controller._characterController.Move(_controller.Input * Time.deltaTime);
 	}
 
 	private void UpdateGravity() {
 		Velocity += Vector3.down * _controller.Gravity * Time.deltaTime;
 	}
 
-	private void UpdateCollisions(RaycastHit[] hits) {
-		_groundNormal = Vector3.zero;
-		int groundHits = 0;
+	//private void UpdateCollisions(RaycastHit[] hits) {
+	//	_groundNormal = Vector3.zero;
+	//	int groundHits = 0;
 
-		foreach (RaycastHit hit in hits) {
-			if (!MathHelper.CheckAllowedSlope (_controller.SlopeTollerance, hit.normal))
-				continue;
-			_groundNormal += hit.normal;
-			groundHits++;
-		}
+	//	foreach (RaycastHit hit in hits) {
+	//		if (!MathHelper.CheckAllowedSlope (_controller.SlopeTollerance, hit.normal))
+	//			continue;
+	//		_groundNormal += hit.normal;
+	//		groundHits++;
+	//	}
 
-		if (groundHits == 0)
-			_controller.TransitionTo<AirState> ();
-		else
-			_groundNormal /= groundHits;
-	}
+	//	if (groundHits == 0)
+	//		_controller.TransitionTo<AirState> ();
+	//	else
+	//		_groundNormal /= groundHits;
+	//}
 
-	private void UpdateNormalForce(RaycastHit[] hits) {
-		foreach (RaycastHit hit in hits) {
-			_controller.SnapToHit(hit);
-			Velocity += MathHelper.GetNormalForce(Velocity, hit.normal);
-		}
-	}
+    //private void UpdateNormalForce(RaycastHit[] hits) {
+    //	foreach (RaycastHit hit in hits) {
+    //		_controller.SnapToHit(hit);
+    //		Velocity += MathHelper.GetNormalForce(Velocity, hit.normal);
+    //	}
+    //}
 
+   
 	private Vector3 ForwardAlongGround {
 		get
 		{
@@ -113,8 +120,9 @@ public class GroundState : State {
 
 	private void UpdateJump() {
 		if(!Input.GetButtonDown("Jump")) return;
-		transform.position += Vector3.up * InitialJumpDistance;
-		Velocity = new Vector3(Velocity.x, JumpVelocity.Max, Velocity.z);
+        //	transform.position += Vector3.up * InitialJumpDistance;
+        _controller._characterController.Move(Vector3.up * InitialJumpDistance);
+        Velocity = new Vector3(Velocity.x, JumpVelocity.Max, Velocity.z);
 		_controller.GetState<AirState>().CanCancelJump = true;
 		_controller.TransitionTo<AirState>();
 		CameraShake.AddIntesity (5.0f);
@@ -134,4 +142,24 @@ public class GroundState : State {
 			_controller.TransitionTo<LockedState> ();
 		}
 	}
+
+    
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("Gonorre");
+        Rigidbody body = hit.collider.attachedRigidbody;
+        if (body == null || body.isKinematic)
+            return;
+
+        if (hit == null) {
+            Debug.Log("Klamydia");
+            _controller.TransitionTo<AirState>();
+        }
+
+        if (hit.moveDirection.y < -0.3F)
+            return;
+
+        //Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+        //body.velocity = pushDir * pushPower;
+    }
 }

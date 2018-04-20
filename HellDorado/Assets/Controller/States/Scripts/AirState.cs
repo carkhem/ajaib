@@ -22,28 +22,41 @@ public class AirState : State {
 		UpdateGravity();
 		UpdateMovement ();
 		UpdateCollision();
-		transform.position += Velocity * Time.deltaTime;
-	}
+	//	transform.position += Velocity * Time.deltaTime;
+        _controller._characterController.Move(Velocity * Time.deltaTime);
+    }
 
 	private void UpdateGravity() {
 		float multiplier = Velocity.y > 0.0f ? 1.0f : FastFallingModifier;
 		Velocity += Vector3.down * _controller.Gravity * multiplier * Time.deltaTime;
 	}
 
-	private void UpdateCollision() {
-		RaycastHit[] hits = _controller.DetectHits();
-		foreach (RaycastHit hit in hits)
-		{
-			if (MathHelper.CheckAllowedSlope(_controller.SlopeTollerance, hit.normal))
-				_controller.TransitionTo<GroundState>();
-			if (MathHelper.GetWallAngleDelta(hit.normal) < _controller.MaxWallAngleDelta)
-				_controller.TransitionTo<WallState>();
-			Velocity += MathHelper.GetNormalForce(Velocity, hit.normal);
-			_controller.SnapToHit(hit);
-		}
-	}
+    private void UpdateCollision()
+    {
+        //RaycastHit[] hits = _controller.DetectHits();
+        //foreach (RaycastHit hit in hits)
+        //{
+        //    if (MathHelper.CheckAllowedSlope(_controller.SlopeTollerance, hit.normal))
+        //        _controller.TransitionTo<GroundState>();
+        //    Velocity += MathHelper.GetNormalForce(Velocity, hit.normal);
+        //    //	_controller.SnapToHit(hit);
+        //}
+  
+        Vector3 groundedPosition = new Vector3(transform.position.x, transform.position.y * 0.5f, transform.position.z);
+       
 
-	private void CancelJump() {
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(groundedPosition, Vector3.down, out hit, 0.5f, _controller.CollisionLayers))
+        {
+            _controller.TransitionTo<GroundState>();
+        }
+        else {
+            Velocity += Vector3.down * _controller.Gravity * Time.deltaTime;
+        }
+    }
+
+    private void CancelJump() {
 		float minJumpVelocity = _controller.GetState<GroundState>().JumpVelocity.Min;
 		if (Velocity.y < minJumpVelocity) CanCancelJump = false;
 		if (!CanCancelJump || Input.GetButton("Jump")) return;
