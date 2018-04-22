@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeBody : MonoBehaviour {
 
-	bool isRewinding = false;
+	public bool isRewinding = false;
 
 	public float recordTime = 5f;
     private float playerGravity;

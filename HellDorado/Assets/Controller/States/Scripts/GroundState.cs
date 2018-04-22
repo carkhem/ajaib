@@ -29,11 +29,11 @@ public class GroundState : State {
 		_controller.Gravity = (2 * JumpHeight.Max) / Mathf.Pow(TimeToJumpApex, 2);
 		JumpVelocity.Max = _controller.Gravity * TimeToJumpApex;
 		JumpVelocity.Min = Mathf.Sqrt(2 * _controller.Gravity * JumpHeight.Min);
-	}
+    }
 
 	public override void Update() {
 
-		UpdateLock();
+	//	UpdateLock();
 		UpdateJump();
 		UpdateGravity();
 		RaycastHit[] hits = _controller.DetectHits(true);
@@ -48,6 +48,7 @@ public class GroundState : State {
 		UpdateFriction();
 		_velocityBeforeNormalForce = Velocity;
 		UpdateNormalForce(hits);
+        UpdateRewind();
 		transform.position += (Velocity * Time.deltaTime);
 	}
 
@@ -120,18 +121,27 @@ public class GroundState : State {
 		CameraShake.AddIntesity (5.0f);
 	}
 
-	private void UpdateLock(){
+	//private void UpdateLock(){
 
-		Vector3 forward = Camera.main.transform.forward * distance;
-		Debug.DrawRay(transform.position,forward,Color.green);
+	//	Vector3 forward = Camera.main.transform.forward * distance;
+	//	Debug.DrawRay(transform.position,forward,Color.green);
 
-		if (!Input.GetButtonDown("Fire2"))
-			return;
-		if (Physics.Raycast (transform.position, (forward), out rayHit) && rayHit.collider.tag == "Enemy") {
-			GameObject t = rayHit.collider.gameObject;
-			Debug.Log ("Target = " + t);
-			_controller.GetState<LockedState>().target = t;
-			_controller.TransitionTo<LockedState> ();
-		}
-	}
+	//	if (!Input.GetButtonDown("Fire2"))
+	//		return;
+	//	if (Physics.Raycast (transform.position, (forward), out rayHit) && rayHit.collider.tag == "Enemy") {
+	//		GameObject t = rayHit.collider.gameObject;
+	//		Debug.Log ("Target = " + t);
+	//		_controller.GetState<LockedState>().target = t;
+	//		_controller.TransitionTo<LockedState> ();
+	//	}
+	//}
+
+    private void UpdateRewind() {
+
+        if (Input.GetKeyDown(KeyCode.Mouse1)) {
+            Debug.Log("rewind");
+            _controller.TransitionTo<RewindState>();
+        }
+        
+    }
 }

@@ -20,18 +20,25 @@ public class PlayerController : Controller {
 	public float MaxWallAngleDelta = 5f;
 
 	private BoxCollider _collider;
+    private bool rewinding;
 
 	private void Start() {
 		_collider = GetComponent<BoxCollider>();
+        rewinding = GetComponent<TimeBody>().isRewinding;
 	}
 
 	public Vector3 Input {
 		get
 		{
-			Vector3 input = new Vector3(UnityEngine.Input.GetAxisRaw("Horizontal"), 0.0f, UnityEngine.Input.GetAxisRaw("Vertical"));
-			float y = Camera.main.transform.rotation.eulerAngles.y;
-			input = Quaternion.Euler(0f, y, 0f) * input;
+            Vector3 input = new Vector3(UnityEngine.Input.GetAxisRaw("Horizontal"), 0.0f, UnityEngine.Input.GetAxisRaw("Vertical"));
+            if (!rewinding)
+            {
+                
+                float y = Camera.main.transform.rotation.eulerAngles.y;
+                input = Quaternion.Euler(0f, y, 0f) * input;
+            }
 			return input;
+
 		}
 	}
 		

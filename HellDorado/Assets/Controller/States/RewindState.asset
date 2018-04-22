@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c042af68c9016541940d2fd613caa1d, type: 3}
+  m_Name: RewindState
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
+  rewinding: 0
+  rewindPanel: {fileID: 1277789393403310, guid: 85b5c499e0d3a964ba0b658dd5d0e49c,
+    type: 2}
