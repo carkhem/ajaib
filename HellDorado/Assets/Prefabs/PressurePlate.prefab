@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1065337660509824}
+  m_RootGameObject: {fileID: 1195141649129678}
   m_IsPrefabParent: 1
---- !u!1 &1065337660509824
+--- !u!1 &1195141649129678
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4951480305301576}
-  - component: {fileID: 33424505770141130}
-  - component: {fileID: 65342112908273386}
-  - component: {fileID: 23629417167900486}
-  - component: {fileID: 114089765588568556}
+  - component: {fileID: 4699493002109728}
+  - component: {fileID: 33201687103636270}
+  - component: {fileID: 65533673261933380}
+  - component: {fileID: 23593522139456312}
+  - component: {fileID: 114652334734113534}
   m_Layer: 0
-  m_Name: GatePressurePlate
+  m_Name: PressurePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4951480305301576
+--- !u!4 &4699493002109728
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065337660509824}
+  m_GameObject: {fileID: 1195141649129678}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10.144, y: 1.25, z: 7.082}
-  m_LocalScale: {x: 1.662299, y: 0.50176835, z: 1.5671933}
+  m_LocalPosition: {x: -20.03, y: -0.08, z: -4.5750995}
+  m_LocalScale: {x: 1.0064723, y: 0.37975544, z: 0.94888735}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
---- !u!23 &23629417167900486
+--- !u!23 &23593522139456312
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065337660509824}
+  m_GameObject: {fileID: 1195141649129678}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -77,38 +77,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33424505770141130
+--- !u!33 &33201687103636270
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065337660509824}
+  m_GameObject: {fileID: 1195141649129678}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65342112908273386
+--- !u!65 &65533673261933380
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065337660509824}
+  m_GameObject: {fileID: 1195141649129678}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114089765588568556
+--- !u!114 &114652334734113534
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065337660509824}
+  m_GameObject: {fileID: 1195141649129678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8a73cfdfbaee241b8fef80f430e16d, type: 3}
+  m_Script: {fileID: 11500000, guid: b1f9ca5f36b2b8f4d92718ab4a9b3d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gate: {fileID: 0}
-  interactableTags:
-  - Player
-  timer: 0
-  pressed: 0
+  OnPressureEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnPressureExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
