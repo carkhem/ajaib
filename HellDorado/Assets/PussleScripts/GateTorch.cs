@@ -11,7 +11,6 @@ public class GateTorch : MonoBehaviour {
 	void Start(){
 		lightIntensity = fireLight.intensity;
 		fireLight.intensity = 0;
-		print (lightIntensity);
 	}
 
 	void Update(){
