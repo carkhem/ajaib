@@ -24,6 +24,8 @@ public class IdleState : State {
 		if (timer > currentIdleTime) {
 			_controller.TransitionTo<PatrolState>();
 		}
+		_controller.Look ();
+		_controller.CheckHealth ();
 	}
 
 }

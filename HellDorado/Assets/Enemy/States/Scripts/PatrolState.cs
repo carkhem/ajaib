@@ -18,14 +18,20 @@ public class PatrolState : State {
 
 	public override void Enter() {
 		RandomizeDestination ();
+		transform.GetComponent<NavMeshAgent> ().enabled = true;
 	}
 
 	public override void Update (){
 		agent.SetDestination (destination);
 		if (SamePosition (destination, transform.position)) {
 			_controller.TransitionTo<IdleState> ();
-//			RandomizeDestination();
 		}
+		_controller.Look ();
+		_controller.CheckHealth ();
+	}
+
+	public override void Exit (){
+		agent.SetDestination (transform.position);
 	}
 
 	private void RandomizeDestination(){

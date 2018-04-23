@@ -268,7 +268,8 @@ MonoBehaviour:
   damage: 10
   health: 10
   fov: 45
-  viewDistance: 2
+  viewDistance: 15
+  detectionSpeed: 1
   player: {fileID: 1313085482}
 --- !u!23 &391233628
 MeshRenderer:
