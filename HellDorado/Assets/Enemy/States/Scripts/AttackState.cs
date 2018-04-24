@@ -27,9 +27,9 @@ public class AttackState : State {
 	}
 
 	public override void Update (){
+		Debug.Log (agent.velocity);
 		agent.SetDestination (attackPos);
-		if (_controller.SamePosition(transform.position, attackPos)) {
-//			Debug.Log ("Same position");
+		if (agent.velocity.x == 0 && agent.velocity.z == 0) {
 			timer += Time.deltaTime;
 			if (timer >= recoverTime) {
 				Debug.Log ("Recovered");

@@ -74,7 +74,8 @@ public class EnemyController : Controller {
 
 	//DEN HÄR FUNKAR TYP INTE MED NEGATIVA NUMMER! JAG FATTAR INGENTING!--------------------------------------------
 	public bool SamePosition(Vector3 posOne, Vector3 posTwo){
-		if (posOne.x == posTwo.x && (int)posOne.z == (int)posTwo.z) {
+//		print ((int)posOne.x + " = " + (int)posTwo.x + " | " + (int)posOne.z + " = " + (int)posTwo.z);
+		if ((int)posOne.x == (int)posTwo.x && (int)posOne.z == (int)posTwo.z) {
 			return true;
 		} else {
 			return false;
