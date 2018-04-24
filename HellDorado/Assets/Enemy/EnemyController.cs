@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : Controller {
-	[Header("Movement")]
-	public float runSpeed;
-	public float walkSpeed;
+//	[Header("Movement")]
+//	public float runSpeed;
+//	public float walkSpeed;
+//	[HideInInspector]
+//	public NavMeshAgent agent;
 	[Header("Stats")]
 	public float damage;
 	public float health;
@@ -22,6 +25,10 @@ public class EnemyController : Controller {
 //	void Awake(){
 //		//Sätt player direkt! Typ: player = PlayerController.instance.transform;
 		//EDIT: det går inte att använda awake när man använder den här state machinen. Gör det i någons Initialize-funktion.
+//	}
+
+//	void Awake(){
+//		agent = transform.GetComponent<NavMeshAgent> ();
 //	}
 
 	public void CheckHealth(){
@@ -63,6 +70,15 @@ public class EnemyController : Controller {
 		
 		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
 		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
+	}
+
+	//DEN HÄR FUNKAR TYP INTE MED NEGATIVA NUMMER! JAG FATTAR INGENTING!--------------------------------------------
+	public bool SamePosition(Vector3 posOne, Vector3 posTwo){
+		if (posOne.x == posTwo.x && (int)posOne.z == (int)posTwo.z) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

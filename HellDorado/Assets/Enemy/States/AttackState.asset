@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Name: AttackState
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
+  hitRange: 0
+  plungeSpeed: 10

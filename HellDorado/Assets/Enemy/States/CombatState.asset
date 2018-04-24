@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Name: CombatState
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
-  hitRange: 0
+  runSpeed: 4
+  stopDistance: 1
+  attackWait:
+    Min: 0
+    Max: 1

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 [CreateAssetMenu(menuName = "Enemy/States/Patrol")]
 public class PatrolState : State {
+	public float walkSpeed;
 	private NavMeshAgent agent;
 	public Vector3[] patrolPoints;
 	private Vector3 destination;
@@ -19,11 +20,12 @@ public class PatrolState : State {
 	public override void Enter() {
 		RandomizeDestination ();
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
+		agent.speed = walkSpeed;
 	}
 
 	public override void Update (){
 		agent.SetDestination (destination);
-		if (SamePosition (destination, transform.position)) {
+		if (_controller.SamePosition (destination, transform.position)) {
 			_controller.TransitionTo<IdleState> ();
 		}
 		_controller.Look ();
@@ -37,14 +39,6 @@ public class PatrolState : State {
 	private void RandomizeDestination(){
 		do {
 			destination = patrolPoints[Random.Range(0, patrolPoints.Length)];
-			} while (SamePosition(destination, transform.position));
-	}
-
-	private bool SamePosition(Vector3 posOne, Vector3 posTwo){
-		if (posOne.x == posTwo.x && (int)posOne.z == (int)posTwo.z) {
-			return true;
-		} else {
-			return false;
-		}
+			} while (_controller.SamePosition(destination, transform.position));
 	}
 }

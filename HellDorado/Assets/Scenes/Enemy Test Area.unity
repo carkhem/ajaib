@@ -263,8 +263,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a325faaf8d69f14c984f045abb668af, type: 2}
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
-  runSpeed: 20
-  walkSpeed: 10
   damage: 10
   health: 10
   fov: 45
@@ -927,7 +925,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313085481}
   m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: -2.54, y: 0.522, z: 6.01}
+  m_LocalPosition: {x: -1.5, y: 0.522, z: 1.21}
   m_LocalScale: {x: 0.39199132, y: 0.3919913, z: 0.41243204}
   m_Children: []
   m_Father: {fileID: 0}

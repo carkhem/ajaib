@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: PatrolState
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
+  walkSpeed: 2
   patrolPoints:
   - {x: -5, y: 0, z: -7}
   - {x: 3, y: 0, z: 5}
