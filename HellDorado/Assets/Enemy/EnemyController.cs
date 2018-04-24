@@ -21,6 +21,8 @@ public class EnemyController : Controller {
 	private float detectionTimer = 0;
 	public Transform player;
 	private Vector3 playerDirection;
+	[HideInInspector]
+	public bool playerInSight = false;
 
 //	void Awake(){
 //		//Sätt player direkt! Typ: player = PlayerController.instance.transform;
@@ -43,33 +45,60 @@ public class EnemyController : Controller {
 		if (Physics.Raycast (transform.position, playerDirection, out hit, viewDistance)) {
 			if (hit.transform.CompareTag ("Player")) {
 				if (Vector3.Angle (transform.forward, playerDirection) < fov) {
-					if (detectionTimer < detectionSpeed)
-						detectionTimer += Time.deltaTime / Vector3.Distance(transform.position, player.position) * 8;
-					else
-						detectionTimer = detectionSpeed;
+					playerInSight = true;
+//					if (detectionTimer < detectionSpeed)
+//						detectionTimer += Time.deltaTime / Vector3.Distance (transform.position, player.position) * 8;
+//					else
+//						detectionTimer = detectionSpeed;
 					Debug.DrawRay (transform.position, playerDirection, Color.green);
 				} else {
+					playerInSight = false;
 					if (detectionTimer > 0)
 						detectionTimer -= Time.deltaTime;
 					else
 						detectionTimer = 0;
 					Debug.DrawRay (transform.position, playerDirection, Color.red);
 				}
+			} else {
+				playerInSight = false;
 			}
+		} 
+//		else {
+//			playerInSight = false;
+//			if (detectionTimer > 0)
+//				detectionTimer -= Time.deltaTime;
+//			else
+//				detectionTimer = 0;
+//		}
+//		detection = detectionTimer / detectionSpeed;
+//		if (detection >= 1) {
+//			detection = 1;
+//			TransitionTo<CombatState> ();
+//		}
+		
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
+	}
+
+	public void LookForPlayer(){
+		Look ();
+		if (playerInSight) {
+			if (detectionTimer < detectionSpeed)
+				detectionTimer += Time.deltaTime / Vector3.Distance (transform.position, player.position) * 8;
+			else
+				detectionTimer = detectionSpeed;
 		} else {
+			playerInSight = false;
 			if (detectionTimer > 0)
 				detectionTimer -= Time.deltaTime;
 			else
 				detectionTimer = 0;
-		}
+			}
 		detection = detectionTimer / detectionSpeed;
 		if (detection >= 1) {
 			detection = 1;
 			TransitionTo<CombatState> ();
 		}
-		
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
 	}
 
 	//DEN HÄR FUNKAR TYP INTE MED NEGATIVA NUMMER! JAG FATTAR INGENTING!--------------------------------------------
