@@ -18,6 +18,7 @@ public class PatrolState : State {
 	}
 
 	public override void Enter() {
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		RandomizeDestination ();
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
 		agent.speed = walkSpeed;
@@ -28,7 +29,7 @@ public class PatrolState : State {
 		if (_controller.SamePosition (destination, transform.position)) {
 			_controller.TransitionTo<IdleState> ();
 		}
-		_controller.Look ();
+		_controller.LookForPlayer();
 		_controller.CheckHealth ();
 	}
 

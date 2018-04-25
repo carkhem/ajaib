@@ -261,6 +261,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3ed06e48e1eb4c4f869e4500cbec1c9, type: 2}
   - {fileID: 11400000, guid: 0f93e4451f95e034d82032c4ecb0fba7, type: 2}
   - {fileID: 11400000, guid: 9a325faaf8d69f14c984f045abb668af, type: 2}
+  - {fileID: 11400000, guid: 3346cafe76a763a468dab06340958ea6, type: 2}
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
   damage: 10

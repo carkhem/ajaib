@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy/States/Attack")]
+[CreateAssetMenu(menuName = "Enemy/States/Search")]
 public class SearchingState : State {
 	public float searchingTime;
 	private float timer = 0;
@@ -14,12 +14,15 @@ public class SearchingState : State {
 	}
 
 	public override void Enter (){
-		timer = 0;
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
+		timer = searchingTime;
 	}
 
 	public override void Update (){
-		timer += Time.deltaTime;
-		if (timer >= searchingTime) {
+		timer -= Time.deltaTime;
+		_controller.detection = timer / searchingTime;
+		if (timer <= 0) {
+			_controller.detection = 0;
 			_controller.TransitionTo<PatrolState> ();
 		}
 	}

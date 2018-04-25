@@ -10,8 +10,7 @@ public class TimeBody : MonoBehaviour {
     private float playerGravity;
 	List<PointInTime> pointsInTime;
     private PlayerController _controller;
-    //Rigidbody rb;
-    
+	//Rigidbody rb;
 
 	void Start () {
 		pointsInTime = new List<PointInTime>();
@@ -43,12 +42,6 @@ public class TimeBody : MonoBehaviour {
             transform.position = pointInTime.position;
 			transform.rotation = pointInTime.rotation;
 			pointsInTime.RemoveAt(0);
-
-            
-                GetComponent<PlayerScript>().changeHealth(-1);
-                
-            
-            
 		} else
 		{
 			StopRewind();
