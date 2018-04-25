@@ -15,7 +15,6 @@ public class IdleState : State {
 	}
 
 	public override void Enter (){
-		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		timer = 0;
 		currentIdleTime = Random.Range (idleTime.Min, idleTime.Max);
 	}
@@ -25,7 +24,7 @@ public class IdleState : State {
 		if (timer > currentIdleTime) {
 			_controller.TransitionTo<PatrolState>();
 		}
-		_controller.LookForPlayer();
+		_controller.Look ();
 		_controller.CheckHealth ();
 	}
 
