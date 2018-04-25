@@ -45,9 +45,10 @@ public class GroundState : State {
 		RaycastHit hit;
 
 		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer) && hit.collider.gameObject.tag == "ForcePush") {
-			if (Input.GetKeyDown (KeyCode.F))
-				_controller.GetComponent<ForcePush> ().ForcePushObject(hit);
-			}
+			if (Input.GetKeyDown (KeyCode.F)) 
+				_controller.GetComponent<ForcePush> ().ForcePushObject (hit);
+			
+		}
 	}
 
 
@@ -56,10 +57,17 @@ public class GroundState : State {
 		RaycastHit hit;
 
 		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer)) {
-			if (Input.GetKeyDown (KeyCode.R))
+			if (Input.GetKeyDown (KeyCode.R)) {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StartRewind ();
-			if (Input.GetKeyUp (KeyCode.R))
+			} else if (Input.GetKeyUp (KeyCode.R)) {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StopRewind ();
+			} else if (RewindObject.createShadowObject == false) {
+				hit.collider.gameObject.GetComponent<RewindObject> ().CreateShadowObject ();
+			}
+//			else if (hit.collider.gameObject.GetComponent<RewindObject> ().activateShadowObject == true) {
+//				hit.collider.gameObject.GetComponent<RewindObject> ().ShadowRewind();
+//			}
+				
 		}
 			
 	}
