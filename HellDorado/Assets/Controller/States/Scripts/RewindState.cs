@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class RewindState : State {
 
     public bool rewinding;
-    
 
     private PlayerController _controller;
 
@@ -17,7 +16,6 @@ public class RewindState : State {
         
     }
 	
-	// Update is called once per frame
 	public override void Update () {
         rewinding = _controller.GetComponent<TimeBody>().isRewinding; 
 
