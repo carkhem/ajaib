@@ -20,16 +20,15 @@ public class AttackState : State {
 	}
 
 	public override void Enter (){
-		Debug.Log ("ATTACK!");
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		attackPos = _controller.player.position;
 		agent.speed = plungeSpeed;
 		timer = 0;
 	}
 
 	public override void Update (){
-		Debug.Log (agent.velocity);
 		agent.SetDestination (attackPos);
-		if (agent.velocity.x == 0 && agent.velocity.z == 0) {
+		if (!_controller.IsMoving(agent)) {
 			timer += Time.deltaTime;
 			if (timer >= recoverTime) {
 				Debug.Log ("Recovered");

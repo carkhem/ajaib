@@ -14,7 +14,7 @@ public class DeadState : State {
 
 	public override void Enter (){
 		//Play dead-animation OR use a ragdoll :D
-		Debug.Log ("DED");
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		transform.eulerAngles = new Vector3 (90, transform.eulerAngles.y, transform.eulerAngles.z);
 		transform.GetComponent<NavMeshAgent> ().enabled = false;
 	}
