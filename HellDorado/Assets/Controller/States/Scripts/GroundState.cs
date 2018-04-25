@@ -33,7 +33,7 @@ public class GroundState : State {
 
 	public override void Update() {
 
-		UpdateLock();
+		//UpdateLock();
 		UpdateJump();
 		UpdateGravity();
 		RaycastHit[] hits = _controller.DetectHits(true);
@@ -120,7 +120,7 @@ public class GroundState : State {
 		CameraShake.AddIntesity (5.0f);
 	}
 
-	private void UpdateLock(){
+	/*private void UpdateLock(){
 
 		Vector3 forward = Camera.main.transform.forward * distance;
 		Debug.DrawRay(transform.position,forward,Color.green);
@@ -133,5 +133,5 @@ public class GroundState : State {
 			_controller.GetState<LockedState>().target = t;
 			_controller.TransitionTo<LockedState> ();
 		}
-	}
+	}*/
 }

@@ -23,6 +23,7 @@ public class PlayerController : Controller {
 
 	private void Start() {
 		_collider = GetComponent<BoxCollider>();
+   
 	}
 
 	public Vector3 Input {

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour {
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
+    public GameObject fireballPrefab;
+    public Transform fireballSpawn;
+    public GameObject player;
+    
     // Use this for initialization
     void Start () {
 		
@@ -12,24 +14,30 @@ public class Fireball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
         if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
             Fire();
-        }
+        
+        
     }
 
     void Fire()
     {
         // Create the Bullet from the Bullet Prefab
-        var bullet = (GameObject)Instantiate(
-            bulletPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
+        var fireball = (GameObject)Instantiate(
+            fireballPrefab,
+            fireballSpawn.position,
+            fireballSpawn.rotation);
 
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
+        fireball.GetComponent<Rigidbody>().velocity = fireball.transform.forward * 8;
 
+
+        player.GetComponent<PlayerScript>().changeHealth(-20);
         // Destroy the bullet after 2 seconds
-        Destroy(bullet, 2.0f);
+        Destroy(fireball, 2.0f);
+        // Add velocity to the bullet
+
     }
+
+   
 }
