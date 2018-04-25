@@ -25,7 +25,9 @@ GameObject:
   - component: {fileID: 114382011215907482}
   - component: {fileID: 199439241960264188}
   - component: {fileID: 198126663255794380}
+  - component: {fileID: 114487018795407642}
   - component: {fileID: 135721482519799078}
+  - component: {fileID: 135191334778520044}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -40,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896457964743868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.532393, y: 3.4485822, z: 10.245472}
+  m_LocalPosition: {x: -30.462704, y: 0.65, z: 38.600094}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,7 +54,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896457964743868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -115,7 +117,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRewinding: 0
   recordTime: 5
---- !u!135 &135721482519799078
+  playerGravity: 0
+  _controller: {fileID: 0}
+--- !u!114 &114487018795407642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896457964743868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be05c2dc2687b5459c7598e9c002a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+--- !u!135 &135191334778520044
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -125,8 +141,20 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.49999997
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.38832822
+  m_Center: {x: 0.028931895, y: -0.026775945, z: -0.00895977}
+--- !u!135 &135721482519799078
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896457964743868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6064545
+  m_Center: {x: -0.044377048, y: 0.035940804, z: 0.026136735}
 --- !u!198 &198126663255794380
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -187,7 +215,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1734881939
+  randomSeed: 560937949
   InitialModule:
     serializedVersion: 3
     enabled: 1
