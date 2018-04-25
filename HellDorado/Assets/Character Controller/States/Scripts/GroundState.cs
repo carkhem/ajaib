@@ -31,7 +31,8 @@ public class GroundState : State {
 		}
 		UpdateJump ();
 
-		RewindAbilitie ();
+		RewindObjectAbility ();
+		UseForcePush ();
 	}
 		
 
@@ -39,7 +40,18 @@ public class GroundState : State {
 		
 	}
 
-	private void RewindAbilitie(){
+	private void UseForcePush(){
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		RaycastHit hit;
+
+		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer) && hit.collider.gameObject.tag == "ForcePush") {
+			if (Input.GetKeyDown (KeyCode.F))
+				_controller.GetComponent<ForcePush> ().ForcePushObject(hit);
+			}
+	}
+
+
+	private void RewindObjectAbility(){
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 
