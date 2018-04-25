@@ -30,13 +30,27 @@ public class GroundState : State {
 			_controller.TransitionTo<AirState> ();
 		}
 		UpdateJump ();
+
+		RewindAbilitie ();
 	}
 		
 
 	private void UpdateMovement() {
 		
 	}
-		
+
+	private void RewindAbilitie(){
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		RaycastHit hit;
+
+		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer)) {
+			if (Input.GetKeyDown (KeyCode.R))
+				hit.collider.gameObject.GetComponent<RewindObject> ().StartRewind ();
+			if (Input.GetKeyUp (KeyCode.R))
+				hit.collider.gameObject.GetComponent<RewindObject> ().StopRewind ();
+		}
+			
+	}
 
 	private void UpdateJump() {
 		if (Input.GetButtonDown ("Jump")) {
@@ -44,4 +58,6 @@ public class GroundState : State {
 			_controller.Velocity.y = 10f;
 		}
 	}
+
+
 }
