@@ -269,6 +269,7 @@ MonoBehaviour:
   fov: 45
   viewDistance: 15
   detectionSpeed: 1
+  detection: 0
   player: {fileID: 1313085482}
 --- !u!23 &391233628
 MeshRenderer:
@@ -918,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1313085482
 Transform:
   m_ObjectHideFlags: 0
