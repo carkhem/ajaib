@@ -60,9 +60,12 @@ public class EnemyController : Controller {
 		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
 		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
 
+//		float detectionMultiplier = Vector3.Distance (transform.position, player.position) * 8;
+		float detectionMultiplier = ;
+
 		if (InSight(player)) {
 			if (detectionTimer < detectionSpeed)
-				detectionTimer += Time.deltaTime / Vector3.Distance (transform.position, player.position) * 8;
+				detectionTimer += Time.deltaTime / detectionMultiplier;
 			else
 				detectionTimer = detectionSpeed;
 		} else {

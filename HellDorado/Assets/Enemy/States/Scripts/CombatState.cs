@@ -32,6 +32,7 @@ public class CombatState : State {
 		currentAttackWait = Random.Range (attackWait.Min, attackWait.Max);
 		agent.speed = runSpeed;
 		logicFollowTimer = 0;
+		transform.LookAt (_controller.player);
 	}
 
 	public override void Update (){
