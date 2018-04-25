@@ -17,9 +17,12 @@ public class EnemyController : Controller {
 	public float fov;
 	public float viewDistance;
 	public float detectionSpeed;
-	public float detection; //Kan användas för att visa på hur nära man är på att bli upptäckt
+	private float detection; //Kan användas för att visa på hur nära man är på att bli upptäckt
 	private float detectionTimer = 0;
 	public Transform player;
+	private Vector3 playerDirection;
+	[HideInInspector]
+	public bool playerInSight = false;
 
 //	void Awake(){
 //		//Sätt player direkt! Typ: player = PlayerController.instance.transform;
@@ -36,36 +39,56 @@ public class EnemyController : Controller {
 		}
 	}
 
-	public bool InSight(Transform thing){
-		Vector3 direction = thing.position - transform.position;
+	public void Look(){
+		playerDirection = player.position - transform.position;
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position, direction, out hit, viewDistance)) {
-			if (hit.transform.CompareTag (thing.tag)) {
-				if (Vector3.Angle (transform.forward, direction) < fov) {
-					Debug.DrawRay (transform.position, direction, Color.green);
-					return true;
+		if (Physics.Raycast (transform.position, playerDirection, out hit, viewDistance)) {
+			if (hit.transform.CompareTag ("Player")) {
+				if (Vector3.Angle (transform.forward, playerDirection) < fov) {
+					playerInSight = true;
+//					if (detectionTimer < detectionSpeed)
+//						detectionTimer += Time.deltaTime / Vector3.Distance (transform.position, player.position) * 8;
+//					else
+//						detectionTimer = detectionSpeed;
+					Debug.DrawRay (transform.position, playerDirection, Color.green);
 				} else {
-					Debug.DrawRay (transform.position, direction, Color.red);
-					return false;
+					playerInSight = false;
+					if (detectionTimer > 0)
+						detectionTimer -= Time.deltaTime;
+					else
+						detectionTimer = 0;
+					Debug.DrawRay (transform.position, playerDirection, Color.red);
 				}
 			} else {
-				return false;
+				playerInSight = false;
 			}
-		} else {
-			return false;
-		}
+		} 
+//		else {
+//			playerInSight = false;
+//			if (detectionTimer > 0)
+//				detectionTimer -= Time.deltaTime;
+//			else
+//				detectionTimer = 0;
+//		}
+//		detection = detectionTimer / detectionSpeed;
+//		if (detection >= 1) {
+//			detection = 1;
+//			TransitionTo<CombatState> ();
+//		}
+		
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
 	}
 
 	public void LookForPlayer(){
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
-
-		if (InSight(player)) {
+		Look ();
+		if (playerInSight) {
 			if (detectionTimer < detectionSpeed)
 				detectionTimer += Time.deltaTime / Vector3.Distance (transform.position, player.position) * 8;
 			else
 				detectionTimer = detectionSpeed;
 		} else {
+			playerInSight = false;
 			if (detectionTimer > 0)
 				detectionTimer -= Time.deltaTime;
 			else
@@ -74,25 +97,18 @@ public class EnemyController : Controller {
 		detection = detectionTimer / detectionSpeed;
 		if (detection >= 1) {
 			detection = 1;
-			detectionTimer = 0;
 			TransitionTo<CombatState> ();
 		}
 	}
 
-	//DEN HÄR FUNKAR INTE ALLTID AV NÅGON ANLEDNING
+	//DEN HÄR FUNKAR TYP INTE MED NEGATIVA NUMMER! JAG FATTAR INGENTING!--------------------------------------------
 	public bool SamePosition(Vector3 posOne, Vector3 posTwo){
+//		print ((int)posOne.x + " = " + (int)posTwo.x + " | " + (int)posOne.z + " = " + (int)posTwo.z);
 		if ((int)posOne.x == (int)posTwo.x && (int)posOne.z == (int)posTwo.z) {
 			return true;
 		} else {
 			return false;
 		}
-	}
-
-	public bool IsMoving(NavMeshAgent agent){
-		if (agent.velocity.x == 0 && agent.velocity.z == 0)
-			return false;
-		else
-			return true;
 	}
 
 }
