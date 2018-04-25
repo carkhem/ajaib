@@ -14,7 +14,7 @@ MonoBehaviour:
   Controller: {fileID: 0}
   runSpeed: 4
   stopDistance: 2
-  logicFollowTime: 1
+  logicFollowTime: 2
   attackWait:
     Min: 0
     Max: 1
