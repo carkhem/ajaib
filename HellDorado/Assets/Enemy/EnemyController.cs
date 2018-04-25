@@ -46,6 +46,10 @@ public class EnemyController : Controller {
 			if (hit.transform.CompareTag ("Player")) {
 				if (Vector3.Angle (transform.forward, playerDirection) < fov) {
 					playerInSight = true;
+//					if (detectionTimer < detectionSpeed)
+//						detectionTimer += Time.deltaTime / Vector3.Distance (transform.position, player.position) * 8;
+//					else
+//						detectionTimer = detectionSpeed;
 					Debug.DrawRay (transform.position, playerDirection, Color.green);
 				} else {
 					playerInSight = false;
@@ -58,7 +62,20 @@ public class EnemyController : Controller {
 			} else {
 				playerInSight = false;
 			}
-		}
+		} 
+//		else {
+//			playerInSight = false;
+//			if (detectionTimer > 0)
+//				detectionTimer -= Time.deltaTime;
+//			else
+//				detectionTimer = 0;
+//		}
+//		detection = detectionTimer / detectionSpeed;
+//		if (detection >= 1) {
+//			detection = 1;
+//			TransitionTo<CombatState> ();
+//		}
+		
 		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
 		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
 	}
