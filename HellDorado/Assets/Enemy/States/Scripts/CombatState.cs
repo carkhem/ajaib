@@ -10,10 +10,12 @@ public class CombatState : State {
 	private NavMeshAgent agent;
 	public float stopDistance = 1f;
 	private Vector3 lastKnownPos;
+	public float logicFollowTime = 2f;
+	private float logicFollowTimer = 0;
 	[Header("Fighting")]
 	public MinMaxFloat attackWait;
 	private float currentAttackWait;
-	private float timer = 0;
+	private float attackTimer = 0;
 
 	private EnemyController _controller;
 
@@ -26,14 +28,15 @@ public class CombatState : State {
 	public override void Enter (){
 		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
-		timer = 0;
+		attackTimer = 0;
 		currentAttackWait = Random.Range (attackWait.Min, attackWait.Max);
 		agent.speed = runSpeed;
+		logicFollowTimer = 0;
 	}
 
 	public override void Update (){
 		//Stannar för skarpt. Vill egentligen hitta en vector mellan tarnsform och player som är stopDistance ifrån playern.
-		if (_controller.InSight(_controller.player)){
+		if (_controller.InSight (_controller.player)) {
 			lastKnownPos = _controller.player.position;
 		}
 
@@ -43,14 +46,20 @@ public class CombatState : State {
 
 		if (Vector3.Distance (transform.position, _controller.player.position) > stopDistance) {
 			if (_controller.InSight (_controller.player)) {
+				logicFollowTimer = 0;
 				agent.SetDestination (_controller.player.position);
 			} else {
-				agent.SetDestination (lastKnownPos);
+				logicFollowTimer += Time.deltaTime;
+				if (logicFollowTimer >= logicFollowTime) {
+					agent.SetDestination (lastKnownPos);
+				} else {
+					agent.SetDestination (_controller.player.position);
+				}
 			}
 		} else {
 			agent.SetDestination (transform.position);
-			timer += Time.deltaTime;
-			if (timer >= currentAttackWait) {
+			attackTimer += Time.deltaTime;
+			if (attackTimer >= currentAttackWait) {
 				_controller.TransitionTo<AttackState> ();
 			}
 		}
