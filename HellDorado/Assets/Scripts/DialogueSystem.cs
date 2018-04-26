@@ -8,6 +8,7 @@ public class DialogueSystem : MonoBehaviour {
 	public Text uiText;
 	public Text uiName;
 	public string speakerName;
+	public Color nameColor;
 	public string[] pages;
 	private int currentPage = 0;
 
@@ -16,10 +17,18 @@ public class DialogueSystem : MonoBehaviour {
 	}
 
 	public void StartDialogue(){
-		dialogueBox.SetActive (true);
+		if (!dialogueBox.activeSelf) {
+			dialogueBox.SetActive (true);
+			currentPage = 0;
+			uiText.text = pages [currentPage];
+			uiName.text = speakerName;
+			uiName.color = nameColor;
+		}
+	}
+
+	public void EndDialogue(){
+		dialogueBox.SetActive (false);
 		currentPage = 0;
-		uiText.text = pages [currentPage];
-		uiName.text = speakerName;
 	}
 
 	public void Update(){
@@ -29,7 +38,7 @@ public class DialogueSystem : MonoBehaviour {
 				currentPage += 1;
 				uiText.text = pages [currentPage];
 			} else {
-				dialogueBox.SetActive (false);
+				EndDialogue ();
 			}
 		}
 	}

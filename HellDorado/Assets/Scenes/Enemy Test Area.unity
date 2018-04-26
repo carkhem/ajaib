@@ -1448,6 +1448,7 @@ MonoBehaviour:
   uiText: {fileID: 10391336}
   uiName: {fileID: 742280352}
   speakerName: John
+  nameColor: {r: 1, g: 0.5955882, b: 0.9386409, a: 1}
   pages:
   - Hey, friend!
   - How you doin'?
