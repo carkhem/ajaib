@@ -17,9 +17,6 @@ public class GroundState : State {
 		_controller = (PlayerController)owner;
     }
 
-	public override void Enter (){
-		Debug.Log ("Grounded State");
-	}
 
 	public override void Update() {
 		_controller.GetComponent<CharacterController>().Move(_controller.Input * _controller.MaxSpeed * Time.deltaTime);
@@ -61,13 +58,8 @@ public class GroundState : State {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StartRewind ();
 			} else if (Input.GetKeyUp (KeyCode.R)) {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StopRewind ();
-			} else if (RewindObject.createShadowObject == false) {
-				hit.collider.gameObject.GetComponent<RewindObject> ().CreateShadowObject ();
 			}
-//			else if (hit.collider.gameObject.GetComponent<RewindObject> ().activateShadowObject == true) {
-//				hit.collider.gameObject.GetComponent<RewindObject> ().ShadowRewind();
-//			}
-				
+
 		}
 			
 	}
