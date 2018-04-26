@@ -8,9 +8,12 @@ public class RewindObject : MonoBehaviour {
 	public LayerMask ObjectLayer;
 	public float recordTime = 5f;
 	public Material shadowMaterial;
+	public RaycastHit hit;
 
 	public Transform shadowObject;
+	public Transform clone;
 	public bool shadowObjectCreated = false;
+	public bool deactivateObject = false;
 	List<PointInTime> pointsInTime;
 
 	private Rigidbody rb;
@@ -21,6 +24,13 @@ public class RewindObject : MonoBehaviour {
 
 		rb = GetComponent<Rigidbody>();
 
+	}
+
+	void Update(){
+		if (clone != null)
+			Debug.Log ("INTE NULL");
+		else
+			Debug.Log ("NULL");
 	}
 		
 
@@ -59,7 +69,10 @@ public class RewindObject : MonoBehaviour {
 		if(rb.velocity.sqrMagnitude > 0.01f)
 			pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
 
-
+		if (clone != null && pointsInTime.Count > 0) {
+			clone.position = pointsInTime [pointsInTime.Count - 1].position;
+			clone.rotation = pointsInTime [pointsInTime.Count - 1].rotation;
+		}
 	}
 
 	public void StartRewind ()
@@ -76,5 +89,46 @@ public class RewindObject : MonoBehaviour {
 	
 	}
 
+	public void CreateShadowObject(){
+
+		if (shadowObject != null) {
+			clone = Instantiate (shadowObject, transform.position, Quaternion.identity);
+			clone.gameObject.GetComponent<MeshRenderer> ().material = shadowMaterial;
+			Destroy (clone.gameObject.GetComponent<Rigidbody> ());
+			Destroy(clone.gameObject.GetComponent<BoxCollider> ());
+			Destroy (clone.gameObject.GetComponent<RewindObject> ());
+			clone.gameObject.layer = 0;
+			clone.gameObject.SetActive (false);
+			if (pointsInTime.Count > 0) {
+				clone.position = pointsInTime [pointsInTime.Count - 1].position;
+				clone.rotation = pointsInTime [pointsInTime.Count - 1].rotation;
+			}
+
+		}
+	}
+
+	public void ActivateShadowObject(){
+		if (clone != null && shadowObjectCreated == true) {
+			if (rb.velocity.sqrMagnitude < 0.01f)
+				if(pointsInTime.Count > 0 && pointsInTime[0].position != pointsInTime[pointsInTime.Count-1].position)
+					clone.gameObject.SetActive (true);
+		} else {
+			shadowObjectCreated = true;
+			CreateShadowObject ();
+		}
+	}
+
+	public void DestroyObject(){
+		if (clone != null) {
+			clone.gameObject.SetActive (false);
+			Debug.Log ("WHYYYYY");
+			deactivateObject = false;
+		}	
+	}
+
+	public void DeactivateObject(){
+
+		deactivateObject = true;
+	}
 
 }

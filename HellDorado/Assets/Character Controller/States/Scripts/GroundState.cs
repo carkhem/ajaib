@@ -19,7 +19,7 @@ public class GroundState : State {
 
 
 	public override void Update() {
-		_controller.GetComponent<CharacterController>().Move(_controller.Input * _controller.MaxSpeed * Time.deltaTime);
+		_controller.GetComponent<CharacterController>().Move(_controller.InputVector * _controller.MaxSpeed * Time.deltaTime);
 		_controller.Velocity.x = transform.GetComponent<CharacterController> ().velocity.x;
 		_controller.Velocity.z = transform.GetComponent<CharacterController> ().velocity.z;
 
@@ -42,7 +42,7 @@ public class GroundState : State {
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 
-		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer) && hit.collider.gameObject.tag == "ForcePush") {
+		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer) && (hit.collider.gameObject.tag == "ForcePush" || hit.collider.gameObject.tag == "Enemy")) {
 			if (Input.GetKeyDown (KeyCode.F)) 
 				_controller.GetComponent<ForcePush> ().ForcePushObject (hit);
 			
@@ -59,20 +59,22 @@ public class GroundState : State {
 
 	private void RewindObjectAbility ()
 	{
+
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 
-	
-		if (Physics.Raycast (ray, out hit, 50f, _controller.ObjectLayer)) {
+		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer) && (hit.collider.gameObject.tag == "ForcePush")){
 			if (Input.GetKeyDown (KeyCode.R)) {
+				hit.collider.gameObject.GetComponent<RewindObject> ().DeactivateObject ();
 				hit.collider.gameObject.GetComponent<RewindObject> ().StartRewind ();
 			} else if (Input.GetKeyUp (KeyCode.R)) {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StopRewind ();
-			} else {
-				Debug.Log ("GÖR");
+			} else if(hit.collider.gameObject.GetComponent<RewindObject>().deactivateObject == true){
+				if(hit.collider.gameObject.GetComponent<RewindObject>().clone != null)
+					Destroy(hit.collider.gameObject.GetComponent<RewindObject>().clone.gameObject);
+			}else {
+				hit.collider.gameObject.GetComponent<RewindObject> ().ActivateShadowObject ();
 			}
-		} else if (!Physics.Raycast (ray, out hit, 50f, _controller.ObjectLayer)) {
-			Debug.Log ("INTE");
 		}
 	}
 

@@ -348,34 +348,6 @@ Transform:
   m_Father: {fileID: 1838216111}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -19.632002, y: 0, z: 0}
---- !u!1 &253538683
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 253538684}
-  m_Layer: 0
-  m_Name: FireballSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &253538684
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 253538683}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0.515}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 410986915}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &307547470 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1196042665137070, guid: 3b5598f917383414da3830f2a341a6ce,
@@ -465,11 +437,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 382709816}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &410986915 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4815698213044606, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1316931686}
 --- !u!1 &433136727
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,61 +523,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1857608410268046, guid: 3b5598f917383414da3830f2a341a6ce,
     type: 2}
   m_PrefabInternal: {fileID: 1459016223}
---- !u!1 &741517662 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1987242077293968, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1316931686}
---- !u!114 &741517665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 741517662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5307c67e41a5fc74ca1bcff18b07b4a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthProcent: {fileID: 1518233391}
-  health: 100
-  healthBar: {fileID: 1567159863}
-  healthFill: {fileID: 2120119168}
-  maxHealth: 100
-  deadScreen: {fileID: 471812700}
-  inCombat: 0
-  regenerate: 10
---- !u!114 &741517666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 741517662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d01b2466b21cbd44291660b49f061c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRewinding: 0
-  recordTime: 5
-  rewindPanel: {fileID: 1609791630}
-  rewindCost: 1
-  fireballPrefab: {fileID: 1896457964743868, guid: 54bd92e89fdd14442bae356225d16c9c,
-    type: 2}
-  fireballSpawn: {fileID: 253538684}
-  player: {fileID: 741517662}
-  rewindAvailable: {fileID: 893255279}
-  rewindUnavailable: {fileID: 518952140}
-  rewindActive: {fileID: 1431098700}
-  fireballAvailable: {fileID: 808675695}
-  fireballUnavailable: {fileID: 70904347}
-  fireballActive: {fileID: 774128563}
-  abilityCost: 20
-  pushAvailable: {fileID: 307547470}
-  pushUnavailable: {fileID: 1261187943}
-  pushActive: {fileID: 724199991}
-  currentAbility: 
-  currentAbilityText: {fileID: 600776639}
 --- !u!1 &774128563 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1899736534102894, guid: 3b5598f917383414da3830f2a341a6ce,
@@ -1175,24 +1087,82 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1987242077293968, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114780522469227124, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+    - target: {fileID: 114317910976488378, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
         type: 2}
-      propertyPath: ballSpawn
+      propertyPath: healthProcent
       value: 
-      objectReference: {fileID: 253538684}
-    - target: {fileID: 114780522469227124, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+      objectReference: {fileID: 1518233391}
+    - target: {fileID: 114317910976488378, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
         type: 2}
-      propertyPath: fireballPrefab
+      propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1896457964743868, guid: 54bd92e89fdd14442bae356225d16c9c,
+      objectReference: {fileID: 1567159863}
+    - target: {fileID: 114317910976488378, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
         type: 2}
-    m_RemovedComponents:
-    - {fileID: 114344365601677850, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
-    - {fileID: 114780522469227124, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
+      propertyPath: healthFill
+      value: 
+      objectReference: {fileID: 2120119168}
+    - target: {fileID: 114317910976488378, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: deadScreen
+      value: 
+      objectReference: {fileID: 471812700}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: rewindPanel
+      value: 
+      objectReference: {fileID: 1609791630}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: rewindAvailable
+      value: 
+      objectReference: {fileID: 893255279}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: rewindUnavailable
+      value: 
+      objectReference: {fileID: 518952140}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: rewindActive
+      value: 
+      objectReference: {fileID: 1431098700}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: fireballAvailable
+      value: 
+      objectReference: {fileID: 808675695}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: fireballUnavailable
+      value: 
+      objectReference: {fileID: 70904347}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: fireballActive
+      value: 
+      objectReference: {fileID: 774128563}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: pushAvailable
+      value: 
+      objectReference: {fileID: 307547470}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: pushUnavailable
+      value: 
+      objectReference: {fileID: 1261187943}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: pushActive
+      value: 
+      objectReference: {fileID: 724199991}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: currentAbilityText
+      value: 
+      objectReference: {fileID: 600776639}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1431098700 stripped
