@@ -34,7 +34,7 @@ public class AirState : State {
 	}
 
 	private void UpdateRewind(){
-		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<TimeBody>().isRewinding)
+		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<AbilityManager>().isRewinding)
 			_controller.TransitionTo<RewindState> ();
 	}
 }

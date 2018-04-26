@@ -36,6 +36,7 @@ public class Fireball2 : MonoBehaviour {
 		GameObject explosion = Instantiate (explosionPrefab, transform.position, transform.rotation);
 		//explosion.particleSystem.particleEmitter -- Sätt storleken på explosionen på nåt sätt.
 		GameObject.Destroy (gameObject);
+        GameObject.Destroy(explosion, 1.5f);
 	}
 
 	void OnCollisionEnter(){
