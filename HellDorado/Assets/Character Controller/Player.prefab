@@ -763,10 +763,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4874292685659178}
   - component: {fileID: 114419834847920368}
-  - component: {fileID: 114344365601677850}
-  - component: {fileID: 114780522469227124}
   - component: {fileID: 143872959272013462}
   - component: {fileID: 114217093097811482}
+  - component: {fileID: 114317910976488378}
+  - component: {fileID: 114749972329582750}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1368,8 +1368,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987242077293968}
-  m_LocalRotation: {x: -0, y: 0.0000059604636, z: -0, w: -1}
-  m_LocalPosition: {x: -1.87, y: 1.66, z: 6.14}
+  m_LocalRotation: {x: -0, y: 0.99949753, z: -0, w: -0.031696968}
+  m_LocalPosition: {x: 5.537764, y: 15.9, z: 13.294753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4013114397461412}
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa6c0c4dabfc924480bd20a8426ad80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114344365601677850
+--- !u!114 &114317910976488378
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1569,11 +1569,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987242077293968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc4d17b0d94bfd4ea0ec81b67638509, type: 3}
+  m_Script: {fileID: 11500000, guid: 5307c67e41a5fc74ca1bcff18b07b4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
-  recordTime: 5
+  healthProcent: {fileID: 0}
+  health: 100
+  healthBar: {fileID: 0}
+  healthFill: {fileID: 0}
+  maxHealth: 100
+  deadScreen: {fileID: 0}
+  inCombat: 0
+  regenerate: 10
 --- !u!114 &114366971839013984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1614,7 +1620,7 @@ MonoBehaviour:
   MaxSpeed: 5
   Gravity: 25
   SkinWidth: 0.03
---- !u!114 &114780522469227124
+--- !u!114 &114749972329582750
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1622,14 +1628,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987242077293968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9641dfe9e0aeb542b682ba11affc624, type: 3}
+  m_Script: {fileID: 11500000, guid: d01b2466b21cbd44291660b49f061c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRewinding: 0
+  recordTime: 5
+  rewindPanel: {fileID: 0}
+  rewindCost: 1
   fireballPrefab: {fileID: 1896457964743868, guid: 54bd92e89fdd14442bae356225d16c9c,
     type: 2}
-  ballSpawn: {fileID: 0}
-  speed: 6
-  lifeTime: 2
+  fireballSpawn: {fileID: 4706572722408384}
+  player: {fileID: 1987242077293968}
+  rewindAvailable: {fileID: 0}
+  rewindUnavailable: {fileID: 0}
+  rewindActive: {fileID: 0}
+  fireballAvailable: {fileID: 0}
+  fireballUnavailable: {fileID: 0}
+  fireballActive: {fileID: 0}
+  abilityCost: 20
+  pushAvailable: {fileID: 0}
+  pushUnavailable: {fileID: 0}
+  pushActive: {fileID: 0}
+  currentAbility: 
+  currentAbilityText: {fileID: 0}
 --- !u!124 &124204564720828752
 Behaviour:
   m_ObjectHideFlags: 1
