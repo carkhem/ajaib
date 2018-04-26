@@ -11,8 +11,8 @@ public class PlayerController : Controller {
 	public float MaxSpeed = 10f;
 	public float Gravity = 100f;
 
-	[Header("Collision")]
-	public float SkinWidth = 0.03f;
+//	[Header("Collision")]
+//	public float SkinWidth = 0.03f;
 
 
 	public Vector3 InputVector {

@@ -57,8 +57,7 @@ public class GroundState : State {
 	}
 
 
-	private void RewindObjectAbility ()
-	{
+	private void RewindObjectAbility (){
 
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
