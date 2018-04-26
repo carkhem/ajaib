@@ -59,7 +59,6 @@ public class GroundState : State {
 			} else if (Input.GetKeyUp (KeyCode.R)) {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StopRewind ();
 			}
-
 		}
 			
 	}

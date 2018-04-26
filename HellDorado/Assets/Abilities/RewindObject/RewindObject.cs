@@ -26,10 +26,6 @@ public class RewindObject : MonoBehaviour {
 		//shadowObject = gameObject.transform;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		Debug.Log (pointsInTime.Count);
-	}
 
 	void FixedUpdate ()
 	{
