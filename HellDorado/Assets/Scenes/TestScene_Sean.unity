@@ -349,6 +349,26 @@ Prefab:
       propertyPath: m_Name
       value: PS_Fire_Parent
       objectReference: {fileID: 0}
+    - target: {fileID: 198436834558274336, guid: 1547c41d390d5844f9f1a67ca863b2ad,
+        type: 2}
+      propertyPath: randomSeed
+      value: 428213609
+      objectReference: {fileID: 0}
+    - target: {fileID: 198436834558274336, guid: 1547c41d390d5844f9f1a67ca863b2ad,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198010537631584502, guid: 1547c41d390d5844f9f1a67ca863b2ad,
+        type: 2}
+      propertyPath: randomSeed
+      value: 855140519
+      objectReference: {fileID: 0}
+    - target: {fileID: 198010537631584502, guid: 1547c41d390d5844f9f1a67ca863b2ad,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1547c41d390d5844f9f1a67ca863b2ad, type: 2}
   m_IsPrefabParent: 0
