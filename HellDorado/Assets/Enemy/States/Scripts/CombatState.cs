@@ -33,6 +33,7 @@ public class CombatState : State {
 		agent.speed = runSpeed;
 		logicFollowTimer = 0;
 		transform.LookAt (_controller.player);
+		lastKnownPos = _controller.player.position;
 	}
 
 	public override void Update (){
