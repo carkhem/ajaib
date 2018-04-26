@@ -15,7 +15,7 @@ public class PlayerController : Controller {
 	public float SkinWidth = 0.03f;
 
 
-	public Vector3 Input {
+	public Vector3 InputVector {
 		get{
 			Vector3 input = new Vector3(UnityEngine.Input.GetAxisRaw("Horizontal"), Velocity.y, UnityEngine.Input.GetAxisRaw("Vertical"));
             float y = Camera.main.transform.rotation.eulerAngles.y;
@@ -25,5 +25,16 @@ public class PlayerController : Controller {
 	}
 
 
+	public RaycastHit RaycastLong(){
+
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		RaycastHit hit;
+
+		if (Physics.Raycast (ray, out hit, 50f, ObjectLayer))
+			return hit;
+		else
+			return hit;
+
+	}
 
 }

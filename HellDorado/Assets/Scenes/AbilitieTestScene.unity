@@ -241,6 +241,11 @@ Prefab:
       propertyPath: shadowMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 1d91485b36fd9134cbba3b0499961261, type: 2}
+    - target: {fileID: 114764598579534360, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,
+        type: 2}
+      propertyPath: shadowObject
+      value: 
+      objectReference: {fileID: 1648407401}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b, type: 2}
   m_IsPrefabParent: 0
@@ -369,6 +374,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114317910976488378, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114749972329582750, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
   m_IsPrefabParent: 0
@@ -388,7 +403,7 @@ GameObject:
   - component: {fileID: 825992936}
   m_Layer: 8
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: ForcePush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,7 +437,9 @@ MonoBehaviour:
   recordTime: 5
   shadowMaterial: {fileID: 0}
   shadowObject: {fileID: 0}
+  clone: {fileID: 0}
   shadowObjectCreated: 0
+  deactivateObject: 0
 --- !u!54 &825992938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -739,3 +756,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1648407401 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4346869128294042, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,
+    type: 2}
+  m_PrefabInternal: {fileID: 454662033}
