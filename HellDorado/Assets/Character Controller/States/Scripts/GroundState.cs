@@ -54,23 +54,29 @@ public class GroundState : State {
 			_controller.TransitionTo<RewindState> ();
 			Debug.Log ("rewind from Groundstate");
 		}
-			
 	}
 
 
-	private void RewindObjectAbility(){
+	private void RewindObjectAbility ()
+	{
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 
-		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer)) {
+	
+		if (Physics.Raycast (ray, out hit, 50f, _controller.ObjectLayer)) {
 			if (Input.GetKeyDown (KeyCode.R)) {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StartRewind ();
 			} else if (Input.GetKeyUp (KeyCode.R)) {
 				hit.collider.gameObject.GetComponent<RewindObject> ().StopRewind ();
+			} else {
+				Debug.Log ("GÖR");
 			}
+		} else if (!Physics.Raycast (ray, out hit, 50f, _controller.ObjectLayer)) {
+			Debug.Log ("INTE");
 		}
-			
 	}
+
+
 
 	private void UpdateJump() {
 		if (Input.GetButtonDown ("Jump")) {

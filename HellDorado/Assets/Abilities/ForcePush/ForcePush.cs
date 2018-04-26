@@ -21,8 +21,6 @@ public class ForcePush : MonoBehaviour {
 		rb.isKinematic = false;
 		rb.AddForce (_controller.transform.forward * 500f);
 
-		Debug.Log ("PUSH");
-
 	}
 
 	void ForcePushEnemy(){

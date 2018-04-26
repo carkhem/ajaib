@@ -7,25 +7,22 @@ public class RewindObject : MonoBehaviour {
 	public bool isRewinding = false;
 	public LayerMask ObjectLayer;
 	public float recordTime = 5f;
-	private float objectGravity;
 	public Material shadowMaterial;
 
+	public Transform shadowObject;
+	public bool shadowObjectCreated = false;
 	List<PointInTime> pointsInTime;
-//	List<PointInTime> shadowRewind;
-//	Transform shadowObject;
-//
-//	public static bool createShadowObject = false;
-//	public bool activateShadowObject = false;
+
 	private Rigidbody rb;
 	//Rigidbody rb;
 
 	void Start () {
 		pointsInTime = new List<PointInTime>();
-	//	shadowRewind = new List<PointInTime> ();
-		rb = GetComponent<Rigidbody>();
-		//shadowObject = gameObject.transform;
-	}
 
+		rb = GetComponent<Rigidbody>();
+
+	}
+		
 
 	void FixedUpdate ()
 	{
@@ -33,14 +30,11 @@ public class RewindObject : MonoBehaviour {
 			Rewind();
 		else
 			Record();
-
-//		if (gameObject.GetComponent<Rigidbody> ().velocity == Vector3.zero && createShadowObject == true) {
-//			activateShadowObject = true;
-//		}
 	}
 
 	void Rewind ()
 	{
+
 		if (pointsInTime.Count > 0)
 		{
 			PointInTime pointInTime = pointsInTime[0];
@@ -53,42 +47,7 @@ public class RewindObject : MonoBehaviour {
 		}
 
 	}
-
-//	public void CreateShadowObject(){
-//		if (pointsInTime.Count <= 0)
-//			return;
-//
-//	
-//
-//		if (createShadowObject == false) {
-//			Instantiate (shadowObject, transform.position, Quaternion.identity);
-//			shadowObject.GetComponent<MeshRenderer> ().material = shadowMaterial;
-//			shadowObject.GetComponent<BoxCollider> ().isTrigger = true;
-//			shadowObject.gameObject.SetActive (false);
-//			createShadowObject = true;
-//			shadowRewind = pointsInTime;
-//		}
-//
-//
-//	}
-//
-//	public void ShadowRewind(){
-//		shadowObject.gameObject.SetActive (true);
-//
-//		if (pointsInTime.Count > 0)
-//		{
-//			PointInTime pointInTime = pointsInTime[0];
-//			shadowObject.position = pointInTime.position;
-//			shadowObject.rotation = pointInTime.rotation;
-//			pointsInTime.RemoveAt(0);
-//		} else
-//		{
-//			Destroy (shadowObject);
-//			createShadowObject = false;
-//			activateShadowObject = false;
-//		}
-//
-//	}
+		
 
 	void Record ()
 	{
@@ -99,6 +58,8 @@ public class RewindObject : MonoBehaviour {
 
 		if(rb.velocity.sqrMagnitude > 0.01f)
 			pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+
+
 	}
 
 	public void StartRewind ()
@@ -114,4 +75,6 @@ public class RewindObject : MonoBehaviour {
 			rb.isKinematic = false;
 	
 	}
+
+
 }
