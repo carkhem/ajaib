@@ -29,5 +29,12 @@ public class AirState : State {
 		if (transform.GetComponent<CharacterController>().isGrounded){
 			_controller.TransitionTo<GroundState> ();
 		}
+
+		UpdateRewind ();
+	}
+
+	private void UpdateRewind(){
+		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<TimeBody>().isRewinding)
+			_controller.TransitionTo<RewindState> ();
 	}
 }

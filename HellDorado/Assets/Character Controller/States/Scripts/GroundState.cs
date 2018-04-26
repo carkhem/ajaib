@@ -30,6 +30,7 @@ public class GroundState : State {
 
 		RewindObjectAbility ();
 		UseForcePush ();
+		UpdateRewind ();
 	}
 		
 
@@ -46,6 +47,14 @@ public class GroundState : State {
 				_controller.GetComponent<ForcePush> ().ForcePushObject (hit);
 			
 		}
+	}
+
+	private void UpdateRewind(){
+		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<TimeBody> ().isRewinding) {
+			_controller.TransitionTo<RewindState> ();
+			Debug.Log ("rewind from Groundstate");
+		}
+			
 	}
 
 

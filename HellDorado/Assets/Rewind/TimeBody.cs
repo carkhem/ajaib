@@ -19,12 +19,7 @@ public class TimeBody : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Mouse1))
-			StartRewind();
-		if (Input.GetKeyUp(KeyCode.Mouse1))
-			StopRewind();
-	}
+
 
 	void FixedUpdate ()
 	{
