@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5a116a1fdb6c6264d86d8a7bfd6e9055
-timeCreated: 1524757926
+guid: 62d7e702999d6ae4da63cb03d3b9d66e
+timeCreated: 1524757386
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -51,7 +51,7 @@ ModelImporter:
     400040: Thumb_2
     400042: Thumb_3
     400044: Wrist
-    7400000: Take 001
+    7400000: SwordSwings
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -79,7 +79,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SwordSwings
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
