@@ -50,7 +50,7 @@ public class GroundState : State {
 	}
 
 	private void UpdateRewind(){
-		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<TimeBody> ().isRewinding) {
+		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<AbilityManager> ().isRewinding) {
 			_controller.TransitionTo<RewindState> ();
 			Debug.Log ("rewind from Groundstate");
 		}
