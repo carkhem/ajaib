@@ -20,7 +20,6 @@ public class FPSCamera : MonoBehaviour {
 	}
 
 	void Update(){
-
 		var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
 
 		md = Vector2.Scale(md,new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
@@ -32,7 +31,6 @@ public class FPSCamera : MonoBehaviour {
 
 		transform.localRotation = Quaternion.AngleAxis (-_mouseLook.y, Vector3.right);
 		Character.transform.localRotation = Quaternion.AngleAxis (_mouseLook.x, Character.transform.up);
-
 
 		UpdateCursorLock ();
 	}

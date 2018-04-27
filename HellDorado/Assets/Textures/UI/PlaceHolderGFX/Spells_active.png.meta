@@ -87,12 +87,12 @@ TextureImporter:
       name: Spells_active_0
       rect:
         serializedVersion: 2
-        x: 353
-        y: 917
-        width: 237
-        height: 237
+        x: 339
+        y: 902
+        width: 263
+        height: 267
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -101,12 +101,12 @@ TextureImporter:
       name: Spells_active_1
       rect:
         serializedVersion: 2
-        x: 633
-        y: 916
-        width: 233
-        height: 240
+        x: 621
+        y: 902
+        width: 262
+        height: 267
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -115,12 +115,12 @@ TextureImporter:
       name: Spells_active_2
       rect:
         serializedVersion: 2
-        x: 902
-        y: 913
-        width: 239
-        height: 241
+        x: 891
+        y: 902
+        width: 263
+        height: 267
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

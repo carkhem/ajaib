@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class AbilityManager : MonoBehaviour {
 
+	public enum Ability{
+		None, Rewind, Fireball, Push
+	}
+	public Ability selectedAbility;
+
 	[Header("Rewind")]
 	public bool isRewinding = false;
 	public float recordTime = 5f;
-	public GameObject rewindPanel;
     public int rewindCost = 1;
 	private float playerGravity;
 	List<PointInTime> pointsInTime;
@@ -17,39 +21,36 @@ public class AbilityManager : MonoBehaviour {
 	public GameObject fireballPrefab;
 	public Transform fireballSpawn;
 	public GameObject player;
+	public int fireCost;
 
-    [Header("Rewind Butttons")]
-    public GameObject rewindAvailable;
-    public GameObject rewindUnavailable;
-    public GameObject rewindActive;
-
-    [Header("Fireball Buttons")]
-    public GameObject fireballAvailable;
-    public GameObject fireballUnavailable;
-    public GameObject fireballActive;
-	public int abilityCost;
-
-    [Header("Push Buttons")]
-    public GameObject pushAvailable;
-    public GameObject pushUnavailable;
-    public GameObject pushActive;
-
-	public string currentAbility;
-	public Text currentAbilityText;
 	PlayerController _controller;
 
-    void Start ()
-    {
+    void Start (){
 		pointsInTime = new List<PointInTime>();
 		_controller = GetComponent<PlayerController>();
-        currentAbility = "Rewind";
 		_controller = GetComponent<PlayerController> ();
+		selectedAbility = Ability.None;
+		playerGravity = _controller.Gravity;
 	}
 	
-	void Update ()
-    {
+	void Update (){
         ChangeAbility();
-		UpdateAbility ();
+
+		switch (selectedAbility) {
+		case Ability.Rewind:
+			UpdateRewind ();
+			//RewindObject();
+			break;
+		case Ability.Fireball:
+			FireFireball ();
+			break;
+		case Ability.Push:
+			//ForcePush();
+			break;
+		default:
+			break;
+		}
+
 	}
 
 	void FixedUpdate ()
@@ -69,13 +70,11 @@ public class AbilityManager : MonoBehaviour {
 
 			transform.rotation = pointInTime.rotation;
 			pointsInTime.RemoveAt(0);
-            GetComponent<PlayerScript>().damagePlayer();
-            //GetComponent<PlayerScript>().changeHealth(-rewindCost);
+			GetComponent<PlayerStats>().DamagePlayer(rewindCost);
         }
         else{
 			StopRewind();
 		}
-
 	}
 
 	void Record ()
@@ -84,77 +83,49 @@ public class AbilityManager : MonoBehaviour {
 		{
 			pointsInTime.RemoveAt(pointsInTime.Count - 1);
 		}
-
 		pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
 	}
 
 	public void StartRewind ()
-	{   
+{   
         if (!isRewinding)
         {
             playerGravity = _controller.Gravity;
             isRewinding = true;
         }
 		_controller.Gravity = 0;
-		rewindPanel.SetActive (true);
-        Debug.Log(playerGravity);
+		CanvasManager.instance.rewindPanel.SetActive (true);
 	}
 
-	public void StopRewind ()
-	{
+	public void StopRewind (){
 		isRewinding = false;
 		_controller.Gravity = playerGravity;
-		rewindPanel.SetActive (false);
+		_controller.TransitionTo<GroundState> ();
+		CanvasManager.instance.rewindPanel.SetActive (false);
         Debug.Log(playerGravity + " när vi slutat rewind");
 	}
 
 
-    private void ChangeAbility()
-    {
-        if (Input.GetKeyDown("1"))
-        {
-            currentAbility = "Rewind";
-
-            rewindActive.SetActive(true);
-            rewindAvailable.SetActive(false);
-			rewindUnavailable.SetActive (false);
-            fireballActive.SetActive(false);
-            fireballAvailable.SetActive(true);
+    private void ChangeAbility(){
+		if (Input.GetKeyDown("1") && GameManager.instance.playerLevel >= 1){
+			selectedAbility = Ability.Rewind;
+			CanvasManager.instance.ChangeAbility (0);
         }
 
-        if (Input.GetKeyDown("2"))
-        {
-            currentAbility = "Fireball";
-
-            fireballActive.SetActive(true);
-            fireballAvailable.SetActive(false);
-            fireballUnavailable.SetActive(false);
-
-            rewindActive.SetActive(false);
-            rewindAvailable.SetActive(true);
+		if (Input.GetKeyDown("2") && GameManager.instance.playerLevel >= 2){
+			selectedAbility = Ability.Fireball;
+			CanvasManager.instance.ChangeAbility (1);
         }
 
-        currentAbilityText.text = currentAbility;
-    }
-
-
-    public string GetCurrentAbility()
-    {
-        return currentAbility;
-    }
-
-	private void UpdateAbility() {
-		if (currentAbility == "Rewind") {
-			UpdateRewind ();
+		if (Input.GetKeyDown("3") && GameManager.instance.playerLevel >= 3){
+			selectedAbility = Ability.Push;
+			CanvasManager.instance.ChangeAbility (2);
 		}
 
-		if (currentAbility == "Fireball") {
-			FireFireball ();
-		}
-	}
+    }
 
 	private void UpdateRewind() {
-        if (player.GetComponent<PlayerScript>().health <= rewindCost)
+		if (player.GetComponent<PlayerStats>().health <= rewindCost)
             StopRewind();
 
 		if (Input.GetKeyDown(KeyCode.Mouse1)) {
@@ -167,11 +138,12 @@ public class AbilityManager : MonoBehaviour {
 	}
 
 	private void FireFireball() {
-		if (player.GetComponent<PlayerScript> ().health - abilityCost <= 0)
+		if (player.GetComponent<PlayerStats> ().health - fireCost <= 0)
 			return;
 		if(Input.GetKeyDown(KeyCode.Mouse1)) {
-			GameObject.Instantiate( fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
-			player.GetComponent<PlayerScript>().changeHealth(-abilityCost);
+			print ("Shooting");
+			Instantiate( fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
+			player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
 		}
 	}
 }

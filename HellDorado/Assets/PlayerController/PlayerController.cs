@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class PlayerController : Controller {
 
-	public LayerMask ObjectLayer;
+//	public LayerMask ObjectLayer;
 
 	[Header("Movement")]
 	public float MaxSpeed = 10f;
 	public float Gravity = 100f;
+
+	[Header("Animation")]
+	public Animator righArm;
 
 //	[Header("Collision")]
 //	public float SkinWidth = 0.03f;
@@ -25,16 +28,16 @@ public class PlayerController : Controller {
 	}
 
 
-	public RaycastHit RaycastLong(){
-
-		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		RaycastHit hit;
-
-		if (Physics.Raycast (ray, out hit, 50f, ObjectLayer))
-			return hit;
-		else
-			return hit;
-
-	}
+//	public RaycastHit RaycastLong(){
+//
+//		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+//		RaycastHit hit;
+//
+//		if (Physics.Raycast (ray, out hit, 50f, ObjectLayer))
+//			return hit;
+//		else
+//			return hit;
+//
+//	}
 
 }

@@ -19,7 +19,7 @@ public class AirState : State {
 	}
 
 	public override void Enter (){
-		Debug.Log ("Air State");
+//		Debug.Log ("Air State");
 	}
 
 	public override void Update() {
@@ -30,11 +30,11 @@ public class AirState : State {
 			_controller.TransitionTo<GroundState> ();
 		}
 
-		UpdateRewind ();
+//		UpdateRewind ();
 	}
 
-	private void UpdateRewind(){
-		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<AbilityManager>().isRewinding)
-			_controller.TransitionTo<RewindState> ();
-	}
+//	private void UpdateRewind(){
+//		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<AbilityManager>().isRewinding)
+//			_controller.TransitionTo<RewindState> ();
+//	}
 }

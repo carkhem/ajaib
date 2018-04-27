@@ -20,7 +20,8 @@ public class Fireball2 : MonoBehaviour {
 	
 	void Update () {
 		//Åk framåt i den hastighet vi vill.
-		transform.Translate (Vector3.forward * speed * Time.deltaTime);
+		transform.Translate (transform.forward * speed * Time.deltaTime);
+//		GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
 		//Minska damage över tid
 		timer += Time.deltaTime;
@@ -33,13 +34,14 @@ public class Fireball2 : MonoBehaviour {
 	}
 
 	private void Explode(){
-		GameObject explosion = Instantiate (explosionPrefab, transform.position, transform.rotation);
+		if (explosionPrefab != null)
+			Instantiate (explosionPrefab, transform.position, transform.rotation);
 		//explosion.particleSystem.particleEmitter -- Sätt storleken på explosionen på nåt sätt.
 		GameObject.Destroy (gameObject);
-        GameObject.Destroy(explosion, 1.5f);
+//        GameObject.Destroy(explosion, 1.5f);
 	}
 
-	void OnCollisionEnter(){
+	void OnCollisionEnter(Collision col){
 		Explode ();
 	}
 
