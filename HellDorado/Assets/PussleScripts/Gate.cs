@@ -40,6 +40,8 @@ public class Gate : MonoBehaviour {
 	}
 
 	public void OpenGate(){
+        delayTime = 0;
+        timer = 0;
 		open = true;
 		animOpen (open);
 	}

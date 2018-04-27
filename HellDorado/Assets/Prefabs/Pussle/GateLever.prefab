@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4316187324916712}
   - component: {fileID: 114767835664246354}
+  - component: {fileID: 65032753761096550}
   m_Layer: 0
   m_Name: GateLever
-  m_TagString: Untagged
+  m_TagString: Lever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +187,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120983353817958}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65032753761096550
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014201057357318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1913438, y: 1.8469985, z: 0.9999999}
+  m_Center: {x: -0.09567218, y: 0.42349932, z: -1.6615229e-10}
 --- !u!65 &65430725838089370
 BoxCollider:
   m_ObjectHideFlags: 1

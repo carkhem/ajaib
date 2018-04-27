@@ -10,7 +10,7 @@ public class PressurePlate : MonoBehaviour {
 	public UnityEvent OnPressureExit;
 	private int objects = 0;
 
-	void OnCollisionEnter(Collision col){
+	void OnTriggerEnter(Collider col){
 		foreach (string t in interactableTags) {
 			if (col.transform.CompareTag (t)) {
 				objects++;
@@ -21,7 +21,7 @@ public class PressurePlate : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionExit(Collision col){
+	void OnTriggerExit(Collider col){
 		foreach (string t in interactableTags) {
 			if (col.transform.CompareTag (t)) {
 				objects--;

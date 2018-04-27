@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - ForcePush
+  - Lever
   layers:
   - Default
   - TransparentFX
