@@ -23,6 +23,10 @@ public class AbilityManager : MonoBehaviour {
 	public GameObject player;
 	public int fireCost;
 
+	[Header("ForcePush")]
+	public int forcePushCost;
+	private ForcePush forcePush;
+
 	PlayerController _controller;
 
     void Start (){
@@ -45,7 +49,8 @@ public class AbilityManager : MonoBehaviour {
 			FireFireball ();
 			break;
 		case Ability.Push:
-			//ForcePush();
+			UseForcePush ();
+			Debug.Log ("push");
 			break;
 		default:
 			break;
@@ -145,5 +150,10 @@ public class AbilityManager : MonoBehaviour {
 			Instantiate( fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
 			player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
 		}
+	}
+
+	private void UseForcePush(){
+		forcePush = GetComponent<ForcePush> ();
+		forcePush.ForcePushObject (forcePushCost);
 	}
 }

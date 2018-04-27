@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : Controller {
 
-//	public LayerMask ObjectLayer;
 
 	[Header("Movement")]
 	public float MaxSpeed = 10f;
