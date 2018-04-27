@@ -54,11 +54,9 @@ public class AbilityManager : MonoBehaviour {
 			break;
 		case Ability.Push:
 			UseForcePush ();
-			Debug.Log ("push");
 			break;
 		case Ability.ObjectRewind:
 			UseRewindObject();
-			Debug.Log ("OR");
 			break;
 		default:
 			break;

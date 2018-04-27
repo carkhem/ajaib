@@ -246,6 +246,21 @@ Prefab:
       propertyPath: shadowObject
       value: 
       objectReference: {fileID: 1648407401}
+    - target: {fileID: 54517679560980578, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54517679560980578, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54517679560980578, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114764598579534360, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b, type: 2}
@@ -441,8 +456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219411d986b2add4db0db038cd54493e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
-  recordTime: 5
 --- !u!54 &825992938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -868,8 +881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219411d986b2add4db0db038cd54493e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
-  recordTime: 5
 --- !u!4 &1648407401 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4346869128294042, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,
@@ -985,3 +996,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c9cd12124ab1ab42bf8620558d6b5e8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1976753442 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1936479364904710, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,
+    type: 2}
+  m_PrefabInternal: {fileID: 454662033}
+--- !u!114 &1976753443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976753442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308222c10a3f402428d7ab99035bd0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRewinding: 0
+  recordTime: 5
