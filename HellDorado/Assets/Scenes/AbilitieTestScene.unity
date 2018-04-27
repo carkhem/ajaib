@@ -246,7 +246,8 @@ Prefab:
       propertyPath: shadowObject
       value: 
       objectReference: {fileID: 1648407401}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114764598579534360, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &627283665
@@ -441,15 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRewinding: 0
-  ObjectLayer:
-    serializedVersion: 2
-    m_Bits: 256
   recordTime: 5
-  shadowMaterial: {fileID: 0}
-  shadowObject: {fileID: 0}
-  clone: {fileID: 0}
-  shadowObjectCreated: 0
-  deactivateObject: 0
 --- !u!54 &825992938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -859,6 +852,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a690dc47c5e3124ba09c346bf4ea959, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1015660284 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1987242077293968, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+    type: 2}
+  m_PrefabInternal: {fileID: 825674554}
+--- !u!114 &1015660292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015660284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219411d986b2add4db0db038cd54493e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRewinding: 0
+  recordTime: 5
 --- !u!4 &1648407401 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4346869128294042, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b,

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AbilityManager : MonoBehaviour {
 
 	public enum Ability{
-		None, Rewind, Fireball, Push
+		None, Rewind, Fireball, Push, ObjectRewind
 	}
 	public Ability selectedAbility;
 
@@ -26,6 +26,10 @@ public class AbilityManager : MonoBehaviour {
 	[Header("ForcePush")]
 	public int forcePushCost;
 	private ForcePush forcePush;
+
+	[Header("ObjectRewind")]
+	public int objectRewindCost;
+	private RewindObject rewindObject;
 
 	PlayerController _controller;
 
@@ -51,6 +55,10 @@ public class AbilityManager : MonoBehaviour {
 		case Ability.Push:
 			UseForcePush ();
 			Debug.Log ("push");
+			break;
+		case Ability.ObjectRewind:
+			UseRewindObject();
+			Debug.Log ("OR");
 			break;
 		default:
 			break;
@@ -127,6 +135,11 @@ public class AbilityManager : MonoBehaviour {
 			CanvasManager.instance.ChangeAbility (2);
 		}
 
+		if (Input.GetKeyDown("4") && GameManager.instance.playerLevel >= 3){
+			selectedAbility = Ability.ObjectRewind;
+			CanvasManager.instance.ChangeAbility (3);
+		}
+
     }
 
 	private void UpdateRewind() {
@@ -155,5 +168,10 @@ public class AbilityManager : MonoBehaviour {
 	private void UseForcePush(){
 		forcePush = GetComponent<ForcePush> ();
 		forcePush.ForcePushObject (forcePushCost);
+	}
+
+	private void UseRewindObject(){
+		rewindObject = GetComponent<RewindObject> ();
+		rewindObject.UseRewindObject (rewindCost);
 	}
 }
