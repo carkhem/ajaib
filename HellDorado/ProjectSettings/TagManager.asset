@@ -7,7 +7,6 @@ TagManager:
   - Enemy
   - ForcePush
   - Lever
-  - CheckPoint
   layers:
   - Default
   - TransparentFX
