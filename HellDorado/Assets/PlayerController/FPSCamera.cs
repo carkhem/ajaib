@@ -12,6 +12,7 @@ public class FPSCamera : MonoBehaviour {
 	public float Sensitivity = 5.0f;
 	public float Smoothing = 2.0f;
 	public MinMaxFloat mouseClamp;
+    public bool dead = false;
 
 	GameObject Character;
 
@@ -20,7 +21,8 @@ public class FPSCamera : MonoBehaviour {
 	}
 
 	void Update(){
-		var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
+        if (!dead) { 
+        var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
 
 		md = Vector2.Scale(md,new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
 		_smoothV.x = Mathf.Lerp (_smoothV.x, md.x, 1f / Smoothing);
@@ -33,7 +35,13 @@ public class FPSCamera : MonoBehaviour {
 		Character.transform.localRotation = Quaternion.AngleAxis (_mouseLook.x, Character.transform.up);
 
 		UpdateCursorLock ();
-	}
+        }
+    }
+
+    public void SetDead(bool d)
+    {
+        dead = d;
+    }
 
 	public void UpdateCursorLock()
 	{

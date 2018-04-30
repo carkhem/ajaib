@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour {
 
 	public int playerLevel = 0;
 	public GameObject[] abilityDisplay;
+    public GameObject abilityList;
+    public GameObject healthSlider;
+    public GameObject cam;
 
-	void Awake(){
+    void Awake(){
 		//DONTDESTROYONLOAD! Det är ett krav
 		instance = this;
 	}
@@ -26,7 +29,24 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void GameOver(){
-		CanvasManager.instance.deathScreen.SetActive (true);
-	}
+        Time.timeScale = 0f;
+        CanvasManager.instance.deathScreen.SetActive (true);
+        abilityList.SetActive(false);
+        healthSlider.SetActive(false);
+        cam.GetComponent<FPSCamera>().SetDead(true);
+     
+     
+    }
+    public void Respawn()
+    {
+        GameObject player =  GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerStats>().health = 100;
+        Time.timeScale = 1f;
+        CanvasManager.instance.deathScreen.SetActive(false);
+        abilityList.SetActive(true);
+        healthSlider.SetActive(true);
+        cam.GetComponent<FPSCamera>().SetDead(false);
+
+    }
 
 }

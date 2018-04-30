@@ -25,7 +25,7 @@ public class PlayerStats : MonoBehaviour{
 		healthSlider.value = Mathf.Lerp(healthSlider.value, (health / maxHealth), Time.deltaTime * regenSpeed);
 		if (!GetComponent<AbilityManager> ().isRewinding)
 			RegenerateHealth ();
-		if (health <= 0)
+		if (health <= 10)
 		{
 			GameManager.instance.GameOver();
 		}

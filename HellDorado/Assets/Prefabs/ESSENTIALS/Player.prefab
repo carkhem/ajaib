@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 114217093097811482}
   - component: {fileID: 114317910976488378}
   - component: {fileID: 114749972329582750}
-  - component: {fileID: 114351340604848016}
+  - component: {fileID: 114874706705723912}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1417,7 +1417,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987242077293968}
   m_LocalRotation: {x: -0, y: 0.99949753, z: -0, w: -0.031696968}
-  m_LocalPosition: {x: 5.537764, y: 15.9, z: 13.294753}
+  m_LocalPosition: {x: 1.39, y: 2.72, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886735798879278}
@@ -1680,19 +1680,6 @@ MonoBehaviour:
   maxHealth: 100
   inCombat: 0
   regenSpeed: 20
---- !u!114 &114351340604848016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1987242077293968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35ac56a9bb94144296eca6b7e3f4b3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 0}
-  rayRange: 0
 --- !u!114 &114366971839013984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1751,6 +1738,20 @@ MonoBehaviour:
   player: {fileID: 1987242077293968}
   fireCost: 20
   forcePushCost: 0
+  objectRewindCost: 0
+--- !u!114 &114874706705723912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987242077293968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf76143959c05d4cb43bf7f41dee819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: {fileID: 0}
+  rayRange: 1
 --- !u!124 &124204564720828752
 Behaviour:
   m_ObjectHideFlags: 1
