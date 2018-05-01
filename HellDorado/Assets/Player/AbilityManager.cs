@@ -74,18 +74,20 @@ public class AbilityManager : MonoBehaviour {
 
 	void Rewind ()
 	{
-		if (pointsInTime.Count > 0)
-		{
-			PointInTime pointInTime = pointsInTime[0];
-			transform.position = pointInTime.position;
+       if (pointsInTime.Count > 0)
+            {
+                PointInTime pointInTime = pointsInTime[0];
+                transform.position = pointInTime.position;
 
-			transform.rotation = pointInTime.rotation;
-			pointsInTime.RemoveAt(0);
-			GetComponent<PlayerStats>().DamagePlayer(rewindCost);
-        }
-        else{
-			StopRewind();
-		}
+                transform.rotation = pointInTime.rotation;
+                pointsInTime.RemoveAt(0);
+                GetComponent<PlayerStats>().DamagePlayer(rewindCost);
+            }
+            else
+            {
+                StopRewind();
+            }
+        
 	}
 
 	void Record ()
@@ -141,26 +143,34 @@ public class AbilityManager : MonoBehaviour {
     }
 
 	private void UpdateRewind() {
-		if (player.GetComponent<PlayerStats>().health <= rewindCost)
-            StopRewind();
+        if (player.GetComponent<PlayerStats>().health > 10)
+        {
+            if (player.GetComponent<PlayerStats>().health <= rewindCost)
+                StopRewind();
 
-		if (Input.GetKeyDown(KeyCode.Mouse1)) {
-			StartRewind ();
-			_controller.TransitionTo<RewindState>();
-		}
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                StartRewind();
+                _controller.TransitionTo<RewindState>();
+            }
 
-		if (Input.GetKeyUp(KeyCode.Mouse1))
-			StopRewind();
+            if (Input.GetKeyUp(KeyCode.Mouse1))
+                StopRewind();
+        }
 	}
 
 	private void FireFireball() {
-		if (player.GetComponent<PlayerStats> ().health - fireCost <= 0)
-			return;
-		if(Input.GetKeyDown(KeyCode.Mouse1)) {
-			print ("Shooting");
-			Instantiate( fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
-			player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
-		}
+        if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
+        {
+            Debug.Log(player.GetComponent<PlayerStats>().health - fireCost);
+
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                print("Shooting");
+                Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
+                player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
+            }
+        }
 	}
 
 	private void UseForcePush(){

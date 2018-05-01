@@ -24,7 +24,7 @@ public class GroundState : State {
 	public override void Update() {
 		UpdateMovement ();
 		UpdateJump ();
-
+        CheckPlayerLife();
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			Debug.Log ("Swing sword");
 			_controller.righArm.SetTrigger ("swing");
@@ -51,6 +51,15 @@ public class GroundState : State {
 			_controller.TransitionTo<AirState> ();
 		}
 	}
+
+    private void CheckPlayerLife()
+    {
+       if( _controller.GetComponent<PlayerStats>().health <= 10)
+        {
+            GameManager.instance.GameOver();
+            _controller.TransitionTo<DeathState>();
+        }
+    }
 
 //	private void UseForcePush(){
 //		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);

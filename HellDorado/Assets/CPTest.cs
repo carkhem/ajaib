@@ -5,10 +5,7 @@ using UnityEngine;
 public class CPTest : MonoBehaviour {
 
     public GameObject player;
-    public GameObject deathScreen;
-    public GameObject cam;
-    public GameObject abilityList;
-    public GameObject healthSlider;
+
 	// Use this for initialization
 	void Start () {
       
@@ -24,15 +21,15 @@ public class CPTest : MonoBehaviour {
             Time.timeScale = 1;
         }
 
-        if (deathScreen.activeInHierarchy == true) { 
-        Vector3 spawnPosition = new Vector3(0, 0, 0);
-             if (Input.GetKeyDown(KeyCode.Return))
-        {
+    //    if (deathScreen.activeInHierarchy == true) { 
+    //    Vector3 spawnPosition = new Vector3(0, 0, 0);
+    //         if (Input.GetKeyDown(KeyCode.Return))
+    //    {
 
-                spawnPosition = CheckPoint.GetActiveCheckPointPosition();
-                player.transform.position = spawnPosition;
-                GameManager.instance.Respawn();
-            }
-    }
+    //            spawnPosition = CheckPoint.GetActiveCheckPointPosition();
+    //            player.transform.position = spawnPosition;
+    //            GameManager.instance.Respawn();
+    //        }
+    //}
 	}
 }

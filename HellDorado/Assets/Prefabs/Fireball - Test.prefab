@@ -194,11 +194,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5f6ac355d4b2e42a6bd12090754984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 2
-  speed: 2
+  lifetime: 8
+  speed: 8
   maxDamage: 2
   minDamage: 1
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 1813458027623866, guid: b781422fefc1c514b9234a387e3860fd,
+    type: 2}
 --- !u!135 &135883236736082544
 SphereCollider:
   m_ObjectHideFlags: 1
