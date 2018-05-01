@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 95488762059661008}
   m_Layer: 0
   m_Name: Arm_R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 95043874586935766}
   m_Layer: 0
   m_Name: Arm_L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 4886735798879278}
   m_Layer: 0
   m_Name: fireballSpawn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1417,7 +1417,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987242077293968}
   m_LocalRotation: {x: -0, y: 0.99949753, z: -0, w: -0.031696968}
-  m_LocalPosition: {x: 1.39, y: 2.72, z: 3.5}
+  m_LocalPosition: {x: 13.9, y: 15.9, z: 12.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886735798879278}
@@ -1676,6 +1676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5307c67e41a5fc74ca1bcff18b07b4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthProcent: {fileID: 0}
   health: 100
   maxHealth: 100
   inCombat: 0
@@ -1697,6 +1698,7 @@ MonoBehaviour:
   mouseClamp:
     Min: -45
     Max: 45
+  dead: 0
 --- !u!114 &114419834847920368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1712,6 +1714,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb392211d63a68f43a5e1da933b7ea26, type: 2}
   - {fileID: 11400000, guid: c6173755427dab04bb2be0731aece6ef, type: 2}
   - {fileID: 11400000, guid: fad4e948675822d4eb9fd2cc67c26a12, type: 2}
+  - {fileID: 11400000, guid: b0798cce945349945b5180ab30f4fef1, type: 2}
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: -1000, z: 0}
   MaxSpeed: 5
@@ -1732,7 +1735,7 @@ MonoBehaviour:
   isRewinding: 0
   recordTime: 5
   rewindCost: 20
-  fireballPrefab: {fileID: 1896457964743868, guid: 54bd92e89fdd14442bae356225d16c9c,
+  fireballPrefab: {fileID: 1144616759694740, guid: d66748d3041cc9849a22ec7e2e0b1bf0,
     type: 2}
   fireballSpawn: {fileID: 4886735798879278}
   player: {fileID: 1987242077293968}
@@ -1750,6 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf76143959c05d4cb43bf7f41dee819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1987242077293968}
   interactText: {fileID: 0}
   rayRange: 1
 --- !u!124 &124204564720828752

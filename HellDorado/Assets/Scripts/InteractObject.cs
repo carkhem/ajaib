@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class InteractObject : MonoBehaviour
 {
-
+    public GameObject player;
     public Text interactText;
     public float rayRange;
-
+    private float DashLenght = 8;
     // Use this for initialization
     void Start()
     {
@@ -19,6 +19,7 @@ public class InteractObject : MonoBehaviour
     void Update()
     {
         RaycastObject();
+
     }
 
     public void RaycastObject()

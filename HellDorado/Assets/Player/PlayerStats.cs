@@ -4,25 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour{
-//    public Text healthProcent; --- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
+    public Text healthProcent; //--- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
     public float health;
-	private Slider healthSlider;
+	
     public int maxHealth;
     public bool inCombat;
 //    private float timeSecond = 0.0f;
 //    public int regenerate;
 	public float regenSpeed = 2f;
+    private Slider healthSlider;
 
     void Start(){
 		healthSlider = CanvasManager.instance.healthSlider;
         health = maxHealth;
-//        healthProcent.text = health + "%";
+        healthProcent.text = health + "%";
     }
 
 
     void Update()
     {
-		healthSlider.value = Mathf.Lerp(healthSlider.value, (health / maxHealth), Time.deltaTime * regenSpeed);
+        
+        healthSlider.value = Mathf.Lerp(healthSlider.value, (health / maxHealth), Time.deltaTime * regenSpeed);
 		if (!GetComponent<AbilityManager> ().isRewinding)
 			RegenerateHealth ();
 		if (health <= 10)
@@ -30,13 +32,13 @@ public class PlayerStats : MonoBehaviour{
 			GameManager.instance.GameOver();
 		}
 
-//        if (!GetComponent<AbilityManager>().isRewinding)
-//            regenerateHealth(regenerate);
+        //        if (!GetComponent<AbilityManager>().isRewinding)
+        //            regenerateHealth(regenerate);
         //		if (!inCombat) {
         //			regenerateHealth();
         //		}
 
-
+        healthProcent.text = (int)health + "%";
     }
     public void ChangeHealth(int ammount)
     {
@@ -44,7 +46,7 @@ public class PlayerStats : MonoBehaviour{
         health = Mathf.Clamp(health, 0, maxHealth);
 
 //		healthSlider.value = health / maxHealth;
-//        healthProcent.text = health + "%";
+       
     }
 
     private void RegenerateHealth()
