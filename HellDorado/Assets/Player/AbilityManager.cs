@@ -145,12 +145,16 @@ public class AbilityManager : MonoBehaviour {
             StopRewind();
 
 		if (Input.GetKeyDown(KeyCode.Mouse1)) {
+			FreezeTime.freezeTime = true;
 			StartRewind ();
 			_controller.TransitionTo<RewindState>();
 		}
 
-		if (Input.GetKeyUp(KeyCode.Mouse1))
+		if (Input.GetKeyUp (KeyCode.Mouse1)) {
+			FreezeTime.freezeTime = false;
 			StopRewind();
+		}
+			
 	}
 
 	private void FireFireball() {
