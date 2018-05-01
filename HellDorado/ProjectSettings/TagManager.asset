@@ -8,6 +8,8 @@ TagManager:
   - ForcePush
   - Lever
   - CheckPoint
+  - Boulder
+  - Ground
   layers:
   - Default
   - TransparentFX
