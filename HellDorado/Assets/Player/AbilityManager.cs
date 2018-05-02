@@ -143,35 +143,24 @@ public class AbilityManager : MonoBehaviour {
     }
 
 	private void UpdateRewind() {
-        if (player.GetComponent<PlayerStats>().health > 10)
-        {
-            if (player.GetComponent<PlayerStats>().health <= rewindCost)
-                StopRewind();
+		if (player.GetComponent<PlayerStats> ().health > 10) {
+			if (player.GetComponent<PlayerStats> ().health <= rewindCost)
+				StopRewind ();
 
-<<<<<<< HEAD
-		if (Input.GetKeyDown(KeyCode.Mouse1)) {
-			FreezeTime.freezeTime = true;
-			StartRewind ();
-			_controller.TransitionTo<RewindState>();
+
+			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+				FreezeTime.freezeTime = true;
+				StartRewind ();
+				_controller.TransitionTo<RewindState> ();
+			}
+
+			if (Input.GetKeyUp (KeyCode.Mouse1)) {
+				FreezeTime.freezeTime = false;
+				StopRewind ();
+			}
 		}
-
-		if (Input.GetKeyUp (KeyCode.Mouse1)) {
-			FreezeTime.freezeTime = false;
-			StopRewind();
-		}
-			
-=======
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                StartRewind();
-                _controller.TransitionTo<RewindState>();
-            }
-
-            if (Input.GetKeyUp(KeyCode.Mouse1))
-                StopRewind();
-        }
->>>>>>> 15566b1aa3bcbc0cc9dba2d057bb8282a41b4583
 	}
+
 
 	private void FireFireball() {
         if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
