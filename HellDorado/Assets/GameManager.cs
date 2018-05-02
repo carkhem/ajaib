@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour {
      
      
     }
+
     public void Respawn()
     {
         Vector3 spawnPosition = new Vector3(0, 0, 0);

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4918147725369608}
   m_Layer: 0
   m_Name: Middle_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4180101436043608}
   m_Layer: 0
   m_Name: Ring_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4264039463254258}
   m_Layer: 0
   m_Name: Ring_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 4640789124167264}
   m_Layer: 0
   m_Name: Thumb_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 4279688594231190}
   m_Layer: 0
   m_Name: Index_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4980847574353364}
   m_Layer: 0
   m_Name: Pinky_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4900153609134720}
   m_Layer: 0
   m_Name: Middle_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 124204564720828752}
   - component: {fileID: 81505015264723206}
   - component: {fileID: 114366971839013984}
+  - component: {fileID: 114953782125380146}
   m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -145,7 +146,7 @@ GameObject:
   - component: {fileID: 4122284645690550}
   m_Layer: 0
   m_Name: Middle_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +161,7 @@ GameObject:
   - component: {fileID: 4064246313506434}
   m_Layer: 0
   m_Name: Wrist
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +176,7 @@ GameObject:
   - component: {fileID: 4336097534537238}
   m_Layer: 0
   m_Name: Controls
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +191,7 @@ GameObject:
   - component: {fileID: 4278028687748206}
   m_Layer: 0
   m_Name: Thumb_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,7 +206,7 @@ GameObject:
   - component: {fileID: 4991665444653094}
   m_Layer: 0
   m_Name: Index_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +221,7 @@ GameObject:
   - component: {fileID: 4378242443373998}
   m_Layer: 0
   m_Name: Ring_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +236,7 @@ GameObject:
   - component: {fileID: 4234370007960192}
   m_Layer: 0
   m_Name: Index_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +251,7 @@ GameObject:
   - component: {fileID: 4743023188593832}
   m_Layer: 0
   m_Name: Index_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,7 +282,7 @@ GameObject:
   - component: {fileID: 4338675355279134}
   m_Layer: 0
   m_Name: Thumb_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +297,7 @@ GameObject:
   - component: {fileID: 4631705132885478}
   m_Layer: 0
   m_Name: Ring_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,7 +312,7 @@ GameObject:
   - component: {fileID: 4457037735956494}
   m_Layer: 0
   m_Name: Middle_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +327,7 @@ GameObject:
   - component: {fileID: 4047200039436414}
   m_Layer: 0
   m_Name: Index_4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +342,7 @@ GameObject:
   - component: {fileID: 4851841160507022}
   m_Layer: 0
   m_Name: Pinky_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,7 +373,7 @@ GameObject:
   - component: {fileID: 4955162083338798}
   m_Layer: 0
   m_Name: Middle_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,7 +388,7 @@ GameObject:
   - component: {fileID: 4106207617100656}
   m_Layer: 0
   m_Name: Index_4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,7 +403,7 @@ GameObject:
   - component: {fileID: 4478024426556280}
   m_Layer: 0
   m_Name: Middle_4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,7 +418,7 @@ GameObject:
   - component: {fileID: 4134422792853202}
   m_Layer: 0
   m_Name: Ring_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +433,7 @@ GameObject:
   - component: {fileID: 4338573747413294}
   m_Layer: 0
   m_Name: Ring_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +466,7 @@ GameObject:
   - component: {fileID: 23893239773082738}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,7 +481,7 @@ GameObject:
   - component: {fileID: 4867087734404112}
   m_Layer: 0
   m_Name: Thumb_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -495,7 +496,7 @@ GameObject:
   - component: {fileID: 4661762749543984}
   m_Layer: 0
   m_Name: Pinky_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,7 +511,7 @@ GameObject:
   - component: {fileID: 4201162621822026}
   m_Layer: 0
   m_Name: Elbow
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,7 +526,7 @@ GameObject:
   - component: {fileID: 4560211387102548}
   m_Layer: 0
   m_Name: Index_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,7 +542,7 @@ GameObject:
   - component: {fileID: 137154867975452920}
   m_Layer: 0
   m_Name: LowPoly
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,7 +557,7 @@ GameObject:
   - component: {fileID: 4248546734714562}
   m_Layer: 0
   m_Name: Pinky_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,7 +572,7 @@ GameObject:
   - component: {fileID: 4346046012194446}
   m_Layer: 0
   m_Name: Thumb_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +587,7 @@ GameObject:
   - component: {fileID: 4545707780520978}
   m_Layer: 0
   m_Name: Pinky_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -601,7 +602,7 @@ GameObject:
   - component: {fileID: 4403484105320160}
   m_Layer: 0
   m_Name: Elbow
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -616,7 +617,7 @@ GameObject:
   - component: {fileID: 4046318395455550}
   m_Layer: 0
   m_Name: Thumb_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -631,7 +632,7 @@ GameObject:
   - component: {fileID: 4761052370810056}
   m_Layer: 0
   m_Name: Middle_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +647,7 @@ GameObject:
   - component: {fileID: 4015971342293414}
   m_Layer: 0
   m_Name: Shoulder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -661,7 +662,7 @@ GameObject:
   - component: {fileID: 4199612505719564}
   m_Layer: 0
   m_Name: Pinky_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -676,7 +677,7 @@ GameObject:
   - component: {fileID: 4333692679393678}
   m_Layer: 0
   m_Name: Wrist
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -691,7 +692,7 @@ GameObject:
   - component: {fileID: 4944957203085130}
   m_Layer: 0
   m_Name: Controls
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -706,7 +707,7 @@ GameObject:
   - component: {fileID: 4728343086044712}
   m_Layer: 0
   m_Name: Ring_4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -721,7 +722,7 @@ GameObject:
   - component: {fileID: 4635392823649892}
   m_Layer: 0
   m_Name: Ring_4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,7 +737,7 @@ GameObject:
   - component: {fileID: 4031597640007848}
   m_Layer: 0
   m_Name: Shoulder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -751,7 +752,7 @@ GameObject:
   - component: {fileID: 4902096463690008}
   m_Layer: 0
   m_Name: Index_3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,7 +767,7 @@ GameObject:
   - component: {fileID: 4177051416596802}
   m_Layer: 0
   m_Name: Middle_4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +783,7 @@ GameObject:
   - component: {fileID: 137704349568303446}
   m_Layer: 0
   m_Name: LowPoly
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1680,6 +1681,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   inCombat: 0
+  sneaking: 0
   regenSpeed: 20
 --- !u!114 &114366971839013984
 MonoBehaviour:
@@ -1756,6 +1758,20 @@ MonoBehaviour:
   player: {fileID: 1987242077293968}
   interactText: {fileID: 0}
   rayRange: 1
+--- !u!114 &114953782125380146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173198122221142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760efcb09ff28e640a7357f96a910088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingSpeed: 0.18
+  bobbingAmount: 0.2
+  midpoint: 2
 --- !u!124 &124204564720828752
 Behaviour:
   m_ObjectHideFlags: 1

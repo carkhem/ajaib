@@ -14,6 +14,11 @@ public class PlayerController : Controller
     private float dashLength;
     private float after;
     float a = 10;
+    private float CrouchSpeed = 2;
+    private float WalkingSpeed;
+    private bool crouching = false;
+
+
     [Header("Animation")]
     public Animator righArm;
 
@@ -28,6 +33,7 @@ public class PlayerController : Controller
 
             input = new Vector3(UnityEngine.Input.GetAxisRaw("Horizontal"), Velocity.y, UnityEngine.Input.GetAxisRaw("Vertical"));
             Dash();
+            UpdateCrouch();
             float y = Camera.main.transform.rotation.eulerAngles.y;
             input = Quaternion.Euler(0f, y, 0f) * input;
             return input;
@@ -63,5 +69,37 @@ public class PlayerController : Controller
         //    if (dashLength == after)
         //        isDashing = false;
         //}
+    }
+
+    private void UpdateCrouch()
+    {
+        if (Input.GetButtonDown("Crouch"))
+        {
+            if(!crouching)
+            Crouch();
+        }
+        if (Input.GetButtonUp("Crouch"))
+        {
+            if (crouching)
+                StopCrouch();
+        }
+    }
+    public void StopCrouch()
+    {
+        Debug.Log("nu sluta vi croucha");
+        crouching = false;
+        GetComponent<CharacterController>().height = 2;
+        GetComponent<PlayerStats>().sneaking = false;
+        MaxSpeed = WalkingSpeed;
+    }
+
+    private void Crouch()
+    {
+        WalkingSpeed = MaxSpeed;
+        Debug.Log("nu crouchar vi");
+        crouching = true;
+        GetComponent<CharacterController>().height = 1;
+        GetComponent<PlayerStats>().sneaking = true;
+        MaxSpeed = CrouchSpeed;
     }
 }

@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour{
 	
     public int maxHealth;
     public bool inCombat;
+    public bool sneaking = false;
 //    private float timeSecond = 0.0f;
 //    public int regenerate;
 	public float regenSpeed = 2f;

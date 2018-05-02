@@ -25,13 +25,19 @@ public class AirState : State {
 	public override void Update() {
 		Velocity += Vector3.down * _controller.Gravity * Time.deltaTime;
 		_controller.GetComponent<CharacterController>().Move(Velocity * Time.deltaTime);
+        if (Input.GetButtonUp("Crouch"))
+        {
+            _controller.GetComponent<PlayerController>().StopCrouch();
+        }
 
-		if (transform.GetComponent<CharacterController>().isGrounded){
+        if (transform.GetComponent<CharacterController>().isGrounded){
 			_controller.TransitionTo<GroundState> ();
 		}
 
-//		UpdateRewind ();
-	}
+
+        //		UpdateRewind ();
+    }
+    
 
 //	private void UpdateRewind(){
 //		if (Input.GetKeyDown (KeyCode.Mouse0) && !_controller.GetComponent<AbilityManager>().isRewinding)
