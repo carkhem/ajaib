@@ -21,13 +21,23 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < playerLevel; i++) {
 			CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}
-	}
+        player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
+    }
 
 	public void LevelUp(){
-		playerLevel++;
-		if (abilityDisplay.Length >= playerLevel)
+        playerLevel++;
+        player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
+       // player.GetComponent<PlayerStats>().changeDmg(playerLevel);
+        if (abilityDisplay.Length >= playerLevel)
 			CanvasManager.instance.AddAbility (abilityDisplay[playerLevel - 1]);
 	}
+
+    public void experienceChange( float exp)
+    {
+        player.GetComponent<PlayerStats>().playerExp += exp;
+        if (player.GetComponent<PlayerStats>().playerExp >= player.GetComponent<PlayerStats>().LevelMaxExp)
+            LevelUp();
+    }
 
 	public void GameOver(){
         Time.timeScale = 0f;

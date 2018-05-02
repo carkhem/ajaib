@@ -48,7 +48,6 @@ public class AbilityManager : MonoBehaviour {
 		switch (selectedAbility) {
 		case Ability.Rewind:
 			UpdateRewind ();
-			//RewindObject();
 			break;
 		case Ability.Fireball:
 			FireFireball ();
@@ -128,20 +127,24 @@ public class AbilityManager : MonoBehaviour {
 			CanvasManager.instance.ChangeAbility (0);
         }
 
-		if (Input.GetKeyDown("2") && GameManager.instance.playerLevel >= 2){
-			selectedAbility = Ability.Fireball;
-			CanvasManager.instance.ChangeAbility (1);
+
+        if (Input.GetKeyDown("2") && GameManager.instance.playerLevel >= 1)
+        {
+            selectedAbility = Ability.ObjectRewind;
+            CanvasManager.instance.ChangeAbility(1);
         }
 
-		if (Input.GetKeyDown("3") && GameManager.instance.playerLevel >= 3){
-			selectedAbility = Ability.Push;
-			CanvasManager.instance.ChangeAbility (2);
-		}
+        if (Input.GetKeyDown("3") && GameManager.instance.playerLevel >= 2)
+        {
+            selectedAbility = Ability.Fireball;
+            CanvasManager.instance.ChangeAbility(2);
+        }
 
-		if (Input.GetKeyDown("4") && GameManager.instance.playerLevel >= 3){
-			selectedAbility = Ability.ObjectRewind;
-			CanvasManager.instance.ChangeAbility (3);
-		}
+        if (Input.GetKeyDown("4") && GameManager.instance.playerLevel >= 3)
+        {
+            selectedAbility = Ability.Push;
+            CanvasManager.instance.ChangeAbility(3);
+        }
 
     }
 
@@ -181,11 +184,14 @@ public class AbilityManager : MonoBehaviour {
 
 	private void UseForcePush(){
 		forcePush = GetComponent<ForcePush> ();
-		forcePush.ForcePushObject (forcePushCost);
+        if (forcePush != null)
+            forcePush.ForcePushObject (forcePushCost);
 	}
 
 	private void UseRewindObject(){
 		rewindObject = GetComponent<RewindObject> ();
-		rewindObject.UseRewindObject (rewindCost);
+        if (rewindObject != null)
+            rewindObject.UseRewindObject (rewindCost);
+       
 	}
 }
