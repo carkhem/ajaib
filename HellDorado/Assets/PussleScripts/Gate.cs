@@ -10,7 +10,8 @@ public class Gate : MonoBehaviour {
 //	}
 //	public DoorType type;
 	private float timer = 0;
-	private float delayTime = 0;
+	[HideInInspector]
+	public float delayTime = 0;
 
 	private void Start(){
 		anim = transform.GetChild (0).GetComponent<Animator> ();

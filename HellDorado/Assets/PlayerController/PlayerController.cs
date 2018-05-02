@@ -36,7 +36,7 @@ public class PlayerController : Controller
     private void Dash()
     {
         a += Time.fixedDeltaTime;
-        Debug.Log(a);
+       // Debug.Log(a);
         if (Input.GetKeyDown(KeyCode.E))
         {
             a = 0;
