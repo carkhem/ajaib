@@ -4,21 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour{
+
+    [Header("PlayerHealth")]
     public Text healthProcent; //--- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
     public float health;
-	
     public int maxHealth;
     public bool inCombat;
-    public bool sneaking = false;
-//    private float timeSecond = 0.0f;
-//    public int regenerate;
-	public float regenSpeed = 2f;
+    public float regenSpeed = 2f;
     private Slider healthSlider;
+
+    [Header("Combat")]
+    public int meleeDamage;
+    private int damage;
+    private int sneakDamage;
+    public bool sneaking = false;
+
+    public float LevelMaxExp;
+    public float playerExp;
+    public int PlayerLevel;
+    //    private float timeSecond = 0.0f;
+    //    public int regenerate;
+
 
     void Start(){
 		healthSlider = CanvasManager.instance.healthSlider;
         health = maxHealth;
         healthProcent.text = health + "%";
+        PlayerLevel = 1;
+        playerExp = 0;
     }
 
 
@@ -38,8 +51,16 @@ public class PlayerStats : MonoBehaviour{
         //		if (!inCombat) {
         //			regenerateHealth();
         //		}
+        if (sneaking)
+            damage = sneakDamage;
+        
+        if (!sneaking)
+            damage = meleeDamage;
 
         healthProcent.text = (int)health + "%";
+        changeDmg(PlayerLevel);
+        LevelMaxExp = PlayerLevel * 100;
+        Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
     }
     public void ChangeHealth(int ammount)
     {
@@ -84,6 +105,12 @@ public class PlayerStats : MonoBehaviour{
 			health = 0;
 		}
        
+    }
+
+    public void changeDmg( int level)
+    {
+        meleeDamage = level * 2;
+        sneakDamage = meleeDamage * 2;
     }
 
 }
