@@ -16,6 +16,7 @@ public class AbilityManager : MonoBehaviour {
     public int rewindCost = 1;
 	private float playerGravity;
 	List<PointInTime> pointsInTime;
+	public static bool WorldRewind = false;
 
 	[Header("Fireball")]
 	public GameObject fireballPrefab;
@@ -100,6 +101,7 @@ public class AbilityManager : MonoBehaviour {
 
 	public void StartRewind ()
 {   
+		WorldRewind = true;
         if (!isRewinding)
         {
             playerGravity = _controller.Gravity;
@@ -110,6 +112,7 @@ public class AbilityManager : MonoBehaviour {
 	}
 
 	public void StopRewind (){
+		WorldRewind = false;
 		isRewinding = false;
 		_controller.Gravity = playerGravity;
 		_controller.TransitionTo<GroundState> ();
