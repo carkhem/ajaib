@@ -55,11 +55,9 @@ public class FreezeTime : MonoBehaviour {
 		}
 
 		if (animator != null) {
-			Debug.Log ("animator");
 			if (freezeTime) {
 				if (gateDelayTemp == 0) {
 					gateDelayTemp = gate.delayTime;
-					Debug.Log (gateDelayTemp + " freezeTime");
 				}
 				animator.speed = 0.1f;
 				gate.delayTime = 0f;
@@ -67,7 +65,6 @@ public class FreezeTime : MonoBehaviour {
 				if (gateDelayTemp != 0f) {
 					gate.delayTime = gateDelayTemp;
 					gateDelayTemp = 0f;
-					Debug.Log (gateDelayTemp + " !freezeTime");
 				}
 				animator.speed = 1f;
 			}

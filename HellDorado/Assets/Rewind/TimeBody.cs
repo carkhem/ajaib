@@ -9,13 +9,13 @@ public class TimeBody : MonoBehaviour {
 	public float recordTime = 5f;
     private float playerGravity;
 	List<PointInTime> pointsInTime;
-    private PlayerController _controller;
-	//Rigidbody rb;
+
+
 
 	void Start () {
 		pointsInTime = new List<PointInTime>();
-        //	rb = GetComponent<Rigidbody>();
-        _controller = GetComponent<PlayerController>();
+     
+  
 	}
 	
 	// Update is called once per frame
@@ -57,15 +57,12 @@ public class TimeBody : MonoBehaviour {
 	public void StartRewind ()
 	{
 		isRewinding = true;
-        //	rb.isKinematic = true;
-        playerGravity = _controller.Gravity;
-        _controller.Gravity = 0;
+
 	}
 
 	public void StopRewind ()
 	{
 		isRewinding = false;
-        //	rb.isKinematic = false;
-        _controller.Gravity = playerGravity;
+    
 	}
 }
