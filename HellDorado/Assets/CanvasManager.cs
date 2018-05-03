@@ -12,6 +12,7 @@ public class CanvasManager : MonoBehaviour {
 	public GameObject dialoguePanel;
 
 	[Header("Stats")]
+	public GameObject healthBar;
 	public Slider healthSlider;
 	public Text healthProcent;
 	public GameObject deathScreen;

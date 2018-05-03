@@ -8,13 +8,13 @@ public class GameManager : MonoBehaviour {
 	public int playerLevel = 0;
 	public GameObject[] abilityDisplay;
     public GameObject abilityList;
-    public GameObject healthSlider;
-    public GameObject cam;
+	private GameObject cam;
     public GameObject player;
 
     void Awake(){
 		//DONTDESTROYONLOAD! Det är ett krav
 		instance = this;
+		cam = Camera.main.gameObject;
 	}
 
 	void Start(){
@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0f;
         CanvasManager.instance.deathScreen.SetActive (true);
         abilityList.SetActive(false);
-        healthSlider.SetActive(false);
-        cam.GetComponent<FPSCamera>().SetDead(true);
+		CanvasManager.instance.healthBar.SetActive (false);
+		cam.GetComponent<FPSCamera>().SetDead(true);
      
      
     }
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour {
     {
         Vector3 spawnPosition = new Vector3(0, 0, 0);
         spawnPosition = CheckPoint.GetActiveCheckPointPosition();
-        healthSlider.SetActive(true);
+		CanvasManager.instance.healthBar.SetActive (true);
         abilityList.SetActive(true);
         player.GetComponent<PlayerStats>().health = 100;
         CanvasManager.instance.deathScreen.SetActive(false);

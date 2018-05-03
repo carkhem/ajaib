@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine;
 
 public class PlayerController : Controller{
-
     private Vector3 input;
     private Vector3 drag;
     [Header("Movement")]
@@ -17,9 +16,9 @@ public class PlayerController : Controller{
     private float WalkingSpeed;
     private bool crouching = false;
 
-
     [Header("Animation")]
-    public Animator righArm;
+	public Animator lArmAnim;
+	public Animator rArmAnim;
 
     //	[Header("Collision")]
     //	public float SkinWidth = 0.03f;
@@ -29,18 +28,16 @@ public class PlayerController : Controller{
     {
         get
         {
-
             input = new Vector3(UnityEngine.Input.GetAxisRaw("Horizontal"), Velocity.y, UnityEngine.Input.GetAxisRaw("Vertical"));
-            Dash();
-            UpdateCrouch();
+//            Dash();
+//            UpdateCrouch();
             float y = Camera.main.transform.rotation.eulerAngles.y;
             input = Quaternion.Euler(0f, y, 0f) * input;
             return input;
         }
     }
 
-    private void Dash()
-    {
+    private void Dash() {
         a += Time.fixedDeltaTime;
        // Debug.Log(a);
         if (Input.GetKeyDown(KeyCode.E))
@@ -96,7 +93,7 @@ public class PlayerController : Controller{
     private void Crouch()
     {
         WalkingSpeed = MaxSpeed;
-        Debug.Log("nu crouchar vi");
+//        Debug.Log("nu crouchar vi");
         crouching = true;
         GetComponent<CharacterController>().height = 1;
         GetComponent<PlayerStats>().sneaking = true;
