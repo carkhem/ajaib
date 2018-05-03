@@ -19,6 +19,7 @@ public class EnemyController : Controller {
 	public float detectionSpeed;
 	public float detection; //Kan användas för att visa på hur nära man är på att bli upptäckt
 	private float detectionTimer = 0;
+	[HideInInspector]
 	public Transform player;
 
 //	void Awake(){
@@ -26,9 +27,9 @@ public class EnemyController : Controller {
 		//EDIT: det går inte att använda awake när man använder den här state machinen. Gör det i någons Initialize-funktion.
 //	}
 
-//	void Awake(){
-//		agent = transform.GetComponent<NavMeshAgent> ();
-//	}
+	void Start(){
+		player = PlayerStats.instance.transform;
+	}
 
 	public void CheckHealth(){
 		if (health <= 0) {
@@ -54,6 +55,10 @@ public class EnemyController : Controller {
 		} else {
 			return false;
 		}
+	}
+
+	public void Hit(){
+		TransitionTo<StunnedState> ();
 	}
 
 	public void LookForPlayer(){

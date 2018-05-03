@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour{
-
+	public static PlayerStats instance;
     [Header("PlayerHealth")]
 	private Text healthProcent; //--- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
     public float health;
@@ -25,6 +25,9 @@ public class PlayerStats : MonoBehaviour{
     //    private float timeSecond = 0.0f;
     //    public int regenerate;
 
+	void Awake(){
+		instance = this;
+	}
 
     void Start(){
 		healthSlider = CanvasManager.instance.healthSlider;
@@ -61,7 +64,7 @@ public class PlayerStats : MonoBehaviour{
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
         changeDmg(PlayerLevel);
         LevelMaxExp = PlayerLevel * 100;
-        Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
+//        Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
     }
 
 	public void ChangeHealth(float ammount){

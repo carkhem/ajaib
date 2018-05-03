@@ -24,13 +24,10 @@ public class RewindObject : MonoBehaviour {
 		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))) {
 			activeObject = hit.collider.gameObject.GetComponent<ObjectTimeBody> ();
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
-<<<<<<< HEAD
 				hit.collider.gameObject.GetComponent<ObjectTimeBody>().StartRewind ();
 				GetComponent<PlayerStats> ().ChangeHealth (-cost);
-=======
 				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StartRewind ();
 				GetComponent<PlayerStats> ().DamagePlayer (cost);
->>>>>>> 5a3f97789ec94bfa6849f11b7fbb05e49611c9da
 			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {
 				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StopRewind ();
 			}

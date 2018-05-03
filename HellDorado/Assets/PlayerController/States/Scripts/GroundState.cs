@@ -16,31 +16,26 @@ public class GroundState : State {
 		_controller = (PlayerController)owner;
     }
 	public override void Enter (){
-     	Debug.Log ("Ground State");
-
+//     	Debug.Log ("Ground State");
     }
 
 	public override void Update() {
         UpdateMovement ();
 		UpdateJump ();
-//        CheckPlayerLife();
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
-			Debug.Log ("Swing sword");
-			_controller.righArm.SetTrigger ("swing");
-		}
-        //		RewindObjectAbility (); ------ Gör sånt här i AbilityManager
-        //		UseForcePush ();
-        //		UpdateRewind ();
-      
-
+		UpdateSwordSwing ();
     }
 
 	private void UpdateJump() {
 		if (Input.GetButtonDown ("Jump")) {
             _controller.Velocity.y = 10f;
-           
-
         }
+	}
+
+	private void UpdateSwordSwing(){
+		if (Input.GetKeyDown (KeyCode.Mouse0)) {
+			Debug.Log ("Swing sword");
+			_controller.rArmAnim.SetTrigger ("swing");
+		}
 	}
 		
 

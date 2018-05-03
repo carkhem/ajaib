@@ -169,7 +169,6 @@ public class AbilityManager : MonoBehaviour {
 		}
 	}
 
-
 	private void FireFireball() {
         if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
         {
