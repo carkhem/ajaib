@@ -14,8 +14,6 @@ public class AbilityManager : MonoBehaviour {
 	public bool isRewinding = false;
 	public float recordTime = 5f;
 	public float rewindCost = 1;
-	private float playerGravity;
-	List<PointInTime> pointsInTime;
 	public static bool WorldRewind = false;
 
 	[Header("Fireball")]
@@ -35,11 +33,8 @@ public class AbilityManager : MonoBehaviour {
 	PlayerController _controller;
 
     void Start (){
-		pointsInTime = new List<PointInTime>();
-		_controller = GetComponent<PlayerController>();
 		_controller = GetComponent<PlayerController> ();
 		selectedAbility = Ability.None;
-		playerGravity = _controller.Gravity;
 	}
 	
 	void Update (){
@@ -63,62 +58,7 @@ public class AbilityManager : MonoBehaviour {
 		}
 
 	}
-
-	void FixedUpdate ()
-	{
-		if (isRewinding)
-			Rewind();
-		else
-			Record();
-	}
-
-	void Rewind ()
-	{
-       if (pointsInTime.Count > 0)
-            {
-                PointInTime pointInTime = pointsInTime[0];
-                transform.position = pointInTime.position;
-
-                transform.rotation = pointInTime.rotation;
-                pointsInTime.RemoveAt(0);
-                GetComponent<PlayerStats>().DamagePlayer(rewindCost);
-            }
-            else
-            {
-                StopRewind();
-            }
-        
-	}
-
-	void Record ()
-	{
-		if (pointsInTime.Count > Mathf.Round(recordTime / Time.fixedDeltaTime)) 
-		{
-			pointsInTime.RemoveAt(pointsInTime.Count - 1);
-		}
-		pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
-	}
-
-	public void StartRewind ()
-{   
-		WorldRewind = true;
-        if (!isRewinding)
-        {
-            playerGravity = _controller.Gravity;
-            isRewinding = true;
-        }
-		_controller.Gravity = 0;
-		CanvasManager.instance.rewindPanel.SetActive (true);
-	}
-
-	public void StopRewind (){
-		WorldRewind = false;
-		isRewinding = false;
-		_controller.Gravity = playerGravity;
-		_controller.TransitionTo<GroundState> ();
-		CanvasManager.instance.rewindPanel.SetActive (false);
-        Debug.Log(playerGravity + " när vi slutat rewind");
-	}
+		
 
 
     private void ChangeAbility(){
@@ -151,21 +91,28 @@ public class AbilityManager : MonoBehaviour {
 	private void UpdateRewind() {
 		if (player.GetComponent<PlayerStats> ().health > 10) {
 			if (player.GetComponent<PlayerStats> ().health <= rewindCost)
-				StopRewind ();
+				TimeBody.isRewinding = false;
+			//	StopRewind ();
 
 
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
 				FreezeTime.freezeTime = true;
-				StartRewind ();
+				TimeBody.isRewinding = true;
+				GetComponent<PlayerStats>().DamagePlayer(rewindCost);
+				CanvasManager.instance.rewindPanel.SetActive (true);
+				//StartRewind ();
 				_controller.TransitionTo<RewindState> ();
 			}
 
 			if (Input.GetKeyUp (KeyCode.Mouse1)) {
 				FreezeTime.freezeTime = false;
-				StopRewind ();
+				TimeBody.isRewinding = false;
+				_controller.TransitionTo<GroundState> ();
+				CanvasManager.instance.rewindPanel.SetActive (false);
+				//StopRewind ();
 			}
 		} else {
-			StopRewind ();
+			TimeBody.isRewinding = false;
 		}
 	}
 

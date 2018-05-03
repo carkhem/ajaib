@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class TimeBody : MonoBehaviour {
 
-	public bool isRewinding = false;
+	public static bool isRewinding = false;
 
 	public float recordTime = 5f;
     private float playerGravity;
 	List<PointInTime> pointsInTime;
 
+	private EnemyController enemy;
 
 
 	void Start () {
 		pointsInTime = new List<PointInTime>();
      
-  
+		enemy = GetComponent<EnemyController> ();
 	}
 
 	void FixedUpdate ()
 	{
-		if (isRewinding)
-			Rewind();
-		else
-			Record();
+		if (isRewinding) {
+			if (enemy != null)
+				enemy.TransitionTo<EnemyRewindState> ();
+			Rewind ();
+		} else {
+			Record ();
+		}
 	}
 
 	void Rewind ()
@@ -36,7 +40,8 @@ public class TimeBody : MonoBehaviour {
 			pointsInTime.RemoveAt(0);
 		} else
 		{
-			StopRewind();
+			TimeBody.isRewinding = false;
+			//StopRewind();
 		}
 		
 	}
@@ -53,13 +58,14 @@ public class TimeBody : MonoBehaviour {
 
 	public void StartRewind ()
 	{
-		isRewinding = true;
+		//isRewinding = true;
+	
 
 	}
 
 	public void StopRewind ()
 	{
-		isRewinding = false;
-    
+		//isRewinding = false;
+    	
 	}
 }
