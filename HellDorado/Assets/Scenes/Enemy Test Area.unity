@@ -537,6 +537,7 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0, z: 0}
   MaxSpeed: 10
   Gravity: 100
+  dashCooldown: 0
   lArmAnim: {fileID: 0}
   rArmAnim: {fileID: 0}
 --- !u!65 &652746068
@@ -1056,6 +1057,16 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114689847716088776, guid: 03be57b6a6df1594aa13291109646642,
+        type: 2}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689847716088776, guid: 03be57b6a6df1594aa13291109646642,
+        type: 2}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03be57b6a6df1594aa13291109646642, type: 2}
   m_IsPrefabParent: 0
@@ -1345,6 +1356,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114419834847920368, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: _states.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4874292685659178, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.93
@@ -1632,6 +1648,23 @@ Prefab:
     - target: {fileID: 1764164954496158, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114419834847920368, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: _states.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f2f836b7f667344586d79458e141566,
+        type: 2}
+    - target: {fileID: 114419834847920368, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: _states.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a4e12061ef74064b9e11709c95297f6,
+        type: 2}
+    - target: {fileID: 114419834847920368, guid: 3cd985c37e32c594daf1d12c6aa43ea3,
+        type: 2}
+      propertyPath: dashCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136594309724794264, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}

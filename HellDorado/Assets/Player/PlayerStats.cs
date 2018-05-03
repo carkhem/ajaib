@@ -14,16 +14,16 @@ public class PlayerStats : MonoBehaviour{
     private Slider healthSlider;
 
     [Header("Combat")]
-    public int meleeDamage;
-    private int damage;
-    private int sneakDamage;
+	public float meleeDamage;
+	private float damage;
+	private float sneakDamage;
     public bool sneaking = false;
 
     public float LevelMaxExp;
     public float playerExp;
     public int PlayerLevel;
-    //    private float timeSecond = 0.0f;
-    //    public int regenerate;
+//    private float timeSecond = 0.0f;
+//    public int regenerate;
 
 	void Awake(){
 		instance = this;
@@ -97,7 +97,7 @@ public class PlayerStats : MonoBehaviour{
 		}
     }
 
-    public void changeDmg( int level){
+    public void changeDmg(int level){
         meleeDamage = level * 2;
         sneakDamage = meleeDamage * 2;
     }

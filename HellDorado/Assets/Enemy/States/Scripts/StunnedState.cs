@@ -14,7 +14,7 @@ public class StunnedState : State {
 	}
 
 	public override void Enter (){
-		Debug.Log ("STUNNED");
+//		Debug.Log ("STUNNED");
 	}
 
 	public override void Update(){

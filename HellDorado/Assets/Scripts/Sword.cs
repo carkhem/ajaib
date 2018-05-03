@@ -9,7 +9,7 @@ public class Sword : MonoBehaviour {
 
 	private void OnTriggerEnter (Collider col){
 		if (col.CompareTag ("Enemy")) {
-			col.GetComponent<EnemyController> ().Hit ();
+			col.GetComponent<EnemyController> ().TakeDamage (PlayerStats.instance.meleeDamage);
 		}
 	}
 

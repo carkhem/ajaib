@@ -21,34 +21,19 @@ public class GroundState : State {
 
 	public override void Update() {
         UpdateMovement ();
+		_controller.CheckDash ();
 		UpdateJump ();
-		UpdateSwordSwing ();
         CheckPlayerLife();
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
-			Debug.Log ("Swing sword");
-			_controller.rArmAnim.SetTrigger ("swing");
+			_controller.TransitionTo<StrikeState> ();
 		}
-        //		RewindObjectAbility (); ------ Gör sånt här i AbilityManager
-        //		UseForcePush ();
-        //		UpdateRewind ();
-      
-
-//>>>>>>> 32d310d138cfeb66e5b163f3ffc308726b05e6c4
-    }
+	}
 
 	private void UpdateJump() {
 		if (Input.GetButtonDown ("Jump")) {
             _controller.Velocity.y = 10f;
         }
 	}
-
-	private void UpdateSwordSwing(){
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
-			Debug.Log ("Swing sword");
-			_controller.rArmAnim.SetTrigger ("swing");
-		}
-	}
-		
 
 	private void UpdateMovement() {
 		_controller.GetComponent<CharacterController>().Move(_controller.InputVector * _controller.MaxSpeed * Time.deltaTime);

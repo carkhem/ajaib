@@ -172,8 +172,7 @@ public class AbilityManager : MonoBehaviour {
 	private void FireFireball() {
         if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
         {
-            Debug.Log(player.GetComponent<PlayerStats>().health - fireCost);
-
+//            Debug.Log(player.GetComponent<PlayerStats>().health - fireCost);
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 print("Shooting");
