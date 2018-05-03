@@ -32,4 +32,10 @@ public class GateTorch : MonoBehaviour {
 		fire.Stop ();
 		fireLight.intensity = 0;
 	}
+
+	void OnTriggerEnter(Collider coll){
+
+		if (coll.gameObject.tag == "FireBall")
+			lit = true;
+	}
 }
