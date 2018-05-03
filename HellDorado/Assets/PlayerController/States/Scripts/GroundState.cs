@@ -62,45 +62,6 @@ public class GroundState : State {
             _controller.TransitionTo<DeathState>();
         }
     }
-
- 
-    //	private void UseForcePush(){
-    //		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-    //		RaycastHit hit;
-    //
-    //		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer) && (hit.collider.gameObject.tag == "ForcePush" || hit.collider.gameObject.tag == "Enemy")) {
-    //			if (Input.GetKeyDown (KeyCode.F)) 
-    //				_controller.GetComponent<ForcePush> ().ForcePushObject (hit);
-    //			
-    //		}
-    //	}
-
-    //	private void UpdateRewind(){
-    //		if (Input.GetAxisRaw ("Fire2") != 0 && !_controller.GetComponent<AbilityManager> ().isRewinding) {
-    //			Debug.Log ("rewind from Groundstate");
-    //			_controller.TransitionTo<RewindState> ();
-    //		}
-    //	}
-
-
-    //	private void RewindObjectAbility (){
-    //
-    //		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-    //		RaycastHit hit;
-    //
-    //		if (Physics.Raycast (ray, out hit, 50f,_controller.ObjectLayer) && (hit.collider.gameObject.tag == "ForcePush")){
-    //			if (Input.GetKeyDown (KeyCode.R)) {
-    //				hit.collider.gameObject.GetComponent<RewindObject> ().DeactivateObject ();
-    //				hit.collider.gameObject.GetComponent<RewindObject> ().StartRewind ();
-    //			} else if (Input.GetKeyUp (KeyCode.R)) {
-    //				hit.collider.gameObject.GetComponent<RewindObject> ().StopRewind ();
-    //			} else if(hit.collider.gameObject.GetComponent<RewindObject>().deactivateObject == true){
-    //				if(hit.collider.gameObject.GetComponent<RewindObject>().clone != null)
-    //					Destroy(hit.collider.gameObject.GetComponent<RewindObject>().clone.gameObject);
-    //			}else {
-    //				hit.collider.gameObject.GetComponent<RewindObject> ().ActivateShadowObject ();
-    //			}
-    //		}
-    //	}
+		
 
 }
