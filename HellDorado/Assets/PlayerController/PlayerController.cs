@@ -44,9 +44,9 @@ public class PlayerController : Controller{
 			}
 		}
 
-		Debug.Log (Input.GetAxisRaw ("Horizontal")  + " | " +  Input.GetAxisRaw ("Vertical"));
+		Debug.Log ((Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0 || Input.GetAxisRaw ("Horizontal") != 0 && Input.GetAxisRaw ("Vertical") != 0) && canDash);
 
-		if ((Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0 || Input.GetAxisRaw ("Horizontal") != 0 && Input.GetAxisRaw ("Vertical") != 0) && Input.GetKeyDown(KeyCode.LeftAlt) && canDash) {
+		if ((Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0 || Input.GetAxisRaw ("Horizontal") != 0 && Input.GetAxisRaw ("Vertical") != 0) && (Input.GetKeyDown(KeyCode.LeftAlt) && canDash)) {
 			Debug.Log ("DASH");
 			canDash = false;
 			TransitionTo<DashState> ();
