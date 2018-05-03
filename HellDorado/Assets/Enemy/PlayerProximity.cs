@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerProximity : MonoBehaviour {
 
-	private BoxCollider collider;
 	private EnemyController _controller;
 
 	public bool activateRewind = false;
@@ -12,7 +11,7 @@ public class PlayerProximity : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_controller = GetComponent<EnemyController> ();
-		collider = GetComponent<BoxCollider> ();
+	
 	}
 
 	void Update(){

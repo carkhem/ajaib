@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FreezeTime : MonoBehaviour {
 
-	private string[] tags = { "Rigidbody", "Gate" };
 
 	//För Gate
 	private Animator animator;

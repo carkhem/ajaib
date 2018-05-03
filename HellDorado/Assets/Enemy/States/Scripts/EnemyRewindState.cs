@@ -19,7 +19,10 @@ public class EnemyRewindState : State {
 		
 
 	public override void Update (){
-		if (!AbilityManager.WorldRewind || !timeBody.isRewinding)
+		if (!AbilityManager.WorldRewind || !timeBody.isRewinding) {
+			timeBody.StopRewind ();
 			_controller.TransitionTo<IdleState> ();
+		}
+			
 	}
 }
