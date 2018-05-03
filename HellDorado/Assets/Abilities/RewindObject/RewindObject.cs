@@ -6,6 +6,7 @@ public class RewindObject : MonoBehaviour {
 
 
 	ObjectTimeBody activeObject;
+	private GameObject activeGameobject;
 
 	void Update(){
 		if (Input.GetKeyUp (KeyCode.Mouse1)) {
@@ -20,13 +21,18 @@ public class RewindObject : MonoBehaviour {
 
 		//Är medveten om att tagen är lite missvisande för tillfället, ska ändra till något mer passande 
 		//eller använda lager
-		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "ForcePush"))) {
-			activeObject = hit.collider.gameObject.GetComponent<ObjectTimeBody>();
+		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))) {
+			activeObject = hit.collider.gameObject.GetComponent<ObjectTimeBody> ();
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+<<<<<<< HEAD
 				hit.collider.gameObject.GetComponent<ObjectTimeBody>().StartRewind ();
 				GetComponent<PlayerStats> ().ChangeHealth (-cost);
+=======
+				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StartRewind ();
+				GetComponent<PlayerStats> ().DamagePlayer (cost);
+>>>>>>> 5a3f97789ec94bfa6849f11b7fbb05e49611c9da
 			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {
-				hit.collider.gameObject.GetComponent<ObjectTimeBody>().StopRewind ();
+				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StopRewind ();
 			}
 		}
 	}
