@@ -53,7 +53,6 @@ public class InteractObject : MonoBehaviour
 			highLightObject = hit.collider.gameObject;
 			hit.collider.gameObject.GetComponent<HighlightCube> ().distance = hit.distance;
 			hit.collider.gameObject.GetComponent<HighlightCube> ().hit = true;
-			Debug.Log (hit.distance);
 		
 		} else {
 			if (highLightObject != null)
