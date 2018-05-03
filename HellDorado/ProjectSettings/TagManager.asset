@@ -14,6 +14,8 @@ TagManager:
   - Object
   - ForcePush
   - Sword
+  - Rope
+  - FireBall
   layers:
   - Default
   - TransparentFX

@@ -28,6 +28,7 @@ public class RewindObject : MonoBehaviour {
 				GetComponent<PlayerStats> ().ChangeHealth (-cost);
 				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StartRewind ();
 				GetComponent<PlayerStats> ().DamagePlayer (cost);
+
 			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {
 				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StopRewind ();
 			}
