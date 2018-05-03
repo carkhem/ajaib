@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerController : Controller
-{
+public class PlayerController : Controller{
 
     private Vector3 input;
     private Vector3 drag;
@@ -39,6 +38,7 @@ public class PlayerController : Controller
             return input;
         }
     }
+
     private void Dash()
     {
         a += Time.fixedDeltaTime;

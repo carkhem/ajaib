@@ -13,7 +13,7 @@ public class AbilityManager : MonoBehaviour {
 	[Header("Rewind")]
 	public bool isRewinding = false;
 	public float recordTime = 5f;
-    public int rewindCost = 1;
+	public float rewindCost = 1;
 	private float playerGravity;
 	List<PointInTime> pointsInTime;
 	public static bool WorldRewind = false;
@@ -92,7 +92,7 @@ public class AbilityManager : MonoBehaviour {
 
 	void Record ()
 	{
-		if (pointsInTime.Count > Mathf.Round(recordTime / Time.fixedDeltaTime))
+		if (pointsInTime.Count > Mathf.Round(recordTime / Time.fixedDeltaTime)) 
 		{
 			pointsInTime.RemoveAt(pointsInTime.Count - 1);
 		}
@@ -164,6 +164,8 @@ public class AbilityManager : MonoBehaviour {
 				FreezeTime.freezeTime = false;
 				StopRewind ();
 			}
+		} else {
+			StopRewind ();
 		}
 	}
 

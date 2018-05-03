@@ -23,7 +23,7 @@ public class GroundState : State {
 	public override void Update() {
         UpdateMovement ();
 		UpdateJump ();
-        CheckPlayerLife();
+//        CheckPlayerLife();
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			Debug.Log ("Swing sword");
 			_controller.righArm.SetTrigger ("swing");
@@ -54,14 +54,14 @@ public class GroundState : State {
 		}
 	}
 
-    private void CheckPlayerLife()
-    {
-       if( _controller.GetComponent<PlayerStats>().health <= 10)
-        {
-            GameManager.instance.GameOver();
-            _controller.TransitionTo<DeathState>();
-        }
-    }
+//    private void CheckPlayerLife()
+//    {
+//       if( _controller.GetComponent<PlayerStats>().health <= 10)
+//        {
+//            GameManager.instance.GameOver();
+//            _controller.TransitionTo<DeathState>();
+//        }
+//    }
 
  
     //	private void UseForcePush(){
