@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InteractObject : MonoBehaviour
 {
+	private GameObject highLightObject;
+
     public GameObject player;
     public Text interactText;
     public float rayRange;
@@ -19,6 +21,8 @@ public class InteractObject : MonoBehaviour
     void Update()
     {
         RaycastObject();
+
+		HighlightObject ();
 
     }
 
@@ -40,4 +44,22 @@ public class InteractObject : MonoBehaviour
             interactText.text = "";
         }
     }
+
+	private void HighlightObject(){
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+
+		if (Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object")) {
+			highLightObject = hit.collider.gameObject;
+			hit.collider.gameObject.GetComponent<HighlightCube> ().distance = hit.distance;
+			hit.collider.gameObject.GetComponent<HighlightCube> ().hit = true;
+			Debug.Log (hit.distance);
+		
+		} else {
+			if (highLightObject != null)
+				highLightObject.GetComponent<HighlightCube> ().hit = false;
+		}
+			
+
+	}
 }

@@ -5,13 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - ForcePush
   - Lever
   - CheckPoint
   - Boulder
   - Ground
   - Rigidbody
   - Gate
+  - Object
   layers:
   - Default
   - TransparentFX
