@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour{
 
     [Header("PlayerHealth")]
-    public Text healthProcent; //--- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
+	private Text healthProcent; //--- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
     public float health;
     public int maxHealth;
     public bool inCombat;
@@ -29,6 +29,7 @@ public class PlayerStats : MonoBehaviour{
     void Start(){
 		healthSlider = CanvasManager.instance.healthSlider;
         health = maxHealth;
+		healthProcent = CanvasManager.instance.healthProcent;
         healthProcent.text = health + "%";
         PlayerLevel = 1;
         playerExp = 0;
@@ -41,7 +42,7 @@ public class PlayerStats : MonoBehaviour{
         healthSlider.value = Mathf.Lerp(healthSlider.value, (health / maxHealth), Time.deltaTime * regenSpeed);
 		if (!GetComponent<AbilityManager> ().isRewinding)
 			RegenerateHealth ();
-		if (health <= 10)
+		if (health == 0)
 		{
 			GameManager.instance.GameOver();
 		}
@@ -57,58 +58,43 @@ public class PlayerStats : MonoBehaviour{
         if (!sneaking)
             damage = meleeDamage;
 
-        healthProcent.text = (int)health + "%";
+		healthProcent.text = (int)(health/maxHealth * 100) + "%";
         changeDmg(PlayerLevel);
         LevelMaxExp = PlayerLevel * 100;
         Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
     }
-    public void ChangeHealth(int ammount)
-    {
-        health += ammount;
-        health = Mathf.Clamp(health, 0, maxHealth);
 
-//		healthSlider.value = health / maxHealth;
-       
+	public void ChangeHealth(float ammount){
+        
+		if (health + ammount > maxHealth)
+			health = maxHealth;
+		else if (health + ammount < 0)
+			health = 0;
+		else 
+			health += ammount;
+		
+//        health = Mathf.Clamp(health, 0, maxHealth);
+
     }
 
-    private void RegenerateHealth()
-    {
+    private void RegenerateHealth() {
 		if (health < maxHealth)
 			health += Time.deltaTime * regenSpeed;
 		else if (health > maxHealth)
 			health = maxHealth;
-		
-//        timeSecond += Time.deltaTime;
-//        if (timeSecond >= 1)
-//        {
-//            changeHealth(regen);
-//            timeSecond -= (int)timeSecond;
-//        }
     }
 
-	public void DamagePlayer(float damage)
-    {
-//        timeSecond += Time.deltaTime;
-//        Debug.Log(timeSecond);
-//
-//        if (timeSecond >= 0.05f)
-//        {
-//
-//            changeHealth(-1);
-//
-//            timeSecond -= timeSecond;
-//        }
-
-		if (health > 0)
-			health -= damage * Time.deltaTime;
-		else if (health < 0) {
+	public void DamagePlayer(float damage) {
+		if (health - (damage * Time.deltaTime) > 0) {
+			print ("Killing");
+			health -= (damage * Time.deltaTime);
+		} else if (health - (damage * Time.deltaTime) < 0) {
+			print (health + " - " + damage + " = DIE");
 			health = 0;
 		}
-       
     }
 
-    public void changeDmg( int level)
-    {
+    public void changeDmg( int level){
         meleeDamage = level * 2;
         sneakDamage = meleeDamage * 2;
     }
