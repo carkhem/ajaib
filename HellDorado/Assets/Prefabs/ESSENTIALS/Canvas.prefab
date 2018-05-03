@@ -315,7 +315,9 @@ MonoBehaviour:
   dText: {fileID: 114721792371905100}
   dName: {fileID: 114315069856460778}
   dialoguePanel: {fileID: 1925869502769588}
+  healthBar: {fileID: 1688970932565438}
   healthSlider: {fileID: 114809256257703572}
+  healthProcent: {fileID: 114217376799985380}
   deathScreen: {fileID: 1112138517821678}
   abilityContent: {fileID: 1746230623995410}
   rewindPanel: {fileID: 1035933532201442}
