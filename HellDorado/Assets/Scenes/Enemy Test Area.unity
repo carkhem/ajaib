@@ -170,6 +170,16 @@ Prefab:
       propertyPath: eyes
       value: 
       objectReference: {fileID: 1171433419}
+    - target: {fileID: 137521719073218362, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c602e381e9a5a4499e0cd2f59132e96, type: 2}
+    - target: {fileID: 95955984727920078, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 44f5b487a8cb6f64eae6ddf8d0a393fc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_IsPrefabParent: 0

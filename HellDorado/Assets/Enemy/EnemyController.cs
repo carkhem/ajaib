@@ -23,6 +23,8 @@ public class EnemyController : Controller {
 	private float detectionTimer = 0;
 	[HideInInspector]
 	public Transform player;
+	[Header("Movement")]
+	public Animator anim;
 
 //	void Awake(){
 //		//Sätt player direkt! Typ: player = PlayerController.instance.transform;
@@ -108,6 +110,10 @@ public class EnemyController : Controller {
 			return false;
 		else
 			return true;
+	}
+
+	public void SetAnim(string boolName, bool condition){
+		anim.SetBool (boolName, condition);
 	}
 
 }

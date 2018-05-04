@@ -15,6 +15,7 @@ public class IdleState : State {
 	}
 
 	public override void Enter (){
+		_controller.SetAnim ("walk", true);
 		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		timer = 0;
 		currentIdleTime = Random.Range (idleTime.Min, idleTime.Max);
@@ -27,6 +28,10 @@ public class IdleState : State {
 		}
 		_controller.LookForPlayer();
 		_controller.CheckHealth ();
+	}
+
+	public override void Exit (){
+		_controller.SetAnim ("walk", false);
 	}
 
 }
