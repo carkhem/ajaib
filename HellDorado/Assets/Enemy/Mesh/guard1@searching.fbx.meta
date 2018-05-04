@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2c8a4f0340daee2429529c518e9fbd6e
-timeCreated: 1525437047
+guid: 7b2c3a79f55bb904ca6a32d0d5e43a7d
+timeCreated: 1525441258
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -137,7 +137,7 @@ ModelImporter:
     400126: mixamorig:Spine
     400128: mixamorig:Spine1
     400130: mixamorig:Spine2
-    7400000: walk
+    7400000: searching
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -167,10 +167,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk
+      name: searching
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 33
+      lastFrame: 338
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

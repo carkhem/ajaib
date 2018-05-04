@@ -18,6 +18,7 @@ public class PatrolState : State {
 	}
 
 	public override void Enter() {
+		_controller.SetAnim ("walk", true);
 		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		RandomizeDestination ();
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
@@ -35,6 +36,7 @@ public class PatrolState : State {
 
 	public override void Exit (){
 		agent.SetDestination (transform.position);
+		_controller.SetAnim ("walk", false);
 	}
 
 	private void RandomizeDestination(){

@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InteractObject : MonoBehaviour
-{
-
+public class InteractObject : MonoBehaviour{
     public Text interactText;
     public float rayRange;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start(){
 		interactText = CanvasManager.instance.interactText;
     }
 

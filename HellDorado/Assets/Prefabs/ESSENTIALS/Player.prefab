@@ -836,7 +836,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173198122221142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4706572722408384}
@@ -1466,8 +1466,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502341169758656}
-  m_LocalRotation: {x: -0.0000000011026935, y: 0.118400805, z: -0.000000009247715,
-    w: 0.9929659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.15499987, y: -0.22000027, z: 0.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1589,7 +1588,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 90
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1854,7 +1853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf76143959c05d4cb43bf7f41dee819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1987242077293968}
   interactText: {fileID: 0}
   rayRange: 1
 --- !u!114 &114953782125380146
@@ -1863,14 +1861,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173198122221142}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 760efcb09ff28e640a7357f96a910088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingSpeed: 0.18
-  bobbingAmount: 0.2
-  midpoint: 2
+  bobbingSpeed: 0.1
+  bobbingAmount: 0.05
+  midpoint: 0.8
 --- !u!124 &124204564720828752
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2034,7 +2032,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3

@@ -14,6 +14,7 @@ public class SearchingState : State {
 	}
 
 	public override void Enter (){
+		_controller.SetAnim ("search", true);
 		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		timer = searchingTime;
 	}
@@ -28,5 +29,9 @@ public class SearchingState : State {
 		if (_controller.InSight (_controller.player)) {
 			_controller.TransitionTo<CombatState> ();
 		}
+	}
+
+	public override void Exit (){
+		_controller.SetAnim ("search", false);
 	}
 }

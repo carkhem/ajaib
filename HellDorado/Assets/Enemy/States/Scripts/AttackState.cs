@@ -9,7 +9,7 @@ public class AttackState : State {
 	public float plungeSpeed = 5;
 	public float recoverTime = 2;
 	private float timer = 0;
-	private Vector3 attackPos;
+//	private Vector3 attackPos;
 
 	private EnemyController _controller;
 	private NavMeshAgent agent;
@@ -20,20 +20,25 @@ public class AttackState : State {
 	}
 
 	public override void Enter (){
+		_controller.SetAnim ("attack", true);
 		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
-		attackPos = _controller.player.position;
+//		attackPos = _controller.player.position;
 		agent.speed = plungeSpeed;
 		timer = 0;
 	}
 
 	public override void Update (){
-		agent.SetDestination (attackPos);
-		if (!_controller.IsMoving(agent)) {
+//		agent.SetDestination (attackPos);
+//		if (!_controller.IsMoving(agent)) {
 			timer += Time.deltaTime;
 			if (timer >= recoverTime) {
 				Debug.Log ("Recovered");
 				_controller.TransitionTo<CombatState> ();
 			}
-		}
+//		}
+	}
+
+	public override void Exit (){
+		_controller.SetAnim ("attack", false);
 	}
 }

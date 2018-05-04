@@ -26,6 +26,7 @@ public class CombatState : State {
 	}
 
 	public override void Enter (){
+		_controller.SetAnim ("combat", true);
 //		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
 		attackTimer = 0;
@@ -47,6 +48,7 @@ public class CombatState : State {
 		}
 
 		if (Vector3.Distance (transform.position, _controller.player.position) > stopDistance) {
+			_controller.SetAnim ("run", true);
 			if (_controller.InSight (_controller.player)) {
 				logicFollowTimer = 0;
 				agent.SetDestination (_controller.player.position);
@@ -59,6 +61,7 @@ public class CombatState : State {
 				}
 			}
 		} else {
+			_controller.SetAnim ("run", false);
 			agent.SetDestination (transform.position);
 			attackTimer += Time.deltaTime;
 			if (attackTimer >= currentAttackWait) {
@@ -68,7 +71,11 @@ public class CombatState : State {
 
 		//Vill ha en mer smooth LookAt
 		transform.LookAt (new Vector3 (_controller.player.position.x, transform.position.y, _controller.player.position.z));
-
-
+//		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation(_controller.player.position), 1);
 	}
+
+	public override void Exit (){
+		_controller.SetAnim ("combat", false);
+	}
+
 }
