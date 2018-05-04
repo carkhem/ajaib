@@ -16,7 +16,7 @@ public class FPSCamera : MonoBehaviour {
 
 	GameObject Character;
 
-	void Start(){
+	void Awake(){
 		Character = this.transform.parent.gameObject;
 	}
 

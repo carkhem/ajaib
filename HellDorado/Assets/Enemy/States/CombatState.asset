@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: CombatState
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
-  runSpeed: 4
+  runSpeed: 5
   stopDistance: 3
   logicFollowTime: 2
   attackWait:

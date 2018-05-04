@@ -5,11 +5,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : Controller {
-//	[Header("Movement")]
-//	public float runSpeed;
-//	public float walkSpeed;
-//	[HideInInspector]
-//	public NavMeshAgent agent;
 	[Header("Stats")]
 	public float damage;
 	public float health;
