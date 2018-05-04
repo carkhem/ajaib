@@ -12,9 +12,8 @@ public class InteractObject : MonoBehaviour
     public float rayRange;
     private float DashLenght = 8;
     // Use this for initialization
-    void Start()
-    {
-
+    void Start(){
+		interactText = CanvasManager.instance.interactText;
     }
 
     // Update is called once per frame

@@ -21,6 +21,9 @@ public class CanvasManager : MonoBehaviour {
 	public GameObject abilityContent;
 	public GameObject rewindPanel;
 
+	[Header("Interact")]
+	public Text interactText;
+
 	void Awake(){
 		instance = this;
 	}
