@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour{
 	public static PlayerStats instance;
+    private float timeInSec;
+    private int LevelUpTextSec;
+    private bool LevelIsUp = false;
+
     [Header("PlayerHealth")]
 	private Text healthProcent; //--- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
     public float health;
@@ -25,6 +29,7 @@ public class PlayerStats : MonoBehaviour{
     public int PlayerLevel;
     private Slider experienceSlider;
     private Text experienceProgress;
+
 //    private float timeSecond = 0.0f;
 //    public int regenerate;
 
@@ -113,8 +118,31 @@ public class PlayerStats : MonoBehaviour{
         experienceSlider.value = playerExp;
         experienceSlider.maxValue = LevelMaxExp;
         experienceProgress.text = playerExp + "/" + LevelMaxExp;
-        if(LevelUp)
-            experienceSlider.minValue = (PlayerLevel -1) *100;
+        if (LevelUp)
+        {
+            experienceSlider.minValue = (PlayerLevel - 1) * 100;
+            LevelIsUp = true;
+        }
+        LevelUpText();
     }
 
+    public void LevelUpText()
+    {
+        if (LevelIsUp)
+        {
+            timeInSec += Time.fixedDeltaTime;
+            if (timeInSec > 1)
+            {
+                LevelUpTextSec += (int)timeInSec;
+                timeInSec -= (int)timeInSec;
+                if (LevelUpTextSec >= 3)
+                {
+                    LevelIsUp = false;
+                    LevelUpTextSec = 0;
+                    timeInSec = 0;
+                }
+            }
+            CanvasManager.instance.LevelUpPicture.SetActive(LevelIsUp);
+        }
+    }
 }

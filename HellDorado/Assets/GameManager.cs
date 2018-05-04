@@ -48,7 +48,9 @@ public class GameManager : MonoBehaviour {
 		cam.GetComponent<FPSCamera>().SetDead(true);
      
      
-    }
+    } 
+
+   
 
     public void Respawn()
     {
