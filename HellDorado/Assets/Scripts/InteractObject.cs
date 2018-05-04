@@ -8,6 +8,8 @@ public class InteractObject : MonoBehaviour
     private Text interactText;
     public float rayRange;
 
+	private GameObject objectToHighlight;
+
     // Use this for initialization
     void Start(){
 		interactText = CanvasManager.instance.interactText;
@@ -17,6 +19,8 @@ public class InteractObject : MonoBehaviour
     void Update()
     {
         RaycastObject();
+
+		HighlightObject ();
     }
 
     public void RaycastObject()
@@ -37,4 +41,22 @@ public class InteractObject : MonoBehaviour
             interactText.text = "";
         }
     }
+
+	public void HighlightObject()
+	{
+
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+
+		if (Physics.Raycast(ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))
+		{
+			objectToHighlight = hit.collider.gameObject;
+			objectToHighlight.GetComponent<HighlightCube> ().hit = true;
+		}
+		else
+		{
+			if(objectToHighlight != null)
+				objectToHighlight.GetComponent<HighlightCube> ().hit = false;
+		}
+	}
 }
