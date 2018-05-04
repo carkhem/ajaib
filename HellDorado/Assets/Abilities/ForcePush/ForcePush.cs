@@ -32,6 +32,7 @@ public class ForcePush : MonoBehaviour {
 
 		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))) {
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+				
 				rb = hit.collider.gameObject.GetComponent<Rigidbody> ();
 				rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 				rb.isKinematic = false;

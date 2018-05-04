@@ -6,11 +6,18 @@ public class GateTorch : MonoBehaviour {
 	public bool lit;
 	public ParticleSystem fire;
 	public Light fireLight;
+
+	public AudioClip TorchSound;
+	public AudioSource source;
+
 	private float lightIntensity;
 
 	void Start(){
 		lightIntensity = fireLight.intensity;
 		fireLight.intensity = 0;
+		source = GetComponent<AudioSource> ();
+		source.clip = TorchSound;
+		source.loop = true;
 	}
 
 	void Update(){
@@ -25,12 +32,14 @@ public class GateTorch : MonoBehaviour {
 		lit = true;
 		fire.Play ();
 		fireLight.intensity = lightIntensity;
+		source.Play ();
 	}
 
 	public void PutOut(){
 		lit = false;
 		fire.Stop ();
 		fireLight.intensity = 0;
+		source.Stop ();
 	}
 
 	void OnTriggerEnter(Collider coll){
