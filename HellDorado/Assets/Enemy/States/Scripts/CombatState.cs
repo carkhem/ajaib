@@ -27,13 +27,13 @@ public class CombatState : State {
 
 	public override void Enter (){
 		_controller.SetAnim ("activeIdle", true);
-//		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
 		attackTimer = 0;
 		currentAttackWait = Random.Range (attackWait.Min, attackWait.Max);
 		agent.speed = runSpeed;
 		logicFollowTimer = 0;
-		transform.LookAt (_controller.player);
+//		transform.LookAt (_controller.player);
 		lastKnownPos = _controller.player.position;
 	}
 
@@ -70,8 +70,10 @@ public class CombatState : State {
 		}
 
 		//Vill ha en mer smooth LookAt
-		transform.LookAt (new Vector3 (_controller.player.position.x, transform.position.y, _controller.player.position.z));
-//		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation(_controller.player.position), 1);
+//		transform.LookAt (new Vector3 (_controller.player.position.x, transform.position.y, _controller.player.position.z));
+//		transform.rotation = Quaternion.LookRotation(_controller.player.position - transform.position);
+
+		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation(_controller.player.position - transform.position), Time.deltaTime * 10);
 	}
 
 	public override void Exit (){
