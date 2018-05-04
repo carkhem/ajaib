@@ -63,7 +63,7 @@ public class EnemyController : Controller {
 
 	public void TakeDamage(float damage){
 		health -= damage;
-		Debug.Log (health);
+//		Debug.Log (health);
 		if (health > 0)
 			TransitionTo<StunnedState> ();
 		else

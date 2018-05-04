@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: StunnedState
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
-  stunnedTime: 1
+  stunnedTime: 0.5
