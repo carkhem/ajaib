@@ -45,7 +45,7 @@ public class InteractObject : MonoBehaviour
 	public void HighlightObject()
 	{
 
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
 		if (Physics.Raycast(ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))
