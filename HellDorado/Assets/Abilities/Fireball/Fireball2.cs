@@ -10,17 +10,23 @@ public class Fireball2 : MonoBehaviour {
 	public float minDamage = 1;
 	public GameObject explosionPrefab;
 
+	private Vector3 endPos;
+
 	private float damage;
 	private float timer;
 
 	void Start () {
 		damage = maxDamage; //Behöver kanske inte den här raden.
 		timer = 0;
+
+		endPos = Aim();
 	}
 	
 	void Update () {
 		//Åk framåt i den hastighet vi vill.
 		//transform.Translate (transform.forward * speed * Time.deltaTime);
+		//GetComponent<Rigidbody>().velocity = transform.forward * speed;
+		transform.LookAt(endPos);
 		GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
 		//Minska damage över tid
@@ -49,6 +55,22 @@ public class Fireball2 : MonoBehaviour {
 
 	public float GetDamage(){
 		return damage;
+	}
+
+	public Vector3 Aim(){
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		RaycastHit hit;
+
+		if (Physics.Raycast (ray, out hit)) {
+			endPos = ray.GetPoint (50);
+			return endPos;
+		} else {
+			endPos = ray.GetPoint(50);
+			return endPos;
+		}
+
+
+
 	}
 
 }
