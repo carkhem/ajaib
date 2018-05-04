@@ -195,12 +195,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 8
-  speed: 8
+  speed: 10
   maxDamage: 2
   minDamage: 1
   explosionPrefab: {fileID: 1813458027623866, guid: b781422fefc1c514b9234a387e3860fd,
     type: 2}
-  player: {fileID: 1490124080752218, guid: 3cd985c37e32c594daf1d12c6aa43ea3, type: 2}
 --- !u!135 &135883236736082544
 SphereCollider:
   m_ObjectHideFlags: 1

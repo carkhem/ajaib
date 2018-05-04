@@ -26,7 +26,8 @@ public class Fireball2 : MonoBehaviour {
 		//Åk framåt i den hastighet vi vill.
 		//transform.Translate (transform.forward * speed * Time.deltaTime);
 		//GetComponent<Rigidbody>().velocity = transform.forward * speed;
-		transform.LookAt(endPos);
+
+		//transform.LookAt(endPos);
 		GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
 		//Minska damage över tid
