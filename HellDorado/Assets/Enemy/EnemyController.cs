@@ -14,6 +14,8 @@ public class EnemyController : Controller {
 	public float damage;
 	public float health;
 	[Header("Sight")]
+	public GameObject eyes;
+	public Vector3 offset;
 	public float fov;
 	public float viewDistance;
 	public float detectionSpeed;
@@ -21,6 +23,8 @@ public class EnemyController : Controller {
 	private float detectionTimer = 0;
 	[HideInInspector]
 	public Transform player;
+	[Header("Movement")]
+	public Animator anim;
 
 //	void Awake(){
 //		//Sätt player direkt! Typ: player = PlayerController.instance.transform;
@@ -38,15 +42,15 @@ public class EnemyController : Controller {
 	}
 
 	public bool InSight(Transform thing){
-		Vector3 direction = thing.position - transform.position;
+		Vector3 direction = thing.position - eyes.transform.position;
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position, direction, out hit, viewDistance)) {
+		if (Physics.Raycast (eyes.transform.position, direction, out hit, viewDistance)) {
 			if (hit.transform.CompareTag (thing.tag)) {
-				if (Vector3.Angle (transform.forward, direction) < fov) {
-					Debug.DrawRay (transform.position, direction, Color.green);
+				if (Vector3.Angle (eyes.transform.forward, direction) < fov) {
+					Debug.DrawRay (eyes.transform.position, direction, Color.green);
 					return true;
 				} else {
-					Debug.DrawRay (transform.position, direction, Color.red);
+					Debug.DrawRay (eyes.transform.position, direction, Color.red);
 					return false;
 				}
 			} else {
@@ -67,15 +71,15 @@ public class EnemyController : Controller {
 	}
 
 	public void LookForPlayer(){
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(fov, transform.up) * transform.forward * viewDistance);
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-fov, transform.up) * transform.forward * viewDistance);
+		Debug.DrawRay (eyes.transform.position, Quaternion.AngleAxis(fov, eyes.transform.up) * eyes.transform.forward * viewDistance);
+		Debug.DrawRay (eyes.transform.position, Quaternion.AngleAxis(-fov, eyes.transform.up) * eyes.transform.forward * viewDistance);
 
 //		detectionMultiplier = Vector3.Distance (transform.position, player.position) * 8;
 //		detectionMultiplier = 5 / Vector3.Angle (transform.forward, player.position - transform.position);
 
 		if (InSight(player)) {
 			if (detectionTimer < detectionSpeed)
-				detectionTimer += Time.deltaTime / Vector3.Distance (transform.position, player.position) * 8;
+				detectionTimer += Time.deltaTime / Vector3.Distance (eyes.transform.position, player.position) * 8;
 			else
 				detectionTimer = detectionSpeed;
 		} else {
@@ -106,6 +110,10 @@ public class EnemyController : Controller {
 			return false;
 		else
 			return true;
+	}
+
+	public void SetAnim(string boolName, bool condition){
+		anim.SetBool (boolName, condition);
 	}
 
 }

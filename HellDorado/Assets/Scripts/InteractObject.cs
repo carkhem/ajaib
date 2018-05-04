@@ -12,7 +12,7 @@ public class InteractObject : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+		interactText = CanvasManager.instance.interactText;
     }
 
     // Update is called once per frame
