@@ -23,13 +23,17 @@ public class Elevator : MonoBehaviour {
 	void Update () {
 
 		if (upDown) {
-			float distCovered = (Time.time - startTime) * speed;
-			float fracJourney = distCovered / journeyLenght;
-			transform.position = Vector3.Lerp (transform.position, endPosition, fracJourney);
+			if (journeyLenght != 0) {
+				float distCovered = (Time.time - startTime) * speed;
+				float fracJourney = distCovered / journeyLenght;
+					transform.position = Vector3.Lerp (transform.position, endPosition, fracJourney);
+			}
 		} else {
-			float distCovered = (Time.time - startTime) * speed;
-			float fracJourney = distCovered / journeyLenght;
-			transform.position = Vector3.Lerp (transform.position, startPosition, fracJourney);
+			if (journeyLenght != 0) {
+				float distCovered = (Time.time - startTime) * speed;
+				float fracJourney = distCovered / journeyLenght;
+					transform.position = Vector3.Lerp (transform.position, startPosition, fracJourney);
+			}
 		}
 
 	}

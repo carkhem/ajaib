@@ -1630,8 +1630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c19618e76b45594f9c113af8f119f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ystart: 16.36
-  Yend: 10.98
+  Ystart: 10.98
+  Yend: 16.36
   speed: 1
 --- !u!1 &1438188639 stripped
 GameObject:
