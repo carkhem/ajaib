@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+<<<<<<< HEAD
 public class InteractObject : MonoBehaviour{
     public Text interactText;
+=======
+public class InteractObject : MonoBehaviour
+{
+
+    private Text interactText;
+>>>>>>> 3bef0030aebca411b7674108afc8519c6ab7e9dd
     public float rayRange;
 
     // Use this for initialization

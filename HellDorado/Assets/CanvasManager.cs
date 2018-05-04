@@ -10,6 +10,7 @@ public class CanvasManager : MonoBehaviour {
 	public Text dText;
 	public Text dName;
 	public GameObject dialoguePanel;
+    public GameObject LevelUpPicture;
 
 	[Header("Stats")]
 	public GameObject healthBar;
