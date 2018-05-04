@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InteractObject : MonoBehaviour
 {
 
-    public Text interactText;
+    private Text interactText;
     public float rayRange;
 
     // Use this for initialization

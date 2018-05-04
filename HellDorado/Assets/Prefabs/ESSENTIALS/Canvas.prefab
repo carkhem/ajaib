@@ -440,7 +440,7 @@ MonoBehaviour:
   experienceProgress: {fileID: 114823102444545076}
   abilityContent: {fileID: 1746230623995410}
   rewindPanel: {fileID: 1035933532201442}
-  interactText: {fileID: 0}
+  interactText: {fileID: 114250453378316248}
 --- !u!114 &114208589219203680
 MonoBehaviour:
   m_ObjectHideFlags: 1
