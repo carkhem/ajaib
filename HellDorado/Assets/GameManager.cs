@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 	public void LevelUp(){
         playerLevel++;
         player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
+        player.GetComponent<PlayerStats>().updateExperienceProgress(true);
        // player.GetComponent<PlayerStats>().changeDmg(playerLevel);
         if (abilityDisplay.Length >= playerLevel)
 			CanvasManager.instance.AddAbility (abilityDisplay[playerLevel - 1]);
