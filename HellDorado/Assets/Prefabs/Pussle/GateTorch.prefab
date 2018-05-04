@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 23685539619432274}
   - component: {fileID: 114485890927551678}
   - component: {fileID: 65865402104794970}
+  - component: {fileID: 82742599046980258}
   m_Layer: 0
   m_Name: GateTorch
   m_TagString: Untagged
@@ -170,6 +171,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.29, z: 0.99999994}
   m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!82 &82742599046980258
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1844537516149232}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!108 &108116188595275730
 Light:
   m_ObjectHideFlags: 1
@@ -220,6 +301,8 @@ MonoBehaviour:
   lit: 0
   fire: {fileID: 198355148527375334}
   fireLight: {fileID: 108116188595275730}
+  TorchSound: {fileID: 8300000, guid: 6dfe382b979487c4a9d2e7f845d06a4e, type: 3}
+  source: {fileID: 82742599046980258}
 --- !u!198 &198355148527375334
 ParticleSystem:
   m_ObjectHideFlags: 1

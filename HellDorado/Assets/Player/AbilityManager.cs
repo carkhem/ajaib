@@ -124,6 +124,7 @@ public class AbilityManager : MonoBehaviour {
                 print("Shooting");
                 Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
                 player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
+				GetComponent<AbilitySounds> ().PlayAbilitySound ("Fireball");
             }
         }
 	}

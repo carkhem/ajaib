@@ -9,6 +9,8 @@ public class Fireball2 : MonoBehaviour {
 	public float maxDamage = 2;
 	public float minDamage = 1;
 	public GameObject explosionPrefab;
+	public AudioClip explosion;
+	public AudioSource source;
 
 	private Vector3 endPos;
 
@@ -20,6 +22,7 @@ public class Fireball2 : MonoBehaviour {
 		timer = 0;
 
 		endPos = Aim();
+		source = GetComponent<AudioSource> ();
 	}
 	
 	void Update () {
@@ -27,7 +30,7 @@ public class Fireball2 : MonoBehaviour {
 		//transform.Translate (transform.forward * speed * Time.deltaTime);
 		//GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
-		//transform.LookAt(endPos);
+		transform.LookAt(endPos);
 		GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
 		//Minska damage över tid
@@ -44,8 +47,9 @@ public class Fireball2 : MonoBehaviour {
 		if (explosionPrefab != null)
 			//Instantiate (explosionPrefab, transform.position, transform.rotation);
 		//explosion.particleSystem.particleEmitter -- Sätt storleken på explosionen på nåt sätt.
-		GameObject.Destroy (gameObject);
-        GameObject.Destroy(Instantiate(explosionPrefab, transform.position, transform.rotation), 1.5f);
+			source.PlayOneShot(explosion);
+			GameObject.Destroy (gameObject);
+        	GameObject.Destroy(Instantiate(explosionPrefab, transform.position, transform.rotation), 1.5f);
 	}
 
 	void OnCollisionEnter(Collision col){
@@ -59,7 +63,7 @@ public class Fireball2 : MonoBehaviour {
 	}
 
 	public Vector3 Aim(){
-		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
 		if (Physics.Raycast (ray, out hit)) {

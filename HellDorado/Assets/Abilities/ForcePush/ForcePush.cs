@@ -27,11 +27,12 @@ public class ForcePush : MonoBehaviour {
 	
 	public void ForcePushObject(int forcePushCost){
 
-		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
 		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))) {
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+				
 				rb = hit.collider.gameObject.GetComponent<Rigidbody> ();
 				rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 				rb.isKinematic = false;
