@@ -132,7 +132,10 @@ public class AbilityManager : MonoBehaviour {
 	private void UseForcePush(){
 		forcePush = GetComponent<ForcePush> ();
         if (forcePush != null)
-            forcePush.ForcePushObject (forcePushCost);
+        {
+            forcePush.ForcePushObject(forcePushCost);
+                
+        }
 	}
 
 	private void UseRewindObject(){

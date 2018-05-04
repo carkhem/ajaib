@@ -142,7 +142,7 @@ public class PlayerStats : MonoBehaviour{
                     timeInSec = 0;
                 }
             }
-//            CanvasManager.instance.LevelUpPicture.SetActive(LevelIsUp);
+            CanvasManager.instance.LevelUpPicture.SetActive(LevelIsUp);
         }
     }
 }

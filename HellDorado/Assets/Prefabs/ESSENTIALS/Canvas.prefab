@@ -281,6 +281,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1465832164291508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224424112510462168}
+  - component: {fileID: 222685540379078996}
+  - component: {fileID: 114196808158763132}
+  m_Layer: 5
+  m_Name: LevelUpPic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1475794367973938
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +554,33 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Press Return to load from last Checkpoint
+--- !u!114 &114196808158763132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465832164291508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0c089f9653d8c2543a05c56296111fd8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114220249226126280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -905,7 +949,7 @@ MonoBehaviour:
   dText: {fileID: 114229514890087338}
   dName: {fileID: 114329683917904166}
   dialoguePanel: {fileID: 1573539981720338}
-  LevelUpPicture: {fileID: 0}
+  LevelUpPicture: {fileID: 1465832164291508}
   healthBar: {fileID: 1370969710014668}
   healthSlider: {fileID: 114457193156781884}
   healthProcent: {fileID: 114106086438797936}
@@ -1256,6 +1300,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143171826812712}
+--- !u!222 &222685540379078996
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465832164291508}
 --- !u!222 &222853893832640162
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1480,6 +1530,7 @@ RectTransform:
   - {fileID: 224934983338512250}
   - {fileID: 224826937754835890}
   - {fileID: 224472671766187840}
+  - {fileID: 224424112510462168}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1488,6 +1539,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &224424112510462168
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465832164291508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8118237, y: 1.8118243, z: 1.8118243}
+  m_Children: []
+  m_Father: {fileID: 224414241208194984}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00016022, y: 246}
+  m_SizeDelta: {x: 444, y: 104}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224438420744484560
 RectTransform:
   m_ObjectHideFlags: 1

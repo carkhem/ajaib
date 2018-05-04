@@ -51,12 +51,12 @@ public class InteractObject : MonoBehaviour
 		if (Physics.Raycast(ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))
 		{
 			objectToHighlight = hit.collider.gameObject;
-			objectToHighlight.GetComponent<HighlightCube> ().hit = true;
+			//objectToHighlight.GetComponent<HighlightCube> ().hit = true;
 		}
 		else
 		{
-			if(objectToHighlight != null)
-				objectToHighlight.GetComponent<HighlightCube> ().hit = false;
+			//if(objectToHighlight != null)
+				//objectToHighlight.GetComponent<HighlightCube> ().hit = false;
 		}
 	}
 }
