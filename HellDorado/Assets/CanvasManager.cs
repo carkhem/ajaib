@@ -16,6 +16,8 @@ public class CanvasManager : MonoBehaviour {
 	public Slider healthSlider;
 	public Text healthProcent;
 	public GameObject deathScreen;
+    public Slider experienceSlider;
+    public Text experienceProgress;
 
 	[Header("Ability Panel")]
 	public GameObject abilityContent;

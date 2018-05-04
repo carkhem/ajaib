@@ -19,9 +19,12 @@ public class PlayerStats : MonoBehaviour{
 	private float sneakDamage;
     public bool sneaking = false;
 
+    [Header("PlayerLevel")]
     public float LevelMaxExp;
     public float playerExp;
     public int PlayerLevel;
+    private Slider experienceSlider;
+    private Text experienceProgress;
 //    private float timeSecond = 0.0f;
 //    public int regenerate;
 
@@ -34,6 +37,8 @@ public class PlayerStats : MonoBehaviour{
         health = maxHealth;
 		healthProcent = CanvasManager.instance.healthProcent;
         healthProcent.text = health + "%";
+        experienceSlider = CanvasManager.instance.experienceSlider;
+        experienceProgress = CanvasManager.instance.experienceProgress;
         PlayerLevel = 1;
         playerExp = 0;
     }
@@ -64,6 +69,7 @@ public class PlayerStats : MonoBehaviour{
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
         changeDmg(PlayerLevel);
         LevelMaxExp = PlayerLevel * 100;
+        updateExperienceProgress(false);
 //        Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
     }
 
@@ -100,6 +106,15 @@ public class PlayerStats : MonoBehaviour{
     public void changeDmg(int level){
         meleeDamage = level * 2;
         sneakDamage = meleeDamage * 2;
+    }
+
+    public void updateExperienceProgress(bool LevelUp)
+    {
+        experienceSlider.value = playerExp;
+        experienceSlider.maxValue = LevelMaxExp;
+        experienceProgress.text = playerExp + "/" + LevelMaxExp;
+        if(LevelUp)
+            experienceSlider.minValue = (PlayerLevel -1) *100;
     }
 
 }
