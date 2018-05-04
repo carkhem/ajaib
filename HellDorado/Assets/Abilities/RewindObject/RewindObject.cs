@@ -19,8 +19,7 @@ public class RewindObject : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 
-		//Är medveten om att tagen är lite missvisande för tillfället, ska ändra till något mer passande 
-		//eller använda lager
+
 		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))) {
 			activeObject = hit.collider.gameObject.GetComponent<ObjectTimeBody> ();
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {

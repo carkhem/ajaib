@@ -18,6 +18,7 @@ public class RewindState : State {
     }
 
 	public override void Enter(){
+		Physics.IgnoreLayerCollision (0, 9, true);
 //		Debug.Log ("Rewind State");
 //        _controller.GetComponent<AbilityManager>().StartRewind ();
 	}
@@ -33,5 +34,9 @@ public class RewindState : State {
 //			_controller.GetComponent<AbilityManager> ().StopRewind ();
 //			_controller.TransitionTo<GroundState> ();
 //		}
+	}
+
+	public override void Exit(){
+		Physics.IgnoreLayerCollision (0, 9, false);
 	}
 }

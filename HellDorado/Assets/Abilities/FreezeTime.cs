@@ -23,12 +23,11 @@ public class FreezeTime : MonoBehaviour {
 
 
 		rb = GetComponent<Rigidbody> ();
-		
 
 		animator = GetComponent<Animator> ();
 			if (animator != null)
 				gate = GetComponentInParent<Gate> ();
-		
+
 	}
 	
 	// Update is called once per frame
@@ -58,7 +57,7 @@ public class FreezeTime : MonoBehaviour {
 				if (gateDelayTemp == 0) {
 					gateDelayTemp = gate.delayTime;
 				}
-				animator.speed = 0.1f;
+				animator.speed = 0f;
 				gate.delayTime = 0f;
 			} else {
 				if (gateDelayTemp != 0f) {
@@ -69,7 +68,6 @@ public class FreezeTime : MonoBehaviour {
 			}
 
 		}
-
 
 	}
 }
