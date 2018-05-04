@@ -24,7 +24,7 @@ public class SearchingState : State {
 		_controller.detection = timer / searchingTime;
 		if (timer <= 0) {
 			_controller.detection = 0;
-			_controller.TransitionTo<PatrolState> ();
+			_controller.TransitionTo<IdleState> ();
 		}
 		if (_controller.InSight (_controller.player)) {
 			_controller.TransitionTo<CombatState> ();

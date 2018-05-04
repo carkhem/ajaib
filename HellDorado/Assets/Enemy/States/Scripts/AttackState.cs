@@ -30,12 +30,15 @@ public class AttackState : State {
 	public override void Update (){
 //		agent.SetDestination (attackPos);
 //		if (!_controller.IsMoving(agent)) {
-			timer += Time.deltaTime;
-			if (timer >= recoverTime) {
-				Debug.Log ("Recovered");
-				_controller.TransitionTo<CombatState> ();
-			}
+//			timer += Time.deltaTime;
+//			if (timer >= recoverTime) {
+////				Debug.Log ("Recovered");
+//				_controller.TransitionTo<CombatState> ();
+//			}
 //		}
+		if (_controller.anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1){
+			_controller.TransitionTo<CombatState> ();
+		}
 	}
 
 	public override void Exit (){
