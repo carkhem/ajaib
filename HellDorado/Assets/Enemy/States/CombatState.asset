@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
   runSpeed: 4
-  stopDistance: 2
+  stopDistance: 3
   logicFollowTime: 2
   attackWait:
     Min: 0

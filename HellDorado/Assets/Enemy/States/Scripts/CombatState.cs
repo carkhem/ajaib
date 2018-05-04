@@ -26,7 +26,7 @@ public class CombatState : State {
 	}
 
 	public override void Enter (){
-		_controller.SetAnim ("combat", true);
+		_controller.SetAnim ("activeIdle", true);
 //		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
 		attackTimer = 0;
@@ -75,7 +75,7 @@ public class CombatState : State {
 	}
 
 	public override void Exit (){
-		_controller.SetAnim ("combat", false);
+		_controller.SetAnim ("activeIdle", false);
 	}
 
 }

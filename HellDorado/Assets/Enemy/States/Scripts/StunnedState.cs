@@ -15,6 +15,8 @@ public class StunnedState : State {
 
 	public override void Enter (){
 //		Debug.Log ("STUNNED");
+		timer = 0;
+		_controller.SetAnim("stunned", true);
 	}
 
 	public override void Update(){
@@ -22,6 +24,10 @@ public class StunnedState : State {
 		if (timer >= stunnedTime) {
 			_controller.TransitionTo<CombatState> ();
 		}
+	}
+
+	public override void Exit (){
+		_controller.SetAnim("stunned", false);
 	}
 
 }

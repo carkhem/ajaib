@@ -14,4 +14,4 @@ MonoBehaviour:
   Controller: {fileID: 0}
   dashDuration: 0.2
   xDashSpeed: 0.1
-  yDashSpeed: 0.08
+  yDashSpeed: 0.1

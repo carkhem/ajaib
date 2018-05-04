@@ -18,7 +18,7 @@ public class EnemyRewindState : State {
 		if (!TimeBody.isRewinding) {
 
 			//Vill gå tillbaka till föregående state här istället för alltid Idle
-			_controller.TransitionTo<IdleState> ();
+			_controller.TransitionTo<PatrolState> ();
 		}
 			
 	}
