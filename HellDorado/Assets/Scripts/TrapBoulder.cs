@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TrapBoulder : MonoBehaviour {
     public float fallDelay;
-    public bool active;
-    public bool consumed;
+    private bool active;
+    private bool consumed;
     Rigidbody rigid;
 
     // Use this for initialization
@@ -40,4 +40,19 @@ public class TrapBoulder : MonoBehaviour {
 
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public void Activate()
+    {
+        active = true;
+    }
+
+    
 }

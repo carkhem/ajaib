@@ -20,6 +20,7 @@ public class FallingObjectsTrap : MonoBehaviour {
 
     void OnTriggerEnter()
     {
+
         activated = true;
         ActivateTrap();
     }
@@ -29,7 +30,7 @@ public class FallingObjectsTrap : MonoBehaviour {
         for (int count = 0; count < objects.Length; count++)
         {
 
-            objects[count].transform.GetComponent<TrapBoulder>().active = true;
+            objects[count].transform.GetComponent<TrapBoulder>().Activate();
          //   if (object[count].transform.GetComponent<ActivateKey>().active == false)
            // {
            //     return;
