@@ -13,9 +13,8 @@ public class GateLever : MonoBehaviour {
 	}
 
 	public void PullLever(){
-		gate.GetComponent<Gate> ().ToggleGate ();
-		if (reversedGate != null)
-			reversedGate.GetComponent<Gate> ().ToggleGate ();
+		open = !open;
+		LiveLever();
 	}
 
 	private void LiveLever(){

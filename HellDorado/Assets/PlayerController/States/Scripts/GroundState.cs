@@ -25,7 +25,7 @@ public class GroundState : State {
 		UpdateJump ();
         CheckPlayerLife();
 		_controller.UpdateCrouch ();
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
+		if (Input.GetButtonDown("Fire1")) {
 			_controller.TransitionTo<StrikeState> ();
 		}
 	}
@@ -37,7 +37,7 @@ public class GroundState : State {
 	}
 
 	private void UpdateMovement() {
-		_controller.GetComponent<CharacterController>().Move(_controller.InputVector * _controller.MaxSpeed * Time.deltaTime);
+		_controller.GetComponent<CharacterController>().Move(_controller.InputVector * _controller.movementSpeed * Time.deltaTime);
 		_controller.Velocity.x = transform.GetComponent<CharacterController> ().velocity.x;
 		_controller.Velocity.z = transform.GetComponent<CharacterController> ().velocity.z;
 

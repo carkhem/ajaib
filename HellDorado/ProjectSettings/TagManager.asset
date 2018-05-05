@@ -16,6 +16,7 @@ TagManager:
   - Sword
   - Rope
   - FireBall
+  - Interactable
   layers:
   - Default
   - TransparentFX

@@ -5,10 +5,6 @@ using UnityEngine;
 public class Gate : MonoBehaviour {
 	public bool open = false;
 	private Animator anim;
-//	public enum DoorType{
-//		INSTANT, TIMED
-//	}
-//	public DoorType type;
 	private float timer = 0;
 	[HideInInspector]
 	public float delayTime = 0;
@@ -19,12 +15,6 @@ public class Gate : MonoBehaviour {
 	}
 
 	private void Update(){
-		//TEST
-//		if (open)
-//			animOpen (true);
-//		else
-//			animOpen (false);
-
 		if (delayTime > 0){
 			timer += Time.deltaTime;
 			if (timer > delayTime) {
@@ -33,7 +23,6 @@ public class Gate : MonoBehaviour {
 				timer = 0;
 			}
 		}
-
 	}
 
 	public void CloseGateDelayed(float seconds){

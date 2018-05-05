@@ -24,7 +24,7 @@ public class AirState : State {
 	}
 
 	public override void Update() {
-		Velocity += Vector3.down * _controller.Gravity * Time.deltaTime;
+		Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
 		if (Velocity.y < MinVelocityY)
 			_controller.Velocity.y = MinVelocityY;
 

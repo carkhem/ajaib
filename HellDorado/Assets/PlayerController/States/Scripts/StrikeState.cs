@@ -20,7 +20,7 @@ public class StrikeState : State {
 		_controller.UpdateCrouch ();
 
 		if (_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName ("SwordSwing 1")){
-			if (Input.GetKeyDown (KeyCode.Mouse0)) {
+			if (Input.GetButtonDown("Fire2")) {
 				_controller.rArmAnim.SetTrigger ("swing");
 			}
 		} else if (_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName("Idle")) {

@@ -7,13 +7,13 @@ public class PlayerController : Controller{
     private Vector3 input;
     private Vector3 drag;
     [Header("Movement")]
-    public float MaxSpeed = 10f;
-    public float Gravity = 100f;
+    public float maxSpeed = 10f;
+    public float gravity = 100f;
+	[HideInInspector]
+	public float movementSpeed;
     private float dashLength;
     private float after;
-    float a = 10;
-    private float CrouchSpeed = 2;
-    private float WalkingSpeed;
+	private float crouchSpeed = 2;
     private bool crouching = false;
 	public float dashCooldown;
 	private float dashTimer = 0;
@@ -22,6 +22,10 @@ public class PlayerController : Controller{
     [Header("Animation")]
 	public Animator lArmAnim;
 	public Animator rArmAnim;
+
+	void Start(){
+		movementSpeed = maxSpeed;
+	}
 
     public Vector3 InputVector
     {
@@ -43,7 +47,6 @@ public class PlayerController : Controller{
 			}
 		}
 		if ((Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0 || Input.GetAxisRaw ("Horizontal") != 0 && Input.GetAxisRaw ("Vertical") != 0) && ((Input.GetKeyDown(KeyCode.LeftAlt))  || (Input.GetKeyDown(KeyCode.X))) && canDash) {
-			Debug.Log ("DASH");
 			canDash = false;
 			TransitionTo<DashState> ();
 		}
@@ -63,22 +66,17 @@ public class PlayerController : Controller{
         }
     }
 
-    public void StopCrouch()
-    {
-        Debug.Log("nu sluta vi croucha");
+    public void StopCrouch(){
         crouching = false;
         GetComponent<CharacterController>().height = 2;
         GetComponent<PlayerStats>().sneaking = false;
-        MaxSpeed = WalkingSpeed;
+		movementSpeed = maxSpeed;
     }
 
-    private void Crouch()
-    {
-        WalkingSpeed = MaxSpeed;
-//        Debug.Log("nu crouchar vi");
+    private void Crouch(){
         crouching = true;
         GetComponent<CharacterController>().height = 1;
         GetComponent<PlayerStats>().sneaking = true;
-        MaxSpeed = CrouchSpeed;
+		movementSpeed = crouchSpeed;
     }
 }

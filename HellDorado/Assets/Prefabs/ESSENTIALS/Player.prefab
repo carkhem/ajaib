@@ -244,7 +244,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4015471661713908}
-  - component: {fileID: 114819065209335830}
   - component: {fileID: 114879916634385688}
   m_Layer: 9
   m_Name: CameraController
@@ -546,9 +545,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4752446678451178}
   - component: {fileID: 20976412351030574}
-  - component: {fileID: 111063273228637378}
   - component: {fileID: 124592035223716472}
   - component: {fileID: 81883828440679294}
+  - component: {fileID: 114208648859786586}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1780,20 +1779,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &111063273228637378
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708112897957844}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114082727700017434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1820,6 +1805,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordTime: 5
+--- !u!114 &114208648859786586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708112897957844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760efcb09ff28e640a7357f96a910088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingSpeed: 0.1
+  bobbingAmount: 0.02
+  midpoint: 0
 --- !u!114 &114243145775003912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1881,10 +1880,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  inCombat: 0
   regenSpeed: 5
   meleeDamage: 0
   sneaking: 0
+  inCombat: 0
   LevelMaxExp: 0
   playerExp: 0
   PlayerLevel: 0
@@ -1921,20 +1920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219411d986b2add4db0db038cd54493e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114819065209335830
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1300203794932032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760efcb09ff28e640a7357f96a910088, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobbingSpeed: 0.1
-  bobbingAmount: 0.05
-  midpoint: 0.8
 --- !u!114 &114879916634385688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1950,11 +1935,8 @@ MonoBehaviour:
   Sensitivity: 2
   Smoothing: 2
   yClamp:
-    Min: -45
-    Max: 45
-  xClamp:
-    Min: 0
-    Max: 0
+    Min: -80
+    Max: 80
   player: {fileID: 1445569227061950}
 --- !u!124 &124592035223716472
 Behaviour:

@@ -120,7 +120,7 @@ public class AbilityManager : MonoBehaviour {
 	private void FireFireball() {
         if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+			if (Input.GetButtonDown("Fire2"))
             {
                 print("Shooting");
                 Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);

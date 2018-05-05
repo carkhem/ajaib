@@ -1078,8 +1078,7 @@ MonoBehaviour:
   experienceProgress: {fileID: 114817071313609560}
   abilityContent: {fileID: 1424245741830410}
   rewindPanel: {fileID: 1786396751604818}
-  enemyHealthBar: {fileID: 0}
-  enemyHealthSlider: {fileID: 0}
+  enemyHealthSlider: {fileID: 114457193156781884}
   interactText: {fileID: 114457616774745594}
 --- !u!114 &114547530846287370
 MonoBehaviour:
