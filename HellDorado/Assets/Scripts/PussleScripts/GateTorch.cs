@@ -15,6 +15,7 @@ public class GateTorch : MonoBehaviour {
 	void Start(){
 		lightIntensity = fireLight.intensity;
 		fireLight.intensity = 0;
+		fire.Stop ();
 		source = GetComponent<AudioSource> ();
 		source.clip = TorchSound;
 		source.loop = true;

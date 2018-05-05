@@ -26,8 +26,10 @@ public class Interaction : MonoBehaviour
 		if (Physics.Raycast(ray, out hit, range) && (hit.collider.gameObject.CompareTag("Interactable"))){
 			if (interactableObject == null || interactableObject != hit.transform.GetComponent<InteractableObject> ()) {
 				interactableObject = hit.transform.GetComponent<InteractableObject> ();
-				originalMaterial = interactableObject.GetComponent<Renderer> ().material;
-				interactableObject.GetComponent<Renderer> ().material = highlightMaterial;
+				if (interactableObject.GetComponent<Renderer> () != null) {
+					originalMaterial = interactableObject.GetComponent<Renderer> ().material;
+					interactableObject.GetComponent<Renderer> ().material = highlightMaterial;
+				}
 			}
 			interactText.text = interactableObject.GetInteractionText ();
 			interactText.gameObject.SetActive (true);
@@ -36,7 +38,9 @@ public class Interaction : MonoBehaviour
 		} else {
 			interactText.gameObject.SetActive (false);
 			if (interactableObject != null) {
-				interactableObject.GetComponent<Renderer> ().material = originalMaterial;
+				if (interactableObject.GetComponent<Renderer> () != null) {
+					interactableObject.GetComponent<Renderer> ().material = originalMaterial;
+				}
 				interactableObject = null;
 			}
 		}

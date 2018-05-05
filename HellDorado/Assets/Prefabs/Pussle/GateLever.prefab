@@ -19,11 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4316187324916712}
-  - component: {fileID: 114767835664246354}
-  - component: {fileID: 65032753761096550}
   m_Layer: 0
   m_Name: GateLever
-  m_TagString: Lever
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +38,7 @@ GameObject:
   - component: {fileID: 65595810125166988}
   - component: {fileID: 23818440278424698}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,9 +55,11 @@ GameObject:
   - component: {fileID: 33409467538976078}
   - component: {fileID: 65430725838089370}
   - component: {fileID: 23277149464334804}
+  - component: {fileID: 114912829102701814}
+  - component: {fileID: 114730670012645504}
   m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
+  m_Name: LeverHandle
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,11 +71,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014201057357318}
   m_LocalRotation: {x: -0, y: 0.71568114, z: -0, w: 0.6984272}
-  m_LocalPosition: {x: -15.055, y: 0.17000002, z: -3.6}
+  m_LocalPosition: {x: -15.825001, y: -1.79, z: -7.13}
   m_LocalScale: {x: 0.5508142, y: 0.68851805, z: 0.55081445}
   m_Children:
-  - {fileID: 4508561244354550}
   - {fileID: 4571476335823312}
+  - {fileID: 4508561244354550}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 91.398, z: 0}
@@ -90,7 +90,7 @@ Transform:
   m_LocalScale: {x: 0.88000005, y: 0.616, z: 0.34475946}
   m_Children: []
   m_Father: {fileID: 4316187324916712}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4571476335823312
 Transform:
@@ -103,7 +103,7 @@ Transform:
   m_LocalScale: {x: 0.22000001, y: 1.386, z: 0.22}
   m_Children: []
   m_Father: {fileID: 4316187324916712}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.000002}
 --- !u!23 &23277149464334804
 MeshRenderer:
@@ -187,18 +187,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120983353817958}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65032753761096550
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1014201057357318}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1913438, y: 1.8469985, z: 0.9999999}
-  m_Center: {x: -0.09567218, y: 0.42349932, z: -1.6615229e-10}
 --- !u!65 &65430725838089370
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -209,7 +197,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3.54, y: 1.65, z: 3.81}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65595810125166988
 BoxCollider:
@@ -219,16 +207,44 @@ BoxCollider:
   m_GameObject: {fileID: 1120983353817958}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114767835664246354
+--- !u!114 &114730670012645504
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1014201057357318}
+  m_GameObject: {fileID: 1986242422788448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea0f067bbd453d4ba69f087e22f7e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressFTo: pull lever
+  Interaction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114912829102701814}
+        m_MethodName: PullLever
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114912829102701814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986242422788448}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6f01ef2e8a5f764ead7acb1439e5c87, type: 3}
