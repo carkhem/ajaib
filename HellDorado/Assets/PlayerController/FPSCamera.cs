@@ -11,37 +11,52 @@ public class FPSCamera : MonoBehaviour {
 	private Vector2 _smoothV;
 	public float Sensitivity = 5.0f;
 	public float Smoothing = 2.0f;
-	public MinMaxFloat mouseClamp;
-    public bool dead = false;
+	public MinMaxFloat yClamp;
+	public MinMaxFloat xClamp;
+	private MinMaxFloat currentYClamp;
+	private bool constrained;
 
-	GameObject Character;
+	public GameObject player;
 
 	void Awake(){
-		Character = this.transform.parent.gameObject;
+//		Character = this.transform.parent.gameObject;
+	}
+
+	void Start(){
+		currentYClamp = yClamp;
+		constrained = false;
 	}
 
 	void Update(){
-        if (!dead) { 
-        var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
+      	  var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
 
-		md = Vector2.Scale(md,new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
-		_smoothV.x = Mathf.Lerp (_smoothV.x, md.x, 1f / Smoothing);
-		_smoothV.y = Mathf.Lerp (_smoothV.y, md.y, 1f / Smoothing);
-		_mouseLook += _smoothV;
+			md = Vector2.Scale(md,new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
+			_smoothV.x = Mathf.Lerp (_smoothV.x, md.x, 1f / Smoothing);
+			_smoothV.y = Mathf.Lerp (_smoothV.y, md.y, 1f / Smoothing);
+			_mouseLook += _smoothV;
 
-		_mouseLook.y = Mathf.Clamp (_mouseLook.y, mouseClamp.Min, mouseClamp.Max);
+			_mouseLook.y = Mathf.Clamp (_mouseLook.y, currentYClamp.Min, currentYClamp.Max);
+			if (constrained)
+				_mouseLook.x = Mathf.Clamp (_mouseLook.x, xClamp.Min, xClamp.Max);
 
-		transform.localRotation = Quaternion.AngleAxis (-_mouseLook.y, Vector3.right);
-		Character.transform.localRotation = Quaternion.AngleAxis (_mouseLook.x, Character.transform.up);
+			transform.localRotation = Quaternion.AngleAxis (-_mouseLook.y, Vector3.right);
+			player.transform.localRotation = Quaternion.AngleAxis (_mouseLook.x, player.transform.up);
 
-		UpdateCursorLock ();
-        }
+			UpdateCursorLock ();
     }
 
-    public void SetDead(bool d)
-    {
-        dead = d;
-    }
+	public void SetConstraints(float minX, float maxX, float minY, float maxY){
+		currentYClamp.Min = minY;
+		currentYClamp.Max = maxY;
+		xClamp.Min = player.transform.eulerAngles.y + minX;
+		xClamp.Max = player.transform.eulerAngles.y + maxX;
+		constrained = true;
+	}
+
+	public void RemoveConstraints (){
+		currentYClamp = yClamp;
+		constrained = false;
+	}
 
 	public void UpdateCursorLock()
 	{

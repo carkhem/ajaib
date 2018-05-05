@@ -8,19 +8,19 @@ public class GameManager : MonoBehaviour {
 	public int playerLevel = 0;
 	public GameObject[] abilityDisplay;
     public GameObject abilityList;
-	private GameObject cam;
+	private GameObject cameraController;
     public GameObject player;
 
     void Awake(){
 		//DONTDESTROYONLOAD! Det är ett krav
 		instance = this;
-		cam = Camera.main.gameObject;
+		cameraController = Camera.main.transform.parent.gameObject;
 	}
 
 	void Start(){
-		for (int i = 1; i < playerLevel; i++) {
+		for (int i = 0; i < playerLevel; i++) {
 			if (abilityDisplay.Length > i)
-				CanvasManager.instance.AddAbility (abilityDisplay[i - 1]);
+				CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}
         player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
     }
@@ -44,11 +44,9 @@ public class GameManager : MonoBehaviour {
 	public void GameOver(){
         Time.timeScale = 0f;
         CanvasManager.instance.deathScreen.SetActive (true);
-        abilityList.SetActive(false);
+		CanvasManager.instance.abilityContent.transform.parent.gameObject.SetActive(false);
 		CanvasManager.instance.healthBar.SetActive (false);
-		cam.GetComponent<FPSCamera>().SetDead(true);
-     
-     
+		cameraController.GetComponent<FPSCamera>().SetConstraints(0, 0, 0, 0);
     } 
 
    
@@ -61,7 +59,7 @@ public class GameManager : MonoBehaviour {
         abilityList.SetActive(true);
         player.GetComponent<PlayerStats>().health = 100;
         CanvasManager.instance.deathScreen.SetActive(false);
-        cam.GetComponent<FPSCamera>().SetDead(false);
+		cameraController.GetComponent<FPSCamera>().RemoveConstraints();
         player.transform.position = spawnPosition;
 
     }

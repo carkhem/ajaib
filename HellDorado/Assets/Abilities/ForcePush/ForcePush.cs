@@ -26,23 +26,25 @@ public class ForcePush : MonoBehaviour {
 	}
 	
 	public void ForcePushObject(int forcePushCost){
-
+		print ("FORCE PUSH!");
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
-		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))) {
-			if (Input.GetKeyDown (KeyCode.Mouse1)) {
-                GetComponent<AbilitySounds>().PlayAbilitySound("Push");
-                rb = hit.collider.gameObject.GetComponent<Rigidbody> ();
-				rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-				rb.isKinematic = false;
-				force = true;
-				if (rb.velocity.sqrMagnitude < 0.01f) {
-					rb.AddForce (_controller.transform.forward * 500f);
-					GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
+		if ((Physics.Raycast (ray, out hit, 50f))) {
+			if (hit.collider.gameObject.tag == "Object") {
+				if (Input.GetKeyDown (KeyCode.Mouse1)) {
+					GetComponent<AbilitySounds> ().PlayAbilitySound ("Push");
+					rb = hit.collider.gameObject.GetComponent<Rigidbody> ();
+					rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+					rb.isKinematic = false;
+					force = true;
+					if (rb.velocity.sqrMagnitude < 0.01f) {
+						rb.AddForce (_controller.transform.forward * 500f);
+						GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
+					}
 				}
-					
-				
+			} else if (hit.transform.CompareTag ("Enemy")) {
+				hit.transform.GetComponent<EnemyController> ().TransitionTo<StunnedState> ();
 			}
 		}
 	}

@@ -24,6 +24,7 @@ public class GroundState : State {
 		_controller.CheckDash ();
 		UpdateJump ();
         CheckPlayerLife();
+		_controller.UpdateCrouch ();
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			_controller.TransitionTo<StrikeState> ();
 		}

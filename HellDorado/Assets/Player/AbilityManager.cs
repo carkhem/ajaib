@@ -48,7 +48,8 @@ public class AbilityManager : MonoBehaviour {
 			FireFireball ();
 			break;
 		case Ability.Push:
-			UseForcePush ();
+			if (Input.GetKeyDown(KeyCode.Mouse1))
+				UseForcePush ();
 			break;
 		case Ability.ObjectRewind:
 			UseRewindObject();
@@ -131,10 +132,9 @@ public class AbilityManager : MonoBehaviour {
 
 	private void UseForcePush(){
 		forcePush = GetComponent<ForcePush> ();
-        if (forcePush != null)
-        {
-            forcePush.ForcePushObject(forcePushCost);
-                
+        if (forcePush != null){
+			player.GetComponent<PlayerStats>().ChangeHealth(-forcePushCost);
+            forcePush.ForcePushObject(forcePushCost); 
         }
 	}
 

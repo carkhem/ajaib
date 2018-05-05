@@ -17,6 +17,7 @@ public class StrikeState : State {
 
 	public override void Update (){
 		_controller.CheckDash ();
+		_controller.UpdateCrouch ();
 
 		if (_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName ("SwordSwing 1")){
 			if (Input.GetKeyDown (KeyCode.Mouse0)) {

@@ -28,7 +28,6 @@ public class PlayerController : Controller{
         get
         {
             input = new Vector3(UnityEngine.Input.GetAxisRaw("Horizontal"), Velocity.y, UnityEngine.Input.GetAxisRaw("Vertical"));
-//          UpdateCrouch();
             float y = Camera.main.transform.rotation.eulerAngles.y;
             input = Quaternion.Euler(0f, y, 0f) * input;
             return input;
@@ -50,7 +49,7 @@ public class PlayerController : Controller{
 		}
     }
 
-    private void UpdateCrouch()
+	public void UpdateCrouch()
     {
         if (Input.GetButtonDown("Crouch"))
         {
