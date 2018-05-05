@@ -14,11 +14,12 @@ public class Sword : MonoBehaviour {
 
 	private void OnTriggerEnter (Collider col){
 		if (col.CompareTag ("Enemy") && swordType == SwordTypes.Firendly) {
-			if ((anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 1") || anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 1")) && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
+			if ((anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 1") || anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 2")) && (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.7f))
 				col.GetComponent<EnemyController> ().TakeDamage (PlayerStats.instance.meleeDamage);
 		}
 		if (col.CompareTag ("Player") && swordType == SwordTypes.Hostile) {
-			col.GetComponent<PlayerStats> ().ChangeHealth (-damage);
+//			if ((anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 1") || anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 1")) && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
+				col.GetComponent<PlayerStats> ().ChangeHealth (-damage);
 		}
 	}
 

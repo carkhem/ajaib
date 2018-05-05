@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: DashState
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
-  dashDuration: 0.2
-  xDashSpeed: 0.1
-  yDashSpeed: 0.1
+  dashDuration: 0.15
+  xDashSpeed: 0.2
+  yDashSpeed: 0.2

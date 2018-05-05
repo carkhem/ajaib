@@ -12,7 +12,7 @@ public class FPSCamera : MonoBehaviour {
 	public float Sensitivity = 5.0f;
 	public float Smoothing = 2.0f;
 	public MinMaxFloat yClamp;
-	public MinMaxFloat xClamp;
+	private MinMaxFloat xClamp;
 	private MinMaxFloat currentYClamp;
 	private bool constrained;
 

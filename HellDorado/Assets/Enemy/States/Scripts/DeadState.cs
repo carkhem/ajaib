@@ -19,6 +19,7 @@ public class DeadState : State {
 //		transform.eulerAngles = new Vector3 (90, transform.eulerAngles.y, transform.eulerAngles.z);
 		transform.GetComponent<NavMeshAgent> ().enabled = false;
 		transform.GetComponent<BoxCollider> ().enabled = false;
+		_controller.player.GetComponent<PlayerStats> ().RemoveEnemy (transform.gameObject);
 	}
 
 	public override void Update (){

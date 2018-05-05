@@ -13,7 +13,6 @@ public class PlayerStats : MonoBehaviour{
 	private Text healthProcent; //--- tog bara bort för jag vet inte var det passar in. Ta tillbaka om du vill
     public float health;
     public int maxHealth;
-    public bool inCombat;
     public float regenSpeed = 2f;
     private Slider healthSlider;
 
@@ -22,6 +21,8 @@ public class PlayerStats : MonoBehaviour{
 	private float damage;
 	private float sneakDamage;
     public bool sneaking = false;
+	private List<GameObject> enemies = new List<GameObject>();
+	public bool inCombat;
 
     [Header("PlayerLevel")]
     public float LevelMaxExp;
@@ -49,11 +50,16 @@ public class PlayerStats : MonoBehaviour{
     }
 
 
-    void Update()
-    {
-        
+    void Update(){
+		if (enemies.Count > 0) {
+			inCombat = true;
+			UpdateCombatFocus ();
+		} else {
+			inCombat = false;
+		}
+		
         healthSlider.value = Mathf.Lerp(healthSlider.value, (health / maxHealth), Time.deltaTime * regenSpeed);
-		if (!GetComponent<AbilityManager> ().isRewinding)
+		if (!GetComponent<AbilityManager> ().isRewinding && !inCombat)
 			RegenerateHealth ();
 		if (health == 0)
 		{
@@ -145,4 +151,24 @@ public class PlayerStats : MonoBehaviour{
             CanvasManager.instance.LevelUpPicture.SetActive(LevelIsUp);
         }
     }
+
+	public void AddEnemy(GameObject enemy){
+		enemies.Add (enemy);
+	}
+
+	public void RemoveEnemy(GameObject enemy){
+		enemies.Remove (enemy);
+		CanvasManager.instance.ExitEnemySlider ();
+	}
+
+	public void UpdateCombatFocus(){
+		RaycastHit hit;
+		if (Physics.Raycast (Camera.main.transform.position, Camera.main.transform.forward, out hit, 8)) {
+			if (hit.transform.CompareTag ("Enemy")) {
+				if (enemies.Contains (hit.transform.gameObject)) {
+					CanvasManager.instance.SetEnemySlider (hit.transform.gameObject);
+				}
+			}
+		}
+	}
 }

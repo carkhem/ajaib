@@ -24,6 +24,10 @@ public class CanvasManager : MonoBehaviour {
 	public GameObject abilityContent;
 	public GameObject rewindPanel;
 
+	[Header("Fighting")]
+	public Slider enemyHealthSlider;
+	private GameObject currentEnemy;
+
 	[Header("Interact")]
 	public Text interactText;
 
@@ -34,6 +38,13 @@ public class CanvasManager : MonoBehaviour {
 	void Start(){
 		rewindPanel.SetActive (false);
 		deathScreen.SetActive (false);
+		ExitEnemySlider ();
+	}
+
+	void Update(){
+		if (currentEnemy != null) {
+			enemyHealthSlider.value = currentEnemy.GetComponent<EnemyController> ().GetHealthPercentage ();
+		}
 	}
 
 	public void ChangeAbility(int currentAbility){
@@ -45,6 +56,15 @@ public class CanvasManager : MonoBehaviour {
 
 	public void AddAbility(GameObject abilityDisplayPrefab){
 		Instantiate (abilityDisplayPrefab, abilityContent.transform);
+	}
+
+	public void SetEnemySlider(GameObject enemy){
+		currentEnemy = enemy;
+		enemyHealthSlider.gameObject.SetActive (true);
+	}
+
+	public void ExitEnemySlider(){
+		enemyHealthSlider.gameObject.SetActive (false);
 	}
 
 }

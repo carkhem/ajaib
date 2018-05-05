@@ -2196,6 +2196,7 @@ MonoBehaviour:
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
   damage: 30
+  maxHealth: 100
   health: 100
   eyes: {fileID: 1182124741358420}
   offset: {x: 0, y: 0, z: 0}
@@ -2216,9 +2217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 95955984727920078}
   swordType: 1
-  damage: 10
+  damage: 20
 --- !u!137 &137521719073218362
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

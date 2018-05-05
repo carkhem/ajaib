@@ -7,6 +7,8 @@ using UnityEngine.AI;
 public class EnemyController : Controller {
 	[Header("Stats")]
 	public float damage;
+	public float maxHealth = 100;
+	[HideInInspector]
 	public float health;
 	[Header("Sight")]
 	public GameObject eyes;
@@ -23,6 +25,7 @@ public class EnemyController : Controller {
 
 	void Start(){
 		player = PlayerStats.instance.transform;
+		health = maxHealth;
 	}
 
 	public void CheckHealth(){
@@ -57,7 +60,7 @@ public class EnemyController : Controller {
 		if (health < 0)
 			TransitionTo<DeadState> ();
 		if (detection != 1) {
-			detection = 1;
+			DetectPlayer ();
 			TransitionTo <StunnedState> ();
 		}
 	}
@@ -82,8 +85,7 @@ public class EnemyController : Controller {
 			}
 		detection = detectionTimer / detectionSpeed;
 		if (detection >= 1) {
-			detection = 1;
-			detectionTimer = 0;
+			DetectPlayer ();
 			TransitionTo<CombatState> ();
 		}
 	}
@@ -106,6 +108,16 @@ public class EnemyController : Controller {
 
 	public void SetAnim(string boolName, bool condition){
 		anim.SetBool (boolName, condition);
+	}
+
+	public float GetHealthPercentage(){
+		return health / maxHealth;
+	}
+
+	public void DetectPlayer(){
+		detection = 1;
+		detectionTimer = 0;
+		player.GetComponent<PlayerStats> ().AddEnemy (gameObject);
 	}
 
 }
