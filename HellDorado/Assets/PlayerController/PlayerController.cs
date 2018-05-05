@@ -42,7 +42,7 @@ public class PlayerController : Controller{
 				dashTimer = 0;
 			}
 		}
-		if ((Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0 || Input.GetAxisRaw ("Horizontal") != 0 && Input.GetAxisRaw ("Vertical") != 0) && (Input.GetKeyDown(KeyCode.LeftAlt) && canDash)) {
+		if ((Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0 || Input.GetAxisRaw ("Horizontal") != 0 && Input.GetAxisRaw ("Vertical") != 0) && ((Input.GetKeyDown(KeyCode.LeftAlt))  || (Input.GetKeyDown(KeyCode.X))) && canDash) {
 			Debug.Log ("DASH");
 			canDash = false;
 			TransitionTo<DashState> ();

@@ -21,11 +21,6 @@ public class EnemyController : Controller {
 	[Header("Movement")]
 	public Animator anim;
 
-//	void Awake(){
-//		//Sätt player direkt! Typ: player = PlayerController.instance.transform;
-		//EDIT: det går inte att använda awake när man använder den här state machinen. Gör det i någons Initialize-funktion.
-//	}
-
 	void Start(){
 		player = PlayerStats.instance.transform;
 	}
@@ -57,12 +52,14 @@ public class EnemyController : Controller {
 	}
 
 	public void TakeDamage(float damage){
+		Debug.Log ("TAKE DAMAGE");
 		health -= damage;
-//		Debug.Log (health);
-		if (health > 0)
-			TransitionTo<StunnedState> ();
-		else
+		if (health < 0)
 			TransitionTo<DeadState> ();
+		if (detection != 1) {
+			detection = 1;
+			TransitionTo <StunnedState> ();
+		}
 	}
 
 	public void LookForPlayer(){

@@ -1806,6 +1806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95722458717943972}
+  swordType: 0
+  damage: 0
 --- !u!114 &114177090878064434
 MonoBehaviour:
   m_ObjectHideFlags: 1

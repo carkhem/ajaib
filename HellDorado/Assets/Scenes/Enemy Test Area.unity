@@ -276,6 +276,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 916919016}
+    - target: {fileID: 114870501714441728, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: swordType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870501714441728, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_IsPrefabParent: 0
@@ -317,6 +327,11 @@ Prefab:
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114082727700017434, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: swordType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}

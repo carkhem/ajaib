@@ -2217,6 +2217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  swordType: 1
+  damage: 10
 --- !u!137 &137521719073218362
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
