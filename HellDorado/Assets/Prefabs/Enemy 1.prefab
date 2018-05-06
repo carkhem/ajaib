@@ -2191,7 +2191,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f93e4451f95e034d82032c4ecb0fba7, type: 2}
   - {fileID: 11400000, guid: 9a325faaf8d69f14c984f045abb668af, type: 2}
   - {fileID: 11400000, guid: 3346cafe76a763a468dab06340958ea6, type: 2}
-  - {fileID: 11400000, guid: a1f1ca428951e674bb5d62d749a95d29, type: 2}
+  - {fileID: 11400000, guid: 547c606a1ca73f24cb981b560bfc8f34, type: 2}
   - {fileID: 11400000, guid: 9c643c2467c895c4dbd8cef5c4e1ba19, type: 2}
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
@@ -2206,6 +2206,8 @@ MonoBehaviour:
   detection: 0
   player: {fileID: 0}
   anim: {fileID: 95955984727920078}
+  recentState: 
+  recentHealth: 0
 --- !u!114 &114870501714441728
 MonoBehaviour:
   m_ObjectHideFlags: 1
