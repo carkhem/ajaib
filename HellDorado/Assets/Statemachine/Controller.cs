@@ -48,4 +48,5 @@ public abstract class Controller : MonoBehaviour
         CurrentState.Enter();
         if(runUpdate) CurrentState.Update();
     }
+		
 }

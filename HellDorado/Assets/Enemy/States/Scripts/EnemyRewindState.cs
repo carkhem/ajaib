@@ -12,14 +12,49 @@ public class EnemyRewindState : State {
 	}
 
 
-		
+	public override void Enter(){
+
+	}
 
 	public override void Update (){
+
+
+		//Temporärt. Får kolla hur mycket som behöver läggas på under rewind
+		_controller.health += 0.1f;
 		if (!TimeBody.isRewinding) {
 
-			//Vill gå tillbaka till föregående state här istället för alltid Idle
-			_controller.TransitionTo<PatrolState> ();
+			RecentState ();
 		}
 			
 	}
+
+	private void RecentState(){
+		switch (_controller.recentState) {
+		case "AttackState":
+			_controller.TransitionTo<AttackState>();
+			break;
+		case "CombatState":
+			_controller.TransitionTo<CombatState>();
+			break;
+		case "DeadState":
+			_controller.TransitionTo<DeadState>();
+			break;
+		case "IdleState":
+			_controller.TransitionTo<IdleState>();
+			break;
+		case "PatrolStat":
+			_controller.TransitionTo<PatrolState>();
+			break;
+		case "SearchingState":
+			_controller.TransitionTo<SearchingState>();
+			break;
+		case "StunnedState":
+			_controller.TransitionTo<StunnedState>();
+			break;
+			default:
+			_controller.TransitionTo<PatrolState>();
+			break;
+		}
+	}
+
 }

@@ -22,6 +22,10 @@ public class EnemyController : Controller {
 	public Transform player;
 	[Header("Movement")]
 	public Animator anim;
+	[HideInInspector]
+	public string recentState;
+	[HideInInspector]
+	public float recentHealth;
 
 	void Start(){
 		player = PlayerStats.instance.transform;

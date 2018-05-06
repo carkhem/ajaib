@@ -22,8 +22,13 @@ public class TimeBody : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		if (isRewinding) {
-			if (enemy != null)
+			if (enemy != null) {
+				enemy.recentHealth = enemy.health;
+
+				enemy.recentState = enemy.CurrentState.name;
+				Debug.Log (enemy.recentState + " recentstate");
 				enemy.TransitionTo<EnemyRewindState> ();
+			}
 			Rewind ();
 		} else {
 			Record ();
