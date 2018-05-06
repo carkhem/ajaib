@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f7647cca8b61e0848a07bb8dbc386ced
-timeCreated: 1524763093
+guid: 6eb4a58cf00ba2847a719720a0e59dfe
+timeCreated: 1525637162
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -51,7 +51,7 @@ ModelImporter:
     400040: Thumb_2
     400042: Thumb_3
     400044: Wrist
-    7400000: Fireball2
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -79,35 +79,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Fireball2
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 23
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

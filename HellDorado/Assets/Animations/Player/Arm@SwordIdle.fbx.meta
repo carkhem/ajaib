@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f7647cca8b61e0848a07bb8dbc386ced
-timeCreated: 1524763093
+guid: a55d717812470df4dbc15f7aa9445972
+timeCreated: 1525633675
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -51,7 +51,7 @@ ModelImporter:
     400040: Thumb_2
     400042: Thumb_3
     400044: Wrist
-    7400000: Fireball2
+    7400000: SwordIdle
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -81,10 +81,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Fireball2
+      name: SwordIdle
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 23
+      lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

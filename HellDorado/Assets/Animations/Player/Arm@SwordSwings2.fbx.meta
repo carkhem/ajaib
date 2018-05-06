@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f7647cca8b61e0848a07bb8dbc386ced
-timeCreated: 1524763093
+guid: 532e250c0870c2142abe7707401dfbdd
+timeCreated: 1525632683
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -51,7 +51,8 @@ ModelImporter:
     400040: Thumb_2
     400042: Thumb_3
     400044: Wrist
-    7400000: Fireball2
+    7400000: Swing 1
+    7400002: Swing 2
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -81,17 +82,45 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Fireball2
+      name: Swing 1
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 23
+      lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Swing 2
+      takeName: Take 001
+      firstFrame: 13
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
