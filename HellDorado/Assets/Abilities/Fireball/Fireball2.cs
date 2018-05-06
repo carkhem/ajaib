@@ -53,9 +53,9 @@ public class Fireball2 : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-        if(!col.gameObject.CompareTag("Player") && !col.gameObject.CompareTag("MainCamera")) {
+		if(!col.gameObject.CompareTag("Player") && !col.gameObject.CompareTag("MainCamera") && !col.gameObject.CompareTag("Sword")) {
             Explode();
-        } 
+        }
 	}
 
 	public float GetDamage(){
