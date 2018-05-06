@@ -61,7 +61,6 @@ public class PlayerStats : MonoBehaviour{
         healthSlider.value = Mathf.Lerp(healthSlider.value, (health / maxHealth), Time.deltaTime * regenSpeed);
         if (!TimeBody.isRewinding && !inCombat) {
             RegenerateHealth();
-            Debug.Log("regen");
             }
 		if (health == 0)
 		{

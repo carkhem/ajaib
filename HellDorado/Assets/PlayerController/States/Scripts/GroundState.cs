@@ -28,6 +28,7 @@ public class GroundState : State {
 		if (Input.GetButtonDown("Fire1")) {
 			_controller.TransitionTo<StrikeState> ();
 		}
+        _controller.sprintCheat();
 	}
 
 	private void UpdateJump() {

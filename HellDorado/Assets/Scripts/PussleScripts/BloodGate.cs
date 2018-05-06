@@ -12,10 +12,14 @@ public class BloodGate : MonoBehaviour {
 
 	public void OpenGate(){
 		foreach (GameObject g in bloodPodiums) {
-			if (!g.GetComponent<BloodPodium>().filled) {
-				GetComponent<Gate> ().CloseGate ();
-				return;
-			}
+            if (g != null)
+            {
+                if (!g.GetComponent<BloodPodium>().filled)
+                {
+                    GetComponent<Gate>().CloseGate();
+                    return;
+                }
+            }
 		}
 		GetComponent<Gate> ().OpenGate ();
 	}

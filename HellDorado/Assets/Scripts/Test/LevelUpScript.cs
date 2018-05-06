@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelUpScript : MonoBehaviour {
-    private float exp = 10;
+    private float exp = 100;
 	// Use this for initialization
 	void Start () {
 		
