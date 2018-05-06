@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 33363268247816576}
   - component: {fileID: 23483772024234602}
   - component: {fileID: 95044154425077628}
+  - component: {fileID: 136047622120446430}
   m_Layer: 0
   m_Name: Brazier
   m_TagString: Untagged
@@ -220,7 +221,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075095230207012}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60.188324, y: 3.166552e-16, z: 34.3}
+  m_LocalPosition: {x: 36.095, y: -0.12999988, z: -8.92}
   m_LocalScale: {x: 3.2794056, y: 3.279406, z: 3.279406}
   m_Children:
   - {fileID: 4669321509849670}
@@ -325,6 +326,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!136 &136047622120446430
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075095230207012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.57863003
+  m_Height: 0.4625961
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.23129804, z: 0.018024174}
 --- !u!198 &198089913490676124
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2906,7 +2920,7 @@ ParticleSystem:
   LightsModule:
     enabled: 0
     ratio: 0
-    light: {fileID: 108827055304560960, guid: 3964ae3c3c5b4af4680abc71ffa28f8d, type: 2}
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1
@@ -9628,7 +9642,7 @@ ParticleSystem:
   LightsModule:
     enabled: 0
     ratio: 1
-    light: {fileID: 108827055304560960, guid: 3964ae3c3c5b4af4680abc71ffa28f8d, type: 2}
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1
@@ -16350,7 +16364,7 @@ ParticleSystem:
   LightsModule:
     enabled: 0
     ratio: 1
-    light: {fileID: 108827055304560960, guid: 3964ae3c3c5b4af4680abc71ffa28f8d, type: 2}
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1

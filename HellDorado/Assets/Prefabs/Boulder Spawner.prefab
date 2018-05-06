@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTimer: 1
-  prefab: {fileID: 1747346246314740, guid: f280ed184aeb34f40ab24e2685872dd3, type: 2}
+  prefab: {fileID: 1699659370361680, guid: abb2514714aeeb24f8740c7c4cafdefa, type: 2}
   x: 10
   z: 10
   y: 10
