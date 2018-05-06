@@ -12,7 +12,8 @@ public class StrikeState : State {
 	}
 
 	public override void Enter (){
-		_controller.rArmAnim.SetTrigger ("swing");
+		_controller.rArmAnim.SetTrigger ("swing1");
+		_controller.rArmAnim.SetBool ("swing2", false);
 	}
 
 	public override void Update (){
@@ -20,10 +21,12 @@ public class StrikeState : State {
 		_controller.UpdateCrouch ();
 
 		if (_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName ("SwordSwing 1")){
-			if (Input.GetButtonDown("Fire2")) {
-				_controller.rArmAnim.SetTrigger ("swing");
+			Debug.Log ("SWING 1");
+			if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire1")) {
+				Debug.Log ("SWING 2");
+				_controller.rArmAnim.SetBool ("swing2", true);
 			}
-		} else if (_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName("Idle")) {
+		} else if (_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName("SwordIdle")) {
 			_controller.TransitionTo<GroundState> ();
 		}
 	}
