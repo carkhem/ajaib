@@ -136,16 +136,27 @@ public class AbilityManager : MonoBehaviour {
 
 	private void UseForcePush(){
 		forcePush = GetComponent<ForcePush> ();
-        if (forcePush != null){
-			player.GetComponent<PlayerStats>().ChangeHealth(-forcePushCost);
-            forcePush.ForcePushObject(forcePushCost); 
-        }
+		if (forcePush != null){
+			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+				player.GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
+				forcePush.ForcePushObject (); 
+			}
+		}
 	}
 
 	private void UseRewindObject(){
 		rewindObject = GetComponent<RewindObject> ();
-        if (rewindObject != null)
-            rewindObject.UseRewindObject (rewindCost);
-       
+		if (rewindObject != null) {
+			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+				player.GetComponent<PlayerStats> ().ChangeHealth (-objectRewindCost);
+				rewindObject.UseRewindObject ();
+			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {
+				if (rewindObject.HitInfo () != null) {
+					if(rewindObject.HitInfo ().GetComponent<ObjectTimeBody> ().isRewinding)
+						rewindObject.HitInfo ().GetComponent<ObjectTimeBody> ().StopRewind ();
+				}
+			}
+		}
+
 	}
 }
