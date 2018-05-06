@@ -10,7 +10,6 @@ public class Sword : MonoBehaviour {
 	}
 	public SwordTypes swordType = SwordTypes.Firendly;
 	public float damage = 20;
-//	public static bool extended;
 
 	private void OnTriggerEnter (Collider col){
 		if (col.CompareTag ("Enemy") && swordType == SwordTypes.Firendly) {
@@ -18,12 +17,9 @@ public class Sword : MonoBehaviour {
 				col.GetComponent<EnemyController> ().TakeDamage (PlayerStats.instance.meleeDamage);
 		}
 		if (col.CompareTag ("Player") && swordType == SwordTypes.Hostile) {
-//			if ((anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 1") || anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing 1")) && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0)
+			if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.1f && anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5f))
 				col.GetComponent<PlayerStats> ().ChangeHealth (-damage);
 		}
 	}
 
-//	public void SetExtended(bool ex){
-//		extended = ex;
-//	}
 }
