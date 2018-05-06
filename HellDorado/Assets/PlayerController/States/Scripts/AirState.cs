@@ -29,16 +29,13 @@ public class AirState : State {
 			_controller.Velocity.y = MinVelocityY;
 
 		_controller.GetComponent<CharacterController>().Move(Velocity * Time.deltaTime);
-        if (Input.GetButtonUp("Crouch"))
-        {
+        if (Input.GetButtonUp("Crouch")){
             _controller.GetComponent<PlayerController>().StopCrouch();
         }
 
         if (transform.GetComponent<CharacterController>().isGrounded){
 			_controller.TransitionTo<GroundState> ();
 		}
-
-
         //		UpdateRewind ();
     }
     

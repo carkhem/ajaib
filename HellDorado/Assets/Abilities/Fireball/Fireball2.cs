@@ -67,15 +67,11 @@ public class Fireball2 : MonoBehaviour {
 		RaycastHit hit;
 
 		if (Physics.Raycast (ray, out hit)) {
-			endPos = ray.GetPoint (50);
+			endPos = ray.GetPoint (200);
 			return endPos;
 		} else {
-			endPos = ray.GetPoint(50);
+			endPos = ray.GetPoint(200);
 			return endPos;
 		}
-
-
-
 	}
-
 }

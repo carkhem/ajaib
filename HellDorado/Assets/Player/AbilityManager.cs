@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AbilityManager : MonoBehaviour {
 
+	private Animator anim;
 	public enum Ability{
 		None, Rewind, Fireball, Push, ObjectRewind
 	}
@@ -30,11 +31,13 @@ public class AbilityManager : MonoBehaviour {
 	public int objectRewindCost;
 	private RewindObject rewindObject;
 
+
 	PlayerController _controller;
 
     void Start (){
 		_controller = GetComponent<PlayerController> ();
 		selectedAbility = Ability.None;
+		anim = GetComponent<PlayerController> ().lArmAnim;
 	}
 	
 	void Update (){
@@ -45,11 +48,16 @@ public class AbilityManager : MonoBehaviour {
 			UpdateRewind ();
 			break;
 		case Ability.Fireball:
-			FireFireball ();
+			if (Input.GetButtonDown ("Fire2")) {
+				FireFireball ();
+				anim.SetTrigger ("push");
+			}
 			break;
 		case Ability.Push:
-			if (Input.GetKeyDown(KeyCode.Mouse1))
+			if (Input.GetButtonDown("Fire2")) {
 				UseForcePush ();
+				anim.SetTrigger ("push");
+			}
 			break;
 		case Ability.ObjectRewind:
 			UseRewindObject();
@@ -59,8 +67,6 @@ public class AbilityManager : MonoBehaviour {
 		}
 
 	}
-		
-
 
     private void ChangeAbility(){
 		if (Input.GetKeyDown("1") && GameManager.instance.playerLevel >= 1){
@@ -124,23 +130,18 @@ public class AbilityManager : MonoBehaviour {
 	private void FireFireball() {
         if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
         {
-			if (Input.GetButtonDown("Fire2"))
-            {
-                print("Shooting");
-                Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
-                player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
-				GetComponent<AbilitySounds> ().PlayAbilitySound ("Fireball");
-            }
+            print("Shooting");
+            Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
+            player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
+			GetComponent<AbilitySounds> ().PlayAbilitySound ("Fireball");
         }
 	}
 
 	private void UseForcePush(){
 		forcePush = GetComponent<ForcePush> ();
 		if (forcePush != null){
-			if (Input.GetKeyDown (KeyCode.Mouse1)) {
-				player.GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
-				forcePush.ForcePushObject (); 
-			}
+			player.GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
+			forcePush.ForcePushObject (); 
 		}
 	}
 

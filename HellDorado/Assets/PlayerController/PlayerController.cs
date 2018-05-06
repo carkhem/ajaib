@@ -14,11 +14,12 @@ public class PlayerController : Controller{
     private float dashLength;
     private float after;
 	private float crouchSpeed = 2;
-    private bool crouching = false;
 	public float dashCooldown;
 	private float dashTimer = 0;
 	private bool canDash = true;
-    private int timesShift = 0;
+    
+	private float originalHeight;
+	private int timesShift = 0;
     private float shiftTimer = 0;
 
     [Header("Animation")]
@@ -54,29 +55,23 @@ public class PlayerController : Controller{
 		}
     }
 
-	public void UpdateCrouch()
-    {
-        if (Input.GetButtonDown("Crouch"))
-        {
-            if(!crouching)
+	public void UpdateCrouch(){
+        if (Input.GetButtonDown("Crouch")){
             Crouch();
         }
-        if (Input.GetButtonUp("Crouch"))
-        {
-            if (crouching)
-                StopCrouch();
+        if (Input.GetButtonUp("Crouch")){
+			StopCrouch();
         }
     }
 
     public void StopCrouch(){
-        crouching = false;
-        GetComponent<CharacterController>().height = 2;
+		GetComponent<CharacterController>().height = originalHeight;
         GetComponent<PlayerStats>().sneaking = false;
 		movementSpeed = maxSpeed;
     }
 
     private void Crouch(){
-        crouching = true;
+		originalHeight = GetComponent<CharacterController> ().height;
         GetComponent<CharacterController>().height = 1;
         GetComponent<PlayerStats>().sneaking = true;
 		movementSpeed = crouchSpeed;

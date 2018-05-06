@@ -2196,7 +2196,7 @@ MonoBehaviour:
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
   damage: 30
-  maxHealth: 100
+  maxHealth: 10
   health: 100
   eyes: {fileID: 1182124741358420}
   offset: {x: 0, y: 0, z: 0}

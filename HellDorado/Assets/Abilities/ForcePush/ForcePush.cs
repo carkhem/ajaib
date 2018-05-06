@@ -10,6 +10,7 @@ public class ForcePush : MonoBehaviour {
 	private PlayerController _controller;
 	private float timer = 0.05f;
 	private bool force = false;
+	public float range = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +31,7 @@ public class ForcePush : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
-		if ((Physics.Raycast (ray, out hit, 50f))) {
+		if ((Physics.Raycast (ray, out hit, range))) {
 			if (hit.collider.gameObject.tag == "Interactable") {
 				if (hit.collider.GetComponent<Rigidbody> () != null) {
 					GetComponent<AbilitySounds> ().PlayAbilitySound ("Push");
