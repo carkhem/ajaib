@@ -13,7 +13,7 @@ public class AbilityManager : MonoBehaviour {
 	[Header("Rewind")]
 	public bool isRewinding = false;
 	public float recordTime = 5f;
-	public float rewindCost = 1;
+	public float rewindCost = 20;
 	public static bool WorldRewind = false;
 
 	[Header("Fireball")]
@@ -91,15 +91,15 @@ public class AbilityManager : MonoBehaviour {
 
 	private void UpdateRewind() {
 		if (player.GetComponent<PlayerStats> ().health > 10) {
-			if (player.GetComponent<PlayerStats> ().health <= rewindCost)
-				TimeBody.isRewinding = false;
-			//	StopRewind ();
-
+            if (player.GetComponent<PlayerStats>().health <= rewindCost)
+            {
+                TimeBody.isRewinding = false;
+                //	StopRewind ();
+            }
 
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
 				FreezeTime.freezeTime = true;
 				TimeBody.isRewinding = true;
-				GetComponent<PlayerStats>().DamagePlayer(rewindCost);
 				CanvasManager.instance.rewindPanel.SetActive (true);
 				//StartRewind ();
 				_controller.TransitionTo<RewindState> ();
@@ -115,6 +115,10 @@ public class AbilityManager : MonoBehaviour {
 		} else {
 			TimeBody.isRewinding = false;
 		}
+        if(TimeBody.isRewinding == true)
+        {
+            GetComponent<PlayerStats>().DamagePlayer(rewindCost);
+        }
 	}
 
 	private void FireFireball() {

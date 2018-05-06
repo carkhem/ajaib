@@ -59,8 +59,10 @@ public class PlayerStats : MonoBehaviour{
 		}
 		
         healthSlider.value = Mathf.Lerp(healthSlider.value, (health / maxHealth), Time.deltaTime * regenSpeed);
-		if (!GetComponent<AbilityManager> ().isRewinding && !inCombat)
-			RegenerateHealth ();
+        if (!TimeBody.isRewinding && !inCombat) {
+            RegenerateHealth();
+            Debug.Log("regen");
+            }
 		if (health == 0)
 		{
 			GameManager.instance.GameOver();
@@ -107,7 +109,8 @@ public class PlayerStats : MonoBehaviour{
 	public void DamagePlayer(float damage) {
 		if (health - (damage * Time.deltaTime) > 0) {
 			print ("Killing");
-			health -= (damage * Time.deltaTime);
+			health -= damage * Time.deltaTime;
+            Debug.Log(health);
 		} else if (health - (damage * Time.deltaTime) < 0) {
 			print (health + " - " + damage + " = DIE");
 			health = 0;
