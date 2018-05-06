@@ -195,7 +195,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -275,8 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5f6ac355d4b2e42a6bd12090754984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 8
-  speed: 8
+  lifetime: 1.6
+  speed: 32
   maxDamage: 2
   minDamage: 1
   explosionPrefab: {fileID: 1813458027623866, guid: b781422fefc1c514b9234a387e3860fd,
