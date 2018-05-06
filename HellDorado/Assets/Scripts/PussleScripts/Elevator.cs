@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour {
 
-	public float Ystart;
-	public float Yend;
+	public float distance;
 	public float speed = 1f;
 
 	private Vector3 startPosition;
@@ -15,8 +14,8 @@ public class Elevator : MonoBehaviour {
 	private float journeyLenght;
 	// Use this for initialization
 	void Start () {
-		startPosition = new Vector3 (transform.position.x, Ystart, transform.position.z);
-		endPosition = new Vector3 (transform.position.x, Yend, transform.position.z);
+		startPosition = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+		endPosition = new Vector3 (transform.position.x, transform.position.y + distance, transform.position.z);
 	}
 	
 	// Update is called once per frame
@@ -26,13 +25,17 @@ public class Elevator : MonoBehaviour {
 			if (journeyLenght != 0) {
 				float distCovered = (Time.time - startTime) * speed;
 				float fracJourney = distCovered / journeyLenght;
-					transform.position = Vector3.Lerp (transform.position, endPosition, fracJourney);
+
+				transform.position = Vector3.Lerp (transform.position, endPosition, fracJourney);
+
 			}
 		} else {
 			if (journeyLenght != 0) {
 				float distCovered = (Time.time - startTime) * speed;
 				float fracJourney = distCovered / journeyLenght;
-					transform.position = Vector3.Lerp (transform.position, startPosition, fracJourney);
+
+				transform.position = Vector3.Lerp (transform.position, startPosition, fracJourney);
+
 			}
 		}
 

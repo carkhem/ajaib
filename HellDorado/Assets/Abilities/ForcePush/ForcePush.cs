@@ -25,14 +25,14 @@ public class ForcePush : MonoBehaviour {
 			
 	}
 	
-	public void ForcePushObject(int forcePushCost){
-		print ("FORCE PUSH!");
+	public void ForcePushObject(){
+
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
 		if ((Physics.Raycast (ray, out hit, 50f))) {
-			if (hit.collider.gameObject.tag == "Object") {
-				if (Input.GetKeyDown (KeyCode.Mouse1)) {
+			if (hit.collider.gameObject.tag == "Interactable") {
+				if (hit.collider.GetComponent<Rigidbody> () != null) {
 					GetComponent<AbilitySounds> ().PlayAbilitySound ("Push");
 					rb = hit.collider.gameObject.GetComponent<Rigidbody> ();
 					rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
@@ -40,7 +40,6 @@ public class ForcePush : MonoBehaviour {
 					force = true;
 					if (rb.velocity.sqrMagnitude < 0.01f) {
 						rb.AddForce (_controller.transform.forward * 500f);
-						GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
 					}
 				}
 			} else if (hit.transform.CompareTag ("Enemy")) {

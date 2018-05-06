@@ -5,33 +5,26 @@ using UnityEngine;
 public class RewindObject : MonoBehaviour {
 
 
-	ObjectTimeBody activeObject;
+
 	private GameObject activeGameobject;
 
-	void Update(){
-		if (Input.GetKeyUp (KeyCode.Mouse1)) {
-			if (activeObject != null && activeObject.isRewinding)
-				activeObject.StopRewind ();
-		}
-	}
 
-	public void UseRewindObject(float cost){
+
+	public void UseRewindObject(){
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
 
-		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Object"))) {
-			activeObject = hit.collider.gameObject.GetComponent<ObjectTimeBody> ();
-			if (Input.GetKeyDown (KeyCode.Mouse1)) {
-				hit.collider.gameObject.GetComponent<ObjectTimeBody>().StartRewind ();
-				GetComponent<PlayerStats> ().ChangeHealth (-cost);
+		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Interactable"))) {
+			if (hit.collider.GetComponent<ObjectTimeBody> () != null) {
+				activeGameobject = hit.collider.gameObject;
 				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StartRewind ();
-				GetComponent<PlayerStats> ().DamagePlayer (cost);
-
-			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {
-				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StopRewind ();
 			}
 		}
+	}
+
+	public GameObject HitInfo(){
+		return activeGameobject;
 	}
 
 
