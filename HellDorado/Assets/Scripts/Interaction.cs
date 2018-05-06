@@ -24,15 +24,18 @@ public class Interaction : MonoBehaviour
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, range) && (hit.collider.gameObject.CompareTag("Interactable"))){
-			if (interactableObject == null || interactableObject != hit.transform.GetComponent<InteractableObject> ()) {
-				interactableObject = hit.transform.GetComponent<InteractableObject> ();
-				if (interactableObject.GetComponent<Renderer> () != null) {
-					originalMaterial = interactableObject.GetComponent<Renderer> ().material;
-					interactableObject.GetComponent<Renderer> ().material = highlightMaterial;
-				}
-			}
-			interactText.text = interactableObject.GetInteractionText ();
-			interactText.gameObject.SetActive (true);
+            if (interactableObject != null || interactableObject != hit.transform.GetComponent<InteractableObject>())
+            {
+                interactableObject = hit.transform.GetComponent<InteractableObject>();
+                if (interactableObject.GetComponent<Renderer>() != null)
+                {
+                    originalMaterial = interactableObject.GetComponent<Renderer>().material;
+                    interactableObject.GetComponent<Renderer>().material = highlightMaterial;
+                }
+
+                interactText.text = interactableObject.GetInteractionText();
+                interactText.gameObject.SetActive(true);
+            }
 			if (Input.GetButtonDown ("Interact"))
 				interactableObject.Interact ();
 		} else {

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class PressurePlate : MonoBehaviour {
 
-	public string[] interactableTags = {"Player", "Object"};
+	public string[] interactableTags = {"Player", "Interactable"};
 	public UnityEvent OnPressureEnter;
 	public UnityEvent OnPressureExit;
 	private int objects = 0;

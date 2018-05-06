@@ -18,6 +18,8 @@ public class PlayerController : Controller{
 	public float dashCooldown;
 	private float dashTimer = 0;
 	private bool canDash = true;
+    private int timesShift = 0;
+    private float shiftTimer = 0;
 
     [Header("Animation")]
 	public Animator lArmAnim;
@@ -78,5 +80,31 @@ public class PlayerController : Controller{
         GetComponent<CharacterController>().height = 1;
         GetComponent<PlayerStats>().sneaking = true;
 		movementSpeed = crouchSpeed;
+    }
+
+    public void sprintCheat()
+    {
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            timesShift++;
+            movementSpeed = maxSpeed;
+
+            if (shiftTimer > 1.0f)
+            {
+                shiftTimer = 0;
+                timesShift = 0;
+            }
+            if(shiftTimer != 0 && timesShift >= 4)
+            {
+                movementSpeed = 20;
+                timesShift = 0;
+                shiftTimer = 0;
+            }
+        }
+
+        if(timesShift >=1)
+            shiftTimer += Time.fixedDeltaTime;
+
     }
 }

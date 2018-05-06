@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		for (int i = 0; i < playerLevel; i++) {
+		for (int i = 0; i <= playerLevel; i++) {
+            Debug.Log(playerLevel + " " + i);
 			if (abilityDisplay.Length > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}

@@ -6,9 +6,12 @@ public class TimeBody : MonoBehaviour {
 
 	public static bool isRewinding = false;
 
+	private bool enemyTransition = false;
+
 	public float recordTime = 5f;
     private float playerGravity;
-	List<PointInTime> pointsInTime;
+	private List<PointInTime> pointsInTime;
+	private List<string> enemyStates;
 
 	private EnemyController enemy;
 
@@ -17,20 +20,21 @@ public class TimeBody : MonoBehaviour {
 		pointsInTime = new List<PointInTime>();
      
 		enemy = GetComponent<EnemyController> ();
+		if (enemy != null)
+			enemyStates = new List<string> ();
 	}
 
 	void FixedUpdate ()
 	{
 		if (isRewinding) {
-			if (enemy != null) {
+			if (enemy != null && !enemyTransition) {
 				enemy.recentHealth = enemy.health;
-
-				enemy.recentState = enemy.CurrentState.name;
-				Debug.Log (enemy.recentState + " recentstate");
+				enemyTransition = true;
 				enemy.TransitionTo<EnemyRewindState> ();
 			}
 			Rewind ();
 		} else {
+			enemyTransition = false;
 			Record ();
 		}
 	}
@@ -43,6 +47,12 @@ public class TimeBody : MonoBehaviour {
             transform.position = pointInTime.position;
 			transform.rotation = pointInTime.rotation;
 			pointsInTime.RemoveAt(0);
+
+			if (enemy != null) {
+				string enemyRecentState = enemyStates [0];
+				enemy.recentState = enemyRecentState;
+				enemyStates.RemoveAt (0);
+			}
 		} else
 		{
 			TimeBody.isRewinding = false;
@@ -55,10 +65,21 @@ public class TimeBody : MonoBehaviour {
 	{
 		if (pointsInTime.Count > Mathf.Round(recordTime / Time.fixedDeltaTime))
 		{
+			if(enemy != null)
+				enemyStates.RemoveAt (enemyStates.Count - 1);
 			pointsInTime.RemoveAt(pointsInTime.Count - 1);
 		}
-
+		if(enemy != null)
+			enemyStates.Insert (0, EnemyRecentState ());
 		pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+	}
+
+	private string EnemyRecentState(){
+
+		enemy.recentState = enemy.CurrentState.name;
+		enemy.recentState = enemy.recentState.Remove (enemy.recentState.Length-7,7);
+		enemy.recentState.Trim ();
+		return enemy.recentState;
 	}
 
 	public void StartRewind ()
