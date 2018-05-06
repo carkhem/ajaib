@@ -17,7 +17,7 @@ public class Sword : MonoBehaviour {
 				col.GetComponent<EnemyController> ().TakeDamage (PlayerStats.instance.meleeDamage);
 		}
 		if (col.CompareTag ("Player") && swordType == SwordTypes.Hostile) {
-			if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.1f && anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.5f))
+			if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.1f && anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.6f))
 				col.GetComponent<PlayerStats> ().ChangeHealth (-damage);
 		}
 	}
