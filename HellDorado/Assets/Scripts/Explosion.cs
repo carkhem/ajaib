@@ -17,7 +17,11 @@ public class Explosion : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (!GetComponent<ParticleSystem> ().IsAlive() && !GetComponent<AudioSource>().isPlaying) {
+//		if (!GetComponent<ParticleSystem> ().IsAlive() && !GetComponent<AudioSource>().isPlaying) {
+//			Destroy (gameObject);
+//		}
+
+		if (GetComponent<ParticleSystem> ().time >= GetComponent<ParticleSystem> ().duration && !GetComponent<AudioSource>().isPlaying) {
 			Destroy (gameObject);
 		}
 	}
