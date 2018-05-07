@@ -15,7 +15,7 @@ public class RewindObject : MonoBehaviour {
 		RaycastHit hit;
 
 
-		if ((Physics.Raycast (ray, out hit, 50f) && (hit.collider.gameObject.tag == "Interactable"))) {
+		if ((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Interactable"))) {
 			if (hit.collider.GetComponent<ObjectTimeBody> () != null) {
 				activeGameobject = hit.collider.gameObject;
 				hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StartRewind ();

@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 33552567649685798}
   - component: {fileID: 23162806966274056}
   - component: {fileID: 95461232540133452}
-  - component: {fileID: 114457841497099352}
   - component: {fileID: 54477912771979162}
   - component: {fileID: 65338065889167400}
   - component: {fileID: 114268432722090668}
   - component: {fileID: 114392735509122984}
+  - component: {fileID: 114693358948523490}
   m_Layer: 0
   m_Name: Boulder1
   m_TagString: Boulder
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699659370361680}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.264111, y: 2.4273556e-16, z: -10.931838}
+  m_LocalPosition: {x: 46.26, y: 2.4273556e-16, z: 47.07}
   m_LocalScale: {x: 175, y: 175, z: 175}
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a35cb980a39ede4a9945f32f3010b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114457841497099352
+--- !u!114 &114693358948523490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -163,7 +163,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699659370361680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b55f8235e650a4390715758a18941d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8eccb7f3b2df3c148bb883e33341c566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagThatDestroys: Ground
+  ShatterEffect: {fileID: 1944288623258392, guid: 0cd42d66dd3b84742bc579298c7fc294,
+    type: 2}
