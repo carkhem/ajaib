@@ -8,6 +8,12 @@ public class Headbobber : MonoBehaviour
     public float bobbingSpeed = 0.18f;
     public float bobbingAmount = 0.2f;
     public float midpoint = 2.0f;
+	public Transform player;
+
+
+	void Start() {
+		player = PlayerStats.instance.transform;
+	}
 
     void Update()
     {
@@ -37,12 +43,12 @@ public class Headbobber : MonoBehaviour
             totalAxes = Mathf.Clamp(totalAxes, 0.0f, 1.0f);
             translateChange = totalAxes * translateChange;
             v3T.y = midpoint + translateChange;
+			player.GetComponent<PlayerSounds> ().PlayWalkSound ();
         }
         else
         {
             v3T.y = midpoint;
         }
         transform.localPosition = v3T;
-
     }
 }

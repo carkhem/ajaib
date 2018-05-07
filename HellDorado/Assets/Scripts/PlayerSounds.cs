@@ -11,6 +11,7 @@ public class PlayerSounds : MonoBehaviour {
 	public AudioClip dashSound;
 	public AudioClip[] takingDamageSounds;
 	public AudioClip[] jumpSounds;
+	public AudioClip[] walkingSounds;
 	public AudioClip keySound;
 
 	private int clipIndex;
@@ -61,5 +62,15 @@ public class PlayerSounds : MonoBehaviour {
 
 	public void PlayKeyPickUpSound(){
 		sources [3].PlayOneShot (keySound);
+	}
+
+	public void PlayWalkSound(){
+		clipIndex = Random.Range (1, walkingSounds.Length);
+		AudioClip clip = walkingSounds [clipIndex];
+		if (!sources [2].isPlaying) {
+			sources [2].PlayOneShot (clip);
+			walkingSounds [clipIndex] = walkingSounds [0];
+			walkingSounds [0] = clip;
+		}
 	}
 }
