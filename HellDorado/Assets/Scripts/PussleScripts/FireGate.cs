@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireGate : MonoBehaviour {
 	public GameObject[] torches;
+	private bool open;
 
 	void Update(){
 		OpenGate ();
@@ -12,10 +13,14 @@ public class FireGate : MonoBehaviour {
 	public void OpenGate(){
 		foreach (GameObject t in torches) {
 			if (!t.GetComponent<GateTorch> ().lit) {
-				GetComponent<Gate> ().CloseGate ();
+				if (open) {
+					GetComponent<Gate> ().CloseGate ();
+				}
 				return;
 			}
 		}
-		GetComponent<Gate> ().OpenGate ();
+		if (!open) {
+			GetComponent<Gate> ().OpenGate ();
+		}
 	}
 }
