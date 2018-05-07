@@ -26,11 +26,7 @@ public class StrikeState : State {
 		_controller.UpdateCrouch ();
 
 		if (_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName ("SwordSwing 1")){
-			Debug.Log ("SWING 1");
-
 			if (Input.GetButtonDown("Fire1")) {
-				Debug.Log ("SWING 2");
-
 				_controller.rArmAnim.SetBool ("swing2", true);
 				if (!_controller.rArmAnim.GetCurrentAnimatorStateInfo (0).IsName ("SwordSwing 2") && swing2) {
 					_controller.GetComponent<PlayerSounds> ().PlaySwordSwing ();
