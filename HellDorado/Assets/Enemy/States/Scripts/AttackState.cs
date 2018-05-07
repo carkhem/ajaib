@@ -21,7 +21,7 @@ public class AttackState : State {
 
 	public override void Enter (){
 		_controller.SetAnim ("attack", true);
-		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
+//		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 //		attackPos = _controller.player.position;
 		agent.speed = plungeSpeed;
 		timer = 0;

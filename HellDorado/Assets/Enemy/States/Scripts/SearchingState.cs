@@ -15,7 +15,7 @@ public class SearchingState : State {
 
 	public override void Enter (){
 		_controller.SetAnim ("search", true);
-		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
+//		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		timer = searchingTime;
 	}
 
