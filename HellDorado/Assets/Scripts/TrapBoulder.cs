@@ -24,18 +24,14 @@ public class TrapBoulder : MonoBehaviour {
             Fall();
 
     }
-
-    void OnMouseDown()
-    {
-        rigid.useGravity = true;
-    }
+		
 
     public void Fall()
     {
         fallDelay -= Time.deltaTime;
-        if (fallDelay < 0)
+        if (fallDelay <= 0)
         {
-            rigid.useGravity = true;
+			rigid.isKinematic = false;
             consumed = true;
 
         }
