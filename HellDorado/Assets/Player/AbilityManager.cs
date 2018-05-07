@@ -155,7 +155,8 @@ public class AbilityManager : MonoBehaviour {
 	private void UseRewindObject(){
 		rewindObject = GetComponent<RewindObject> ();
 		if (rewindObject != null) {
-			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+			rewindObject.UpdateFeedback ();
+			if (Input.GetButtonDown ("Fire2")) {
 				rewindObject.UseRewindObject ();
 				player.GetComponent<PlayerStats> ().ChangeHealth (-objectRewindCost);
 			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {

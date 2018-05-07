@@ -23,7 +23,7 @@ public class ObjectTimeBody : MonoBehaviour {
 		pointsInTime = new List<PointInTime>();
 		rb = GetComponent<Rigidbody>();
 		_controller = GetComponent<PlayerController> ();
-		abilitySounds = _controller.GetComponent<AbilitySounds>();
+//		abilitySounds = _controller.GetComponent<AbilitySounds>();
 
 	}
 

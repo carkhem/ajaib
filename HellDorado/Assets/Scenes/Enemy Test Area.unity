@@ -1579,6 +1579,7 @@ GameObject:
   - component: {fileID: 2008458837}
   - component: {fileID: 2008458843}
   - component: {fileID: 2008458842}
+  - component: {fileID: 2008458844}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Interactable
@@ -1697,3 +1698,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overridePushForce: 500
+--- !u!114 &2008458844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008458836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308222c10a3f402428d7ab99035bd0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRewinding: 0
+  recordTime: 5
