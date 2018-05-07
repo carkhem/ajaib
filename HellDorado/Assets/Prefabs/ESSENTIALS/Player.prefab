@@ -397,7 +397,6 @@ GameObject:
   - component: {fileID: 114362205852985014}
   - component: {fileID: 82075996703256658}
   - component: {fileID: 82521835657468312}
-  - component: {fileID: 114703742282385896}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2340,9 +2339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760efcb09ff28e640a7357f96a910088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingSpeed: 0.1
-  bobbingAmount: 0.02
+  bobbingSpeed: 0.2
+  bobbingAmount: 0.1
   midpoint: 0
+  player: {fileID: 0}
 --- !u!114 &114243145775003912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2392,7 +2392,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 959a866a41a4bdb4296a8baf5b53c876, type: 3}
   - {fileID: 8300000, guid: b0f4d14d0a5c47748bb67b7d81a03821, type: 3}
   - {fileID: 8300000, guid: a3f3183a3272a3941b96eadbba9d46f3, type: 3}
+  walkingSounds:
+  - {fileID: 8300000, guid: c615335190ea6744a9bf3e6616c5a6eb, type: 3}
+  - {fileID: 8300000, guid: 246e5d8e2d4de194397c314bb52809fd, type: 3}
   keySound: {fileID: 8300000, guid: f81ca4f67064b0248a860a2abdda06be, type: 3}
+  landingSound: {fileID: 0}
 --- !u!114 &114383441981491612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2455,22 +2459,6 @@ MonoBehaviour:
   LevelMaxExp: 0
   playerExp: 0
   PlayerLevel: 0
---- !u!114 &114703742282385896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1445569227061950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34b39c7302ea3242b5b5abb106b3b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  rewindClip: {fileID: 0}
-  fireClip: {fileID: 8300000, guid: f142482f474ba1c4ea90488ad91429e7, type: 3}
-  pushClip: {fileID: 8300000, guid: 9de07419424f4ff42acbc87a0c42c3cf, type: 3}
-  rewindObjectClip: {fileID: 0}
 --- !u!114 &114718242059653216
 MonoBehaviour:
   m_ObjectHideFlags: 1

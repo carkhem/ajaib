@@ -13,6 +13,7 @@ public class PlayerSounds : MonoBehaviour {
 	public AudioClip[] jumpSounds;
 	public AudioClip[] walkingSounds;
 	public AudioClip keySound;
+	public AudioClip landingSound;
 
 	private int clipIndex;
 
@@ -72,5 +73,9 @@ public class PlayerSounds : MonoBehaviour {
 			walkingSounds [clipIndex] = walkingSounds [0];
 			walkingSounds [0] = clip;
 		}
+	}
+
+	public void PlayLandingSound() {
+
 	}
 }
