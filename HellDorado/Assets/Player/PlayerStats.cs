@@ -109,7 +109,7 @@ public class PlayerStats : MonoBehaviour{
 
 	public void DamagePlayer(float damage) {
 		if (health - (damage * Time.deltaTime) > 0) {
-			print ("Killing");
+//			print ("Killing");
 			health -= damage * Time.deltaTime;
             //Debug.Log(health);
 		} else if (health - (damage * Time.deltaTime) < 0) {

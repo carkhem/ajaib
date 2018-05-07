@@ -16,13 +16,10 @@ public class FPSCamera : MonoBehaviour {
 	private MinMaxFloat currentYClamp;
 	private bool constrained;
 
-	public GameObject player;
-
-	void Awake(){
-//		Character = this.transform.parent.gameObject;
-	}
+	private GameObject player;
 
 	void Start(){
+		player = PlayerStats.instance.gameObject;
 		currentYClamp = yClamp;
 		constrained = false;
 	}
