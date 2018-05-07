@@ -245,6 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4015471661713908}
   - component: {fileID: 114879916634385688}
+  - component: {fileID: 114493531791294432}
   m_Layer: 9
   m_Name: CameraController
   m_TagString: Untagged
@@ -1031,8 +1032,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
-  m_LocalPosition: {x: 9.4, y: 17.49, z: 14.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.64, z: 6.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -1895,7 +1896,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1907,7 +1908,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1919,7 +1920,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82521835657468312
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1975,7 +1976,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1987,7 +1988,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1999,7 +2000,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82770318619254654
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2287,7 +2288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  distance: 2
+  distance: 5
 --- !u!114 &114356039716626932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2366,6 +2367,20 @@ MonoBehaviour:
   dashCooldown: 1
   lArmAnim: {fileID: 95542743222077180}
   rArmAnim: {fileID: 95722458717943972}
+--- !u!114 &114493531791294432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300203794932032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760efcb09ff28e640a7357f96a910088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingSpeed: 0.18
+  bobbingAmount: 0.2
+  midpoint: 1
 --- !u!114 &114652977690393738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2435,7 +2450,7 @@ MonoBehaviour:
   Sensitivity: 2
   Smoothing: 2
   yClamp:
-    Min: -80
+    Min: -90
     Max: 80
   player: {fileID: 1445569227061950}
 --- !u!124 &124592035223716472
