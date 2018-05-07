@@ -27,32 +27,50 @@ public class Fireball2 : MonoBehaviour {
 	
 	void Update () {
 		//Åk framåt i den hastighet vi vill.
-		//transform.Translate (transform.forward * speed * Time.deltaTime);
-		//GetComponent<Rigidbody>().velocity = transform.forward * speed;
-
-		transform.LookAt(endPos);
 		GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
 		//Minska damage över tid
 		timer += Time.deltaTime;
 		damage = Mathf.Lerp (maxDamage, minDamage, timer / lifetime);
 
-		//Förstör när livstiden är nådd.
+		//Sluta emitta när livstiden är nådd.
 		if (timer >= lifetime) {
-			Explode ();
+			StopEmitting();
+		}
+		DestroyIfDead ();
+	}
+
+	private void DestroyIfDead(){
+		for ( int i = 0; i < transform.childCount; i++){
+			if (transform.GetChild (i).GetComponent<ParticleSystem> ().IsAlive()) {
+				return;
+			}
+		}
+		if (!source.isPlaying)
+			GameObject.Destroy (gameObject);
+	}
+
+	private void StopEmitting(){
+		for ( int i = 0; i < transform.childCount; i++){
+			transform.GetChild (i).GetComponent<ParticleSystem> ().Stop ();
 		}
 	}
 
 	private void Explode(){
 		if (explosionPrefab != null)
-			//Instantiate (explosionPrefab, transform.position, transform.rotation);
-		//explosion.particleSystem.particleEmitter -- Sätt storleken på explosionen på nåt sätt.
+			StopEmitting();
 			source.PlayOneShot(explosion);
-			GameObject.Destroy (gameObject);
-        	GameObject.Destroy(Instantiate(explosionPrefab, transform.position, transform.rotation), 1.5f);
+        	Instantiate (explosionPrefab, transform.position, transform.rotation);
+	}
+
+	public void SetMaxDamage(float damage){
+		maxDamage = damage;
 	}
 
 	void OnCollisionEnter(Collision col){
+		if(col.gameObject.CompareTag("Enemy")) {
+			col.gameObject.GetComponent<EnemyController> ().TakeDamage (damage);
+		}
 		if(!col.gameObject.CompareTag("Player") && !col.gameObject.CompareTag("MainCamera") && !col.gameObject.CompareTag("Sword")) {
             Explode();
         }
