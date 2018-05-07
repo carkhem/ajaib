@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
@@ -49,7 +50,9 @@ public class GameManager : MonoBehaviour {
 		cameraController.GetComponent<FPSCamera>().SetConstraints(0, 0, 0, 0);
     } 
 
-   
+	public void ChangeLevel(string sceneName){
+		SceneManager.LoadScene (sceneName);
+	}
 
     public void Respawn()
     {
