@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionSound : MonoBehaviour {
+public class Explosion : MonoBehaviour {
 
 	public AudioClip[] explosionSounds;
 	public AudioSource source;
@@ -16,8 +16,9 @@ public class ExplosionSound : MonoBehaviour {
 		source.PlayOneShot(clip);
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		
+		if (!GetComponent<ParticleSystem> ().IsAlive() && !GetComponent<AudioSource>().isPlaying) {
+			Destroy (gameObject);
+		}
 	}
 }

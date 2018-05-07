@@ -739,7 +739,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 9a01d2b8a66458c4ebc0b2e83f748277, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 76fe4961e1e980941990026e7746710e, type: 2}
 --- !u!4 &751234650
 Transform:
   m_ObjectHideFlags: 0
@@ -1224,8 +1224,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1641554287}
   m_LocalRotation: {x: -0, y: -0.0000008791684, z: -0, w: 1}
-  m_LocalPosition: {x: 1.44, y: 1.26, z: 4.56}
-  m_LocalScale: {x: 0.51544, y: 4.14651, z: 6.7532406}
+  m_LocalPosition: {x: 1.65, y: 1.26, z: 4.02}
+  m_LocalScale: {x: 0.51544, y: 4.14651, z: 5.0146084}
   m_Children: []
   m_Father: {fileID: 1789499077}
   m_RootOrder: 7
@@ -1696,3 +1696,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654ed7b17db997448b02f4b696d18da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overridePushForce: 0

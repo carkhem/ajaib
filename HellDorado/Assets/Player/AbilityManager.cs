@@ -22,6 +22,7 @@ public class AbilityManager : MonoBehaviour {
 	public Transform fireballSpawn;
 	public GameObject player;
 	public int fireCost;
+	public float fireballDamage = 3;
 
 	[Header("ForcePush")]
 	public int forcePushCost;
@@ -131,7 +132,8 @@ public class AbilityManager : MonoBehaviour {
         if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
         {
             print("Shooting");
-            Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
+            GameObject ball = Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
+			ball.GetComponent<Fireball2> ().SetMaxDamage (fireballDamage);
             player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
 			GetComponent<AbilitySounds> ().PlayAbilitySound ("Fireball");
         }
