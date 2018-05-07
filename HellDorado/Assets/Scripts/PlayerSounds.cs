@@ -29,6 +29,10 @@ public class PlayerSounds : MonoBehaviour {
 		
 	}
 
+	public void PlayDeathSound(){
+		sources[0].PlayOneShot (deathSound);
+	}
+
 	public void PlaySwordSwing(){
 		sources[0].PlayOneShot (swordSwing);
 	}
@@ -37,25 +41,17 @@ public class PlayerSounds : MonoBehaviour {
 		sources[1].PlayOneShot (dashSound);
 	}
 
-//	public void StopPlayAudio(){
-//		source.Stop ();
-//	}
-
-	public void TakingDamgeSound(){
+	public void TakingDamageSound(){
 		if (!sources[3].isPlaying) 
 			clipIndex = Random.Range (0, takingDamageSounds.Length);
 			AudioClip clip = takingDamageSounds [clipIndex];
 			sources[3].PlayOneShot (clip);
 	}
 
-	public void PlayDeathSound(){
-		sources[0].PlayOneShot (deathSound);
-	}
-
 	public void PlayJumpSound (){
 			clipIndex = Random.Range (1, jumpSounds.Length);
 			AudioClip clip = jumpSounds [clipIndex];
-			sources[2].PlayOneShot (clip);
+			sources[4].PlayOneShot (clip);
 			jumpSounds [clipIndex] = jumpSounds [0];
 			jumpSounds [0] = clip;
 	}
@@ -79,7 +75,11 @@ public class PlayerSounds : MonoBehaviour {
 		}
 	}
 
+	public void StopPlayWalkingSound(){
+		sources[2].Stop ();
+	}
+
 	public void PlayLandingSound() {
-		sources [0].PlayOneShot (landingSound);
+		sources [1].PlayOneShot (landingSound);
 	}
 }

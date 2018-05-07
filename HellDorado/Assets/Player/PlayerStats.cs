@@ -90,7 +90,7 @@ public class PlayerStats : MonoBehaviour{
 	public void ChangeHealth(float ammount){
         
 		if(ammount < 0) {
-			GetComponent<PlayerSounds> ().TakingDamgeSound ();
+			GetComponent<PlayerSounds> ().TakingDamageSound ();
 			if (health + ammount > maxHealth)
 				health = maxHealth;
 			else if (health + ammount < 0)
