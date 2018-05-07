@@ -24,6 +24,8 @@ public class PlayerController : Controller{
 	public Animator lArmAnim;
 	public Animator rArmAnim;
 
+	private CharacterController charController;
+
 	void Start(){
 		movementSpeed = maxSpeed;
 	}
@@ -74,6 +76,7 @@ public class PlayerController : Controller{
         GetComponent<PlayerStats>().sneaking = true;
 		movementSpeed = crouchSpeed;
     }
+
 
     public void sprintCheat()
     {

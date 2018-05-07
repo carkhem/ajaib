@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
 
+	public AudioClip doorSound;
+	private AudioSource source;
 	private Animator anim;
 	private bool open;
 	public GameObject[] keys;
 
 	void Awake(){
 		anim = GetComponent<Animator> ();
+		source = GetComponent<AudioSource> ();
 	}
 
 	public void ToggleDoor(){
@@ -28,11 +31,16 @@ public class Door : MonoBehaviour {
 		}
 		anim.SetBool ("open", true);
 		open = true;
+		PlayDoorSound ();
 	}
 
 	public void CloseDoor(){
 		anim.SetBool ("open", false);
 		open = false;
+		PlayDoorSound ();
 	}
 
+	public void PlayDoorSound(){
+		source.PlayOneShot (doorSound);
+	}
 }

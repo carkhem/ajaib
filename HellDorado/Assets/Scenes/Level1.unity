@@ -12853,6 +12853,11 @@ Prefab:
       propertyPath: keys.Array.data[0]
       value: 
       objectReference: {fileID: 1455029061}
+    - target: {fileID: 114939019942717686, guid: 6d6cdba8799d20d449f343c9b1e872c1,
+        type: 2}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 99314ab3b53cbb3408821e2fc78a5df7, type: 3}
     m_RemovedComponents:
     - {fileID: 65183905824469622, guid: 6d6cdba8799d20d449f343c9b1e872c1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6d6cdba8799d20d449f343c9b1e872c1, type: 2}
