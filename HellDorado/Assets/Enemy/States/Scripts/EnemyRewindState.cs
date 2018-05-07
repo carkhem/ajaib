@@ -46,7 +46,7 @@ public class EnemyRewindState : State {
 			Debug.Log ("4");
 			_controller.TransitionTo<IdleState>();
 			break;
-		case "PatrolStat":
+		case "PatrolState":
 			Debug.Log ("5");
 			_controller.TransitionTo<PatrolState> ();
 			break;
