@@ -16,6 +16,7 @@ public class PushableObject : MonoBehaviour {
 		} else {
 			this.force = force;
 		}
-		GetComponent<Rigidbody>().AddForce (Quaternion.AngleAxis(transform.eulerAngles.y + angle, Vector3.up) * Vector3.forward * force);
+		print (force);
+		GetComponent<Rigidbody>().AddForce (Quaternion.AngleAxis(transform.eulerAngles.y + angle, Vector3.up) * Vector3.forward * this.force);
 	}
 }

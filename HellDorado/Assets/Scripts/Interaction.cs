@@ -12,11 +12,8 @@ public class Interaction : MonoBehaviour
 	private Material originalMaterial;
 	public Material highlightMaterial;
 
-//	public string matName;
-
     void Start(){
 		interactText = CanvasManager.instance.interactText;
-//		matName = highlightMaterial.name;
     }
 
     void Update(){
@@ -27,8 +24,7 @@ public class Interaction : MonoBehaviour
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, range) && (hit.collider.gameObject.CompareTag("Interactable"))){
-            if (interactableObject != null || interactableObject != hit.transform.GetComponent<InteractableObject>())
-            {
+            if (interactableObject != null || interactableObject != hit.transform.GetComponent<InteractableObject>()){
                 interactableObject = hit.transform.GetComponent<InteractableObject>();
 
 				if (interactableObject.GetComponent<Renderer>() != null && interactableObject.GetComponent<Renderer>().sharedMaterial != highlightMaterial){

@@ -11,7 +11,7 @@ public class ForcePush : MonoBehaviour {
 	private float timer = 0.05f;
 	private bool force = false;
 	public float range = 2f;
-	public float distance = 2f;
+	public float pushForce = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -40,16 +40,12 @@ public class ForcePush : MonoBehaviour {
 					rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 					rb.isKinematic = false;
 					force = true;
-					hit.transform.GetComponent<PushableObject> ().Push (_controller.transform.eulerAngles.y, distance);
+					hit.transform.GetComponent<PushableObject> ().Push (_controller.transform.eulerAngles.y, pushForce);
 				}
 			} else if (hit.transform.CompareTag ("Enemy")) {
 				hit.transform.GetComponent<EnemyController> ().TransitionTo<StunnedState> ();
 			}
 		}
-	}
-
-	void ForcePushEnemy(){
-		
 	}
 
 	void TimerRigidbodyConstraints(){
