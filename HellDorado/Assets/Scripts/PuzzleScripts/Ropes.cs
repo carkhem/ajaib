@@ -20,7 +20,7 @@ public class Ropes : MonoBehaviour {
 
 		if (coll.gameObject.tag == "FireBall") {
 			bridge.counter += 1;
-			Debug.Log ("hej");
+			Debug.Log ("Burn rope");
 			Destroy (this.gameObject);
 		}
 	}

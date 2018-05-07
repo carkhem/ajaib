@@ -62,7 +62,7 @@ public class EnemyController : Controller {
 	}
 
 	public void TakeDamage(float damage){
-		Debug.Log ("TAKE DAMAGE");
+//		Debug.Log ("TAKE DAMAGE");
 		health -= damage;
         if (health < 0)
         {
