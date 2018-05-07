@@ -1160,11 +1160,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: walkingSounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.93
@@ -1197,28 +1192,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114208648859786586, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: bobbingAmount
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114208648859786586, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: bobbingSpeed
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
         type: 2}
-      propertyPath: walkingSounds.Array.data[0]
+      propertyPath: landingSound
       value: 
-      objectReference: {fileID: 8300000, guid: c615335190ea6744a9bf3e6616c5a6eb, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: walkingSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 246e5d8e2d4de194397c314bb52809fd, type: 3}
-    m_RemovedComponents:
-    - {fileID: 114703742282385896, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
+      objectReference: {fileID: 8300000, guid: 73447ed3c02a6504e96a525cfe276cd7, type: 3}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &923298886

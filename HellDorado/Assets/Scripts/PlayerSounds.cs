@@ -24,8 +24,7 @@ public class PlayerSounds : MonoBehaviour {
 //		sources [2].clip = jumpSounds;
 //		sources [3].clip = takingDamageSounds;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
@@ -69,6 +68,11 @@ public class PlayerSounds : MonoBehaviour {
 		clipIndex = Random.Range (1, walkingSounds.Length);
 		AudioClip clip = walkingSounds [clipIndex];
 		if (!sources [2].isPlaying) {
+			if (gameObject.GetComponent<PlayerStats>().sneaking)
+				sources[2].pitch = 0.8f;
+			else
+				sources[2].pitch = 1.1f;
+
 			sources [2].PlayOneShot (clip);
 			walkingSounds [clipIndex] = walkingSounds [0];
 			walkingSounds [0] = clip;
@@ -76,6 +80,6 @@ public class PlayerSounds : MonoBehaviour {
 	}
 
 	public void PlayLandingSound() {
-
+		sources [0].PlayOneShot (landingSound);
 	}
 }
