@@ -1031,8 +1031,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
-  m_LocalPosition: {x: 9.4, y: 17.49, z: 14.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.64, z: 6.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -1659,9 +1659,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 43c55afb42083fd428925f8b49889599, type: 3}
-  - {fileID: 2100002, guid: 43c55afb42083fd428925f8b49889599, type: 3}
-  - {fileID: 2100004, guid: 43c55afb42083fd428925f8b49889599, type: 3}
+  - {fileID: 2100000, guid: b181c7f0ea2cdf84f91bb38670a5c26a, type: 2}
+  - {fileID: 2100000, guid: 7a47c02a7204f2a4da5d3e629ab26183, type: 2}
+  - {fileID: 2100000, guid: 5adec7d7394bd1347b88606a277e64b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2287,7 +2287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  distance: 2
+  pushForce: 2
 --- !u!114 &114356039716626932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2420,6 +2420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219411d986b2add4db0db038cd54493e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionIcon: {fileID: 1665534845075062, guid: d77a70762f243644ba3b2eac9ec4ed3a,
+    type: 2}
 --- !u!114 &114879916634385688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2435,7 +2437,7 @@ MonoBehaviour:
   Sensitivity: 2
   Smoothing: 2
   yClamp:
-    Min: -80
+    Min: -90
     Max: 80
   player: {fileID: 1445569227061950}
 --- !u!124 &124592035223716472

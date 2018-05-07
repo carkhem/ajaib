@@ -23,10 +23,12 @@ public class RewindObject : MonoBehaviour {
 		RaycastHit hit;
 
 		if ((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Interactable")) && hit.collider.GetComponent<ObjectTimeBody> () != null) {
-			if (currentIcon == null) {
-				currentIcon = GameObject.Instantiate (interactionIcon, new Vector3 (hit.transform.position.x, hit.transform.position.y + 1, hit.transform.position.z), Quaternion.LookRotation(Camera.main.transform.position - hit.transform.position));
-			} else {
-				currentIcon.GetComponent<InteractionIcon> ().KeepAlive ();
+			if (!Input.GetButton ("Fire2")){
+				if (currentIcon == null) {
+				currentIcon = GameObject.Instantiate (interactionIcon, new Vector3 (hit.transform.position.x, hit.transform.position.y + 1, hit.transform.position.z), Quaternion.LookRotation (Camera.main.transform.position - hit.transform.position));
+				} else {
+					currentIcon.GetComponent<InteractionIcon> ().KeepAlive ();
+				}
 			}
 		} else {
 			Destroy (currentIcon);

@@ -199,27 +199,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114388339974472154, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: Velocity.y
-      value: -1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114879916634385688, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: yClamp.Min
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 114243145775003912, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: distance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114773680334390078, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: interactionIcon
-      value: 
-      objectReference: {fileID: 1665534845075062, guid: d77a70762f243644ba3b2eac9ec4ed3a,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
