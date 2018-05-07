@@ -28,7 +28,7 @@ public class CombatState : State {
 
 	public override void Enter (){
 		_controller.SetAnim ("activeIdle", true);
-//		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
 		attackTimer = 0;
 		rotTimer = 0;
