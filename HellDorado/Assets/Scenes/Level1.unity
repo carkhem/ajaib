@@ -980,7 +980,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: 1
   delayTime: 0
-  gateSound: {fileID: 0}
 --- !u!4 &111120453
 Transform:
   m_ObjectHideFlags: 0
@@ -2292,40 +2291,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114440075515642452, guid: 48455e0f267dfb745baee19c9792e40e,
+    - target: {fileID: 65235657621661348, guid: 48455e0f267dfb745baee19c9792e40e,
         type: 2}
-      propertyPath: gateSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 01d9eaa32016cf04c9cce525fd9e30bf, type: 3}
-    - target: {fileID: 82784905535037054, guid: 48455e0f267dfb745baee19c9792e40e,
-        type: 2}
-      propertyPath: panLevelCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82784905535037054, guid: 48455e0f267dfb745baee19c9792e40e,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82784905535037054, guid: 48455e0f267dfb745baee19c9792e40e,
-        type: 2}
-      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82784905535037054, guid: 48455e0f267dfb745baee19c9792e40e,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82784905535037054, guid: 48455e0f267dfb745baee19c9792e40e,
-        type: 2}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82784905535037054, guid: 48455e0f267dfb745baee19c9792e40e,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
@@ -4159,16 +4128,6 @@ Prefab:
       propertyPath: reversedGate
       value: 
       objectReference: {fileID: 111120451}
-    - target: {fileID: 114912829102701814, guid: 16d3f24fa23751c45912f1e1369b819c,
-        type: 2}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 1508623138}
-    - target: {fileID: 114912829102701814, guid: 16d3f24fa23751c45912f1e1369b819c,
-        type: 2}
-      propertyPath: leverSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6aa5b1393c08abc4e9748bb1d3a613dd, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16d3f24fa23751c45912f1e1369b819c, type: 2}
   m_IsPrefabParent: 0
