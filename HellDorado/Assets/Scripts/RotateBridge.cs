@@ -18,7 +18,7 @@ public class RotateBridge : MonoBehaviour {
 		
 	}
 
-    private void OnMouseDown()
+    public void ActivateBridge()
     {
         if (active == false)
         {
