@@ -46,7 +46,7 @@ public class PlayerStats : MonoBehaviour{
         healthProcent.text = health + "%";
         experienceSlider = CanvasManager.instance.experienceSlider;
         experienceProgress = CanvasManager.instance.experienceProgress;
-        playerLevelText = CanvasManager.instance.PlayerLevelText;
+//        playerLevelText = CanvasManager.instance.playerLevelText;
         PlayerLevel = 1;
         playerExp = 0;
     }
@@ -104,7 +104,8 @@ public class PlayerStats : MonoBehaviour{
 
     public void playerLevelUi()
     {
-        playerLevelText.text = "Level: " + PlayerLevel;
+//        playerLevelText.text = "Level: " + PlayerLevel;
+		CanvasManager.instance.playerLevelText.text = "Level: " + PlayerLevel;
     }
 
     private void RegenerateHealth() {
