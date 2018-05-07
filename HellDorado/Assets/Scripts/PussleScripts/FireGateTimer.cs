@@ -31,7 +31,6 @@ public class FireGateTimer : MonoBehaviour {
 				t.GetComponent<GateTorchTimer> ().lit = true;
 				Debug.Log ("keepLit");
 			}
-
 		}
 	}
 }
