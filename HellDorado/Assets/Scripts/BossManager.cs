@@ -10,7 +10,8 @@ public class BossManager : MonoBehaviour {
     public GameObject boulderSpawner;
     public float spawnTimer;
     public GameObject player;
-    public bool ressing;
+    private bool ressing;
+    public GameObject fireBallShooter;
 
 
     // Use this for initialization
@@ -82,15 +83,15 @@ public class BossManager : MonoBehaviour {
                 case 1:
                     RestorePlayerHealth();
                     ReviveMinions();
-                    //Börja kasta eldbollar
-                    break;
+                    fireBallShooter.SetActive(true);
+                break;
                 case 2:
                     RestorePlayerHealth();
                     ReviveMinions();
                     boulderSpawner.SetActive(true);
                     break;
                 case 3:
-                    //sluta kasta eldbollar
+                    fireBallShooter.SetActive(false);
                     boulderSpawner.SetActive(false);
                     Die();
                     break;

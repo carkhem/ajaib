@@ -22,13 +22,24 @@ public class GameManager : MonoBehaviour {
 	void Start(){
         if (playerLevel > MaxLevel)
             playerLevel = MaxLevel;
-		for (int i = 0; i <= playerLevel; i++) {
+		for (int i = 0; i < playerLevel; i++) {
 			if (abilityDisplay.Length > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}
         player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
         player.GetComponent<PlayerStats>().playerLevelUi();
     }
+
+	public void ChangePlayerLevel(int newLevel){
+		if (playerLevel < MaxLevel) {
+			playerLevel = newLevel;
+			player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
+			player.GetComponent<PlayerStats>().updateExperienceProgress(true);
+			if (abilityDisplay.Length >= playerLevel)
+				CanvasManager.instance.AddAbility(abilityDisplay[playerLevel]);
+			player.GetComponent<PlayerStats>().playerLevelUi();
+		}
+	}
 
 	public void LevelUp(){
         if (playerLevel < MaxLevel)
