@@ -8,6 +8,7 @@ public class GateTorchTimer : MonoBehaviour {
 	public ParticleSystem fire;
 	public Light fireLight;
 	public float timer = 3f;
+	public FireGateTimer gate;
 	private float originalTime;
 	private float lightIntensity;
 
@@ -22,13 +23,14 @@ public class GateTorchTimer : MonoBehaviour {
 		if (!TimeBody.isRewinding && lit) {
 			timer -= Time.deltaTime;
 		}
-		if (timer <= 0f)
-			PutOut ();
+
+		if (timer <= 0)
+			lit = false;
 
 	
 		if (lit && !fire.isPlaying)
 			Light ();
-		else if (!lit && fire.isPlaying)
+		else if (!lit && fire.isPlaying && !gate.bothTorchesLit)
 			PutOut ();
 
 	}

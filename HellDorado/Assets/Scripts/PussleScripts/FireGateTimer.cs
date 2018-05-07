@@ -5,7 +5,8 @@ using UnityEngine;
 public class FireGateTimer : MonoBehaviour {
 
 	public GameObject[] torches;
-	private bool bothTorchesLit;
+	[HideInInspector]
+	public bool bothTorchesLit;
 
 	void Update(){
 		OpenGate ();
@@ -26,10 +27,9 @@ public class FireGateTimer : MonoBehaviour {
 			GetComponent<Gate> ().OpenGate ();
 
 			foreach (GameObject t in torches) {
-				if (t.GetComponent<GateTorchTimer> ().timer <= 0f) {
-					t.GetComponent<GateTorchTimer> ().timer = 1f;
-					t.GetComponent<GateTorchTimer> ().Light ();
-				}
+				t.GetComponent<GateTorchTimer> ().timer = 1f;
+				t.GetComponent<GateTorchTimer> ().lit = true;
+				Debug.Log ("keepLit");
 			}
 
 		}

@@ -25,10 +25,11 @@ GameObject:
   - component: {fileID: 54517679560980578}
   - component: {fileID: 114258786428542948}
   - component: {fileID: 114702715865986844}
-  - component: {fileID: 114130152795308264}
+  - component: {fileID: 114410741374677962}
+  - component: {fileID: 114039653709692312}
   m_Layer: 0
   m_Name: PuzzleCube
-  m_TagString: Object
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +115,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114130152795308264
+--- !u!114 &114039653709692312
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -122,12 +123,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936479364904710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b076f6e0b6c7874bb10dc1942fe16c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 654ed7b17db997448b02f4b696d18da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: 0
-  distance: 0
-  highlight: {fileID: 2100000, guid: 1420f9be0a9d82f44bcc4e5084bd876d, type: 2}
+  overridePushForce: 0
 --- !u!114 &114258786428542948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +140,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRewinding: 0
   recordTime: 5
+--- !u!114 &114410741374677962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936479364904710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea0f067bbd453d4ba69f087e22f7e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressFTo: 
+  showText: 0
+  Interaction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114702715865986844
 MonoBehaviour:
   m_ObjectHideFlags: 1

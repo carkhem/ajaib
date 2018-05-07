@@ -35,7 +35,7 @@ public class Fireball2 : MonoBehaviour {
 
 		//Sluta emitta när livstiden är nådd.
 		if (timer >= lifetime) {
-			GetComponent<BoxCollider> ().enabled = false;
+			GetComponent<SphereCollider> ().enabled = false;
 			StopEmitting();
 		}
 		DestroyIfDead ();
@@ -47,8 +47,9 @@ public class Fireball2 : MonoBehaviour {
 				return;
 			}
 		}
-		if (!source.isPlaying)
+		if (!source.isPlaying) {
 			GameObject.Destroy (gameObject);
+		}
 	}
 
 	private void StopEmitting(){
