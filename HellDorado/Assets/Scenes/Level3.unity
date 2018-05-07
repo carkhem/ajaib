@@ -3541,34 +3541,27 @@ Prefab:
       propertyPath: m_RootOrder
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 198869138555894722, guid: 0f5903cc92e9f5b4a99d55cadec749da,
+    - target: {fileID: 198598627562565574, guid: 0f5903cc92e9f5b4a99d55cadec749da,
         type: 2}
-      propertyPath: randomSeed
-      value: 1051485498
-      objectReference: {fileID: 0}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 108827055304560960, guid: 3964ae3c3c5b4af4680abc71ffa28f8d,
+        type: 2}
+    - target: {fileID: 198436834558274336, guid: 0f5903cc92e9f5b4a99d55cadec749da,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 108827055304560960, guid: 3964ae3c3c5b4af4680abc71ffa28f8d,
+        type: 2}
     - target: {fileID: 198010537631584502, guid: 0f5903cc92e9f5b4a99d55cadec749da,
         type: 2}
-      propertyPath: randomSeed
-      value: 1690134714
-      objectReference: {fileID: 0}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 108827055304560960, guid: 3964ae3c3c5b4af4680abc71ffa28f8d,
+        type: 2}
     - target: {fileID: 1144616759694740, guid: 0f5903cc92e9f5b4a99d55cadec749da, type: 2}
       propertyPath: m_Name
       value: PS_Fire (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 198436834558274336, guid: 0f5903cc92e9f5b4a99d55cadec749da,
-        type: 2}
-      propertyPath: randomSeed
-      value: -203886301
-      objectReference: {fileID: 0}
-    - target: {fileID: 198598627562565574, guid: 0f5903cc92e9f5b4a99d55cadec749da,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1493259188
-      objectReference: {fileID: 0}
-    - target: {fileID: 198050468599288904, guid: 0f5903cc92e9f5b4a99d55cadec749da,
-        type: 2}
-      propertyPath: randomSeed
-      value: 930220906
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f5903cc92e9f5b4a99d55cadec749da, type: 2}
