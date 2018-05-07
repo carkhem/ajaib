@@ -17,10 +17,8 @@ public class AnimatedKey : MonoBehaviour {
 		if (director.time > 0 && director.time < 6.52f) {
 			transform.localPosition = new Vector3 (0.0016f, -0.0017f, 0);
 		} else  if (director.time >= 6.52 && director.time < 7) {
-			print ("Old: " + transform.position);
 			if (!dropped) {
 				transform.position = dropPos;
-				print ("New: " + transform.position);
 				dropped = true;
 			}
 			transform.SetParent (null);
