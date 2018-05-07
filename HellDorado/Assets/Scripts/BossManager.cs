@@ -9,6 +9,8 @@ public class BossManager : MonoBehaviour {
     public int phase;
     public GameObject boulderSpawner;
     public float spawnTimer;
+    public GameObject player;
+    public bool ressing;
 
 
     // Use this for initialization
@@ -16,6 +18,7 @@ public class BossManager : MonoBehaviour {
         Health = 100;
         phase = 1;
         spawnTimer = 3;
+        ressing = false;
         
 	}
 	
@@ -33,7 +36,10 @@ public class BossManager : MonoBehaviour {
         }
     }
 
-
+    void RestorePlayerHealth()
+    {
+        player.GetComponent<PlayerStats>().health = player.GetComponent<PlayerStats>().maxHealth;
+    }
     void CheckThatMinionsAreDead()
     {
         
@@ -42,15 +48,18 @@ public class BossManager : MonoBehaviour {
             //Kolla om mobsen lever
             if(g.GetComponent<EnemyController>().health > 0)
             {
-                //Om mobsen lever, returnera falsk
+                //Om mobsen lever, bryt
                 return;
             }
             
         }
         //Om mobsen är döda, ingå nästa fas
 
-        Invoke("EnterNextPhase", 3);
-       // EnterNextPhase();
+        if (ressing == false)
+        {
+            Invoke("EnterNextPhase", spawnTimer);
+            ressing = true;
+        }
 
     }
 
@@ -71,19 +80,24 @@ public class BossManager : MonoBehaviour {
             switch (phase)
             {
                 case 1:
+                    RestorePlayerHealth();
                     ReviveMinions();
                     //Börja kasta eldbollar
                     break;
                 case 2:
+                    RestorePlayerHealth();
                     ReviveMinions();
-                    Instantiate(boulderSpawner, this.transform.position, this.transform.rotation);
+                    boulderSpawner.SetActive(true);
                     break;
                 case 3:
+                    //sluta kasta eldbollar
+                    boulderSpawner.SetActive(false);
                     Die();
                     break;
             }
+       phase++;
+       ressing = false;
+    }
 
-        }
 
-        
 }
