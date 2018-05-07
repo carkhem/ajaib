@@ -86,10 +86,6 @@ public class ObjectTimeBody : MonoBehaviour {
 //		abilitySounds.StopPlayingAudio();
 	}
 
-	public void ShowIcon(){
-		
-	}
-
 
 	//lämna tills vidare
 	//	public void CreateShadowObject(){
