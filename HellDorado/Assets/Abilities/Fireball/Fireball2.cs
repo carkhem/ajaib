@@ -35,7 +35,7 @@ public class Fireball2 : MonoBehaviour {
 
 		//Sluta emitta när livstiden är nådd.
 		if (timer >= lifetime) {
-			GetComponent<BoxCollider> ().enabled = false;
+			GetComponent<SphereCollider> ().enabled = false;
 			StopEmitting();
 		}
 		DestroyIfDead ();
