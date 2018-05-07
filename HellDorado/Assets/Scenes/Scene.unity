@@ -2347,7 +2347,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224710581824291570, guid: 5acdd9237da3e38468aa13d4462057c2,
+    - target: {fileID: 224416916527804816, guid: 5acdd9237da3e38468aa13d4462057c2,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2357,7 +2357,7 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224416916527804816, guid: 5acdd9237da3e38468aa13d4462057c2,
+    - target: {fileID: 224710581824291570, guid: 5acdd9237da3e38468aa13d4462057c2,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
