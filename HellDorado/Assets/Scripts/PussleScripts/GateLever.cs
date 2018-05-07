@@ -8,6 +8,13 @@ public class GateLever : MonoBehaviour {
 	public GameObject reversedGate;
 	public bool open;
 
+	public AudioClip leverSound;
+	private AudioSource source;
+
+	void Start() {
+		source = GetComponent<AudioSource> ();
+	}
+
 	void Update(){
 //		LiveLever ();
 	}
@@ -15,6 +22,7 @@ public class GateLever : MonoBehaviour {
 	public void PullLever(){
 		open = !open;
 		LiveLever();
+		source.PlayOneShot (leverSound);
 	}
 
 	private void LiveLever(){
