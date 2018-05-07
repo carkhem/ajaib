@@ -4302,6 +4302,10 @@ PlayableDirector:
     value: {fileID: 1122700082}
   m_ExposedReferences:
     m_References: []
+--- !u!4 &1122700084 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400074, guid: 06fa9600f00f83f4583c0f4dfd4812d8, type: 3}
+  m_PrefabInternal: {fileID: 1122700081}
 --- !u!4 &1122700085 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 06fa9600f00f83f4583c0f4dfd4812d8, type: 3}
@@ -5556,6 +5560,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRewinding: 0
   recordTime: 5
+--- !u!114 &1455029067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1455029061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572ca1a43f96d254db3fed948146e7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 1122700083}
+  hand: {fileID: 1122700084}
 --- !u!1 &1508623131 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1986242422788448, guid: 16d3f24fa23751c45912f1e1369b819c,
