@@ -157,16 +157,12 @@ public class AbilityManager : MonoBehaviour {
 		if (rewindObject != null) {
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
 				player.GetComponent<PlayerStats> ().ChangeHealth (-objectRewindCost);
-				rewindObject.UseRewindObject ();
-				abilitySounds.PlayAbilitySound ("Rewind");
 			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {
 				if (rewindObject.HitInfo () != null) {
 					if(rewindObject.HitInfo ().GetComponent<ObjectTimeBody> ().isRewinding)
 						rewindObject.HitInfo ().GetComponent<ObjectTimeBody> ().StopRewind ();
-						abilitySounds.StopPlayingAudio();
 				}
 			}
 		}
-
 	}
 }

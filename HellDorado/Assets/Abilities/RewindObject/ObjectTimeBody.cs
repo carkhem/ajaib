@@ -9,6 +9,7 @@ public class ObjectTimeBody : MonoBehaviour {
 
 	List<PointInTime> pointsInTime;
 	private Rigidbody rb;
+	private AbilitySounds abilitySounds;
 
 	//Lämna tills vidare
 	//	public Transform shadowObject;
@@ -19,7 +20,6 @@ public class ObjectTimeBody : MonoBehaviour {
 
 	void Start () {
 		pointsInTime = new List<PointInTime>();
-
 		rb = GetComponent<Rigidbody>();
 
 	}
@@ -72,6 +72,7 @@ public class ObjectTimeBody : MonoBehaviour {
 	{
 		isRewinding = true;
 		rb.isKinematic = true;
+		abilitySounds.PlayAbilitySound ("RewindObject");
 
 	}
 
@@ -79,7 +80,7 @@ public class ObjectTimeBody : MonoBehaviour {
 	{
 		isRewinding = false;
 		rb.isKinematic = false;
-
+		abilitySounds.StopPlayingAudio();
 	}
 
 

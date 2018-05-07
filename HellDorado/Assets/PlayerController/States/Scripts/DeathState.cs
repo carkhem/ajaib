@@ -17,7 +17,7 @@ public class DeathState : State
     // Use this for initialization
     void Start()
     {
-
+		_controller.GetComponent<PlayerSounds> ().PlayDeathSound();
     }
 
     public override void Enter()

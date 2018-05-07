@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour {
 
-	public AudioSource source;
-	public AudioClip dashSound;
+	public AudioSource[] sources;
+
 	public AudioClip swordSwing;
-	// Use this for initialization
+	public AudioClip deathSound;
+	public AudioClip dashSound;
+	public AudioClip[] takingDamageSounds;
+	public AudioClip[] jumpSounds;
+
+	private int clipIndex;
+
 	void Start () {
-		source = GetComponent<AudioSource> ();
+		sources = GetComponents<AudioSource> ();
+		sources [0].clip = swordSwing;
+		sources [1].clip = dashSound;
+//		sources [2].clip = jumpSounds;
+//		sources [3].clip = takingDamageSounds;
 	}
 	
 	// Update is called once per frame
@@ -18,21 +28,32 @@ public class PlayerSounds : MonoBehaviour {
 	}
 
 	public void PlaySwordSwing(){
-//		if (source.isPlaying) {
-//			StopPlayAudio ();
-//		}
-//
-//		if (!source.isPlaying) {
-			source.PlayOneShot (swordSwing);
-//		}
+		sources[0].PlayOneShot (swordSwing);
 	}
 
 	public void PlayDashSound(){
-		source.PlayOneShot (dashSound);
+		sources[1].PlayOneShot (dashSound);
 	}
 
-	public void StopPlayAudio(){
-		source.Stop ();
+//	public void StopPlayAudio(){
+//		source.Stop ();
+//	}
 
+	public void TakingDamgeSound(){
+		if (!sources[3].isPlaying) 
+			clipIndex = Random.Range (0, takingDamageSounds.Length);
+			AudioClip clip = takingDamageSounds [clipIndex];
+			sources[3].PlayOneShot (clip);
+	}
+
+	public void PlayDeathSound(){
+		sources[0].PlayOneShot (deathSound);
+	}
+
+	public void PlayJumpSound (){
+		if (!sources[2].isPlaying) 
+			clipIndex = Random.Range (0, jumpSounds.Length);
+			AudioClip clip = jumpSounds [clipIndex];
+			sources[2].PlayOneShot (clip);
 	}
 }

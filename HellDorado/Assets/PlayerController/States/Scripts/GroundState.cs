@@ -34,6 +34,7 @@ public class GroundState : State {
 	private void UpdateJump() {
 		if (Input.GetButtonDown ("Jump")) {
             _controller.Velocity.y = 10f;
+			_controller.GetComponent<PlayerSounds> ().PlayJumpSound ();
         }
 	}
 

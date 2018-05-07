@@ -49,8 +49,7 @@ public class AbilitySounds : MonoBehaviour {
 	}
 		
 	private void PlayRewindObject(){
-		StopPlayingAudio ();
-		source.PlayOneShot (rewindClip);
+			source.PlayOneShot (rewindClip);
 	}
 
 	private void PlayFireball(){

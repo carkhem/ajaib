@@ -930,6 +930,7 @@ GameObject:
   - component: {fileID: 23265187495873886}
   - component: {fileID: 65219459878397282}
   - component: {fileID: 114870501714441728}
+  - component: {fileID: 82121513568996352}
   m_Layer: 9
   m_Name: EnemySword
   m_TagString: Untagged
@@ -1962,14 +1963,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336670347079802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94, y: 0.64, z: 1.58}
+  m_LocalRotation: {x: -0, y: -0.98700804, z: -0, w: 0.16067128}
+  m_LocalPosition: {x: 9.267888, y: 12.25, z: 4.749445}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4085781518546660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -161.50801, z: 0}
 --- !u!4 &4927177587607114
 Transform:
   m_ObjectHideFlags: 1
@@ -2132,6 +2133,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 2.8, z: 0.9}
   m_Center: {x: 0, y: 0.8, z: 0.02}
+--- !u!82 &82121513568996352
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1823914406325248}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95955984727920078
 Animator:
   serializedVersion: 3
@@ -2196,7 +2277,7 @@ MonoBehaviour:
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
   damage: 30
-  maxHealth: 10
+  maxHealth: 1000
   health: 100
   eyes: {fileID: 1182124741358420}
   offset: {x: 0, y: 0, z: 0}
@@ -2219,6 +2300,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 82121513568996352}
+  enemyHitClips:
+  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
+  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
   anim: {fileID: 95955984727920078}
   swordType: 1
   damage: 20

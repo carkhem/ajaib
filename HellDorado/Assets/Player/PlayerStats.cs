@@ -87,15 +87,17 @@ public class PlayerStats : MonoBehaviour{
 
 	public void ChangeHealth(float ammount){
         
-		if (health + ammount > maxHealth)
-			health = maxHealth;
-		else if (health + ammount < 0)
-			health = 0;
-		else 
-			health += ammount;
+		if(ammount < 0) {
+			GetComponent<PlayerSounds> ().TakingDamgeSound ();
+			if (health + ammount > maxHealth)
+				health = maxHealth;
+			else if (health + ammount < 0)
+				health = 0;
+			else 
+				health += ammount;
 		
 //        health = Mathf.Clamp(health, 0, maxHealth);
-
+		}
     }
 
     private void RegenerateHealth() {

@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class RewindObject : MonoBehaviour {
 
-
-
 	private GameObject activeGameobject;
-
-
 
 	public void UseRewindObject(){
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
