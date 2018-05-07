@@ -9,7 +9,7 @@ public class GateLever : MonoBehaviour {
 	public bool open;
 
 	void Update(){
-		LiveLever ();
+//		LiveLever ();
 	}
 
 	public void PullLever(){
