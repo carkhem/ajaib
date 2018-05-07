@@ -24,8 +24,8 @@ public class AnimatedKey : MonoBehaviour {
 				dropped = true;
 			}
 			transform.SetParent (null);
-//			transform.GetComponent<BoxCollider> ().isTrigger = false;
-		} else if (director.time >= 10.58 && director.time < 15.49) {
+			transform.GetComponent<BoxCollider> ().isTrigger = false;
+		} else if (director.time >= 11.05 && director.time < 15.49) {
 			transform.SetParent (hand, true);
 			transform.GetComponent<BoxCollider> ().isTrigger = true;
 			transform.localPosition = new Vector3 (0, 0.002f, 0.0006f);
