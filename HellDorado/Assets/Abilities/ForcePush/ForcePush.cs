@@ -40,10 +40,7 @@ public class ForcePush : MonoBehaviour {
 					rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 					rb.isKinematic = false;
 					force = true;
-					hit.transform.GetComponent<PushableObject> ().Push (Mathf.Round(_controller.transform.eulerAngles.y / 90) * 90, distance);
-//					if (rb.velocity.sqrMagnitude < 0.01f) {
-//						rb.AddForce (_controller.transform.forward * 500f);
-//					}
+					hit.transform.GetComponent<PushableObject> ().Push (_controller.transform.eulerAngles.y, distance);
 				}
 			} else if (hit.transform.CompareTag ("Enemy")) {
 				hit.transform.GetComponent<EnemyController> ().TransitionTo<StunnedState> ();
