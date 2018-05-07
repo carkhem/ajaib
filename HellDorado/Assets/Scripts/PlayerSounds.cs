@@ -11,13 +11,14 @@ public class PlayerSounds : MonoBehaviour {
 	public AudioClip dashSound;
 	public AudioClip[] takingDamageSounds;
 	public AudioClip[] jumpSounds;
+	public AudioClip keySound;
 
 	private int clipIndex;
 
 	void Start () {
 		sources = GetComponents<AudioSource> ();
-		sources [0].clip = swordSwing;
-		sources [1].clip = dashSound;
+//		sources [0].clip = swordSwing;
+//		sources [1].clip = dashSound;
 //		sources [2].clip = jumpSounds;
 //		sources [3].clip = takingDamageSounds;
 	}
@@ -56,5 +57,9 @@ public class PlayerSounds : MonoBehaviour {
 			sources[2].PlayOneShot (clip);
 			jumpSounds [clipIndex] = jumpSounds [0];
 			jumpSounds [0] = clip;
+	}
+
+	public void PlayKeyPickUpSound(){
+		sources [3].PlayOneShot (keySound);
 	}
 }

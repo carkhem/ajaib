@@ -2391,6 +2391,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 959a866a41a4bdb4296a8baf5b53c876, type: 3}
   - {fileID: 8300000, guid: b0f4d14d0a5c47748bb67b7d81a03821, type: 3}
   - {fileID: 8300000, guid: a3f3183a3272a3941b96eadbba9d46f3, type: 3}
+  keySound: {fileID: 8300000, guid: f81ca4f67064b0248a860a2abdda06be, type: 3}
 --- !u!114 &114383441981491612
 MonoBehaviour:
   m_ObjectHideFlags: 1
