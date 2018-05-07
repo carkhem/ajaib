@@ -24,10 +24,13 @@ public class PlayerSounds : MonoBehaviour {
 //		sources [2].clip = jumpSounds;
 //		sources [3].clip = takingDamageSounds;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
+	}
+
+	public void PlayDeathSound(){
+		sources[0].PlayOneShot (deathSound);
 	}
 
 	public void PlaySwordSwing(){
@@ -38,25 +41,17 @@ public class PlayerSounds : MonoBehaviour {
 		sources[1].PlayOneShot (dashSound);
 	}
 
-//	public void StopPlayAudio(){
-//		source.Stop ();
-//	}
-
-	public void TakingDamgeSound(){
+	public void TakingDamageSound(){
 		if (!sources[3].isPlaying) 
 			clipIndex = Random.Range (0, takingDamageSounds.Length);
 			AudioClip clip = takingDamageSounds [clipIndex];
 			sources[3].PlayOneShot (clip);
 	}
 
-	public void PlayDeathSound(){
-		sources[0].PlayOneShot (deathSound);
-	}
-
 	public void PlayJumpSound (){
 			clipIndex = Random.Range (1, jumpSounds.Length);
 			AudioClip clip = jumpSounds [clipIndex];
-			sources[2].PlayOneShot (clip);
+			sources[4].PlayOneShot (clip);
 			jumpSounds [clipIndex] = jumpSounds [0];
 			jumpSounds [0] = clip;
 	}
@@ -69,13 +64,22 @@ public class PlayerSounds : MonoBehaviour {
 		clipIndex = Random.Range (1, walkingSounds.Length);
 		AudioClip clip = walkingSounds [clipIndex];
 		if (!sources [2].isPlaying) {
+			if (gameObject.GetComponent<PlayerStats>().sneaking)
+				sources[2].pitch = 0.8f;
+			else
+				sources[2].pitch = 1.1f;
+
 			sources [2].PlayOneShot (clip);
 			walkingSounds [clipIndex] = walkingSounds [0];
 			walkingSounds [0] = clip;
 		}
 	}
 
-	public void PlayLandingSound() {
+	public void StopPlayWalkingSound(){
+		sources[2].Stop ();
+	}
 
+	public void PlayLandingSound() {
+		sources [1].PlayOneShot (landingSound);
 	}
 }

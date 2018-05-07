@@ -14,6 +14,7 @@ public class AirState : State {
 	public float Friction = 5f;
 
 	private PlayerController _controller;
+	private PlayerSounds ps;
 
 	public override void Initialize(Controller owner) {
 		_controller = (PlayerController) owner;
@@ -21,6 +22,7 @@ public class AirState : State {
 
 	public override void Enter (){
 //		Debug.Log ("Air State");
+		ps = _controller.GetComponent<PlayerSounds> ();
 	}
 
 	public override void Update() {
@@ -34,6 +36,7 @@ public class AirState : State {
         }
 
         if (transform.GetComponent<CharacterController>().isGrounded){
+			ps.PlayLandingSound ();
 			_controller.TransitionTo<GroundState> ();
 		}
         //		UpdateRewind ();
