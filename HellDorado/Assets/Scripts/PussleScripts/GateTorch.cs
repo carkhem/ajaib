@@ -19,6 +19,7 @@ public class GateTorch : MonoBehaviour {
 		source = GetComponent<AudioSource> ();
 		source.clip = TorchSound;
 		source.loop = true;
+		source.time = Random.Range (0, TorchSound.length);
 	}
 
 	void Update(){

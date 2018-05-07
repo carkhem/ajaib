@@ -193,7 +193,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   fire: {fileID: 198355148527375334}
   fireLight: {fileID: 108116188595275730}
   TorchSound: {fileID: 8300000, guid: 6dfe382b979487c4a9d2e7f845d06a4e, type: 3}
-  source: {fileID: 82742599046980258}
+  source: {fileID: 0}
 --- !u!198 &198355148527375334
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -363,7 +363,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1139863324
+  randomSeed: 2121396385
   InitialModule:
     serializedVersion: 3
     enabled: 1

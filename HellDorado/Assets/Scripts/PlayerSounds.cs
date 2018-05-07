@@ -51,9 +51,10 @@ public class PlayerSounds : MonoBehaviour {
 	}
 
 	public void PlayJumpSound (){
-		if (!sources[2].isPlaying) 
-			clipIndex = Random.Range (0, jumpSounds.Length);
+			clipIndex = Random.Range (1, jumpSounds.Length);
 			AudioClip clip = jumpSounds [clipIndex];
 			sources[2].PlayOneShot (clip);
+			jumpSounds [clipIndex] = jumpSounds [0];
+			jumpSounds [0] = clip;
 	}
 }
