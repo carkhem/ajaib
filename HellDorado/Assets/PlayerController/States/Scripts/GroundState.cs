@@ -25,7 +25,7 @@ public class GroundState : State {
 		UpdateJump ();
         CheckPlayerLife();
 		_controller.UpdateCrouch ();
-		if (Input.GetButtonDown("Fire1")) {
+		if (Input.GetButtonDown("Fire1") && _controller.rArmAnim.gameObject.activeSelf) {
 			_controller.TransitionTo<StrikeState> ();
 		}
         _controller.sprintCheat();

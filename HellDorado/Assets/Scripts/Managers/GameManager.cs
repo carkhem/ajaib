@@ -35,8 +35,10 @@ public class GameManager : MonoBehaviour {
 			playerLevel = newLevel;
 			player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
 			player.GetComponent<PlayerStats>().updateExperienceProgress(true);
-			if (abilityDisplay.Length >= playerLevel)
-				CanvasManager.instance.AddAbility(abilityDisplay[playerLevel]);
+			for (int i = 0; i < playerLevel; i++) {
+				if (abilityDisplay.Length > i)
+					CanvasManager.instance.AddAbility (abilityDisplay[i]);
+			}
 			player.GetComponent<PlayerStats>().playerLevelUi();
 		}
 	}

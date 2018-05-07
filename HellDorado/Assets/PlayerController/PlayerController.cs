@@ -23,6 +23,7 @@ public class PlayerController : Controller{
     [Header("Animation")]
 	public Animator lArmAnim;
 	public Animator rArmAnim;
+	public GameObject lameRHand;
 
 	private CharacterController charController;
 
@@ -101,6 +102,11 @@ public class PlayerController : Controller{
 
         if(timesShift >=1)
             shiftTimer += Time.fixedDeltaTime;
-
     }
+
+	public void EquipSword(){
+		rArmAnim.gameObject.SetActive (true);
+		lameRHand.SetActive (false);
+	}
+
 }
