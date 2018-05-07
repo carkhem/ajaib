@@ -10,10 +10,11 @@ public class PushableObject : MonoBehaviour {
 
 	public void Push (float angle, float force){
 		this.force = force;
-		this.angle = angle;
+		this.angle = Mathf.Round(angle / 90) * 90;
+		print (angle);
 		if (overridePushForce > 0) {
 			force = overridePushForce;
 		}
-		GetComponent<Rigidbody>().AddForce (Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward * force);
+		GetComponent<Rigidbody>().AddForce (Quaternion.AngleAxis(transform.eulerAngles.y + angle, Vector3.up) * Vector3.forward * force);
 	}
 }

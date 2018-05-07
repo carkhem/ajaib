@@ -1696,4 +1696,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654ed7b17db997448b02f4b696d18da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overridePushForce: 0
+  overridePushForce: 500
