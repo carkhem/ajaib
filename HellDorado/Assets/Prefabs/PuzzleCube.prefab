@@ -25,7 +25,8 @@ GameObject:
   - component: {fileID: 54517679560980578}
   - component: {fileID: 114258786428542948}
   - component: {fileID: 114702715865986844}
-  - component: {fileID: 114130152795308264}
+  - component: {fileID: 114548311354707642}
+  - component: {fileID: 114295307420140656}
   m_Layer: 0
   m_Name: PuzzleCube
   m_TagString: Object
@@ -39,8 +40,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1936479364904710}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.86, y: 11.655, z: 6.03}
+  m_LocalRotation: {x: 0, y: 4.139093e-10, z: 0, w: 1}
+  m_LocalPosition: {x: 29.86, y: 11.285468, z: 6.03}
   m_LocalScale: {x: 0.48011982, y: 0.48011956, z: 0.48011956}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,7 +61,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e1a2347afe29c744ea69eb9da1c075c1, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,20 +115,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114130152795308264
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1936479364904710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b076f6e0b6c7874bb10dc1942fe16c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hit: 0
-  distance: 0
-  highlight: {fileID: 2100000, guid: 1420f9be0a9d82f44bcc4e5084bd876d, type: 2}
 --- !u!114 &114258786428542948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +128,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRewinding: 0
   recordTime: 5
+--- !u!114 &114295307420140656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936479364904710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654ed7b17db997448b02f4b696d18da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overridePushForce: 500
+--- !u!114 &114548311354707642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936479364904710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea0f067bbd453d4ba69f087e22f7e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressFTo: 
+  showText: 0
+  Interaction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114702715865986844
 MonoBehaviour:
   m_ObjectHideFlags: 1
