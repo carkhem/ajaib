@@ -1126,7 +1126,7 @@ MonoBehaviour:
   deathScreen: {fileID: 1475794367973938}
   experienceSlider: {fileID: 114384104962677234}
   experienceProgress: {fileID: 114817071313609560}
-  PlayerLevelText: {fileID: 114450770040534978}
+  playerLevelText: {fileID: 114450770040534978}
   abilityContent: {fileID: 1424245741830410}
   rewindPanel: {fileID: 1786396751604818}
   enemyHealthSlider: {fileID: 114457193156781884}
