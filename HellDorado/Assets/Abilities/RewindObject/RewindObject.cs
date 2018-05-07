@@ -5,7 +5,7 @@ using UnityEngine;
 public class RewindObject : MonoBehaviour {
 
 	private GameObject activeGameobject;
-	public Sprite icon;
+	public GameObject interactionIcon;
 
 	public void UseRewindObject(){
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
@@ -22,8 +22,7 @@ public class RewindObject : MonoBehaviour {
 		RaycastHit hit;
 
 		if ((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Interactable")) && hit.collider.GetComponent<ObjectTimeBody> () != null) {
-			print ("IN SIGHT");
-
+			GameObject.Instantiate (interactionIcon, new Vector3 (transform.position.x, transform.position.y + 5), transform.rotation);
 		}
 	}
 
