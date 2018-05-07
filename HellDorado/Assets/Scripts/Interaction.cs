@@ -31,7 +31,7 @@ public class Interaction : MonoBehaviour
             {
                 interactableObject = hit.transform.GetComponent<InteractableObject>();
 
-				if (interactableObject.GetComponent<Renderer>().sharedMaterial != highlightMaterial){
+				if (interactableObject.GetComponent<Renderer>() != null && interactableObject.GetComponent<Renderer>().sharedMaterial != highlightMaterial){
                     originalMaterial = interactableObject.GetComponent<Renderer>().material;
                     interactableObject.GetComponent<Renderer>().material = highlightMaterial;
                 }
