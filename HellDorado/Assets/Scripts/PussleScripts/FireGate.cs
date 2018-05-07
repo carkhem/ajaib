@@ -14,12 +14,14 @@ public class FireGate : MonoBehaviour {
 		foreach (GameObject t in torches) {
 			if (!t.GetComponent<GateTorch> ().lit) {
 				if (open) {
+					open = false;
 					GetComponent<Gate> ().CloseGate ();
 				}
 				return;
 			}
 		}
 		if (!open) {
+			open = true;
 			GetComponent<Gate> ().OpenGate ();
 		}
 	}
