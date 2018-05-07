@@ -9,18 +9,18 @@ public class AnimationRecieveStone : MonoBehaviour {
 	private Vector3 startPosition = new Vector3 (-11.93f, 1.598708f, 3.69f);
 	private GameObject player;
 	public GameObject gameHands;
-	private FPSCamera fps;
+	public FPSCamera fps;
 
 	void Start (){
 		player = PlayerStats.instance.transform.gameObject;
 		director.Stop ();
 		director.playOnAwake = false;
+//		fps = GetComponent<FPSCamera> ();
 	}
 
 	public void StartAnimation(){
 		gameHands.SetActive(false);
 		director.transform.gameObject.SetActive (true);
-		fps = GetComponent<FPSCamera> ();
 		fps.enabled = false;
 		director.Play ();
 	}
@@ -29,7 +29,7 @@ public class AnimationRecieveStone : MonoBehaviour {
 		if (director.time > 0) {
 			player.transform.position = Vector3.Lerp (player.transform.position, startPosition, Time.deltaTime * 50);
 		}
-		if (director.time >= director.duration) {
+		if (director.time == director.duration) {
 			GetComponent<FPSCamera> ().enabled = true;
 			gameHands.SetActive(true);
 			director.gameObject.SetActive (false);
