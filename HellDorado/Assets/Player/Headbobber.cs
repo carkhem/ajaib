@@ -17,6 +17,7 @@ public class Headbobber : MonoBehaviour
         if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0)
         {
             timer = 0.0f;
+			Debug.Log ("No walking");
         }
         else
         {
