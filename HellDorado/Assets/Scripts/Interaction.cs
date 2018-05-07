@@ -12,8 +12,11 @@ public class Interaction : MonoBehaviour
 	private Material originalMaterial;
 	public Material highlightMaterial;
 
+//	public string matName;
+
     void Start(){
 		interactText = CanvasManager.instance.interactText;
+//		matName = highlightMaterial.name;
     }
 
     void Update(){
@@ -27,14 +30,15 @@ public class Interaction : MonoBehaviour
             if (interactableObject != null || interactableObject != hit.transform.GetComponent<InteractableObject>())
             {
                 interactableObject = hit.transform.GetComponent<InteractableObject>();
-                if (interactableObject.GetComponent<Renderer>() != null)
-                {
+
+				if (interactableObject.GetComponent<Renderer>().sharedMaterial != highlightMaterial){
                     originalMaterial = interactableObject.GetComponent<Renderer>().material;
                     interactableObject.GetComponent<Renderer>().material = highlightMaterial;
                 }
 
                 interactText.text = interactableObject.GetInteractionText();
-                interactText.gameObject.SetActive(true);
+				if (interactableObject.showText)
+					interactText.gameObject.SetActive(true);
             }
 			if (Input.GetButtonDown ("Interact"))
 				interactableObject.Interact ();

@@ -11,6 +11,7 @@ public class ForcePush : MonoBehaviour {
 	private float timer = 0.05f;
 	private bool force = false;
 	public float range = 2f;
+	public float distance = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -33,15 +34,16 @@ public class ForcePush : MonoBehaviour {
 
 		if ((Physics.Raycast (ray, out hit, range))) {
 			if (hit.collider.gameObject.tag == "Interactable") {
-				if (hit.collider.GetComponent<Rigidbody> () != null) {
+				if (hit.collider.GetComponent<Rigidbody> () != null && hit.transform.GetComponent<PushableObject>() != null) {
 					GetComponent<AbilitySounds> ().PlayAbilitySound ("Push");
 					rb = hit.collider.gameObject.GetComponent<Rigidbody> ();
 					rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 					rb.isKinematic = false;
 					force = true;
-					if (rb.velocity.sqrMagnitude < 0.01f) {
-						rb.AddForce (_controller.transform.forward * 500f);
-					}
+					hit.transform.GetComponent<PushableObject> ().Push (Mathf.Round(_controller.transform.eulerAngles.y / 90) * 90, distance);
+//					if (rb.velocity.sqrMagnitude < 0.01f) {
+//						rb.AddForce (_controller.transform.forward * 500f);
+//					}
 				}
 			} else if (hit.transform.CompareTag ("Enemy")) {
 				hit.transform.GetComponent<EnemyController> ().TransitionTo<StunnedState> ();

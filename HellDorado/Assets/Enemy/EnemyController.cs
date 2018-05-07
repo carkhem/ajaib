@@ -13,6 +13,7 @@ public class EnemyController : Controller {
 	[Header("Sight")]
 	public GameObject eyes;
 	public Vector3 offset;
+	[Range(0.0f, 180.0f)]
 	public float fov;
 	public float viewDistance;
 	public float detectionSpeed;

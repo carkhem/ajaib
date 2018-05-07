@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class InteractableObject : MonoBehaviour {
 	public string pressFTo;
+	public bool showText = true;
 	public UnityEvent Interaction;
 
 	public void Interact(){
