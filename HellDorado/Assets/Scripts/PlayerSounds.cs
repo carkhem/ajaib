@@ -19,14 +19,6 @@ public class PlayerSounds : MonoBehaviour {
 
 	void Start () {
 		sources = GetComponents<AudioSource> ();
-//		sources [0].clip = swordSwing;
-//		sources [1].clip = dashSound;
-//		sources [2].clip = jumpSounds;
-//		sources [3].clip = takingDamageSounds;
-	}
-
-	void Update () {
-		
 	}
 
 	public void PlayDeathSound(){
