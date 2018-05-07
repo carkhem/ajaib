@@ -8,6 +8,7 @@ public class EnemyController : Controller {
 	[Header("Stats")]
 	public float damage;
 	public float maxHealth = 100;
+    public int ExpGain = 50;
 //	[HideInInspector]
 	public float health;
 	[Header("Sight")]
@@ -66,7 +67,7 @@ public class EnemyController : Controller {
         if (health < 0)
         {
             TransitionTo<DeadState>();
-            GameManager.instance.experienceChange(50);
+            GameManager.instance.experienceChange(ExpGain);
         }
 		if (detection != 1) {
 			DetectPlayer ();
