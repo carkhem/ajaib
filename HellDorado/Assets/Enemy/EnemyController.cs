@@ -130,4 +130,10 @@ public class EnemyController : Controller {
 		player.GetComponent<PlayerStats> ().AddEnemy (gameObject);
 	}
 
+    public void Revive()
+    {
+        health = maxHealth;
+        TransitionTo<IdleState>();
+    }
+
 }

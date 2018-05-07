@@ -27,4 +27,12 @@ public class DeadState : State {
 		if (_controller.health > 0)
 			_controller.TransitionTo<PatrolState> ();
 	}
+
+    public override void Exit()
+    {
+        _controller.SetAnim("die", false);
+        transform.GetComponent<BoxCollider>().enabled = true;
+
+
+    }
 }
