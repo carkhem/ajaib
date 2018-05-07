@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public GameObject abilityList;
 	private GameObject cameraController;
     public GameObject player;
+    public int MaxLevel = 3;
 
     void Awake(){
 		//DONTDESTROYONLOAD! Det är ett krav
@@ -19,20 +20,27 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
+        if (playerLevel > MaxLevel)
+            playerLevel = MaxLevel;
 		for (int i = 0; i <= playerLevel; i++) {
 			if (abilityDisplay.Length > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}
         player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
+        player.GetComponent<PlayerStats>().playerLevelUi();
     }
 
 	public void LevelUp(){
-        playerLevel++;
-        player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
-        player.GetComponent<PlayerStats>().updateExperienceProgress(true);
-       // player.GetComponent<PlayerStats>().changeDmg(playerLevel);
-        if (abilityDisplay.Length >= playerLevel)
-			CanvasManager.instance.AddAbility (abilityDisplay[playerLevel]);
+        if (playerLevel < MaxLevel)
+        {
+            playerLevel++;
+            player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
+            player.GetComponent<PlayerStats>().updateExperienceProgress(true);
+            // player.GetComponent<PlayerStats>().changeDmg(playerLevel);
+            if (abilityDisplay.Length >= playerLevel)
+                CanvasManager.instance.AddAbility(abilityDisplay[playerLevel]);
+            player.GetComponent<PlayerStats>().playerLevelUi();
+        }
 	}
 
     public void experienceChange( float exp)

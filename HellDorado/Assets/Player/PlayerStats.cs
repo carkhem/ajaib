@@ -30,6 +30,7 @@ public class PlayerStats : MonoBehaviour{
     public int PlayerLevel;
     private Slider experienceSlider;
     private Text experienceProgress;
+    private Text playerLevelText;
 
 //    private float timeSecond = 0.0f;
 //    public int regenerate;
@@ -45,6 +46,7 @@ public class PlayerStats : MonoBehaviour{
         healthProcent.text = health + "%";
         experienceSlider = CanvasManager.instance.experienceSlider;
         experienceProgress = CanvasManager.instance.experienceProgress;
+        playerLevelText = CanvasManager.instance.PlayerLevelText;
         PlayerLevel = 1;
         playerExp = 0;
     }
@@ -100,6 +102,11 @@ public class PlayerStats : MonoBehaviour{
 		}
     }
 
+    public void playerLevelUi()
+    {
+        playerLevelText.text = "Level: " + PlayerLevel;
+    }
+
     private void RegenerateHealth() {
 		if (health < maxHealth)
 			health += Time.deltaTime * regenSpeed;
@@ -125,15 +132,24 @@ public class PlayerStats : MonoBehaviour{
 
     public void updateExperienceProgress(bool LevelUp)
     {
-        experienceSlider.value = playerExp;
-        experienceSlider.maxValue = LevelMaxExp;
-        experienceProgress.text = playerExp + "/" + LevelMaxExp;
-        if (LevelUp)
+        if (PlayerLevel == GameManager.instance.MaxLevel && playerExp >= LevelMaxExp)
         {
-            experienceSlider.minValue = (PlayerLevel - 1) * 100;
-            LevelIsUp = true;
+            experienceProgress.text = "Max Level";
+            experienceSlider.value = LevelMaxExp;
         }
-        LevelUpText();
+        else
+        {
+            experienceSlider.value = playerExp;
+            experienceSlider.maxValue = LevelMaxExp;
+            experienceProgress.text = playerExp + "/" + LevelMaxExp;
+            if (LevelUp)
+            {
+                experienceSlider.minValue = (PlayerLevel - 1) * 100;
+                LevelIsUp = true;
+            }
+
+            LevelUpText();
+        }
     }
 
     public void LevelUpText()
