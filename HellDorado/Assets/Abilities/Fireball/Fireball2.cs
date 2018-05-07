@@ -30,7 +30,7 @@ public class Fireball2 : MonoBehaviour {
 		//transform.Translate (transform.forward * speed * Time.deltaTime);
 		//GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
-		transform.LookAt(endPos);
+//		transform.LookAt(endPos);
 		GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
 		//Minska damage över tid
@@ -52,7 +52,14 @@ public class Fireball2 : MonoBehaviour {
         	GameObject.Destroy(Instantiate(explosionPrefab, transform.position, transform.rotation), 1.5f);
 	}
 
+	public void SetMaxDamage(float damage){
+		maxDamage = damage;
+	}
+
 	void OnCollisionEnter(Collision col){
+		if(col.gameObject.CompareTag("Enemy")) {
+			col.gameObject.GetComponent<EnemyController> ().TakeDamage (damage);
+		}
 		if(!col.gameObject.CompareTag("Player") && !col.gameObject.CompareTag("MainCamera") && !col.gameObject.CompareTag("Sword")) {
             Explode();
         }
