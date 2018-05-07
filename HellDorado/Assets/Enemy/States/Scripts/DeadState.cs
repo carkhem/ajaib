@@ -23,6 +23,7 @@ public class DeadState : State {
 	}
 
 	public override void Update (){
+		//PROBLEM IBLAND
 		if (_controller.health > 0)
 			_controller.TransitionTo<PatrolState> ();
 	}

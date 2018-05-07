@@ -135,7 +135,7 @@ public class AbilityManager : MonoBehaviour {
 	private void FireFireball() {
         if (player.GetComponent<PlayerStats>().health - fireCost >= 10)
         {
-            print("Shooting");
+//            print("Shooting");
             GameObject ball = Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
 			ball.GetComponent<Fireball2> ().SetMaxDamage (fireballDamage);
             player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
