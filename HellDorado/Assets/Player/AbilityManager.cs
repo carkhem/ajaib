@@ -32,13 +32,14 @@ public class AbilityManager : MonoBehaviour {
 	public int objectRewindCost;
 	private RewindObject rewindObject;
 
-
+	AbilitySounds abilitySounds;
 	PlayerController _controller;
 
     void Start (){
 		_controller = GetComponent<PlayerController> ();
 		selectedAbility = Ability.None;
 		anim = GetComponent<PlayerController> ().lArmAnim;
+		abilitySounds = GetComponent<AbilitySounds> ();
 	}
 	
 	void Update (){
@@ -110,6 +111,7 @@ public class AbilityManager : MonoBehaviour {
 				CanvasManager.instance.rewindPanel.SetActive (true);
 				//StartRewind ();
 				_controller.TransitionTo<RewindState> ();
+				abilitySounds.PlayAbilitySound ("Rewind");
 			}
 
 			if (Input.GetKeyUp (KeyCode.Mouse1)) {
@@ -118,6 +120,8 @@ public class AbilityManager : MonoBehaviour {
 				_controller.TransitionTo<GroundState> ();
 				CanvasManager.instance.rewindPanel.SetActive (false);
 				//StopRewind ();
+				abilitySounds.StopPlayingAudio();
+
 			}
 		} else {
 			TimeBody.isRewinding = false;
@@ -135,7 +139,7 @@ public class AbilityManager : MonoBehaviour {
             GameObject ball = Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
 			ball.GetComponent<Fireball2> ().SetMaxDamage (fireballDamage);
             player.GetComponent<PlayerStats>().ChangeHealth(-fireCost);
-			GetComponent<AbilitySounds> ().PlayAbilitySound ("Fireball");
+			abilitySounds.PlayAbilitySound ("Fireball");
         }
 	}
 
@@ -143,7 +147,8 @@ public class AbilityManager : MonoBehaviour {
 		forcePush = GetComponent<ForcePush> ();
 		if (forcePush != null){
 			player.GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
-			forcePush.ForcePushObject (); 
+			forcePush.ForcePushObject ();
+			abilitySounds.PlayAbilitySound ("Push");
 		}
 	}
 
@@ -153,10 +158,12 @@ public class AbilityManager : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
 				player.GetComponent<PlayerStats> ().ChangeHealth (-objectRewindCost);
 				rewindObject.UseRewindObject ();
+				abilitySounds.PlayAbilitySound ("Rewind");
 			} else if (Input.GetKeyUp (KeyCode.Mouse1)) {
 				if (rewindObject.HitInfo () != null) {
 					if(rewindObject.HitInfo ().GetComponent<ObjectTimeBody> ().isRewinding)
 						rewindObject.HitInfo ().GetComponent<ObjectTimeBody> ().StopRewind ();
+						abilitySounds.StopPlayingAudio();
 				}
 			}
 		}
