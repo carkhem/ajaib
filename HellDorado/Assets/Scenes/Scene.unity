@@ -573,22 +573,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1445569227061950, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
     type: 2}
   m_PrefabInternal: {fileID: 905679314}
---- !u!114 &297041611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 297041610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34b39c7302ea3242b5b5abb106b3b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  rewindClip: {fileID: 0}
-  fireClip: {fileID: 8300000, guid: f142482f474ba1c4ea90488ad91429e7, type: 3}
-  pushClip: {fileID: 8300000, guid: 9de07419424f4ff42acbc87a0c42c3cf, type: 3}
-  rewindObjectClip: {fileID: 0}
 --- !u!1 &382709816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1160,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: walkingSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.93
@@ -1208,7 +1197,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114208648859786586, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: bobbingAmount
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114208648859786586, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: bobbingSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: walkingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c615335190ea6744a9bf3e6616c5a6eb, type: 3}
+    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: walkingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 246e5d8e2d4de194397c314bb52809fd, type: 3}
+    m_RemovedComponents:
+    - {fileID: 114703742282385896, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &923298886
