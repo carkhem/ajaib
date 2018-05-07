@@ -8,7 +8,7 @@ public class EnemyController : Controller {
 	[Header("Stats")]
 	public float damage;
 	public float maxHealth = 100;
-	//[HideInInspector]
+	[HideInInspector]
 	public float health;
 	[Header("Sight")]
 	public GameObject eyes;
