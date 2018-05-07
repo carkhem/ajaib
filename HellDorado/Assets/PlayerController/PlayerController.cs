@@ -11,8 +11,6 @@ public class PlayerController : Controller{
     public float gravity = 100f;
 	[HideInInspector]
 	public float movementSpeed;
-    private float dashLength;
-    private float after;
 	private float crouchSpeed = 2;
 	public float dashCooldown;
 	private float dashTimer = 0;
