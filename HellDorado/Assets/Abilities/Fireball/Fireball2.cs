@@ -75,6 +75,11 @@ public class Fireball2 : MonoBehaviour {
 		if(!col.gameObject.CompareTag("Player") && !col.gameObject.CompareTag("MainCamera") && !col.gameObject.CompareTag("Sword")) {
             Explode();
         }
+		if (col.gameObject.CompareTag ("Player")) {
+			col.gameObject.GetComponent<PlayerStats> ().ChangeHealth (-20f);
+			Explode ();
+		}
+
 	}
 
 	public float GetDamage(){

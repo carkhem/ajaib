@@ -11,6 +11,7 @@ public class EnemyFireBall : MonoBehaviour {
 	public float shootDelay = 5f;
 	private float originalDelay;
 	public float fireBallDamage;
+	public float lifetime = 7f;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,6 @@ public class EnemyFireBall : MonoBehaviour {
 	private void ShootFireBall(){
 		GameObject ball = Instantiate(fireBallPrefab, fireBallSpawn.position, fireBallSpawn.rotation);
 		ball.GetComponent<Fireball2> ().SetMaxDamage (fireBallDamage);
-		ball.GetComponent<Fireball2> ().lifetime = 7f;
+		ball.GetComponent<Fireball2> ().lifetime = lifetime;
 	}
 }
