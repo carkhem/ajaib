@@ -63,8 +63,11 @@ public class EnemyController : Controller {
 	public void TakeDamage(float damage){
 		Debug.Log ("TAKE DAMAGE");
 		health -= damage;
-		if (health < 0)
-			TransitionTo<DeadState> ();
+        if (health < 0)
+        {
+            TransitionTo<DeadState>();
+            GameManager.instance.experienceChange(50);
+        }
 		if (detection != 1) {
 			DetectPlayer ();
 			TransitionTo <StunnedState> ();
