@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class PatrolState : State {
 	public float walkSpeed;
 	private NavMeshAgent agent;
-	public Vector3[] patrolPoints;
+//	public Vector3[] patrolPoints;
 	private Vector3 destination;
 
 	private EnemyController _controller;
@@ -41,7 +41,7 @@ public class PatrolState : State {
 
 	private void RandomizeDestination(){
 		do {
-			destination = patrolPoints[Random.Range(0, patrolPoints.Length)];
+			destination = _controller.patrolPoints[Random.Range(0, _controller.patrolPoints.Length)];
 			} while (_controller.SamePosition(destination, transform.position));
 	}
 }

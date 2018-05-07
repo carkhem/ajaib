@@ -27,6 +27,7 @@ public class EnemyController : Controller {
 	public string recentState;
 	[HideInInspector]
 	public float recentHealth;
+	public Vector3[] patrolPoints;
 
 	void Start(){
 		player = PlayerStats.instance.transform;
