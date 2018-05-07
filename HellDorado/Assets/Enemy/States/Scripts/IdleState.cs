@@ -16,7 +16,7 @@ public class IdleState : State {
 
 	public override void Enter (){
 		_controller.SetAnim ("idle", true);
-//		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		timer = 0;
 		currentIdleTime = Random.Range (idleTime.Min, idleTime.Max);
 	}
