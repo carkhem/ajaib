@@ -376,6 +376,8 @@ GameObject:
   - component: {fileID: 114177090878064434}
   - component: {fileID: 82966544810474180}
   - component: {fileID: 114383441981491612}
+  - component: {fileID: 82053838261089770}
+  - component: {fileID: 114362205852985014}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1026,8 +1028,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 1.64, z: 6.55}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
+  m_LocalPosition: {x: -10, y: 1.54, z: 4.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -1755,6 +1757,86 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1708112897957844}
   m_Enabled: 1
+--- !u!82 &82053838261089770
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445569227061950}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82966544810474180
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1952,6 +2034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+  distance: 2
 --- !u!114 &114356039716626932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1965,6 +2048,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 3
   highlightMaterial: {fileID: 2100000, guid: 1420f9be0a9d82f44bcc4e5084bd876d, type: 2}
+--- !u!114 &114362205852985014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445569227061950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c609dac584d7a48a51e94976d866bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 82053838261089770}
+  dashSound: {fileID: 0}
+  swordSwing: {fileID: 8300000, guid: b1c14da9afc175b459640786819972ac, type: 3}
 --- !u!114 &114383441981491612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1977,10 +2074,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 82966544810474180}
-  rewindClip: {fileID: 0}
+  rewindClip: {fileID: 8300000, guid: 905de1c4bb980224c8f9a478a8fdb126, type: 3}
   fireClip: {fileID: 8300000, guid: f142482f474ba1c4ea90488ad91429e7, type: 3}
-  pushClip: {fileID: 8300000, guid: 9de07419424f4ff42acbc87a0c42c3cf, type: 3}
-  rewindObjectClip: {fileID: 0}
+  pushClip: {fileID: 8300000, guid: 8efa8ebc7eb198b42b2f08a2d6d67bca, type: 3}
+  rewindObjectClip: {fileID: 8300000, guid: 905de1c4bb980224c8f9a478a8fdb126, type: 3}
 --- !u!114 &114388339974472154
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,6 +8,7 @@ public class AbilitySounds : MonoBehaviour {
 
 	[Header("Rewind")]
 	public AudioClip rewindClip;
+	private bool rewinding;
 
 	[Header("Fireball")]
 	public AudioClip fireClip;
@@ -18,10 +19,10 @@ public class AbilitySounds : MonoBehaviour {
 	[Header("RewindObject")]
 	public AudioClip rewindObjectClip;
 
+
 	void Start () {
 		source = GetComponent<AudioSource> ();
 	}
-
 
 	public void PlayAbilitySound(string ability){
 		switch (ability) {
@@ -43,14 +44,17 @@ public class AbilitySounds : MonoBehaviour {
 	}
 
 	private void PlayRewind(){
-	
+		if(!source.isPlaying)
+			source.PlayOneShot (rewindClip);
 	}
 		
 	private void PlayRewindObject(){
-
+		StopPlayingAudio ();
+		source.PlayOneShot (rewindClip);
 	}
 
 	private void PlayFireball(){
+		StopPlayingAudio ();
 		if(!source.isPlaying)
 			source.PlayOneShot (fireClip);
 	}
@@ -58,5 +62,9 @@ public class AbilitySounds : MonoBehaviour {
 	private void PlayPush(){
 		if(!source.isPlaying)
 			source.PlayOneShot (pushClip);
+	}
+
+	public void StopPlayingAudio(){
+		source.Stop ();
 	}
 }
