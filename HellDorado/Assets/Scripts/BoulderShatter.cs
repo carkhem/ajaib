@@ -28,5 +28,9 @@ public class BoulderShatter : MonoBehaviour {
             Destroy(this.gameObject);
             
             }
+            else if(other.gameObject.tag == "Player")
+        {
+            other.GetComponent<PlayerStats>().health -= 10;
+        }
         }
     }
