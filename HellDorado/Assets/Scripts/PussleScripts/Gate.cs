@@ -9,7 +9,11 @@ public class Gate : MonoBehaviour {
 	[HideInInspector]
 	public float delayTime = 0;
 
+	private AudioSource source;
+	public AudioClip gateSound;
+
 	private void Start(){
+		source = GetComponent<AudioSource> ();
 		anim = transform.GetChild (0).GetComponent<Animator> ();
 		animOpen (open);
 	}
@@ -34,11 +38,13 @@ public class Gate : MonoBehaviour {
         timer = 0;
 		open = true;
 		animOpen (open);
+		PlayGateSound ();
 	}
 
 	public void CloseGate(){
 		open = false;
 		animOpen (open);
+
 	}
 
 	public void ToggleGate(){
@@ -54,4 +60,7 @@ public class Gate : MonoBehaviour {
 		print ("yoyo");
 	}
 
+	private void PlayGateSound(){
+//		source.PlayOneShot (gateSound);
+	}
 }

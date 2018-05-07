@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class GateLever : MonoBehaviour {
 
+	public AudioSource source;
+	public AudioClip leverSound;
 	public GameObject gate;
 	public GameObject reversedGate;
 	public bool open;
+
+	void Start() {
+		source = GetComponent<AudioSource> ();
+	}
 
 	void Update(){
 		LiveLever ();
@@ -15,6 +21,7 @@ public class GateLever : MonoBehaviour {
 	public void PullLever(){
 		open = !open;
 		LiveLever();
+		source.PlayOneShot (leverSound);
 	}
 
 	private void LiveLever(){
