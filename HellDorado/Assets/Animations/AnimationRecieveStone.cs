@@ -28,7 +28,7 @@ public class AnimationRecieveStone : MonoBehaviour {
 	}
 
 	void Update(){
-		if (director.time > 0) {
+		if (director.time > 0 && !stopped) {
 			player.transform.position = Vector3.Lerp (player.transform.position, startPosition, Time.deltaTime * 50);
 		}
 		if (director.time > director.duration - 1 && !stopped) {

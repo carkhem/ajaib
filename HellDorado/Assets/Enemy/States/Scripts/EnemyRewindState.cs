@@ -20,7 +20,7 @@ public class EnemyRewindState : State {
 
 
 		//Temporärt. Får kolla hur mycket som behöver läggas på under rewind
-		_controller.health += 0.1f;
+//		_controller.health += 0.1f;
 		if (!TimeBody.isRewinding) {
 			RecentState ();
 		}
