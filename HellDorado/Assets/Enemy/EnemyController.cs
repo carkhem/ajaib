@@ -133,7 +133,7 @@ public class EnemyController : Controller {
     public void Revive()
     {
         health = maxHealth;
-        TransitionTo<IdleState>();
+		TransitionTo<CombatState>();
     }
 
 }

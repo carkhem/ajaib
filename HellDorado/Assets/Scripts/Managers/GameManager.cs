@@ -13,6 +13,18 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
     public int MaxLevel = 3;
 
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Keypad1)){
+			SceneManager.LoadScene("Level1");
+		}
+		if (Input.GetKeyDown (KeyCode.Keypad2)){
+			SceneManager.LoadScene("Level2");
+		}
+		if (Input.GetKeyDown (KeyCode.Keypad3)){
+			SceneManager.LoadScene("Level3");
+		}
+	}
+
     void Awake(){
 		//DONTDESTROYONLOAD! Det är ett krav
 		instance = this;
@@ -86,6 +98,8 @@ public class GameManager : MonoBehaviour {
         CanvasManager.instance.deathScreen.SetActive(false);
 		cameraController.GetComponent<FPSCamera>().RemoveConstraints();
         player.transform.position = spawnPosition;
-
+		if (spawnPosition == new Vector3 (0, 0, 0)) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+		}
     }
 }

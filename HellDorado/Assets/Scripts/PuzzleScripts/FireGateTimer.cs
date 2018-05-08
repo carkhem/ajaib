@@ -27,7 +27,7 @@ public class FireGateTimer : MonoBehaviour {
 
 			foreach (GameObject t in torches) {
 				if (t.GetComponent<GateTorchTimer> ().timer <= 0f) {
-					t.GetComponent<GateTorchTimer> ().timer = 1f;
+					t.GetComponent<GateTorchTimer> ().timer = 2f;
 					t.GetComponent<GateTorchTimer> ().Light ();
 				}
 			}

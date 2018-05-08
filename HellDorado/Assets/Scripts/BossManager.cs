@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BossManager : MonoBehaviour {
 
@@ -12,6 +14,7 @@ public class BossManager : MonoBehaviour {
     public GameObject player;
     private bool ressing;
     public GameObject fireBallShooter;
+	public GameObject portal;
 
 
     // Use this for initialization
@@ -67,6 +70,8 @@ public class BossManager : MonoBehaviour {
     void Die()
     {
         Destroy(this.gameObject);
+		portal.SetActive (true);
+
         
     }
 

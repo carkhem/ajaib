@@ -27,6 +27,7 @@ public class DashState : State {
 	public override void Update (){
 		timer += Time.deltaTime;
 		if (timer < dashDuration) {
+//			Debug.Log ("dash");
 			_controller.GetComponent<CharacterController>().Move(xDashSpeed * transform.right * xDir);
 			_controller.GetComponent<CharacterController>().Move(yDashSpeed * transform.forward * yDir);
 		} else

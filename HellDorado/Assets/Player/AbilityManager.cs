@@ -71,35 +71,34 @@ public class AbilityManager : MonoBehaviour {
 	}
 
     private void ChangeAbility(){
-		if (Input.GetKeyDown("1") && GameManager.instance.playerLevel >= 1){
-			selectedAbility = Ability.Rewind;
-			CanvasManager.instance.ChangeAbility (0);
-        }
+		if (!TimeBody.isRewinding) {
+			if (Input.GetKeyDown ("1") && GameManager.instance.playerLevel >= 1) {
+				selectedAbility = Ability.Rewind;
+				CanvasManager.instance.ChangeAbility (0);
+			}
 
 
-        if (Input.GetKeyDown("2") && GameManager.instance.playerLevel >= 1)
-        {
-			if (TimeBody.isRewinding)
-				return;
-            selectedAbility = Ability.ObjectRewind;
-            CanvasManager.instance.ChangeAbility(1);
-        }
+			if (Input.GetKeyDown ("2") && GameManager.instance.playerLevel >= 1) {
+				if (TimeBody.isRewinding)
+					return;
+				selectedAbility = Ability.ObjectRewind;
+				CanvasManager.instance.ChangeAbility (1);
+			}
 
-        if (Input.GetKeyDown("3") && GameManager.instance.playerLevel >= 2)
-        {
-			if (TimeBody.isRewinding)
-				return;
-            selectedAbility = Ability.Fireball;
-            CanvasManager.instance.ChangeAbility(2);
-        }
+			if (Input.GetKeyDown ("3") && GameManager.instance.playerLevel >= 2) {
+				if (TimeBody.isRewinding)
+					return;
+				selectedAbility = Ability.Fireball;
+				CanvasManager.instance.ChangeAbility (2);
+			}
 
-        if (Input.GetKeyDown("4") && GameManager.instance.playerLevel >= 3)
-        {
-			if (TimeBody.isRewinding)
-				return;
-            selectedAbility = Ability.Push;
-            CanvasManager.instance.ChangeAbility(3);
-        }
+			if (Input.GetKeyDown ("4") && GameManager.instance.playerLevel >= 3) {
+				if (TimeBody.isRewinding)
+					return;
+				selectedAbility = Ability.Push;
+				CanvasManager.instance.ChangeAbility (3);
+			}
+		}
 
     }
 
