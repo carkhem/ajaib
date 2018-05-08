@@ -125,6 +125,11 @@ Prefab:
       propertyPath: patrolPoints.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114320640482500182, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: walkingSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4917444391632996, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.94
@@ -182,6 +187,16 @@ Prefab:
       propertyPath: swingSound
       value: 
       objectReference: {fileID: 8300000, guid: f3de8f86aa78b73488e5010a8508cd79, type: 3}
+    - target: {fileID: 114320640482500182, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: walkingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 034d68059a7dd8540828f264d60fc105, type: 3}
+    - target: {fileID: 114320640482500182, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: walkingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f80ba9f60b5ff54689f495125d48704, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_IsPrefabParent: 0
@@ -605,6 +620,7 @@ MonoBehaviour:
   dashCooldown: 0
   lArmAnim: {fileID: 0}
   rArmAnim: {fileID: 0}
+  lameRHand: {fileID: 0}
 --- !u!65 &652746068
 BoxCollider:
   m_ObjectHideFlags: 0

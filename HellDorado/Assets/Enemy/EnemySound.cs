@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemySound : MonoBehaviour {
 
 	public AudioClip swingSound;
+	public AudioClip[] walkingSounds;
 	private AudioSource source;
+	private int clipIndex;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,15 @@ public class EnemySound : MonoBehaviour {
 	public void PlaySwingSound(){
 		if (!source.isPlaying) {
 			source.PlayOneShot (swingSound);
+		}
+	}
+
+	public void PlayWalkingSound() {
+		if (!source.isPlaying) {
+			clipIndex = Random.Range (1, walkingSounds.Length);
+			AudioClip clip = walkingSounds [clipIndex];
+			source.PlayOneShot (clip);
+			walkingSounds [0] = clip;
 		}
 	}
 }
