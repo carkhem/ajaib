@@ -9,13 +9,11 @@ public class LevelUpScript : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            GameManager.instance.experienceChange(exp);
+    private void OnTriggerEnter(Collider other){
+		if (other.gameObject.CompareTag ("Player")) {
+//			GameManager.instance.ChangePlayerLevel (GameManager.instance.playerLevel + 1);
+			GameManager.instance.LevelUp();
+			Destroy (gameObject);
+		}
     }
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

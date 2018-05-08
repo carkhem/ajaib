@@ -41,7 +41,7 @@ public class TrapBoulder : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            collision.transform.GetComponent<PlayerStats>().health = 0;
         }
     }
 

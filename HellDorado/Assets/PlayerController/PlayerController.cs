@@ -24,11 +24,15 @@ public class PlayerController : Controller{
 	public Animator lArmAnim;
 	public Animator rArmAnim;
 	public GameObject lameRHand;
+	public bool startWithSword;
 
 	private CharacterController charController;
 
 	void Start(){
 		movementSpeed = maxSpeed;
+		if (startWithSword) {
+			EquipSword ();
+		}
 	}
 
     public Vector3 InputVector

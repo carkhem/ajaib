@@ -59,6 +59,12 @@ public class CanvasManager : MonoBehaviour {
 		Instantiate (abilityDisplayPrefab, abilityContent.transform);
 	}
 
+	public void ClearAbilities(){
+		for (int i = 0; i < abilityContent.transform.childCount; i++) {
+			Destroy(abilityContent.transform.GetChild (i));
+		}
+	}
+
 	public void SetEnemySlider(GameObject enemy){
 		currentEnemy = enemy;
 		enemyHealthSlider.gameObject.SetActive (true);
