@@ -132,10 +132,13 @@ public class AbilityManager : MonoBehaviour {
 		} else {
 			TimeBody.isRewinding = false;
 		}
-        if(TimeBody.isRewinding == true)
-        {
-            GetComponent<PlayerStats>().DamagePlayer(rewindCost);
-        }
+		if (TimeBody.isRewinding) {
+			GetComponent<PlayerStats> ().DamagePlayer (rewindCost);
+		} else {
+			CanvasManager.instance.rewindPanel.SetActive (false);
+			abilitySounds.StopPlayingAudio();
+		}
+
 	}
 
 	private void FireFireball() {
