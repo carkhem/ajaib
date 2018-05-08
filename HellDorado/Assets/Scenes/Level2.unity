@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.123219915, g: 0.15735537, b: 0.23322695, a: 1}
+  m_IndirectSpecularColor: {r: 0.123224296, g: 0.15736338, b: 0.2332429, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -8714,7 +8714,12 @@ Prefab:
     - target: {fileID: 114659882099421306, guid: 1a690dc47c5e3124ba09c346bf4ea959,
         type: 2}
       propertyPath: playerLevel
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659882099421306, guid: 1a690dc47c5e3124ba09c346bf4ea959,
+        type: 2}
+      propertyPath: MaxLevel
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a690dc47c5e3124ba09c346bf4ea959, type: 2}
@@ -8866,15 +8871,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -454.22128
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -53.88
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 213.82707
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalRotation.x
@@ -13254,10 +13259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cfd4fda2cad1540ac1c9ca321abd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPodiums:
-  - {fileID: 1099840593}
-  - {fileID: 1786869850}
-  - {fileID: 1565645244}
+  bloodPodiums: []
 --- !u!1 &1064281201
 GameObject:
   m_ObjectHideFlags: 0
@@ -13657,11 +13659,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4328999586247914, guid: 48455e0f267dfb745baee19c9792e40e,
     type: 2}
   m_PrefabInternal: {fileID: 1260172299}
---- !u!1 &1099840593 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1735320809133252, guid: 8c86349ac55f45e4691120363343f461,
-    type: 2}
-  m_PrefabInternal: {fileID: 1264684496}
 --- !u!1 &1108402826
 GameObject:
   m_ObjectHideFlags: 0
@@ -19836,11 +19833,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565475844}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1565645244 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1735320809133252, guid: 8c86349ac55f45e4691120363343f461,
-    type: 2}
-  m_PrefabInternal: {fileID: 536347336}
 --- !u!1 &1572519767
 GameObject:
   m_ObjectHideFlags: 0
@@ -25903,6 +25895,7 @@ GameObject:
   - component: {fileID: 2098395447}
   - component: {fileID: 2098395446}
   - component: {fileID: 2098395445}
+  - component: {fileID: 2098395448}
   m_Layer: 0
   m_Name: Cube (42)
   m_TagString: Untagged
@@ -25937,7 +25930,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5adec7d7394bd1347b88606a277e64b3, type: 2}
+  - {fileID: 2100000, guid: 8c602e381e9a5a4499e0cd2f59132e96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25964,7 +25957,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2098395443}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -25976,6 +25969,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2098395443}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2098395448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2098395443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f8af6a28dcabc40a817de73afd5043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneToLoad: Scenes/Level3
 --- !u!1 &2100069105
 GameObject:
   m_ObjectHideFlags: 0
