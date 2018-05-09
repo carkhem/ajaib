@@ -2593,14 +2593,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -12.16, y: 1.29, z: 9.73}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000014603138}
+  m_LocalPosition: {x: -8.32, y: 1.29, z: 4.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
 --- !u!4 &4309606010673830
 Transform:
   m_ObjectHideFlags: 1
@@ -5623,7 +5623,7 @@ MonoBehaviour:
   sneakDamage: 0
   sneaking: 0
   inCombat: 0
-  playerLevel: 0
+  playerLevel: 1
   playerEXP: 0
 --- !u!114 &114718242059653216
 MonoBehaviour:
