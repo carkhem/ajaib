@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
 	}
 
     void Awake(){
-		//DONTDESTROYONLOAD! Det är ett krav
+		DontDestroyOnLoad (gameObject);
 		instance = this;
 		cameraController = Camera.main.transform.parent.gameObject;
 	}
@@ -36,9 +36,9 @@ public class GameManager : MonoBehaviour {
     }
 
 	public void UpdateAbilityList(){
-		for (int i = 0; i < stats.playerLevel; i++) {
+		for (int i = 1; i < stats.playerLevel; i++) {
 			if (abilityDisplay.Length > i)
-				CanvasManager.instance.AddAbility (abilityDisplay[i]);
+				CanvasManager.instance.AddAbility (abilityDisplay[i - 1]);
 		}
 	}
 

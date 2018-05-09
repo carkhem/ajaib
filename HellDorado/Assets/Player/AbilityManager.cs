@@ -73,28 +73,28 @@ public class AbilityManager : MonoBehaviour {
 
     private void ChangeAbility(){
 		if (!TimeBody.isRewinding) {
-			if (Input.GetKeyDown ("1") && stats.playerLevel >= 1) {
+			if (Input.GetKeyDown ("1") && stats.playerLevel >= 2) {
 				print (stats.playerLevel);
 				selectedAbility = Ability.Rewind;
 				CanvasManager.instance.ChangeAbility (0);
 			}
 
 
-			if (Input.GetKeyDown ("2") && stats.playerLevel >= 1) {
+			if (Input.GetKeyDown ("2") && stats.playerLevel >= 3) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.ObjectRewind;
 				CanvasManager.instance.ChangeAbility (1);
 			}
 
-			if (Input.GetKeyDown ("3") && stats.playerLevel >= 2) {
+			if (Input.GetKeyDown ("3") && stats.playerLevel >= 4) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.Fireball;
 				CanvasManager.instance.ChangeAbility (2);
 			}
 
-			if (Input.GetKeyDown ("4") && stats.playerLevel >= 3) {
+			if (Input.GetKeyDown ("4") && stats.playerLevel >= 5) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.Push;

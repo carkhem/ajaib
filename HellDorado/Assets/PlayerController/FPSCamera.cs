@@ -16,6 +16,8 @@ public class FPSCamera : MonoBehaviour {
 	private MinMaxFloat currentYClamp;
 	private bool constrained;
 
+	private float vrot;
+
 	private GameObject player;
 
 	void Start(){
@@ -25,19 +27,26 @@ public class FPSCamera : MonoBehaviour {
 	}
 
 	void Update(){
-      	  var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
+		var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
 
-			md = Vector2.Scale(md,new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
-			_smoothV.x = Mathf.Lerp (_smoothV.x, md.x, 1f / Smoothing);
-			_smoothV.y = Mathf.Lerp (_smoothV.y, md.y, 1f / Smoothing);
-			_mouseLook += _smoothV;
+		md = Vector2.Scale(md,new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
+		_smoothV.x = Mathf.Lerp (_smoothV.x, md.x, 1f / Smoothing);
+		_smoothV.y = Mathf.Lerp (_smoothV.y, md.y, 1f / Smoothing);
+		_mouseLook += _smoothV;
 
-			_mouseLook.y = Mathf.Clamp (_mouseLook.y, currentYClamp.Min, currentYClamp.Max);
-			if (constrained)
-				_mouseLook.x = Mathf.Clamp (_mouseLook.x, xClamp.Min, xClamp.Max);
+		_mouseLook.y = Mathf.Clamp (_mouseLook.y, currentYClamp.Min, currentYClamp.Max);
+		transform.localRotation = Quaternion.AngleAxis (-_mouseLook.y, Vector3.right);
+		Vector3 _rotation = new Vector3 (0, md.x, 0) * Sensitivity;
+		player.transform.Rotate (_rotation);
 
-			transform.localRotation = Quaternion.AngleAxis (-_mouseLook.y, Vector3.right);
-			player.transform.localRotation = Quaternion.AngleAxis (_mouseLook.x, player.transform.up);
+
+
+//		transform.Rotate (Vector3.right, md.y);
+//		transform.localRotation = Mathf.Clamp(md.y
+//		print (md.y);
+//		vrot -= Input.GetAxis ("Mouse Y") * Sensitivity;
+//		vrot = Mathf.Clamp (vrot, xClamp.Min, xClamp.Max);
+//		transform.localRotation = Quaternion.Euler (vrot, 0, 0);
 
 			UpdateCursorLock ();
     }
