@@ -20,6 +20,7 @@ public class AnimatedKey : MonoBehaviour {
 			if (!dropped) {
 				transform.position = dropPos;
 				dropped = true;
+				GetComponent<AudioSource> ().PlayScheduled (0.5);
 			}
 			transform.SetParent (null);
 			transform.GetComponent<BoxCollider> ().isTrigger = false;
@@ -35,5 +36,6 @@ public class AnimatedKey : MonoBehaviour {
 			transform.GetComponent<BoxCollider> ().isTrigger = false;
 		}
 	}
+
 
 }

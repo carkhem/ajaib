@@ -16,7 +16,13 @@ public class Door : MonoBehaviour {
 	}
 
 	void Update(){
-		if (keys.Length == 0) {
+		bool allKeys = true;
+		foreach (GameObject key in keys) {
+			if (key != null)
+				allKeys = false;
+		}
+
+		if (allKeys) {
 			GetComponent<InteractableObject> ().showText = true;
 		} else {
 			GetComponent<InteractableObject> ().showText = false;
