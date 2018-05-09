@@ -8,7 +8,7 @@ public class AnimatedKey : MonoBehaviour {
 	public PlayableDirector director;
 	public Transform hand;
 	private Vector3 endPos = new Vector3 (-13f, 1.6f, -1.7f);
-	private Vector3 dropPos = new Vector3 (-10.8f, 1.9f, 1.1f);
+	public Vector3 dropPos = new Vector3 (-10.8f, 1.9f, 1.1f);
 	private bool dropped = false;
 	public void Update(){
 		if (director == null)

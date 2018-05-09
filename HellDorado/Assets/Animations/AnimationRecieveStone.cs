@@ -16,7 +16,6 @@ public class AnimationRecieveStone : MonoBehaviour {
 		player = PlayerStats.instance.transform.gameObject;
 		director.Stop ();
 		director.playOnAwake = false;
-//		fps = GetComponent<FPSCamera> ();
 	}
 
 	public void StartAnimation(){
@@ -37,8 +36,7 @@ public class AnimationRecieveStone : MonoBehaviour {
 			gameHands.SetActive(true);
 			director.gameObject.SetActive (false);
 			fps.enabled = true;
-			PlayerStats.instance.ChangePlayerLevel (2);
-//			this.enabled = false;
+			PlayerStats.instance.ChangePlayerLevel (3);
 		}
 	}
 }

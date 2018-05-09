@@ -104,6 +104,7 @@ public class PlayerStats : MonoBehaviour{
 			playerEXP = 0;
 		}
 		playerLevel = newLevel;
+		GameManager.instance.UpdateAbilityList ();
 	}
 
 	public void LevelUp(){

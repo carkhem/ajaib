@@ -13297,6 +13297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   director: {fileID: 1122700083}
   hand: {fileID: 1122700084}
+  dropPos: {x: -10.4, y: 1.9, z: 1.1}
 --- !u!1 &1472936743
 GameObject:
   m_ObjectHideFlags: 0
