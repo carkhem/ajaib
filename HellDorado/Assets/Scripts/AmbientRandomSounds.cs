@@ -24,31 +24,31 @@ public class AmbientRandomSounds : MonoBehaviour {
 		if (!sources [0].isPlaying) {
 			float d = Random.Range (minDelay, maxDelay);
 			sources [0].PlayDelayed (d);
-			Debug.Log ("s0 = " + d);
+//			Debug.Log ("s0 = " + d);
 		}
 
 		if (!sources [1].isPlaying) {
 			float d = Random.Range (minDelay, maxDelay);
 			sources [1].PlayDelayed (d);
-			Debug.Log ("s1 = " + d);
+//			Debug.Log ("s1 = " + d);
 		}
 
 		if (!sources [2].isPlaying) {
 			float d = Random.Range (minDelay, maxDelay);
 			sources [2].PlayDelayed (d);
-			Debug.Log ("s2 = " + d);
+//			Debug.Log ("s2 = " + d);
 		}
 
 		if (!sources [3].isPlaying) {
 			float d = Random.Range (minDelay, maxDelay);
 			sources [3].PlayDelayed (d);
-			Debug.Log ("s3 = " + d);
+//			Debug.Log ("s3 = " + d);
 		}
 
 		if (!sources [4].isPlaying) {
 			float d = Random.Range (minDelay, maxDelay);
 			sources [4].PlayDelayed (d);
-			Debug.Log ("s4 = " + d);
+//			Debug.Log ("s4 = " + d);
 		}
 	}
 }

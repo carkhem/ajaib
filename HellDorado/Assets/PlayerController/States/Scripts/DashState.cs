@@ -19,6 +19,7 @@ public class DashState : State {
 	}
 
 	public override void Enter (){
+		_controller.lArmAnim.SetTrigger ("dash");
 		xDir = Input.GetAxisRaw ("Horizontal");
 		yDir = Input.GetAxisRaw ("Vertical");
 		timer = 0;
