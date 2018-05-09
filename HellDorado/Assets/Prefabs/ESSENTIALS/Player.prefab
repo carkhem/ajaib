@@ -936,10 +936,10 @@ GameObject:
   - component: {fileID: 114356039716626932}
   - component: {fileID: 114773680334390078}
   - component: {fileID: 114177090878064434}
-  - component: {fileID: 82966544810474180}
   - component: {fileID: 114383441981491612}
-  - component: {fileID: 82053838261089770}
   - component: {fileID: 114362205852985014}
+  - component: {fileID: 82966544810474180}
+  - component: {fileID: 82053838261089770}
   - component: {fileID: 82075996703256658}
   - component: {fileID: 82521835657468312}
   - component: {fileID: 82324955196309268}
@@ -2594,7 +2594,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7.86, y: 1.29, z: 3.65}
+  m_LocalPosition: {x: -12.16, y: 1.29, z: 9.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -5603,7 +5603,7 @@ MonoBehaviour:
   lArmAnim: {fileID: 95463571114645248}
   rArmAnim: {fileID: 95740797903228828}
   lameRHand: {fileID: 1360486801121586}
-  startWithSword: 0
+  startWithSword: 1
 --- !u!114 &114652977690393738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5618,12 +5618,13 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   regenSpeed: 5
-  meleeDamage: 0
+  meleeDamage: 20
+  damage: 0
+  sneakDamage: 0
   sneaking: 0
   inCombat: 0
-  LevelMaxExp: 0
-  playerExp: 0
-  PlayerLevel: 0
+  playerLevel: 0
+  playerEXP: 0
 --- !u!114 &114718242059653216
 MonoBehaviour:
   m_ObjectHideFlags: 1

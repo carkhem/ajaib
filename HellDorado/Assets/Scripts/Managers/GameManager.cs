@@ -6,14 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
-//	public int playerLevel = 0;
-//	public float playerEXP;
 	public GameObject[] abilityDisplay;
-    public GameObject abilityList;
 	private GameObject cameraController;
     public GameObject player;
 	private PlayerStats stats;
-//    public int MaxLevel = 3;
 
 
 	void Update(){
@@ -36,15 +32,15 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		stats = PlayerStats.instance;
-//        if (playerLevel > MaxLevel)
-//            playerLevel = MaxLevel;
+		UpdateAbilityList();
+    }
+
+	public void UpdateAbilityList(){
 		for (int i = 0; i < stats.playerLevel; i++) {
 			if (abilityDisplay.Length > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}
-//        player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
-//        player.GetComponent<PlayerStats>().playerLevelUi();
-    }
+	}
 
 	public void GameOver(){
         Time.timeScale = 0f;
@@ -58,12 +54,10 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 	}
 
-    public void Respawn()
-    {
+    public void Respawn(){
         Vector3 spawnPosition = new Vector3(0, 0, 0);
         spawnPosition = CheckPoint.GetActiveCheckPointPosition();
 		CanvasManager.instance.healthBar.SetActive (true);
-        abilityList.SetActive(true);
         player.GetComponent<PlayerStats>().health = 100;
         CanvasManager.instance.deathScreen.SetActive(false);
 		cameraController.GetComponent<FPSCamera>().RemoveConstraints();

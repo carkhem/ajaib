@@ -69,7 +69,6 @@ public class AbilityManager : MonoBehaviour {
 		default:
 			break;
 		}
-
 	}
 
     private void ChangeAbility(){
@@ -103,10 +102,6 @@ public class AbilityManager : MonoBehaviour {
 			}
 		}
     }
-
-	public void UpdateAbilityList(){
-		
-	}
 
 	private void UpdateRewind() {
 		if (player.GetComponent<PlayerStats> ().health > 10) {
