@@ -26,11 +26,11 @@ public class EnemySound : MonoBehaviour {
 	}
 
 	public void PlayWalkingSound() {
-		if (!source.isPlaying) {
+//		if (!source.isPlaying) {
 			clipIndex = Random.Range (1, walkingSounds.Length);
 			AudioClip clip = walkingSounds [clipIndex];
 			source.PlayOneShot (clip);
 			walkingSounds [0] = clip;
-		}
+//		}
 	}
 }
