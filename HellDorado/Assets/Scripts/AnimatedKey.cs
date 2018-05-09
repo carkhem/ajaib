@@ -15,6 +15,7 @@ public class AnimatedKey : MonoBehaviour {
 			return;
 
 		if (director.time > 0 && director.time < 6.52f) {
+			PlayerStats.instance.transform.GetComponent<PlayerController> ().enabled = false;
 			transform.localPosition = new Vector3 (0.0016f, -0.0017f, 0);
 		} else  if (director.time >= 6.52 && director.time < 7) {
 			if (!dropped) {
@@ -34,6 +35,7 @@ public class AnimatedKey : MonoBehaviour {
 			if (transform.position != endPos)
 				transform.position = endPos;
 			transform.GetComponent<BoxCollider> ().isTrigger = false;
+			PlayerStats.instance.transform.GetComponent<PlayerController> ().enabled = true;
 		}
 	}
 

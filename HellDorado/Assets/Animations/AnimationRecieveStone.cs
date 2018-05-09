@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class AnimationRecieveStone : MonoBehaviour {
 
 	public PlayableDirector director;
-	private Vector3 startPosition = new Vector3 (-11.93f, 1.598708f, 3.69f);
+	private Vector3 startPosition = new Vector3 (-12f, 1.598708f, 3.69f);
 	private GameObject player;
 	public GameObject gameHands;
 	public FPSCamera fps;
@@ -24,6 +24,7 @@ public class AnimationRecieveStone : MonoBehaviour {
 		fps.enabled = false;
 		director.Play ();
 		stopped = false;
+		player.GetComponent<CharacterController> ().enabled = false;
 	}
 
 	void Update(){
@@ -37,6 +38,7 @@ public class AnimationRecieveStone : MonoBehaviour {
 			director.gameObject.SetActive (false);
 			fps.enabled = true;
 			PlayerStats.instance.ChangePlayerLevel (3);
+			player.GetComponent<CharacterController> ().enabled = true;
 		}
 	}
 }
