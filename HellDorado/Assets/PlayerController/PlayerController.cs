@@ -82,32 +82,6 @@ public class PlayerController : Controller{
 		movementSpeed = crouchSpeed;
     }
 
-
-    public void sprintCheat()
-    {
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            timesShift++;
-            movementSpeed = maxSpeed;
-
-            if (shiftTimer > 1.0f)
-            {
-                shiftTimer = 0;
-                timesShift = 0;
-            }
-            if(shiftTimer != 0 && timesShift >= 4)
-            {
-                movementSpeed = 20;
-                timesShift = 0;
-                shiftTimer = 0;
-            }
-        }
-
-        if(timesShift >=1)
-            shiftTimer += Time.fixedDeltaTime;
-    }
-
 	public void EquipSword(){
 		rArmAnim.gameObject.SetActive (true);
 		lameRHand.SetActive (false);

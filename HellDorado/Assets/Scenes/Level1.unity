@@ -1201,6 +1201,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224390633288619372, guid: 5acdd9237da3e38468aa13d4462057c2,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5acdd9237da3e38468aa13d4462057c2, type: 2}
   m_IsPrefabParent: 0
@@ -2168,8 +2173,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2, y: 0.02, z: 0.1}
+  m_Center: {x: 0.5, y: 0.011, z: 0}
 --- !u!4 &192000269
 Transform:
   m_ObjectHideFlags: 0
@@ -4161,7 +4166,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -11.98
+      value: -2.58
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4169,7 +4174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 10.86
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4232,12 +4237,32 @@ Prefab:
     - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
         type: 2}
       propertyPath: playerLevel
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114388339974472154, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
         type: 2}
       propertyPath: startWithSword
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82966544810474180, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 82966544810474180, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82053838261089770, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82053838261089770, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}

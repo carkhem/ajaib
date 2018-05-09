@@ -42,7 +42,7 @@ public class PlayerStats : MonoBehaviour{
         healthProcent.text = health + "%";
         experienceSlider = CanvasManager.instance.experienceSlider;
     }
-		
+
     void Update(){
 		if (enemies.Count > 0) {
 			inCombat = true;
@@ -55,10 +55,11 @@ public class PlayerStats : MonoBehaviour{
         if (!TimeBody.isRewinding && !inCombat) {
             RegenerateHealth();
             }
-		if (health == 0)
-		{
+
+		if (health <= 0){
 			GameManager.instance.GameOver();
 		}
+
         if (sneaking)
             damage = sneakDamage;
         

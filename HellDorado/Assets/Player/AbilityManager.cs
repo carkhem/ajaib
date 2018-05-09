@@ -154,7 +154,7 @@ public class AbilityManager : MonoBehaviour {
 
 	private void UseForcePush(){
 		forcePush = GetComponent<ForcePush> ();
-		if (forcePush != null){
+		if (forcePush != null && stats.health > forcePushCost){
 			player.GetComponent<PlayerStats> ().ChangeHealth (-forcePushCost);
 			forcePush.ForcePushObject ();
 			abilitySounds.PlayAbilitySound ("Push");

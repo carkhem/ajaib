@@ -15,20 +15,19 @@ public class GroundState : State {
 	public override void Initialize(Controller owner) {
 		_controller = (PlayerController)owner;
     }
+
 	public override void Enter (){
-//     	Debug.Log ("Ground State");
-    }
+
+	}
 
 	public override void Update() {
         UpdateMovement ();
 		_controller.CheckDash ();
 		UpdateJump ();
-        CheckPlayerLife();
 		_controller.UpdateCrouch ();
 		if (Input.GetButtonDown("Fire1") && _controller.rArmAnim.gameObject.activeSelf) {
 			_controller.TransitionTo<StrikeState> ();
 		}
-//        _controller.sprintCheat();
 	}
 
 	private void UpdateJump() {
@@ -47,15 +46,4 @@ public class GroundState : State {
 			_controller.TransitionTo<AirState> ();
 		}
 	}
-
-    private void CheckPlayerLife()
-    {
-       if( _controller.GetComponent<PlayerStats>().health <= 10)
-        {
-            GameManager.instance.GameOver();
-            _controller.TransitionTo<DeathState>();
-        }
-    }
-		
-
 }

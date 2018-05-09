@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
 	public void UpdateAbilityList(){
 		CanvasManager.instance.ClearAbilities ();
 		for (int i = 1; i < stats.playerLevel; i++) {
-			if (abilityDisplay.Length > i)
+			if (abilityDisplay.Length + 1 > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i - 1]);
 		}
 	}
@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour {
 		CanvasManager.instance.abilityContent.transform.parent.gameObject.SetActive(false);
 		CanvasManager.instance.healthBar.SetActive (false);
 		cameraController.GetComponent<FPSCamera>().SetStatic(true);
+		player.GetComponent<PlayerController> ().TransitionTo<DeadState> ();
     } 
 
 	public void ChangeLevel(string sceneName){
