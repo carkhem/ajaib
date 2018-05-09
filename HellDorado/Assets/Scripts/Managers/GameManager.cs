@@ -73,8 +73,8 @@ public class GameManager : MonoBehaviour {
 		CanvasManager.instance.healthBar.SetActive(true);
 		stats.health = stats.maxHealth;
 		cameraController.GetComponent<FPSCamera>().SetStatic(false);
-		if (checkpoint != null)
-			player.transform.position = checkpoint.GetPosition();
+		if (CheckPointPosition != null)
+			player.transform.position = CheckPointPosition;
 		else
 			ChangeLevel (SceneManager.GetActiveScene ().name);
 		EnemyRespawn();
