@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
 	public int playerLevel = 0;
+	public float playerEXP;
 	public GameObject[] abilityDisplay;
     public GameObject abilityList;
 	private GameObject cameraController;
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour {
 			if (abilityDisplay.Length > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}
-        player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
+//        player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
         player.GetComponent<PlayerStats>().playerLevelUi();
     }
 
@@ -69,14 +70,14 @@ public class GameManager : MonoBehaviour {
 //                CanvasManager.instance.AddAbility(abilityDisplay[playerLevel - 1]);
 //            player.GetComponent<PlayerStats>().playerLevelUi();
 //        }
-		
+		ChangePlayerLevel (playerLevel + 1);
 	}
 
-    public void experienceChange( float exp)
-    {
-        player.GetComponent<PlayerStats>().playerExp += exp;
-        if (player.GetComponent<PlayerStats>().playerExp >= player.GetComponent<PlayerStats>().LevelMaxExp)
-            LevelUp();
+    public void experienceChange(float exp){
+//        player.GetComponent<PlayerStats>().playerExp += exp;
+//        if (player.GetComponent<PlayerStats>().playerExp >= player.GetComponent<PlayerStats>().LevelMaxExp)
+//            LevelUp();
+		playerEXP += exp;
     }
 
 	public void GameOver(){

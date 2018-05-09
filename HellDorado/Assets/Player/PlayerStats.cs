@@ -25,12 +25,12 @@ public class PlayerStats : MonoBehaviour{
 	public bool inCombat;
 
     [Header("PlayerLevel")]
-    public float LevelMaxExp;
-    public float playerExp;
-    public int PlayerLevel;
+    public float levelMaxExp;
+//    public float exp;
+//    public int PlayerLevel;
     private Slider experienceSlider;
-    private Text experienceProgress;
-    private Text playerLevelText;
+//    private Text experienceProgress;
+//    private Text playerLevelText;
 
 //    private float timeSecond = 0.0f;
 //    public int regenerate;
@@ -45,10 +45,10 @@ public class PlayerStats : MonoBehaviour{
 		healthProcent = CanvasManager.instance.healthProcent;
         healthProcent.text = health + "%";
         experienceSlider = CanvasManager.instance.experienceSlider;
-        experienceProgress = CanvasManager.instance.experienceProgress;
+//        experienceProgress = CanvasManager.instance.experienceProgress;
 //        playerLevelText = CanvasManager.instance.playerLevelText;
-        PlayerLevel = 1;
-        playerExp = 0;
+//        PlayerLevel = 1;
+//        playerExp = 0;
     }
 
 
@@ -81,8 +81,8 @@ public class PlayerStats : MonoBehaviour{
             damage = meleeDamage;
 
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
-        changeDmg(PlayerLevel);
-        LevelMaxExp = PlayerLevel * 100;
+		changeDmg(GameManager.instance.playerLevel);
+//        LevelMaxExp = PlayerLevel * 100;
         UpdateExperienceProgress();
 //        Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
     }
@@ -105,7 +105,7 @@ public class PlayerStats : MonoBehaviour{
     public void playerLevelUi()
     {
 //        playerLevelText.text = "Level: " + PlayerLevel;
-		CanvasManager.instance.playerLevelText.text = "Level: " + PlayerLevel;
+//		CanvasManager.instance.playerLevelText.text = "Level: " + PlayerLevel;
     }
 
     private void RegenerateHealth() {
@@ -151,7 +151,11 @@ public class PlayerStats : MonoBehaviour{
 //
 //            LevelUpText();
 //        }
-
+		float exp = GameManager.instance.playerEXP;
+		experienceSlider.value = exp / levelMaxExp;
+		if (exp >= levelMaxExp) {
+			GameManager.instance.LevelUp ();
+		}
     }
 
     public void LevelUpText()
