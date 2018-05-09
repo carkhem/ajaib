@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Keypad3)){
 			SceneManager.LoadScene("Level3");
 		}
+		if (Time.timeScale == 0) {
+			if (Input.GetKeyDown (KeyCode.Return))
+				Respawn ();
+		}
 	}
 
     void Awake(){
@@ -56,20 +60,21 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 	}
 
-    public void SetCheckPoint(Vector3 position)
-    {
+    public void SetCheckPoint(Vector3 position){
         CheckPointPosition = position;
     }
 
-    public void Respawn()
-    {
-        CanvasManager.instance.healthBar.SetActive(true);
-        //abilityList.SetActive(true);
+    public void Respawn(){
+		Time.timeScale = 1f;
+		CanvasManager.instance.deathScreen.SetActive(false);
+		CanvasManager.instance.abilityContent.transform.parent.gameObject.SetActive(true);
+		CanvasManager.instance.healthBar.SetActive(true);
         player.GetComponent<PlayerStats>().health = 100;
-        CanvasManager.instance.deathScreen.SetActive(false);
-       // cameraController.GetComponent<FPSCamera>().RemoveConstraints();
-        player.transform.position = CheckPointPosition;
-        EnemyRespawn();
+		if (CheckPointPosition != null)
+			player.transform.position = CheckPointPosition;
+		else
+			ChangeLevel (SceneManager.GetActiveScene ().name);
+		EnemyRespawn();
     }
 
     private void EnemyRespawn()
