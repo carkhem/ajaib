@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
 	private PlayerStats stats;
     private Vector3 CheckPointPosition;
+//	private CheckPoint checkpoint;
 
     void Update(){
 		if (Input.GetKeyDown (KeyCode.Keypad1)){
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour {
 		if (stats == null)
 			stats = PlayerStats.instance;
 		UpdateAbilityList();
+		player = stats.transform.gameObject;
     }
 
 	public void UpdateAbilityList(){
@@ -69,9 +71,10 @@ public class GameManager : MonoBehaviour {
 		CanvasManager.instance.deathScreen.SetActive(false);
 		CanvasManager.instance.abilityContent.transform.parent.gameObject.SetActive(true);
 		CanvasManager.instance.healthBar.SetActive(true);
-        player.GetComponent<PlayerStats>().health = 100;
-		if (CheckPointPosition != null)
-			player.transform.position = CheckPointPosition;
+		stats.health = stats.maxHealth;
+		cameraController.GetComponent<FPSCamera>().SetStatic(false);
+		if (checkpoint != null)
+			player.transform.position = checkpoint.GetPosition();
 		else
 			ChangeLevel (SceneManager.GetActiveScene ().name);
 		EnemyRespawn();

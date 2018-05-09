@@ -58,17 +58,19 @@ public class Fireball2 : MonoBehaviour {
 	}
 
 	private void Explode(){
-		if (explosionPrefab != null)
-			StopEmitting();
-			source.PlayOneShot(explosion);
-        	Instantiate (explosionPrefab, transform.position, transform.rotation);
+		if (explosionPrefab != null) {
+			StopEmitting ();
+			source.PlayOneShot (explosion);
+			Instantiate (explosionPrefab, transform.position, transform.rotation);
+			GetComponent<SphereCollider> ().enabled = false;
+		}
 	}
 
 	public void SetMaxDamage(float damage){
 		maxDamage = damage;
 	}
 
-	void OnCollisionEnter(Collision col){
+	void OnTriggerEnter(Collider col){
 		if(col.gameObject.CompareTag("Enemy")) {
 			col.gameObject.GetComponent<EnemyController> ().TakeDamage (damage);
 		}
