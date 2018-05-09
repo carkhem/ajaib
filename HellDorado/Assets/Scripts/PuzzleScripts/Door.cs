@@ -15,6 +15,14 @@ public class Door : MonoBehaviour {
 		source = GetComponent<AudioSource> ();
 	}
 
+	void Update(){
+		if (keys.Length == 0) {
+			GetComponent<InteractableObject> ().showText = true;
+		} else {
+			GetComponent<InteractableObject> ().showText = false;
+		}
+	}
+
 	public void ToggleDoor(){
 		if (open) {
 			CloseDoor ();

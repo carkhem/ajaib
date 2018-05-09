@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
 	private PlayerStats stats;
 
-
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Keypad1)){
 			SceneManager.LoadScene("Level1");
@@ -31,7 +30,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		stats = PlayerStats.instance;
+		if (stats == null)
+			stats = PlayerStats.instance;
 		UpdateAbilityList();
     }
 
