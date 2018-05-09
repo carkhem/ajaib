@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
         CanvasManager.instance.deathScreen.SetActive (true);
 		CanvasManager.instance.abilityContent.transform.parent.gameObject.SetActive(false);
 		CanvasManager.instance.healthBar.SetActive (false);
-		cameraController.GetComponent<FPSCamera>().SetConstraints(0, 0, 0, 0);
+		cameraController.GetComponent<FPSCamera>().SetStatic(true);
     } 
 
 	public void ChangeLevel(string sceneName){
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
 		CanvasManager.instance.healthBar.SetActive (true);
         player.GetComponent<PlayerStats>().health = 100;
         CanvasManager.instance.deathScreen.SetActive(false);
-		cameraController.GetComponent<FPSCamera>().RemoveConstraints();
+		cameraController.GetComponent<FPSCamera>().SetStatic(false);
         player.transform.position = spawnPosition;
 		if (spawnPosition == new Vector3 (0, 0, 0)) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene().name);

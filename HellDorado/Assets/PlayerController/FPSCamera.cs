@@ -37,7 +37,7 @@ public class FPSCamera : MonoBehaviour {
     }
 
 	public void SetStatic (bool condition){
-		
+		isStatic = condition;
 	}
 
 	public void UpdateCursorLock()
