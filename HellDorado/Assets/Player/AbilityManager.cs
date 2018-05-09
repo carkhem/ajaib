@@ -74,7 +74,7 @@ public class AbilityManager : MonoBehaviour {
     private void ChangeAbility(){
 		if (!TimeBody.isRewinding) {
 			if (Input.GetKeyDown ("1") && stats.playerLevel >= 2) {
-				print (stats.playerLevel);
+//				print (stats.playerLevel);
 				selectedAbility = Ability.Rewind;
 				CanvasManager.instance.ChangeAbility (0);
 			}

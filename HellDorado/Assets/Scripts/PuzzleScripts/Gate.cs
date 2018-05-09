@@ -39,12 +39,12 @@ public class Gate : MonoBehaviour {
 		open = true;
 		animOpen (open);
 		source.PlayOneShot (gateSound);
-		Debug.Log ("play");
 	}
 
 	public void CloseGate(){
 		open = false;
 		animOpen (open);
+		source.PlayOneShot (gateSound);
 	}
 
 	public void ToggleGate(){

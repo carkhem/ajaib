@@ -1967,14 +1967,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336670347079802}
-  m_LocalRotation: {x: -0, y: -0.67985636, z: -0, w: -0.7333454}
-  m_LocalPosition: {x: -21.80469, y: 2.7186852, z: 8.0964985}
+  m_LocalRotation: {x: -0, y: -0.728321, z: -0, w: -0.6852361}
+  m_LocalPosition: {x: -9.18469, y: -2.6413147, z: 0.010536194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4085781518546660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -274.335, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -266.508, z: 0}
 --- !u!4 &4927177587607114
 Transform:
   m_ObjectHideFlags: 1
@@ -2502,7 +2502,7 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0, z: 0}
   damage: 30
   maxHealth: 20
-  expGain: 50
+  expGain: 34
   health: 100
   eyes: {fileID: 1182124741358420}
   offset: {x: 0, y: 0, z: 0}
@@ -2515,8 +2515,8 @@ MonoBehaviour:
   recentState: 
   recentHealth: 0
   patrolPoints:
-  - {x: -40.1261, y: 6.18, z: 17.74596}
-  - {x: -33.51, y: 6.18, z: 17.74596}
+  - {x: -13.6, y: 0.82, z: 9.22}
+  - {x: -20.89, y: 0.82, z: 9.66}
 --- !u!114 &114870501714441728
 MonoBehaviour:
   m_ObjectHideFlags: 1

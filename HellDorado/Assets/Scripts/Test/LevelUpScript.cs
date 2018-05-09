@@ -11,7 +11,6 @@ public class LevelUpScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("Player")) {
-//			GameManager.instance.ChangePlayerLevel (GameManager.instance.playerLevel + 1);
 			PlayerStats.instance.LevelUp();
 			Destroy (gameObject);
 		}

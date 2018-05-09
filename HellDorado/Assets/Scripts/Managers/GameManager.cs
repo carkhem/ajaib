@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour {
     }
 
 	public void UpdateAbilityList(){
+		CanvasManager.instance.ClearAbilities ();
 		for (int i = 1; i < stats.playerLevel; i++) {
 			if (abilityDisplay.Length > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i - 1]);
