@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour {
 	private GameObject cameraController;
     public GameObject player;
 	private PlayerStats stats;
+    private Vector3 CheckPointPosition;
 
-	void Update(){
+    void Update(){
 		if (Input.GetKeyDown (KeyCode.Keypad1)){
 			SceneManager.LoadScene("Level1");
 		}
@@ -54,16 +55,35 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 	}
 
-    public void Respawn(){
-        Vector3 spawnPosition = new Vector3(0, 0, 0);
-        spawnPosition = CheckPoint.GetActiveCheckPointPosition();
-		CanvasManager.instance.healthBar.SetActive (true);
+    public void SetCheckPoint(Vector3 position)
+    {
+        CheckPointPosition = position;
+    }
+
+    public void Respawn()
+    {
+        CanvasManager.instance.healthBar.SetActive(true);
+        //abilityList.SetActive(true);
         player.GetComponent<PlayerStats>().health = 100;
         CanvasManager.instance.deathScreen.SetActive(false);
-		cameraController.GetComponent<FPSCamera>().SetStatic(false);
-        player.transform.position = spawnPosition;
-		if (spawnPosition == new Vector3 (0, 0, 0)) {
-			SceneManager.LoadScene (SceneManager.GetActiveScene().name);
-		}
+       // cameraController.GetComponent<FPSCamera>().RemoveConstraints();
+        player.transform.position = CheckPointPosition;
+        EnemyRespawn();
+    }
+
+    private void EnemyRespawn()
+    {
+        GameObject[] enemies;
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (enemies[i].GetComponent<EnemyController>().CurrentState.name != "DeadState")
+            {
+                enemies[i].GetComponent<EnemyController>().TransitionTo<IdleState>();
+                enemies[i].GetComponent<EnemyController>().detection = 0f;
+                enemies[i].transform.position = enemies[i].GetComponent<EnemyController>().patrolPoints[0];
+            }
+        }
     }
 }
