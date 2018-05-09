@@ -83,7 +83,7 @@ public class PlayerStats : MonoBehaviour{
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
         changeDmg(PlayerLevel);
         LevelMaxExp = PlayerLevel * 100;
-        updateExperienceProgress(false);
+        UpdateExperienceProgress();
 //        Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
     }
 
@@ -131,26 +131,27 @@ public class PlayerStats : MonoBehaviour{
         sneakDamage = meleeDamage * 2;
     }
 
-    public void updateExperienceProgress(bool LevelUp)
+    public void UpdateExperienceProgress()
     {
-        if (PlayerLevel == GameManager.instance.MaxLevel && playerExp >= LevelMaxExp)
-        {
-            experienceProgress.text = "Max Level";
-            experienceSlider.value = LevelMaxExp;
-        }
-        else
-        {
-            experienceSlider.value = playerExp;
-            experienceSlider.maxValue = LevelMaxExp;
-            experienceProgress.text = playerExp + "/" + LevelMaxExp;
-            if (LevelUp)
-            {
-                experienceSlider.minValue = (PlayerLevel - 1) * 100;
-                LevelIsUp = true;
-            }
+//        if (PlayerLevel == GameManager.instance.MaxLevel && playerExp >= LevelMaxExp)
+//        {
+//            experienceProgress.text = "Max Level";
+//            experienceSlider.value = LevelMaxExp;
+//        }
+//        else
+//        {
+//            experienceSlider.value = playerExp;
+//            experienceSlider.maxValue = LevelMaxExp;
+//            experienceProgress.text = playerExp + "/" + LevelMaxExp;
+//            if (LevelUp)
+//            {
+//                experienceSlider.minValue = (PlayerLevel - 1) * 100;
+//                LevelIsUp = true;
+//            }
+//
+//            LevelUpText();
+//        }
 
-            LevelUpText();
-        }
     }
 
     public void LevelUpText()
