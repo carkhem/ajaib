@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
-	public int playerLevel = 0;
-	public float playerEXP;
+//	public int playerLevel = 0;
+//	public float playerEXP;
 	public GameObject[] abilityDisplay;
     public GameObject abilityList;
 	private GameObject cameraController;
     public GameObject player;
+	private PlayerStats stats;
 //    public int MaxLevel = 3;
+
 
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Keypad1)){
@@ -33,51 +35,15 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
+		stats = PlayerStats.instance;
 //        if (playerLevel > MaxLevel)
 //            playerLevel = MaxLevel;
-		for (int i = 0; i < playerLevel; i++) {
+		for (int i = 0; i < stats.playerLevel; i++) {
 			if (abilityDisplay.Length > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i]);
 		}
 //        player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
-        player.GetComponent<PlayerStats>().playerLevelUi();
-    }
-
-	public void ChangePlayerLevel(int newLevel){
-//		if (playerLevel < MaxLevel) {
-//			playerLevel = newLevel;
-//			player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
-//			player.GetComponent<PlayerStats>().updateExperienceProgress(true);
-//			CanvasManager.instance.ClearAbilities ();
-//			for (int i = 0; i < playerLevel; i++) {
-//				if (abilityDisplay.Length > i)
-//					CanvasManager.instance.AddAbility (abilityDisplay[i]);
-//			}
-//			player.GetComponent<PlayerStats>().playerLevelUi();
-//		}
-		playerLevel = newLevel;
-
-	}
-
-	public void LevelUp(){
-//        if (playerLevel < MaxLevel)
-//        {
-//            playerLevel++;
-//            player.GetComponent<PlayerStats>().PlayerLevel = playerLevel;
-//            player.GetComponent<PlayerStats>().updateExperienceProgress(true);
-//            // player.GetComponent<PlayerStats>().changeDmg(playerLevel);
-//            if (abilityDisplay.Length > playerLevel)
-//                CanvasManager.instance.AddAbility(abilityDisplay[playerLevel - 1]);
-//            player.GetComponent<PlayerStats>().playerLevelUi();
-//        }
-		ChangePlayerLevel (playerLevel + 1);
-	}
-
-    public void experienceChange(float exp){
-//        player.GetComponent<PlayerStats>().playerExp += exp;
-//        if (player.GetComponent<PlayerStats>().playerExp >= player.GetComponent<PlayerStats>().LevelMaxExp)
-//            LevelUp();
-		playerEXP += exp;
+//        player.GetComponent<PlayerStats>().playerLevelUi();
     }
 
 	public void GameOver(){

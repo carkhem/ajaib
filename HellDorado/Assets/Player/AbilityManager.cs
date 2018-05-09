@@ -34,8 +34,10 @@ public class AbilityManager : MonoBehaviour {
 
 	AbilitySounds abilitySounds;
 	PlayerController _controller;
+	private PlayerStats stats;
 
     void Start (){
+		stats = PlayerStats.instance;
 		_controller = GetComponent<PlayerController> ();
 		selectedAbility = Ability.None;
 		anim = GetComponent<PlayerController> ().lArmAnim;
@@ -72,35 +74,39 @@ public class AbilityManager : MonoBehaviour {
 
     private void ChangeAbility(){
 		if (!TimeBody.isRewinding) {
-			if (Input.GetKeyDown ("1") && GameManager.instance.playerLevel >= 1) {
+			if (Input.GetKeyDown ("1") && stats.playerLevel >= 1) {
+				print (stats.playerLevel);
 				selectedAbility = Ability.Rewind;
 				CanvasManager.instance.ChangeAbility (0);
 			}
 
 
-			if (Input.GetKeyDown ("2") && GameManager.instance.playerLevel >= 1) {
+			if (Input.GetKeyDown ("2") && stats.playerLevel >= 1) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.ObjectRewind;
 				CanvasManager.instance.ChangeAbility (1);
 			}
 
-			if (Input.GetKeyDown ("3") && GameManager.instance.playerLevel >= 2) {
+			if (Input.GetKeyDown ("3") && stats.playerLevel >= 2) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.Fireball;
 				CanvasManager.instance.ChangeAbility (2);
 			}
 
-			if (Input.GetKeyDown ("4") && GameManager.instance.playerLevel >= 3) {
+			if (Input.GetKeyDown ("4") && stats.playerLevel >= 3) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.Push;
 				CanvasManager.instance.ChangeAbility (3);
 			}
 		}
-
     }
+
+	public void UpdateAbilityList(){
+		
+	}
 
 	private void UpdateRewind() {
 		if (player.GetComponent<PlayerStats> ().health > 10) {

@@ -37,7 +37,7 @@ public class AnimationRecieveStone : MonoBehaviour {
 			gameHands.SetActive(true);
 			director.gameObject.SetActive (false);
 			fps.enabled = true;
-			GameManager.instance.ChangePlayerLevel (2);
+			PlayerStats.instance.ChangePlayerLevel (2);
 //			this.enabled = false;
 		}
 	}

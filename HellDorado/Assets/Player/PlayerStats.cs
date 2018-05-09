@@ -18,22 +18,18 @@ public class PlayerStats : MonoBehaviour{
 
     [Header("Combat")]
 	public float meleeDamage;
-	private float damage;
-	private float sneakDamage;
+	public float damage;
+	public float sneakDamage;
     public bool sneaking = false;
 	private List<GameObject> enemies = new List<GameObject>();
 	public bool inCombat;
 
     [Header("PlayerLevel")]
-    public float levelMaxExp;
-//    public float exp;
-//    public int PlayerLevel;
-    private Slider experienceSlider;
-//    private Text experienceProgress;
-//    private Text playerLevelText;
-
-//    private float timeSecond = 0.0f;
-//    public int regenerate;
+	public int playerLevel = 0;
+	public float playerEXP;
+//	public float maxEXP {get {return (playerLevel < 1) ? 100  : playerLevel * 100;}}
+	private float maxEXP = 100;
+	private Slider experienceSlider;
 
 	void Awake(){
 		instance = this;
@@ -45,13 +41,8 @@ public class PlayerStats : MonoBehaviour{
 		healthProcent = CanvasManager.instance.healthProcent;
         healthProcent.text = health + "%";
         experienceSlider = CanvasManager.instance.experienceSlider;
-//        experienceProgress = CanvasManager.instance.experienceProgress;
-//        playerLevelText = CanvasManager.instance.playerLevelText;
-//        PlayerLevel = 1;
-//        playerExp = 0;
     }
-
-
+		
     void Update(){
 		if (enemies.Count > 0) {
 			inCombat = true;
@@ -68,12 +59,6 @@ public class PlayerStats : MonoBehaviour{
 		{
 			GameManager.instance.GameOver();
 		}
-
-        //        if (!GetComponent<AbilityManager>().isRewinding)
-        //            regenerateHealth(regenerate);
-        //		if (!inCombat) {
-        //			regenerateHealth();
-        //		}
         if (sneaking)
             damage = sneakDamage;
         
@@ -81,14 +66,18 @@ public class PlayerStats : MonoBehaviour{
             damage = meleeDamage;
 
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
-		changeDmg(GameManager.instance.playerLevel);
-//        LevelMaxExp = PlayerLevel * 100;
+		ChangeDmg(playerLevel);
         UpdateExperienceProgress();
-//        Debug.Log("Player Level är " + PlayerLevel + " Player EXP är " + playerExp + " Player Max Exp för Level är " + LevelMaxExp + "player Damage är " + damage);
     }
 
+	public void UpdateExperienceProgress(){
+		experienceSlider.value = playerEXP / maxEXP;
+		if (playerEXP >= maxEXP) {
+			LevelUp ();
+		}
+	}
+
 	public void ChangeHealth(float ammount){
-        
 		if(ammount < 0) {
 			GetComponent<PlayerSounds> ().TakingDamageSound ();
 			if (health + ammount > maxHealth)
@@ -97,16 +86,33 @@ public class PlayerStats : MonoBehaviour{
 				health = 0;
 			else 
 				health += ammount;
-		
-//        health = Mathf.Clamp(health, 0, maxHealth);
 		}
     }
 
-    public void playerLevelUi()
-    {
-//        playerLevelText.text = "Level: " + PlayerLevel;
-//		CanvasManager.instance.playerLevelText.text = "Level: " + PlayerLevel;
-    }
+	public void DamagePlayer(float damage) {
+		if (health - (damage * Time.deltaTime) > 0) {
+			health -= damage * Time.deltaTime;
+		} else if (health - (damage * Time.deltaTime) < 0) {
+			health = 0;
+		}
+	}
+
+	public void ChangePlayerLevel(int newLevel){
+		if (playerEXP >= maxEXP) {
+			playerEXP %= maxEXP;
+		} else {
+			playerEXP = 0;
+		}
+		playerLevel = newLevel;
+	}
+
+	public void LevelUp(){
+		ChangePlayerLevel (playerLevel + 1);
+	}
+
+	public void AddExperience(float exp){
+		playerEXP += exp;
+	}
 
     private void RegenerateHealth() {
 		if (health < maxHealth)
@@ -115,47 +121,9 @@ public class PlayerStats : MonoBehaviour{
 			health = maxHealth;
     }
 
-	public void DamagePlayer(float damage) {
-		if (health - (damage * Time.deltaTime) > 0) {
-//			print ("Killing");
-			health -= damage * Time.deltaTime;
-            //Debug.Log(health);
-		} else if (health - (damage * Time.deltaTime) < 0) {
-			print (health + " - " + damage + " = DIE");
-			health = 0;
-		}
-    }
-
-    public void changeDmg(int level){
+    public void ChangeDmg(int level){
         meleeDamage = level * 2;
         sneakDamage = meleeDamage * 2;
-    }
-
-    public void UpdateExperienceProgress()
-    {
-//        if (PlayerLevel == GameManager.instance.MaxLevel && playerExp >= LevelMaxExp)
-//        {
-//            experienceProgress.text = "Max Level";
-//            experienceSlider.value = LevelMaxExp;
-//        }
-//        else
-//        {
-//            experienceSlider.value = playerExp;
-//            experienceSlider.maxValue = LevelMaxExp;
-//            experienceProgress.text = playerExp + "/" + LevelMaxExp;
-//            if (LevelUp)
-//            {
-//                experienceSlider.minValue = (PlayerLevel - 1) * 100;
-//                LevelIsUp = true;
-//            }
-//
-//            LevelUpText();
-//        }
-		float exp = GameManager.instance.playerEXP;
-		experienceSlider.value = exp / levelMaxExp;
-		if (exp >= levelMaxExp) {
-			GameManager.instance.LevelUp ();
-		}
     }
 
     public void LevelUpText()
