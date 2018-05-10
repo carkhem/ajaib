@@ -14,11 +14,12 @@ public class TimeBody : MonoBehaviour {
 	private List<string> enemyStates;
 
 	private EnemyController enemy;
-
+    private PlayerController playerController;
 
 	void Start () {
 		pointsInTime = new List<PointInTime>();
-     
+
+        playerController = GetComponent<PlayerController>();
 		enemy = GetComponent<EnemyController> ();
 		if (enemy != null)
 			enemyStates = new List<string> ();
@@ -71,7 +72,14 @@ public class TimeBody : MonoBehaviour {
 		}
 		if(enemy != null)
 			enemyStates.Insert (0, EnemyRecentState ());
-		pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+        if (playerController != null)
+        {
+            if(playerController.InputVector.x != 0f && playerController.InputVector.z != 0f)
+                pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+        }
+        else if (enemy != null) {
+            pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+        }
 	}
 
 	private string EnemyRecentState(){

@@ -32,6 +32,7 @@ public class TrapBoulder : MonoBehaviour {
         if (fallDelay <= 0)
         {
 			rigid.isKinematic = false;
+            rigid.velocity = new Vector3(0f, -100f, 0f);
             consumed = true;
 
         }
