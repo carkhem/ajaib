@@ -104,10 +104,8 @@ public class EnemyController : Controller
                 detectionTimer = 0;
         }
         detection = detectionTimer / detectionSpeed;
-        if (detection >= 1)
-        {
+        if (detection >= 1){
             DetectPlayer();
-            TransitionTo<CombatState>();
         }
     }
 
@@ -147,6 +145,7 @@ public class EnemyController : Controller
         detection = 1;
         detectionTimer = 0;
         player.GetComponent<PlayerStats>().AddEnemy(gameObject);
+		TransitionTo<CombatState> ();
     }
 
     public void Revive()

@@ -20,7 +20,7 @@ public class StunnedState : State {
 	public override void Enter (){
 //		Debug.Log ("STUNNED");
 		timer = 0;
-		_controller.SetAnim("stunned", true);
+		_controller.anim.SetTrigger("stun");
 		agent.enabled = false;
 	}
 
@@ -29,6 +29,12 @@ public class StunnedState : State {
 		if (timer >= stunnedTime) {
 			_controller.TransitionTo<CombatState> ();
 		}
+
+//		Debug.Log(!_controller.anim.GetCurrentAnimatorStateInfo(0).tagHash)
+//		if (!_controller.anim.GetCurrentAnimatorStateInfo (0).IsName ("Stunned")){
+//			Debug.Log ("transition");
+//			_controller.TransitionTo<CombatState> ();
+//		}
 	}
 
 	public override void Exit (){
