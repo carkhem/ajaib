@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
 		CanvasManager.instance.abilityContent.transform.parent.gameObject.SetActive(false);
 		CanvasManager.instance.healthBar.SetActive (false);
 		cameraController.GetComponent<FPSCamera>().SetStatic(true);
-		player.GetComponent<PlayerController> ().TransitionTo<DeadState> ();
+		player.GetComponent<PlayerController> ().TransitionTo<DeathState> ();
     } 
 
 	public void ChangeLevel(string sceneName){

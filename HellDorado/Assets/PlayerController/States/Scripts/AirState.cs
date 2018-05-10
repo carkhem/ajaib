@@ -27,13 +27,15 @@ public class AirState : State {
 	}
 
 	public override void Update() {
-		if (Velocity.y < MinVelocityY) {
-//			_controller.Velocity.y = MinVelocityY;
+//		Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
+		if (Velocity.y < 0) {
 			Velocity += Vector3.down * _controller.gravity * FastFallingModifier * Time.deltaTime;
 		} else {
 			Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
-
 		}
+//		else if (Velocity.y < -10) {
+//			_controller.Velocity.y = MinVelocityY;
+//		}
 
 		_controller.GetComponent<CharacterController>().Move(Velocity * Time.deltaTime);
         if (Input.GetButtonUp("Crouch")){
