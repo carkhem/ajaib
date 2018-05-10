@@ -19,10 +19,10 @@ public class PatrolState : State {
 
 	public override void Enter() {
 		_controller.SetAnim ("walk", true);
-//		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
 		RandomizeDestination ();
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
 		agent.speed = walkSpeed;
+		Debug.Log (transform.name + ": " + _controller.CurrentState.name + " | " + destination);
 	}
 
 	public override void Update (){
