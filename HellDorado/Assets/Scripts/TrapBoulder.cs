@@ -6,11 +6,15 @@ public class TrapBoulder : MonoBehaviour {
     public float fallDelay;
     private bool active;
     private bool consumed;
+    private Vector3 startPosition;
+    private float timer;
     Rigidbody rigid;
 
     // Use this for initialization
     void Start()
     {
+        timer = fallDelay;
+        startPosition = transform.position;
 
         active = false;
         rigid = this.gameObject.GetComponent<Rigidbody>();
@@ -28,8 +32,8 @@ public class TrapBoulder : MonoBehaviour {
 
     public void Fall()
     {
-        fallDelay -= Time.deltaTime;
-        if (fallDelay <= 0)
+        timer -= Time.deltaTime;
+        if (timer <= 0)
         {
 			rigid.isKinematic = false;
             rigid.velocity = new Vector3(0f, -100f, 0f);
@@ -38,11 +42,11 @@ public class TrapBoulder : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider coll)
     {
-        if (collision.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player")
         {
-            collision.transform.GetComponent<PlayerStats>().health = 0;
+            coll.transform.GetComponent<PlayerStats>().health = -1;
         }
     }
 
@@ -51,5 +55,11 @@ public class TrapBoulder : MonoBehaviour {
         active = true;
     }
 
-    
+    public void Reset() {
+        transform.position = startPosition;
+        active = false;
+        consumed = false;
+        timer = fallDelay;
+        rigid.isKinematic = true;
+    }
 }
