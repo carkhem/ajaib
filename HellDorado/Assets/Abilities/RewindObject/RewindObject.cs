@@ -44,7 +44,11 @@ public class RewindObject : MonoBehaviour {
                     Destroy(clone.GetComponent<PushableObject>());
                     Destroy(clone.GetComponent<FreezeTime>());
                     clone.GetComponent<ObjectTimeBody>().SetPointsInTime(clonePointInTime);
-                  
+                    ghostMaterial = clone.GetComponent<Renderer>().material;
+                    Color changeAlpha = ghostMaterial.color;
+                    changeAlpha.a = 0.3f;
+                    ghostMaterial.color = changeAlpha;
+                    clone.GetComponent<Renderer>().material = ghostMaterial;
                     //  clone.transform.position = clonePointInTime[clonePointInTime.Count - 1].position;
 
 
