@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private GameObject cameraController;
     public GameObject player;
     private PlayerStats stats;
-    private Vector3 CheckPointPosition;
+    private GameObject CheckPoint;
     private GameObject[] enemies;
 
 
@@ -80,9 +80,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void SetCheckPoint(Vector3 position)
+    public void SetCheckPoint(GameObject checkPoint)
     {
-        CheckPointPosition = position;
+        CheckPoint = checkPoint;
     }
 
     public void Respawn()
@@ -93,10 +93,15 @@ public class GameManager : MonoBehaviour
         CanvasManager.instance.healthBar.SetActive(true);
         stats.health = stats.maxHealth;
         cameraController.GetComponent<FPSCamera>().SetStatic(false);
-        if (CheckPointPosition != null)
-            player.transform.position = CheckPointPosition;
+        if (CheckPoint != null)
+        {
+            player.transform.position = CheckPoint.GetComponent<CheckPoint>().GetPosition();
+            CheckPoint.GetComponent<CheckPoint>().RespawnEvent();
+        }
         else
+        {
             ChangeLevel(SceneManager.GetActiveScene().name);
+        }
         RespawnEnemies();
     }
 
