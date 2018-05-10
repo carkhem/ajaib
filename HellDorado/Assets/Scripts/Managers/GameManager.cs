@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
+	public int playerLevel = 0;
+	public float playerEXP;
 	public GameObject[] abilityDisplay;
 	private GameObject cameraController;
     public GameObject player;
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour {
 
 	public void UpdateAbilityList(){
 		CanvasManager.instance.ClearAbilities ();
-		for (int i = 1; i < stats.playerLevel; i++) {
+		for (int i = 1; i < playerLevel; i++) {
 			if (abilityDisplay.Length + 1 > i)
 				CanvasManager.instance.AddAbility (abilityDisplay[i - 1]);
 		}

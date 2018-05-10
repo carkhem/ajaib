@@ -25,11 +25,13 @@ public class PlayerStats : MonoBehaviour{
 	public bool inCombat;
 
     [Header("PlayerLevel")]
-	public int playerLevel = 0;
-	public float playerEXP;
+//	public int playerLevel = 0;
+//	public float playerEXP;
 //	public float maxEXP {get {return (playerLevel < 1) ? 100  : playerLevel * 100;}}
 	private float maxEXP = 100;
 	private Slider experienceSlider;
+
+	private GameManager gm;
 
 	void Awake(){
 		instance = this;
@@ -41,6 +43,7 @@ public class PlayerStats : MonoBehaviour{
 		healthProcent = CanvasManager.instance.healthProcent;
         healthProcent.text = health + "%";
         experienceSlider = CanvasManager.instance.experienceSlider;
+		gm = GameManager.instance;
     }
 
     void Update(){
@@ -67,13 +70,13 @@ public class PlayerStats : MonoBehaviour{
             damage = meleeDamage;
 
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
-		ChangeDmg(playerLevel);
+		ChangeDmg(gm.playerLevel);
         UpdateExperienceProgress();
     }
 
 	public void UpdateExperienceProgress(){
-		experienceSlider.value = playerEXP / maxEXP;
-		if (playerEXP >= maxEXP) {
+		experienceSlider.value = gm.playerEXP / maxEXP;
+		if (gm.playerEXP >= maxEXP) {
 			LevelUp ();
 		}
 	}
@@ -99,21 +102,21 @@ public class PlayerStats : MonoBehaviour{
 	}
 
 	public void ChangePlayerLevel(int newLevel){
-		if (playerEXP >= maxEXP) {
-			playerEXP %= maxEXP;
+		if (gm.playerEXP >= maxEXP) {
+			gm.playerEXP %= maxEXP;
 		} else {
-			playerEXP = 0;
+			gm.playerEXP = 0;
 		}
-		playerLevel = newLevel;
+		gm.playerLevel = newLevel;
 		GameManager.instance.UpdateAbilityList ();
 	}
 
 	public void LevelUp(){
-		ChangePlayerLevel (playerLevel + 1);
+		ChangePlayerLevel (gm.playerLevel + 1);
 	}
 
 	public void AddExperience(float exp){
-		playerEXP += exp;
+		gm.playerEXP += exp;
 	}
 
     private void RegenerateHealth() {
