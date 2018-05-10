@@ -22,7 +22,7 @@ public class PatrolState : State {
 		RandomizeDestination ();
 		transform.GetComponent<NavMeshAgent> ().enabled = true;
 		agent.speed = walkSpeed;
-		Debug.Log (transform.name + ": " + _controller.CurrentState.name + " | " + destination);
+		//Debug.Log (transform.name + ": " + _controller.CurrentState.name + " | " + destination);
 	}
 
 	public override void Update (){
