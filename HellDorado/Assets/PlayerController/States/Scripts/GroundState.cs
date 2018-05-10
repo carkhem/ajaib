@@ -21,7 +21,6 @@ public class GroundState : State {
 	}
 
 	public override void Update() {
-        Debug.Log(_controller.InputVector);
         UpdateMovement ();
 		_controller.CheckDash ();
 		UpdateJump ();

@@ -46,8 +46,12 @@ public class TimeBody : MonoBehaviour {
 		{
 			PointInTime pointInTime = pointsInTime[0];
             transform.position = pointInTime.position;
-			transform.rotation = pointInTime.rotation;
-			pointsInTime.RemoveAt(0);
+            //transform.rotation = pointInTime.rotation;
+            if(pointsInTime.Count > 1)
+             transform.rotation = Quaternion.Slerp(transform.rotation, pointsInTime[0].rotation, Time.deltaTime * 5f);
+            else
+              transform.rotation = pointInTime.rotation;
+            pointsInTime.RemoveAt(0);
 
 			if (enemy != null) {
 				string enemyRecentState = enemyStates [0];
