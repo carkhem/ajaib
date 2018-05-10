@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Player/States/Air")]
 public class AirState : State {
 
-	private float MinVelocityY = -10f;
+	private float MinVelocityY = -100f;
 	public float FastFallingModifier = 2f;
 	[HideInInspector] public bool CanCancelJump;
 
@@ -27,15 +27,16 @@ public class AirState : State {
 	}
 
 	public override void Update() {
-//		Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
-		if (Velocity.y < 0) {
-			Velocity += Vector3.down * _controller.gravity * FastFallingModifier * Time.deltaTime;
-		} else {
-			Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
-		}
-//		else if (Velocity.y < -10) {
-//			_controller.Velocity.y = MinVelocityY;
+//		if (Velocity.y < MinVelocityY) {
+//			Velocity += Vector3.down * _controller.gravity * FastFallingModifier * Time.deltaTime;
+//		} else {
+//			Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
 //		}
+
+		Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
+		if (Velocity.y < -10) {
+			_controller.Velocity.y = MinVelocityY;
+		}
 
 		_controller.GetComponent<CharacterController>().Move(Velocity * Time.deltaTime);
         if (Input.GetButtonUp("Crouch")){
