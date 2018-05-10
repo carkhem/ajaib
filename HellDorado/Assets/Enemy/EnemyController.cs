@@ -37,14 +37,6 @@ public class EnemyController : Controller
         health = maxHealth;
     }
 
-    public void CheckHealth()
-    {
-        if (health <= 0)
-        {
-            TransitionTo<DeadState>();
-        }
-    }
-
     public bool InSight(Transform thing)
     {
         Vector3 direction = thing.position - eyes.transform.position;
@@ -77,17 +69,15 @@ public class EnemyController : Controller
 
     public void TakeDamage(float damage)
     {
-        //		Debug.Log ("TAKE DAMAGE");
         health -= damage;
-        if (health < 0)
-        {
+		anim.SetTrigger("hit");
+        if (health <= 0){
             TransitionTo<DeadState>();
             PlayerStats.instance.AddExperience(expGain);
         }
-        if (detection != 1)
-        {
+        if (detection != 1){
             DetectPlayer();
-            TransitionTo<StunnedState>();
+//            TransitionTo<StunnedState>();
         }
     }
 

@@ -31,7 +31,6 @@ public class PatrolState : State {
 			_controller.TransitionTo<IdleState> ();
 		}
 		_controller.LookForPlayer();
-		_controller.CheckHealth ();
 	}
 
 	public override void Exit (){

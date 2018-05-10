@@ -27,7 +27,6 @@ public class IdleState : State {
 			_controller.TransitionTo<PatrolState>();
 		}
 		_controller.LookForPlayer();
-		_controller.CheckHealth ();
 	}
 
 	public override void Exit (){
