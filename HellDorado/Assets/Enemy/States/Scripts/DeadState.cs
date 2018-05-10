@@ -13,10 +13,8 @@ public class DeadState : State {
 	}
 
 	public override void Enter (){
-		//Play dead-animation OR use a ragdoll :D
 		_controller.SetAnim("die", true);
-//		Debug.Log (transform.name + ": " + _controller.CurrentState.name);
-//		transform.eulerAngles = new Vector3 (90, transform.eulerAngles.y, transform.eulerAngles.z);
+		_controller.health = 0;
 		transform.GetComponent<NavMeshAgent> ().enabled = false;
 		transform.GetComponent<BoxCollider> ().enabled = false;
 		_controller.player.GetComponent<PlayerStats> ().RemoveEnemy (transform.gameObject);
@@ -32,7 +30,5 @@ public class DeadState : State {
     {
         _controller.SetAnim("die", false);
         transform.GetComponent<BoxCollider>().enabled = true;
-
-
     }
 }

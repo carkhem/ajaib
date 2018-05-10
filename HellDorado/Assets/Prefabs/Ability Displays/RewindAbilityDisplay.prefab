@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avalibleSprite: {fileID: 21300000, guid: ee59efe48ddc415458a900c4fda7b086, type: 3}
-  activeSprite: {fileID: 21300000, guid: c702429796769ac498679a21c135179f, type: 3}
+  activeSprite: {fileID: 21300000, guid: a88173ac3f87b5b4a9bc9a37e10c5d48, type: 3}
 --- !u!222 &222330436973187172
 CanvasRenderer:
   m_ObjectHideFlags: 1

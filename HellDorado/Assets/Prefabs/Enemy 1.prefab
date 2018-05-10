@@ -1967,8 +1967,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336670347079802}
-  m_LocalRotation: {x: -0, y: -0.728321, z: -0, w: -0.6852361}
-  m_LocalPosition: {x: -9.18469, y: -2.6413147, z: 0.010536194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.81, y: 0.64, z: 7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4085781518546660}
@@ -2452,6 +2452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc4d17b0d94bfd4ea0ec81b67638509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewindSpeed: 2
   recordTime: 5
 --- !u!114 &114320640482500182
 MonoBehaviour:
@@ -2464,8 +2465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbbe0260321c384da9ff764f12ea171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingSound: {fileID: 8300000, guid: 8abf7bf78bb9da24098e6bf1a33791a0, type: 3}
-  walkingSounds: []
+  swingSound: {fileID: 8300000, guid: f3de8f86aa78b73488e5010a8508cd79, type: 3}
+  walkingSounds:
+  - {fileID: 8300000, guid: 034d68059a7dd8540828f264d60fc105, type: 3}
+  - {fileID: 8300000, guid: 0f80ba9f60b5ff54689f495125d48704, type: 3}
 --- !u!114 &114452026168663924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2515,8 +2518,9 @@ MonoBehaviour:
   recentState: 
   recentHealth: 0
   patrolPoints:
-  - {x: -13.6, y: 0.82, z: 9.22}
+  - {x: -6, y: 0.64, z: 6.55}
   - {x: -20.89, y: 0.82, z: 9.66}
+  - {x: 5.73, y: 0.82, z: -10.21}
 --- !u!114 &114870501714441728
 MonoBehaviour:
   m_ObjectHideFlags: 1

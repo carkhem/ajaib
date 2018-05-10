@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: a88173ac3f87b5b4a9bc9a37e10c5d48
-timeCreated: 1525083907
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Spells_active_0
@@ -9,7 +7,7 @@ TextureImporter:
     21300004: Spells_active_2
     21300006: Spells_active_3
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 5
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -57,11 +55,13 @@ TextureImporter:
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -71,7 +71,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Standalone
+  - serializedVersion: 2
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -88,60 +89,90 @@ TextureImporter:
       name: Spells_active_0
       rect:
         serializedVersion: 2
-        x: 351
-        y: 913
-        width: 234
-        height: 241
+        x: 339
+        y: 902
+        width: 263
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1a394c92b0381b14cac43a9b8f9c8520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Spells_active_1
       rect:
         serializedVersion: 2
-        x: 632
-        y: 916
-        width: 251
-        height: 239
+        x: 619
+        y: 903
+        width: 264
+        height: 266
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 12a1cf2654715bf4db4e9300f110ee36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Spells_active_2
       rect:
         serializedVersion: 2
-        x: 910
-        y: 916
-        width: 240
-        height: 235
+        x: 898
+        y: 901
+        width: 263
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8d53cdf30643ba544b8be450af678836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Spells_active_3
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 919
-        width: 242
-        height: 235
+        x: 1169
+        y: 901
+        width: 263
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b60f2a178b33e4b4ca7a351b9de78529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 7beddc9cbc1562f43be0db8245c1aac5
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

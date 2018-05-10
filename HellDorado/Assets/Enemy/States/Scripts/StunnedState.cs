@@ -20,7 +20,11 @@ public class StunnedState : State {
 	public override void Enter (){
 //		Debug.Log ("STUNNED");
 		timer = 0;
-		_controller.anim.SetTrigger("stun");
+		Vector3 angle = _controller.player.position - transform.position;
+		if (Mathf.Round (Vector3.Angle(transform.forward, angle) / 90) * 90 > 90)
+			_controller.anim.SetTrigger ("backStun");
+		else
+			_controller.anim.SetTrigger ("frontStun");
 		agent.enabled = false;
 	}
 
