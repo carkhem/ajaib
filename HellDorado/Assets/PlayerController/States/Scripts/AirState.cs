@@ -35,7 +35,7 @@ public class AirState : State {
 
 		Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
 		if (Velocity.y < -10) {
-			_controller.Velocity.y = MinVelocityY;
+			_controller.Velocity.y = -10;
 		}
 
 		_controller.GetComponent<CharacterController>().Move(Velocity * Time.deltaTime);
