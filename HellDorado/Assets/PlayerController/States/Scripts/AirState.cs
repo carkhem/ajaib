@@ -23,12 +23,17 @@ public class AirState : State {
 	public override void Enter (){
 //		Debug.Log ("Air State");
 		ps = _controller.GetComponent<PlayerSounds> ();
+//		_controller.Velocity.y = 0;
 	}
 
 	public override void Update() {
-		Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
-		if (Velocity.y < MinVelocityY)
-			_controller.Velocity.y = MinVelocityY;
+		if (Velocity.y < MinVelocityY) {
+//			_controller.Velocity.y = MinVelocityY;
+			Velocity += Vector3.down * _controller.gravity * FastFallingModifier * Time.deltaTime;
+		} else {
+			Velocity += Vector3.down * _controller.gravity * Time.deltaTime;
+
+		}
 
 		_controller.GetComponent<CharacterController>().Move(Velocity * Time.deltaTime);
         if (Input.GetButtonUp("Crouch")){
