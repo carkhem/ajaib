@@ -29,7 +29,6 @@ public class FallingObjectsTrap : MonoBehaviour {
     {
         for (int count = 0; count < objects.Length; count++)
         {
-			Debug.Log ("boldertrap");
             objects[count].transform.GetComponent<TrapBoulder>().Activate();
          //   if (object[count].transform.GetComponent<ActivateKey>().active == false)
            // {

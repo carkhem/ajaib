@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLevel(string sceneName)
     {
+        CheckPoint = null;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -109,7 +110,6 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject enemy in enemies)
         {
-            Debug.Log("eRespawn");
             enemy.GetComponent<EnemyController>().Respawn();
         }
     }
