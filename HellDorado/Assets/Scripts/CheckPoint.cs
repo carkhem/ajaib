@@ -11,17 +11,13 @@ public class CheckPoint : MonoBehaviour {
 
     public void SetCheckPoint() {
    
-        GameManager.instance.SetCheckPoint(gameObject);
+        GameManager.instance.SetCheckPoint(transform.gameObject);
     }
 
 	public Vector3 GetPosition()
 	{
 		return transform.position;
 	}
-
-    public void DestroyCheckPoint() {
-        Destroy(this.gameObject);
-    }
 
     public void RespawnEvent() {
         OnRespawn.Invoke();
