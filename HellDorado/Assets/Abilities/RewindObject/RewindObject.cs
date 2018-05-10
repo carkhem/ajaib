@@ -12,6 +12,7 @@ public class RewindObject : MonoBehaviour {
 
     private List<PointInTime> clonePointInTime;
     private List<PointInTime> originalPointInTime;
+    private int index = 0;
 
     public void UseRewindObject(){
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
@@ -35,13 +36,28 @@ public class RewindObject : MonoBehaviour {
                     objectToCloneFrom = hit.collider.gameObject;
                     clone = GameObject.Instantiate(objectToCloneFrom, objectToCloneFrom.transform.position, Quaternion.identity);
                     clone.GetComponent<BoxCollider>().enabled = false;
-                    Destroy(clone.GetComponent<Rigidbody>());
+                    clone.GetComponent<Rigidbody>().isKinematic = true;
                     clonePointInTime = objectToCloneFrom.GetComponent<ObjectTimeBody>().GetPointsInTime();
-                    Destroy(clone.GetComponent<ObjectTimeBody>());
+                    // Destroy(clone.GetComponent<ObjectTimeBody>());
+                    Destroy(clone.GetComponent<PushableObject>());
+                    Destroy(clone.GetComponent<FreezeTime>());
                     clone.GetComponent<ObjectTimeBody>().SetPointsInTime(clonePointInTime);
-                    clone.transform.position = clonePointInTime[clonePointInTime.Count - 1].position;
+                 
+                    //  clone.transform.position = clonePointInTime[clonePointInTime.Count - 1].position;
 
-                    //clone.GetComponent<ObjectTimeBody>().StartRewind();
+                   
+                }
+                else {
+
+                    if (clonePointInTime.Count > index)
+                    {
+                        PointInTime pointInTime = clonePointInTime[index];
+                        clone.transform.position = pointInTime.position;
+                        clone.transform.rotation = pointInTime.rotation;
+                        index++;
+                      //  clonePointInTime.RemoveAt(0);
+                    }
+                    
                 }
                
 				if (currentIcon == null) {
@@ -54,6 +70,7 @@ public class RewindObject : MonoBehaviour {
 			Destroy (currentIcon);
             Destroy(clone);
             objectToCloneFrom = null;
+            index = 0;
 		}
 	}
 

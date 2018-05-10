@@ -7,7 +7,7 @@ public class ObjectTimeBody : MonoBehaviour {
 	public bool isRewinding = false;
 	public float recordTime = 5f;
 
-	private List<PointInTime> pointsInTime;
+	public List<PointInTime> pointsInTime;
 	private Rigidbody rb;
 	private PlayerController _controller;
 	private AbilitySounds abilitySounds;
@@ -61,8 +61,9 @@ public class ObjectTimeBody : MonoBehaviour {
 	public void StartRewind ()
 	{
 		isRewinding = true;
-        if(rb != null)
-		    rb.isKinematic = true;
+        if (transform.GetComponent<BoxCollider>().enabled == true)
+            rb.isKinematic = true;
+
 //		abilitySounds.PlayAbilitySound ("RewindObject");
 
 	}
@@ -70,7 +71,7 @@ public class ObjectTimeBody : MonoBehaviour {
 	public void StopRewind ()
 	{
 		isRewinding = false;
-        if(rb != null)
+        if(transform.GetComponent<BoxCollider>().enabled == true)
 		    rb.isKinematic = false;
 //		abilitySounds.StopPlayingAudio();
 	}
