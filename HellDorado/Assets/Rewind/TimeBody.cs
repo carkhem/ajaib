@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimeBody : MonoBehaviour {
 
 	public static bool isRewinding = false;
-
+    public int rewindSpeed = 2;
 	private bool enemyTransition = false;
 
 	public float recordTime = 5f;
@@ -48,16 +48,22 @@ public class TimeBody : MonoBehaviour {
             transform.position = pointInTime.position;
             //transform.rotation = pointInTime.rotation;
             if(pointsInTime.Count > 1)
-             transform.rotation = Quaternion.Slerp(transform.rotation, pointsInTime[0].rotation, Time.deltaTime * 5f);
+             transform.rotation = Quaternion.Lerp(transform.rotation, pointsInTime[0].rotation, Time.deltaTime * 5f);
             else
               transform.rotation = pointInTime.rotation;
-            pointsInTime.RemoveAt(0);
 
-			if (enemy != null) {
-				string enemyRecentState = enemyStates [0];
-				enemy.recentState = enemyRecentState;
-				enemyStates.RemoveAt (0);
-			}
+            for (int i = 0; i < rewindSpeed; i++)
+            {
+                pointsInTime.RemoveAt(0);
+
+
+                if (enemy != null)
+                {
+                    string enemyRecentState = enemyStates[0];
+                    enemy.recentState = enemyRecentState;
+                    enemyStates.RemoveAt(0);
+                }
+            }
 		} else
 		{
 			TimeBody.isRewinding = false;
