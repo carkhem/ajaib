@@ -13,6 +13,7 @@ public class RewindObject : MonoBehaviour {
     private List<PointInTime> clonePointInTime;
     private List<PointInTime> originalPointInTime;
     private int index = 0;
+    Material ghostMaterial;
 
     public void UseRewindObject(){
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
@@ -33,6 +34,7 @@ public class RewindObject : MonoBehaviour {
             {
                 if (objectToCloneFrom == null)
                 {
+                    //----------------Ska flytta till metod pga spagetti
                     objectToCloneFrom = hit.collider.gameObject;
                     clone = GameObject.Instantiate(objectToCloneFrom, objectToCloneFrom.transform.position, Quaternion.identity);
                     clone.GetComponent<BoxCollider>().enabled = false;
@@ -42,10 +44,10 @@ public class RewindObject : MonoBehaviour {
                     Destroy(clone.GetComponent<PushableObject>());
                     Destroy(clone.GetComponent<FreezeTime>());
                     clone.GetComponent<ObjectTimeBody>().SetPointsInTime(clonePointInTime);
-                 
+                  
                     //  clone.transform.position = clonePointInTime[clonePointInTime.Count - 1].position;
 
-                   
+
                 }
                 else {
 
@@ -59,7 +61,7 @@ public class RewindObject : MonoBehaviour {
                     }
                     
                 }
-               
+               //--------------------
 				if (currentIcon == null) {
 				currentIcon = GameObject.Instantiate (interactionIcon, new Vector3 (hit.transform.position.x, hit.transform.position.y + 1, hit.transform.position.z), Quaternion.LookRotation (Camera.main.transform.position - hit.transform.position));
 				} else {
