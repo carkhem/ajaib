@@ -13,7 +13,21 @@ public class RewindObject : MonoBehaviour {
     private List<PointInTime> clonePointInTime;
     private List<PointInTime> originalPointInTime;
     private int index = 0;
-    Material ghostMaterial;
+    private Material ghostMaterial;
+    private Material trailMaterial;
+    public GameObject trailPrefab;
+    private GameObject trail;
+    private float timer = 1f;
+
+	void Update(){
+		//Det här är en ful lösning men vet inte hur jag annars ska kunna avaktiver spökObjektet
+		//när man byter ability
+		if (GetComponent<AbilityManager> ().selectedAbility != AbilityManager.Ability.ObjectRewind)
+			if (clone != null) {
+				Destroy (clone);
+				objectToCloneFrom = null;
+			}	 
+	}
 
     public void UseRewindObject(){
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
@@ -34,27 +48,34 @@ public class RewindObject : MonoBehaviour {
             {
                 if (objectToCloneFrom == null)
                 {
-                    //----------------Ska flytta till metod pga spagetti
+                    //----------------Ska göra detta lite mer strukturerat
                     objectToCloneFrom = hit.collider.gameObject;
                     clone = GameObject.Instantiate(objectToCloneFrom, objectToCloneFrom.transform.position, Quaternion.identity);
                     clone.GetComponent<BoxCollider>().enabled = false;
                     clone.GetComponent<Rigidbody>().isKinematic = true;
                     clonePointInTime = objectToCloneFrom.GetComponent<ObjectTimeBody>().GetPointsInTime();
                     // Destroy(clone.GetComponent<ObjectTimeBody>());
-                    Destroy(clone.GetComponent<PushableObject>());
-                    Destroy(clone.GetComponent<FreezeTime>());
+					if(clone.GetComponent<PushableObject>() != null)
+                   		 Destroy(clone.GetComponent<PushableObject>());
+					if(clone.GetComponent<ObjectTimeBody>() != null)
+                   		 Destroy(clone.GetComponent<FreezeTime>());
                     clone.GetComponent<ObjectTimeBody>().SetPointsInTime(clonePointInTime);
-                    ghostMaterial = clone.GetComponent<Renderer>().material;
-                    Color changeAlpha = ghostMaterial.color;
-                    changeAlpha.a = 0.3f;
-                    ghostMaterial.color = changeAlpha;
-                    clone.GetComponent<Renderer>().material = ghostMaterial;
+                   
+                    ChangeAlpha(clone.GetComponent<Renderer>().material, ghostMaterial, 0.3f);
+
+                    timer -= Time.deltaTime;
                     //  clone.transform.position = clonePointInTime[clonePointInTime.Count - 1].position;
-
-
+                    trail = GameObject.Instantiate(trailPrefab, clone.transform.position, Quaternion.identity);
+                    trail.transform.parent = clone.transform;
                 }
                 else {
-
+					//Ska sätta en timer tills trailern blir aktiverad, inte riktigt löst än
+//                    timer -= Time.deltaTime;
+//                    if (timer <= 0f)
+//                    {
+//                        trail.GetComponent<TrailRenderer>().time = 5f;
+//
+//                    }
                     if (clonePointInTime.Count > index)
                     {
                         PointInTime pointInTime = clonePointInTime[index];
@@ -77,6 +98,7 @@ public class RewindObject : MonoBehaviour {
             Destroy(clone);
             objectToCloneFrom = null;
             index = 0;
+            timer = 1f;
 		}
 	}
 
@@ -85,5 +107,13 @@ public class RewindObject : MonoBehaviour {
 		return activeGameobject;
 	}
 
+	private void ChangeAlpha(Material original, Material newM, float alpha) {
+        newM = original;
+		Color changeAlpha = newM.GetColor("_Color");
+        changeAlpha.a = alpha;
+		newM.color = changeAlpha;
+        original = newM;
+
+    }
 
 }

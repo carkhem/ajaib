@@ -5673,6 +5673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc4d17b0d94bfd4ea0ec81b67638509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewindSpeed: 2
   recordTime: 5
 --- !u!114 &114200183681001216
 MonoBehaviour:
@@ -5861,8 +5862,6 @@ MonoBehaviour:
   sneakDamage: 0
   sneaking: 0
   inCombat: 0
-  playerLevel: 1
-  playerEXP: 0
 --- !u!114 &114718242059653216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5898,6 +5897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionIcon: {fileID: 1665534845075062, guid: d77a70762f243644ba3b2eac9ec4ed3a,
+    type: 2}
+  trailPrefab: {fileID: 1099210295391824, guid: b578de8f3abb9d44e8f7d32e7df77154,
     type: 2}
 --- !u!114 &114838939053891898
 MonoBehaviour:
