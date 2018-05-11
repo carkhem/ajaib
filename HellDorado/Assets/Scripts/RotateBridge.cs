@@ -31,4 +31,9 @@ public class RotateBridge : MonoBehaviour {
             active = false;
         }
     }
+
+	public void Reset(){
+		active = false;
+		objectToRotate.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+	}
 }
