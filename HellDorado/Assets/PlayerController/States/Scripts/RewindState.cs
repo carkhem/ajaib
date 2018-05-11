@@ -41,6 +41,8 @@ public class RewindState : State {
 //			_controller.GetComponent<AbilityManager> ().StopRewind ();
 //			_controller.TransitionTo<GroundState> ();
 //		}
+		if (!TimeBody.isRewinding)
+			_controller.TransitionTo<GroundState> ();
 	}
 
 	public override void Exit(){
