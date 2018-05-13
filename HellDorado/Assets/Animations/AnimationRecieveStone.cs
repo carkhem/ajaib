@@ -31,8 +31,14 @@ public class AnimationRecieveStone : MonoBehaviour {
 		if (director.time > 0 && !stopped) {
 			player.transform.position = Vector3.Lerp (player.transform.position, startPosition, Time.deltaTime * 50);
 		}
-		if (director.time > director.duration - 1 && !stopped) {
+
+		if (director.time > 14.11f && !stopped){
+			CanvasManager.instance.rewindPanel.SetActive (true);
+		}
+
+		if (director.time > director.duration - 2 && !stopped) {
 			stopped = true;
+			CanvasManager.instance.rewindPanel.SetActive (false);
 			GetComponent<FPSCamera> ().enabled = true;
 			gameHands.SetActive(true);
 			director.gameObject.SetActive (false);
