@@ -32,8 +32,10 @@ public class FPSCamera : MonoBehaviour {
 			transform.localEulerAngles = new Vector3 (-yRotate, 0, 0.0f);
 			player.transform.eulerAngles = new Vector3 (0, xRotate, 0.0f);
 
-			UpdateCursorLock ();
+//			UpdateCursorLock ();
 		}
+		UpdateCursorLock ();
+
     }
 
 	public void SetStatic (bool condition){
