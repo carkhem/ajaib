@@ -28,6 +28,7 @@ public class CanvasManager : MonoBehaviour {
 	[Header("Fighting")]
 	public Slider enemyHealthSlider;
 	private GameObject currentEnemy;
+	public Slider bossHealthSlider;
 
 	[Header("Interact")]
 	public Text interactText;
