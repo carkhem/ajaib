@@ -15,6 +15,7 @@ public class BossManager : MonoBehaviour {
     private bool ressing;
     public GameObject fireBallShooter;
 	public GameObject portal;
+	private Animator anim;
 
 
     // Use this for initialization
@@ -23,7 +24,8 @@ public class BossManager : MonoBehaviour {
         phase = 1;
         spawnTimer = 3;
         ressing = false;
-        
+		anim = GetComponent<Animator> ();
+		fireBallShooter.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -69,10 +71,9 @@ public class BossManager : MonoBehaviour {
 
     void Die()
     {
-        Destroy(this.gameObject);
+//        Destroy(this.gameObject);
+		anim.SetTrigger("die");
 		portal.SetActive (true);
-
-        
     }
 
     void EnterNextPhase()
