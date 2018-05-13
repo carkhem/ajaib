@@ -16,6 +16,7 @@ public class AbilityManager : MonoBehaviour {
 	public float recordTime = 5f;
 	public float rewindCost = 20;
 	public static bool WorldRewind = false;
+	public ParticleSystem rewindParticles;
 
 	[Header("Fireball")]
 	public GameObject fireballPrefab;
@@ -114,6 +115,7 @@ public class AbilityManager : MonoBehaviour {
             }
 
 			if (Input.GetKeyDown (KeyCode.Mouse1)) {
+				rewindParticles.Play();
 				FreezeTime.freezeTime = true;
 				TimeBody.isRewinding = true;
 				CanvasManager.instance.rewindPanel.SetActive (true);
@@ -123,6 +125,7 @@ public class AbilityManager : MonoBehaviour {
 			}
 
 			if (Input.GetKeyUp (KeyCode.Mouse1)) {
+				rewindParticles.Stop();
 				FreezeTime.freezeTime = false;
 				TimeBody.isRewinding = false;
 				_controller.TransitionTo<GroundState> ();
