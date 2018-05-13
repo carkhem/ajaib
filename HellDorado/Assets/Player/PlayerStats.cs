@@ -78,6 +78,7 @@ public class PlayerStats : MonoBehaviour{
 		experienceSlider.value = gm.playerEXP / maxEXP;
 		if (gm.playerEXP >= maxEXP) {
 			LevelUp ();
+			GetComponent<PlayerController> ().lArmAnim.SetTrigger ("levelUp");
 		}
 	}
 

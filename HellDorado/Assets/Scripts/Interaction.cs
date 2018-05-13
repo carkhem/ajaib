@@ -36,8 +36,10 @@ public class Interaction : MonoBehaviour
 				if (interactableObject.showText)
 					interactText.gameObject.SetActive(true);
             }
-			if (Input.GetButtonDown ("Interact"))
+			if (Input.GetButtonDown ("Interact")) {
 				interactableObject.Interact ();
+				PlayerStats.instance.transform.GetComponent<PlayerController> ().lArmAnim.SetTrigger ("pickUp");
+			}
 		} else {
 			interactText.gameObject.SetActive (false);
 			if (interactableObject != null) {
