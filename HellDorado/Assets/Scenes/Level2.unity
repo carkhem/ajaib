@@ -4832,11 +4832,16 @@ Prefab:
     - target: {fileID: 224631915684898284, guid: 5acdd9237da3e38468aa13d4462057c2,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.34999847
+      value: 0.3500061
       objectReference: {fileID: 0}
     - target: {fileID: 224222386211320536, guid: 5acdd9237da3e38468aa13d4462057c2,
         type: 2}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224219566001118574, guid: 5acdd9237da3e38468aa13d4462057c2,
+        type: 2}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6131,6 +6136,11 @@ Prefab:
         type: 2}
       propertyPath: maxHealth
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
@@ -8138,6 +8148,11 @@ Prefab:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_IsPrefabParent: 0
@@ -9330,6 +9345,16 @@ Prefab:
       propertyPath: MaxDistance
       value: 1258.0392
       objectReference: {fileID: 0}
+    - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: meleeDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: sneakDamage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
@@ -9415,6 +9440,11 @@ Prefab:
         type: 2}
       propertyPath: maxHealth
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
@@ -12339,6 +12369,11 @@ Prefab:
         type: 2}
       propertyPath: maxHealth
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
@@ -20946,6 +20981,11 @@ Prefab:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_IsPrefabParent: 0
@@ -23355,6 +23395,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 1183779879078864, guid: e6da5164dbcd68e498b92858d7ae2878, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6da5164dbcd68e498b92858d7ae2878, type: 2}
   m_IsPrefabParent: 0
@@ -25238,6 +25282,11 @@ Prefab:
         type: 2}
       propertyPath: maxHealth
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}

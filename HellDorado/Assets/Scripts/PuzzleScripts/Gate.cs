@@ -38,13 +38,13 @@ public class Gate : MonoBehaviour {
         timer = 0;
 		open = true;
 		animOpen (open);
-		source.PlayOneShot (gateSound);
+//		source.PlayOneShot (gateSound);
 	}
 
 	public void CloseGate(){
 		open = false;
 		animOpen (open);
-		source.PlayOneShot (gateSound);
+//		source.PlayOneShot (gateSound);
 	}
 
 	public void ToggleGate(){

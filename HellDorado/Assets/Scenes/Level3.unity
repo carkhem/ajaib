@@ -12919,6 +12919,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 91a90356b9c954f4687d51959f05194f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91a90356b9c954f4687d51959f05194f, type: 3}
   m_IsPrefabParent: 0
@@ -14928,6 +14932,16 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 236edc32fa54b754f849911780a97af6,
         type: 2}
+    - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: meleeDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: sneakDamage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
@@ -17785,7 +17799,7 @@ MonoBehaviour:
   spawnTimer: 3
   player: {fileID: 517356173}
   fireBallShooter: {fileID: 1589283078}
-  portal: {fileID: 0}
+  portal: {fileID: 1446719782}
 --- !u!1001 &1687224449
 Prefab:
   m_ObjectHideFlags: 0

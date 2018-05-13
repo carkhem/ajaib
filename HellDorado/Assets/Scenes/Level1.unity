@@ -1206,6 +1206,11 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224219566001118574, guid: 5acdd9237da3e38468aa13d4462057c2,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5acdd9237da3e38468aa13d4462057c2, type: 2}
   m_IsPrefabParent: 0
@@ -4027,6 +4032,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: meleeDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: sneakDamage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
@@ -4284,6 +4299,11 @@ Prefab:
         type: 2}
       propertyPath: patrolPoints.Array.data[1].z
       value: 24.75029
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
@@ -6975,7 +6995,7 @@ Prefab:
     - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
         type: 2}
       propertyPath: expGain
-      value: 34
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
@@ -10300,6 +10320,11 @@ Prefab:
         type: 2}
       propertyPath: m_Height
       value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114320640482500182, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
@@ -14876,7 +14901,7 @@ Prefab:
     - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
         type: 2}
       propertyPath: expGain
-      value: 34
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
@@ -16968,6 +16993,11 @@ Prefab:
         type: 2}
       propertyPath: patrolPoints.Array.data[2].z
       value: -10.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
+        type: 2}
+      propertyPath: expGain
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
