@@ -17,6 +17,7 @@ public class CombatState : State {
 	public MinMaxFloat attackWait;
 	private float currentAttackWait;
 	private float attackTimer = 0;
+	public bool rangeEnemy = false;
 
 	private EnemyController _controller;
 
@@ -54,7 +55,7 @@ public class CombatState : State {
 			_controller.TransitionTo<SearchingState> ();
 		}
 
-		if (Vector3.Distance (transform.position, _controller.player.position) > stopDistance) {
+		if (Vector3.Distance (transform.position, _controller.player.position) > stopDistance || !_controller.InSight (_controller.player)) {
 			_controller.SetAnim ("run", true);
 			if (_controller.InSight (_controller.player)) {
 				logicFollowTimer = 0;
@@ -72,7 +73,11 @@ public class CombatState : State {
 			agent.SetDestination (transform.position);
 			attackTimer += Time.deltaTime;
 			if (attackTimer >= currentAttackWait) {
-				_controller.TransitionTo<AttackState> ();
+				if (rangeEnemy) {
+					_controller.TransitionTo<FireballAttackState> ();
+				} else {
+					_controller.TransitionTo<AttackState> ();
+				}
 			}
 		}
 	}
