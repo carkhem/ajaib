@@ -59,9 +59,11 @@ public class RewindObject : MonoBehaviour {
                    		 Destroy(clone.GetComponent<PushableObject>());
 					if(clone.GetComponent<ObjectTimeBody>() != null)
                    		 Destroy(clone.GetComponent<FreezeTime>());
+					if(clone.GetComponent<Animator>() != null)
+						Destroy(clone.GetComponent<Animator>());
                     clone.GetComponent<ObjectTimeBody>().SetPointsInTime(clonePointInTime);
                    
-                    ChangeAlpha(clone.GetComponent<Renderer>().material, ghostMaterial, 0.3f);
+                    ChangeAlpha(clone.GetComponent<Renderer>().material, ghostMaterial, 0.3f,0f);
 
                     timer -= Time.deltaTime;
                     //  clone.transform.position = clonePointInTime[clonePointInTime.Count - 1].position;
@@ -107,8 +109,9 @@ public class RewindObject : MonoBehaviour {
 		return activeGameobject;
 	}
 
-	private void ChangeAlpha(Material original, Material newM, float alpha) {
+	private void ChangeAlpha(Material original, Material newM, float alpha, float metallic) {
         newM = original;
+		newM.SetFloat ("_Metallic", metallic);
 		Color changeAlpha = newM.GetColor("_Color");
         changeAlpha.a = alpha;
 		newM.color = changeAlpha;
