@@ -54,6 +54,8 @@ public class TimeBody : MonoBehaviour {
 
             for (int i = 0; i < rewindSpeed; i++)
             {
+				if (pointsInTime.Count < 1)
+					return;
                 pointsInTime.RemoveAt(0);
 
 
@@ -84,8 +86,10 @@ public class TimeBody : MonoBehaviour {
 			enemyStates.Insert (0, EnemyRecentState ());
         if (playerController != null)
         {
-            if(playerController.InputVector.x != 0f && playerController.InputVector.z != 0f)
-                pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+			if((playerController.InputVector.x != 0f && playerController.InputVector.z != 0f) ||
+				pointsInTime.Count > 0 && transform.position != pointsInTime[0].position)
+				
+             	   pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
         }
         else if (enemy != null) {
             pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
