@@ -9762,7 +9762,7 @@ Prefab:
     - target: {fileID: 114485890927551678, guid: 278a3d66bec8c6a40a7c210971ea4709,
         type: 2}
       propertyPath: lit
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258344472290476, guid: 278a3d66bec8c6a40a7c210971ea4709, type: 2}
       propertyPath: m_StaticEditorFlags
