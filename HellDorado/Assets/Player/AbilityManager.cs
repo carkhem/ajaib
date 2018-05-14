@@ -33,6 +33,7 @@ public class AbilityManager : MonoBehaviour {
 	public int objectRewindCost;
 	private RewindObject rewindObject;
 
+    public GameObject abilityBar;
 	AbilitySounds abilitySounds;
 	PlayerController _controller;
 	private PlayerStats stats;
@@ -53,24 +54,30 @@ public class AbilityManager : MonoBehaviour {
 		switch (selectedAbility) {
 		case Ability.Rewind:
 			UpdateRewind ();
-			break;
+            //abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
+
+            break;
 		case Ability.Fireball:
 			if (Input.GetButtonDown ("Fire2")) {
 				FireFireball ();
 				anim.SetTrigger ("push");
-			}
+                abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
+                }
 			break;
 		case Ability.Push:
 			if (Input.GetButtonDown("Fire2")) {
 				UseForcePush ();
 				anim.SetTrigger ("push");
-			}
+                abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
+                }
 			break;
 		case Ability.ObjectRewind:
 			UseRewindObject();
-			break;
+            //abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
+                break;
 		default:
-			break;
+                abilityBar.GetComponent<AbilityBar>().ChangeRam(1);
+                break;
 		}
 	}
 
@@ -80,7 +87,9 @@ public class AbilityManager : MonoBehaviour {
 //				print (stats.playerLevel);
 				selectedAbility = Ability.Rewind;
 				CanvasManager.instance.ChangeAbility (0);
-			}
+                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(true);
+            }
 
 
 			if (Input.GetKeyDown ("2") && gm.playerLevel >= 3) {
@@ -88,21 +97,27 @@ public class AbilityManager : MonoBehaviour {
 					return;
 				selectedAbility = Ability.ObjectRewind;
 				CanvasManager.instance.ChangeAbility (1);
-			}
+                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
+            }
 
 			if (Input.GetKeyDown ("3") && gm.playerLevel >= 4) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.Fireball;
 				CanvasManager.instance.ChangeAbility (2);
-			}
+                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
+            }
 
 			if (Input.GetKeyDown ("4") && gm.playerLevel >= 5) {
 				if (TimeBody.isRewinding)
 					return;
 				selectedAbility = Ability.Push;
 				CanvasManager.instance.ChangeAbility (3);
-			}
+                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
+            }
 		}
     }
 

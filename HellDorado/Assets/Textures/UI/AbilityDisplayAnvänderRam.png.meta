@@ -1,10 +1,8 @@
 fileFormatVersion: 2
-guid: ee59efe48ddc415458a900c4fda7b086
+guid: c2dde3b0898bca64196118efca25e8c4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Spells_available_0
-    21300002: Spells_available_1
-    21300004: Spells_available_2
+    21300000: "AbilityDisplayAnv\xE4nderRam_0"
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -140,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spells_available_0
+      name: "AbilityDisplayAnv\xE4nderRam_0"
       rect:
         serializedVersion: 2
-        x: 364
-        y: 922
-        width: 220
-        height: 225
+        x: 0
+        y: 0
+        width: 242
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,47 +152,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e254f1d16332d7644b160767cf9e0522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spells_available_1
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 913
-        width: 222
-        height: 225
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c80b068e15d2ec14a94ce33134e414fa
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spells_available_2
-      rect:
-        serializedVersion: 2
-        x: 912
-        y: 922
-        width: 221
-        height: 225
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a55049027161fd1478d6f2cc0797db98
+      spriteID: bde30f2036d62e44da862ce7626734c7
       vertices: []
       indices: 
       edges: []
@@ -202,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 41a96d7db90a3b74c8787c9956a7dd43
+    spriteID: ca50aeaeb9a53f64fbabf7826a566cd3
     vertices: []
     indices: 
     edges: []

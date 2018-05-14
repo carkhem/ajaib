@@ -24,6 +24,7 @@ public class CanvasManager : MonoBehaviour {
 	[Header("Ability Panel")]
 	public GameObject abilityContent;
 	public GameObject rewindPanel;
+    public GameObject abilityBar;
 
 	[Header("Fighting")]
 	public Slider enemyHealthSlider;
