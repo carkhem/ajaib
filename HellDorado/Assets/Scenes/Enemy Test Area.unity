@@ -200,6 +200,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114452026168663924, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
+    - {fileID: 114267031986715438, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &66920936 stripped
@@ -934,6 +935,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fc35f7a01d10c04b91fe3b46df982fb, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1033800037 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1336670347079802, guid: d5c7b5dd9cda6cd48974e18248e53491,
+    type: 2}
+  m_PrefabInternal: {fileID: 34383808}
+--- !u!114 &1033800038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033800037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9497037cf640d2c41a46748ac5775886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recordTime: 5
+  rewindSpeed: 2
+  isRewinding: 0
 --- !u!1001 &1053547183
 Prefab:
   m_ObjectHideFlags: 0
@@ -1275,6 +1295,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1183476403 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1732721139214832, guid: ad2663e654d866245a74b3b067c7f646,
+    type: 2}
+  m_PrefabInternal: {fileID: 1865985678}
+--- !u!114 &1183476404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183476403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9497037cf640d2c41a46748ac5775886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recordTime: 5
+  rewindSpeed: 2
+  isRewinding: 0
 --- !u!1 &1376833971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +1966,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114449438985322572, guid: ad2663e654d866245a74b3b067c7f646, type: 2}
+    - {fileID: 114834456736600686, guid: ad2663e654d866245a74b3b067c7f646, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ad2663e654d866245a74b3b067c7f646, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1923205088
