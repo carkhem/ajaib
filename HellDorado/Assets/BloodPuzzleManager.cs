@@ -5,7 +5,7 @@ using UnityEngine;
 public class BloodPuzzleManager : MonoBehaviour {
     public GameObject[] Podiums;
     public GameObject enemy;
-    public GameObject gate;
+    public GameObject[] gates;
     public GameObject blood;
     public float spawnTimer;
     private bool ressing;
@@ -48,7 +48,11 @@ public class BloodPuzzleManager : MonoBehaviour {
                     return;
                 }
             }
-            gate.GetComponent<Gate>().OpenGate();
+            foreach (GameObject go in gates)
+            {
+                go.GetComponent<Gate>().OpenGate();
+
+            }
             gateOpen = true;
         }
        
