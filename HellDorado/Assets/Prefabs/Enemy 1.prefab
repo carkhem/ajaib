@@ -427,11 +427,10 @@ GameObject:
   - component: {fileID: 195714899665415340}
   - component: {fileID: 114698912224039340}
   - component: {fileID: 54540433148757132}
-  - component: {fileID: 114267031986715438}
-  - component: {fileID: 114452026168663924}
   - component: {fileID: 65465601358843174}
   - component: {fileID: 82886984399853468}
   - component: {fileID: 114320640482500182}
+  - component: {fileID: 114882519717259966}
   m_Layer: 9
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -915,6 +914,7 @@ GameObject:
   - component: {fileID: 95955984727920078}
   - component: {fileID: 114877210924962254}
   - component: {fileID: 82463898826091830}
+  - component: {fileID: 114325956876336978}
   m_Layer: 9
   m_Name: guard1
   m_TagString: Untagged
@@ -1968,7 +1968,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336670347079802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.81, y: 0.64, z: 7.65}
+  m_LocalPosition: {x: 9.14, y: 0.64, z: -9.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4085781518546660}
@@ -2122,7 +2122,7 @@ BoxCollider:
   m_GameObject: {fileID: 1823914406325248}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.0000012, y: 2, z: 1.0000013}
   m_Center: {x: 0.000000059604645, y: 0.0000009536743, z: 0.0000037252903}
@@ -2441,19 +2441,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114267031986715438
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1336670347079802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc4d17b0d94bfd4ea0ec81b67638509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rewindSpeed: 2
-  recordTime: 5
 --- !u!114 &114320640482500182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2469,18 +2456,20 @@ MonoBehaviour:
   walkingSounds:
   - {fileID: 8300000, guid: 034d68059a7dd8540828f264d60fc105, type: 3}
   - {fileID: 8300000, guid: 0f80ba9f60b5ff54689f495125d48704, type: 3}
---- !u!114 &114452026168663924
+--- !u!114 &114325956876336978
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1336670347079802}
+  m_GameObject: {fileID: 1821989497296004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53f70a65baaf64b4da12b2aea504fedc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f997db146ac673439fce1ead2ef91d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateRewind: 0
+  canAttack: 1
+  reach: 4
+  offset: {x: 0, y: 1.8, z: 0}
 --- !u!114 &114698912224039340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2517,10 +2506,11 @@ MonoBehaviour:
   anim: {fileID: 95955984727920078}
   recentState: 
   recentHealth: 0
+  dead: 0
   patrolPoints:
-  - {x: -6, y: 0.64, z: 6.55}
-  - {x: -20.89, y: 0.82, z: 9.66}
-  - {x: 5.73, y: 0.82, z: -10.21}
+  - {x: -6, y: 0.82, z: 2}
+  - {x: -6, y: 0.82, z: -9.25}
+  - {x: 9.14, y: 0.64, z: -9.25}
 --- !u!114 &114870501714441728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2556,6 +2546,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   - {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
   - {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
+--- !u!114 &114882519717259966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336670347079802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9497037cf640d2c41a46748ac5775886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recordTime: 5
+  rewindSpeed: 2
+  isRewinding: 0
 --- !u!137 &137521719073218362
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

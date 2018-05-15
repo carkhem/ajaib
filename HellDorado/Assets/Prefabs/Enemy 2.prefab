@@ -568,6 +568,7 @@ GameObject:
   - component: {fileID: 95115043782833982}
   - component: {fileID: 114600614951070294}
   - component: {fileID: 82684937961345550}
+  - component: {fileID: 114412175074188486}
   m_Layer: 9
   m_Name: guard1
   m_TagString: Untagged
@@ -751,11 +752,10 @@ GameObject:
   - component: {fileID: 195501668755528610}
   - component: {fileID: 114805322695734758}
   - component: {fileID: 54223032571667164}
-  - component: {fileID: 114834456736600686}
-  - component: {fileID: 114449438985322572}
   - component: {fileID: 65675982333006228}
   - component: {fileID: 82653867752869806}
   - component: {fileID: 114554933450997546}
+  - component: {fileID: 114469896408854106}
   m_Layer: 9
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -2122,7 +2122,7 @@ BoxCollider:
   m_GameObject: {fileID: 1046168382285456}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.0000012, y: 2, z: 1.0000013}
   m_Center: {x: 0.000000059604645, y: 0.0000009536743, z: 0.0000037252903}
@@ -2441,7 +2441,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114449438985322572
+--- !u!114 &114412175074188486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538270044342206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f997db146ac673439fce1ead2ef91d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canAttack: 0
+  reach: 3
+  offset: {x: 0, y: 0, z: 0}
+--- !u!114 &114469896408854106
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2449,10 +2463,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1732721139214832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53f70a65baaf64b4da12b2aea504fedc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9497037cf640d2c41a46748ac5775886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateRewind: 0
+  recordTime: 5
+  rewindSpeed: 2
+  isRewinding: 0
 --- !u!114 &114508749395620530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2539,22 +2555,10 @@ MonoBehaviour:
   anim: {fileID: 95115043782833982}
   recentState: 
   recentHealth: 0
+  dead: 0
   patrolPoints:
   - {x: 10.55, y: 0.64, z: 10.44}
   - {x: 4.15, y: 0.64, z: 10.44}
---- !u!114 &114834456736600686
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1732721139214832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc4d17b0d94bfd4ea0ec81b67638509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rewindSpeed: 2
-  recordTime: 5
 --- !u!137 &137353009148267436
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2570,7 +2574,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 8c602e381e9a5a4499e0cd2f59132e96, type: 2}
+  - {fileID: 2100000, guid: 9b3bbf8742ae9bf47a87b67d7165def1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
