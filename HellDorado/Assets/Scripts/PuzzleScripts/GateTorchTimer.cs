@@ -10,6 +10,7 @@ public class GateTorchTimer : MonoBehaviour {
 	public float timer = 3f;
 	private float originalTime;
 	private float lightIntensity;
+	public float fireHight = 2f;
 
 	void Start(){
 		lightIntensity = fireLight.intensity;
@@ -36,12 +37,20 @@ public class GateTorchTimer : MonoBehaviour {
 	public void Light(){
 		lit = true;
 		fire.Play ();
+		fire.startLifetime = fireHight;
+		foreach (ParticleSystem system in fire.transform.GetComponentsInChildren<ParticleSystem>()) {
+			system.startLifetime = fireHight;
+		}
 		fireLight.intensity = lightIntensity;
 	}
 
 	public void PutOut(){
 		lit = false;
 		fire.Stop ();
+		fire.startLifetime = 1f;
+		foreach (ParticleSystem system in fire.transform.GetComponentsInChildren<ParticleSystem>()) {
+			system.startLifetime = 1f;
+		}
 		fireLight.intensity = 0;
 	}
 
