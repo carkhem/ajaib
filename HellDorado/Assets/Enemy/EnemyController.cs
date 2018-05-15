@@ -51,20 +51,14 @@ public class EnemyController : Controller
                 {
                     Debug.DrawRay(eyes.transform.position, direction, Color.green);
                     return true;
-                }
-                else
-                {
+                } else {
                     Debug.DrawRay(eyes.transform.position, direction, Color.red);
                     return false;
                 }
-            }
-            else
-            {
+            } else {
                 return false;
             }
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
