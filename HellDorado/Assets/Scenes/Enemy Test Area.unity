@@ -161,25 +161,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &66920936 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1404328113946938, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-    type: 2}
-  m_PrefabInternal: {fileID: 90937149}
---- !u!114 &66920939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 66920936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f997db146ac673439fce1ead2ef91d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canAttack: 1
-  reach: 3
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &90937149
 Prefab:
   m_ObjectHideFlags: 0
@@ -219,21 +200,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1360486801121586, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1404328113946938, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65872698156293538, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114838939053891898, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &197715765 stripped
@@ -546,7 +513,6 @@ GameObject:
   - component: {fileID: 652746064}
   - component: {fileID: 652746063}
   - component: {fileID: 652746068}
-  - component: {fileID: 652746067}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -623,28 +589,6 @@ Transform:
   m_Father: {fileID: 311472181}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &652746067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 652746062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8664734271001ba4b83fbd52c6bd43af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _states: []
-  CurrentState: {fileID: 0}
-  Velocity: {x: 0, y: 0, z: 0}
-  maxSpeed: 10
-  gravity: 100
-  movementSpeed: 0
-  dashCooldown: 0
-  lArmAnim: {fileID: 0}
-  rArmAnim: {fileID: 0}
-  lameRHand: {fileID: 0}
-  startWithSword: 0
 --- !u!65 &652746068
 BoxCollider:
   m_ObjectHideFlags: 0
