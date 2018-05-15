@@ -122,7 +122,7 @@ public class AbilityManager : MonoBehaviour {
     }
 
 	private void UpdateRewind() {
-		if (player.GetComponent<PlayerStats> ().health > 10) {
+		if (player.GetComponent<PlayerStats> ().health > stats.maxHealth / 10) {
             if (player.GetComponent<PlayerStats>().health <= rewindCost)
             {
                 TimeBody.isRewinding = false;
