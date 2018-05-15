@@ -61,14 +61,14 @@ public class AbilityManager : MonoBehaviour {
 			if (Input.GetButtonDown ("Fire2")) {
 				FireFireball ();
 				anim.SetTrigger ("push");
-                abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
+//                abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
                 }
 			break;
 		case Ability.Push:
 			if (Input.GetButtonDown("Fire2")) {
 				UseForcePush ();
 				anim.SetTrigger ("push");
-                abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
+//                abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
                 }
 			break;
 		case Ability.ObjectRewind:
@@ -76,7 +76,7 @@ public class AbilityManager : MonoBehaviour {
             //abilityBar.GetComponent<AbilityBar>().ChangeRam(3);
                 break;
 		default:
-                abilityBar.GetComponent<AbilityBar>().ChangeRam(1);
+//                abilityBar.GetComponent<AbilityBar>().ChangeRam(1);
                 break;
 		}
 	}
@@ -87,8 +87,8 @@ public class AbilityManager : MonoBehaviour {
 //				print (stats.playerLevel);
 				selectedAbility = Ability.Rewind;
 				CanvasManager.instance.ChangeAbility (0);
-                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
-                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(true);
+//                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+//                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(true);
             }
 
 
@@ -97,8 +97,8 @@ public class AbilityManager : MonoBehaviour {
 					return;
 				selectedAbility = Ability.ObjectRewind;
 				CanvasManager.instance.ChangeAbility (1);
-                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
-                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
+//                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+//                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
             }
 
 			if (Input.GetKeyDown ("3") && gm.playerLevel >= 4) {
@@ -106,8 +106,8 @@ public class AbilityManager : MonoBehaviour {
 					return;
 				selectedAbility = Ability.Fireball;
 				CanvasManager.instance.ChangeAbility (2);
-                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
-                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
+//                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+//                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
             }
 
 			if (Input.GetKeyDown ("4") && gm.playerLevel >= 5) {
@@ -115,8 +115,8 @@ public class AbilityManager : MonoBehaviour {
 					return;
 				selectedAbility = Ability.Push;
 				CanvasManager.instance.ChangeAbility (3);
-                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
-                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
+//                abilityBar.GetComponent<AbilityBar>().ChangeRam(2);
+//                abilityBar.GetComponent<AbilityBar>().Ability.SetActive(false);
             }
 		}
     }
