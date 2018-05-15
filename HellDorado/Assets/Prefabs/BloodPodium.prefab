@@ -56,9 +56,11 @@ GameObject:
   - component: {fileID: 33541023075051910}
   - component: {fileID: 23724786619946992}
   - component: {fileID: 95871845776616428}
+  - component: {fileID: 114898304555332142}
+  - component: {fileID: 65045290233602254}
   m_Layer: 0
   m_Name: BloodPodium
-  m_TagString: Untagged
+  m_TagString: BloodPodium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,9 +71,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735320809133252}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.86, y: -1.9550844e-16, z: 8.804916}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.0739875, y: 0, z: -0.082417816}
+  m_LocalScale: {x: 0.33333334, y: 0.33333337, z: 0.33333337}
   m_Children:
   - {fileID: 4629903451184876}
   - {fileID: 4492485035375268}
@@ -117,6 +119,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 7350b65a6431f604a8496c39db1ac9c5, type: 2}
   m_StaticBatchInfo:
@@ -151,6 +154,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5adec7d7394bd1347b88606a277e64b3, type: 2}
   m_StaticBatchInfo:
@@ -186,6 +190,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1165614396344698}
   m_Mesh: {fileID: 4300006, guid: ba6a41dc489914734857bb5924eb70ad, type: 3}
+--- !u!65 &65045290233602254
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735320809133252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.81368506, y: 1.3633343, z: 0.813685}
+  m_Center: {x: 0, y: 0.678763, z: -0.000015258789}
 --- !u!95 &95871845776616428
 Animator:
   serializedVersion: 3
@@ -203,6 +219,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!108 &108585267513828836
 Light:
   m_ObjectHideFlags: 1
@@ -239,6 +256,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114898304555332142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735320809133252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d91d5809e3cf8a4c89f64e2c63e4c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blood: {fileID: 1165614396344698}
+  filled: 0
 --- !u!114 &114993976367220184
 MonoBehaviour:
   m_ObjectHideFlags: 1

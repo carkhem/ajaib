@@ -17,6 +17,7 @@ TagManager:
   - Rope
   - FireBall
   - Interactable
+  - BloodPodium
   layers:
   - Default
   - TransparentFX
