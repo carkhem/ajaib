@@ -2467,7 +2467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordTime: 5
-  rewindSpeed: 2
+  rewindSpeed: 1
   isRewinding: 0
 --- !u!114 &114508749395620530
 MonoBehaviour:

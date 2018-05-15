@@ -2558,7 +2558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordTime: 5
-  rewindSpeed: 2
+  rewindSpeed: 1
   isRewinding: 0
 --- !u!137 &137521719073218362
 SkinnedMeshRenderer:
