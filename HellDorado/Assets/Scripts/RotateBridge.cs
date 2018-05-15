@@ -4,36 +4,54 @@ using UnityEngine;
 
 public class RotateBridge : MonoBehaviour {
 
-    public float amountToRotate;
-    public GameObject objectToRotate;
-    private bool active;
-    
+    private bool toggleActive;
+	private bool isLerping;
+	private Quaternion newRotation;
+	private Quaternion startRotation;
+	private float direction;
+
+	private float _timeTakenDuringLerp = 1f;
+	private float _timeStartedLerping;
 	// Use this for initialization
 	void Start () {
-        active = false;
+        toggleActive = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+		if (isLerping) {
+			float timeSinceStarted = Time.time - _timeStartedLerping;
+			float percentageComplete = timeSinceStarted / _timeTakenDuringLerp;
+
+			transform.rotation = Quaternion.Lerp(startRotation,newRotation,percentageComplete);
+
+			if(percentageComplete >= 1f){
+				isLerping = false;
+			}
+		}
 	}
 
-    public void ActivateBridge()
+    public void ActivateBridge(float amountToRotate)
     {
-        if (active == false)
-        {
-            objectToRotate.transform.Rotate(0, amountToRotate, 0, Space.Self);
-            active = true;
-        }
-        else if( active == true)
-        {
-            objectToRotate.transform.Rotate(0, -amountToRotate, 0, Space.Self);
-            active = false;
-        }
+		if(!isLerping){
+		toggleActive = !toggleActive;
+		direction = toggleActive == true ? 1f : -1f;
+
+		isLerping = true;
+		_timeStartedLerping = Time.time;
+		
+		startRotation = transform.rotation;
+		
+		newRotation = transform.rotation;
+		newRotation *= Quaternion.Euler (0, amountToRotate*direction, 0);
+		}
     }
 
 	public void Reset(){
-		active = false;
-		objectToRotate.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+		toggleActive = false;
+		isLerping = false;
+		transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
 	}
+
+
 }

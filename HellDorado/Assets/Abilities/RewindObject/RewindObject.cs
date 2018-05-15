@@ -11,7 +11,6 @@ public class RewindObject : MonoBehaviour {
     private GameObject objectToCloneFrom;
 
     private List<PointInTime> clonePointInTime;
-    private List<PointInTime> originalPointInTime;
     private int index = 0;
     private Material ghostMaterial;
     private Material trailMaterial;

@@ -1476,7 +1476,7 @@ Transform:
   - {fileID: 476318656}
   - {fileID: 1608928763}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123400846
 GameObject:
@@ -8107,7 +8107,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917444391632996, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1336670347079802, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_Name
@@ -10616,7 +10616,7 @@ Transform:
   m_LocalScale: {x: 4.6, y: 1, z: 15.1008}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: -180, y: -36.85498, z: -0.000015258789}
 --- !u!1001 &837487341
 Prefab:
@@ -11128,19 +11128,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1657017746133258, guid: 5fb7dc87ae777cb4aad9570ec88a43c9,
     type: 2}
   m_PrefabInternal: {fileID: 1642680324}
---- !u!114 &873329494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 873329493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4deb141d71390184794352f3eac99fc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToRotate: -90
-  objectToRotate: {fileID: 1579108518}
 --- !u!114 &873329495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11157,14 +11144,14 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 873329494}
+      - m_Target: {fileID: 1579108524}
         m_MethodName: ActivateBridge
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: -90
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -12329,7 +12316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917444391632996, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1336670347079802, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_Name
@@ -12383,19 +12370,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1657017746133258, guid: 5fb7dc87ae777cb4aad9570ec88a43c9,
     type: 2}
   m_PrefabInternal: {fileID: 1840597818}
---- !u!114 &970692959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 970692958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4deb141d71390184794352f3eac99fc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToRotate: 180
-  objectToRotate: {fileID: 1579108518}
 --- !u!114 &970692960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12412,14 +12386,14 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 970692959}
+      - m_Target: {fileID: 1579108524}
         m_MethodName: ActivateBridge
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 180
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -15816,14 +15790,14 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1237639545}
+      - m_Target: {fileID: 1579108524}
         m_MethodName: ActivateBridge
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 90
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -15834,19 +15808,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4676375612779846, guid: 5fb7dc87ae777cb4aad9570ec88a43c9,
     type: 2}
   m_PrefabInternal: {fileID: 1237639541}
---- !u!114 &1237639545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1237639542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4deb141d71390184794352f3eac99fc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountToRotate: 90
-  objectToRotate: {fileID: 1579108518}
 --- !u!65 &1237639546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18402,7 +18363,7 @@ Prefab:
         type: 2}
       propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1237639545}
+      objectReference: {fileID: 1579108524}
     - target: {fileID: 114821223647049496, guid: 3041bdeadc4155646a6dbd003b267404,
         type: 2}
       propertyPath: OnRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -19121,7 +19082,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1437708957
 GameObject:
@@ -20940,7 +20901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917444391632996, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1336670347079802, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_Name
@@ -21265,6 +21226,7 @@ GameObject:
   - component: {fileID: 1579108521}
   - component: {fileID: 1579108520}
   - component: {fileID: 1579108523}
+  - component: {fileID: 1579108524}
   m_Layer: 0
   m_Name: BRIDGE
   m_TagString: Untagged
@@ -21279,7 +21241,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579108518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -82.62, y: -16.74, z: 37.18}
+  m_LocalPosition: {x: -82.3, y: -16.88, z: 37.15}
   m_LocalScale: {x: 2.2, y: 3.0095997, z: 2.1999996}
   m_Children:
   - {fileID: 641508848}
@@ -21353,6 +21315,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 1.9999999, z: 1.0000002}
   m_Center: {x: -0.00000756979, y: -0.00000047683716, z: -0.00000008940697}
+--- !u!114 &1579108524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579108518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deb141d71390184794352f3eac99fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1587448288
 Prefab:
   m_ObjectHideFlags: 0
@@ -23393,7 +23366,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4445669155660270, guid: e6da5164dbcd68e498b92858d7ae2878, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1183779879078864, guid: e6da5164dbcd68e498b92858d7ae2878, type: 2}
       propertyPath: m_IsActive
@@ -26623,7 +26596,7 @@ Transform:
   - {fileID: 2084599520}
   - {fileID: 113791416}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002582705
 GameObject:
