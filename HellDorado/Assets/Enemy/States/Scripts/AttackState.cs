@@ -21,7 +21,7 @@ public class AttackState : State {
 	public override void Enter (){
 		_controller.SetAnim ("attack", true);
 		_controller.GetComponent<EnemySound> ().PlaySwingSound ();
-		agent.speed = plungeSpeed;
+		agent.speed = 0;
 		timer = 0;
 	}
 

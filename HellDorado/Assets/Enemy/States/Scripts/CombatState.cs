@@ -45,7 +45,9 @@ public class CombatState : State {
 			rotTimer += Time.deltaTime;
 		}
 //		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation(lastKnownPos - transform.position), Mathf.Abs(rotTimer / 1));
-//		transform.forward = Vector3.Slerp (transform.forward, lastKnownPos - transform.position, Mathf.Abs(rotTimer / 1));
+		Vector3 toTarget = lastKnownPos - transform.position;
+		toTarget.y = 0;
+		transform.forward = Vector3.Slerp (transform.forward, toTarget, Mathf.Abs(rotTimer / 1));
 
 		//Stannar för skarpt. Vill egentligen hitta en vector mellan tarnsform och player som är stopDistance ifrån playern.
 		if (_controller.InSight (_controller.player)) {
