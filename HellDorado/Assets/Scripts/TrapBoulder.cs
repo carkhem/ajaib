@@ -9,6 +9,7 @@ public class TrapBoulder : MonoBehaviour {
     private Vector3 startPosition;
     private float timer;
     Rigidbody rigid;
+    public float fallspeed;
 
     // Use this for initialization
     void Start()
@@ -36,7 +37,7 @@ public class TrapBoulder : MonoBehaviour {
         if (timer <= 0)
         {
 			rigid.isKinematic = false;
-            rigid.velocity = new Vector3(0f, -100f, 0f);
+           rigid.velocity = new Vector3(0f, -fallspeed, 0f);
             consumed = true;
 
         }
