@@ -12,16 +12,9 @@ public class EnemyRewindState : State {
 	}
 
 
-	public override void Enter(){
-
-	}
-
 	public override void Update (){
 
-
-		//Temporärt. Får kolla hur mycket som behöver läggas på under rewind
-//		_controller.health += 0.1f;
-		if (!TimeBody.isRewinding) {
+		if (!_controller.GetComponent<EnemyTimeBody>().isRewinding) {
 			RecentState ();
 		}
 			
@@ -37,10 +30,6 @@ public class EnemyRewindState : State {
 		case "CombatState":
 			Debug.Log ("2");
 			_controller.TransitionTo<CombatState>();
-			break;
-		case "DeadState":
-			Debug.Log ("3");
-			_controller.TransitionTo<DeadState>();
 			break;
 		case "IdleState":
 			Debug.Log ("4");
@@ -63,6 +52,10 @@ public class EnemyRewindState : State {
 			_controller.TransitionTo<PatrolState>();
 			break;
 		}
+	}
+
+	public override void Exit(){
+		_controller.health = 50f;
 	}
 
 }

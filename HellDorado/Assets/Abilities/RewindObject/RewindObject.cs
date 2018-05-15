@@ -35,6 +35,10 @@ public class RewindObject : MonoBehaviour {
 		if ((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Interactable")) && hit.collider.GetComponent<ObjectTimeBody> () != null) {
 			activeGameobject = hit.collider.gameObject;
 			hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StartRewind ();
+		}else if((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Enemy"))){
+			if(hit.collider.gameObject.GetComponent<EnemyController>().dead){
+				hit.collider.gameObject.GetComponent<EnemyTimeBody>().isRewinding = true;
+			}
 		}
 	}
 

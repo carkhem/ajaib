@@ -29,6 +29,8 @@ public class EnemyController : Controller
     public string recentState;
     [HideInInspector]
     public float recentHealth;
+	[HideInInspector]
+	public bool dead = false;
     public Vector3[] patrolPoints;
 
     void Start()

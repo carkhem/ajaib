@@ -2099,7 +2099,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1023629185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.32, y: 9.97, z: 13.39}
+  m_LocalPosition: {x: 4.32, y: -2.6, z: 13.39}
   m_LocalScale: {x: 4.709815, y: 34.80245, z: 11.244577}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3634,7 +3634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 28.96
+      value: 17.16
       objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3948,7 +3948,9 @@ MonoBehaviour:
   playerLevelText: {fileID: 0}
   abilityContent: {fileID: 44494750}
   rewindPanel: {fileID: 648433462}
+  abilityBar: {fileID: 0}
   enemyHealthSlider: {fileID: 0}
+  bossHealthSlider: {fileID: 0}
   interactText: {fileID: 1163884919}
 --- !u!114 &2012570310
 MonoBehaviour:

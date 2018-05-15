@@ -18,6 +18,7 @@ public class DeadState : State {
 		transform.GetComponent<NavMeshAgent> ().enabled = false;
 		transform.GetComponent<BoxCollider> ().enabled = false;
 		_controller.player.GetComponent<PlayerStats> ().RemoveEnemy (transform.gameObject);
+		_controller.dead = true;
 	}
 
 	public override void Update (){
@@ -28,6 +29,7 @@ public class DeadState : State {
 
     public override void Exit()
     {
+		_controller.dead = false;
         _controller.SetAnim("die", false);
         transform.GetComponent<BoxCollider>().enabled = true;
     }
