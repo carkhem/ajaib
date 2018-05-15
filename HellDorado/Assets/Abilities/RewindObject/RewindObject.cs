@@ -17,7 +17,7 @@ public class RewindObject : MonoBehaviour {
     private Material trailMaterial;
     public GameObject trailPrefab;
     private GameObject trail;
-    private float timer = 1f;
+    private float timer = 0.7f;
 
 	void Update(){
 		//Det här är en ful lösning men vet inte hur jag annars ska kunna avaktiver spökObjektet
@@ -48,47 +48,11 @@ public class RewindObject : MonoBehaviour {
             {
                 if (objectToCloneFrom == null)
                 {
-                    //----------------Ska göra detta lite mer strukturerat
-                    objectToCloneFrom = hit.collider.gameObject;
-                    clone = GameObject.Instantiate(objectToCloneFrom, objectToCloneFrom.transform.position, Quaternion.identity);
-                    clone.GetComponent<BoxCollider>().enabled = false;
-                    clone.GetComponent<Rigidbody>().isKinematic = true;
-                    clonePointInTime = objectToCloneFrom.GetComponent<ObjectTimeBody>().GetPointsInTime();
-                    // Destroy(clone.GetComponent<ObjectTimeBody>());
-					if(clone.GetComponent<PushableObject>() != null)
-                   		 Destroy(clone.GetComponent<PushableObject>());
-					if(clone.GetComponent<ObjectTimeBody>() != null)
-                   		 Destroy(clone.GetComponent<FreezeTime>());
-					if(clone.GetComponent<Animator>() != null)
-						Destroy(clone.GetComponent<Animator>());
-                    clone.GetComponent<ObjectTimeBody>().SetPointsInTime(clonePointInTime);
-                   
-                    ChangeAlpha(clone.GetComponent<Renderer>().material, ghostMaterial, 0.3f,0f);
-
-                    timer -= Time.deltaTime;
-                    //  clone.transform.position = clonePointInTime[clonePointInTime.Count - 1].position;
-                    trail = GameObject.Instantiate(trailPrefab, clone.transform.position, Quaternion.identity);
-                    trail.transform.parent = clone.transform;
+					InstantiateClone(hit.collider.gameObject);
                 }
                 else {
-					//Ska sätta en timer tills trailern blir aktiverad, inte riktigt löst än
-//                    timer -= Time.deltaTime;
-//                    if (timer <= 0f)
-//                    {
-//                        trail.GetComponent<TrailRenderer>().time = 5f;
-//
-//                    }
-                    if (clonePointInTime.Count > index)
-                    {
-                        PointInTime pointInTime = clonePointInTime[index];
-                        clone.transform.position = pointInTime.position;
-                        clone.transform.rotation = pointInTime.rotation;
-                        index++;
-                      //  clonePointInTime.RemoveAt(0);
-                    }
-                    
+					UpdateClonePosition();
                 }
-               //--------------------
 				if (currentIcon == null) {
 				currentIcon = GameObject.Instantiate (interactionIcon, new Vector3 (hit.transform.position.x, hit.transform.position.y + 1, hit.transform.position.z), Quaternion.LookRotation (Camera.main.transform.position - hit.transform.position));
 				} else {
@@ -100,7 +64,7 @@ public class RewindObject : MonoBehaviour {
             Destroy(clone);
             objectToCloneFrom = null;
             index = 0;
-            timer = 1f;
+            timer = 0.7f;
 		}
 	}
 
@@ -118,5 +82,46 @@ public class RewindObject : MonoBehaviour {
         original = newM;
 
     }
+
+	private void InstantiateClone(GameObject _gameObject){
+		objectToCloneFrom = _gameObject;
+		clone = GameObject.Instantiate(objectToCloneFrom, objectToCloneFrom.transform.position, Quaternion.identity);
+		clone.GetComponent<BoxCollider>().enabled = false;
+		clone.GetComponent<Rigidbody>().isKinematic = true;
+		clonePointInTime = objectToCloneFrom.GetComponent<ObjectTimeBody>().GetPointsInTime();
+		// Destroy(clone.GetComponent<ObjectTimeBody>());
+		if(clone.GetComponent<PushableObject>() != null)
+			Destroy(clone.GetComponent<PushableObject>());
+		if(clone.GetComponent<ObjectTimeBody>() != null)
+			Destroy(clone.GetComponent<FreezeTime>());
+		if(clone.GetComponent<Animator>() != null)
+			Destroy(clone.GetComponent<Animator>());
+		clone.GetComponent<ObjectTimeBody>().SetPointsInTime(clonePointInTime);
+		
+		ChangeAlpha(clone.GetComponent<Renderer>().material, ghostMaterial, 0.3f,0f);
+		
+		timer -= Time.deltaTime;
+		trail = GameObject.Instantiate(trailPrefab, clone.transform.position, Quaternion.identity);
+		trail.transform.parent = clone.transform;
+		clone.SetActive(false);
+	}
+
+	private void UpdateClonePosition(){
+		
+		timer -= Time.deltaTime;
+		if (timer <= 0f)
+		{
+			clone.SetActive(true);
+			
+			if (clonePointInTime.Count > index)
+			{
+				PointInTime pointInTime = clonePointInTime[index];
+				clone.transform.position = pointInTime.position;
+				clone.transform.rotation = pointInTime.rotation;
+				index++;
+			}
+			
+		}
+	}
 
 }
