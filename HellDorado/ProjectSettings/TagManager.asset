@@ -18,6 +18,8 @@ TagManager:
   - FireBall
   - Interactable
   - BloodPodium
+  - Blood
+  - Wood
   layers:
   - Default
   - TransparentFX
