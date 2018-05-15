@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 23004278674747196}
   - component: {fileID: 95457879723246526}
   - component: {fileID: 65872698156293538}
-  - component: {fileID: 114838939053891898}
   - component: {fileID: 82703373538287278}
   m_Layer: 10
   m_Name: Macuahuitl
@@ -786,7 +785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1360723154876390
 GameObject:
   m_ObjectHideFlags: 1
@@ -871,13 +870,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4463589864529080}
   - component: {fileID: 95740797903228828}
+  - component: {fileID: 114406124520007832}
   m_Layer: 10
   m_Name: Arm_R
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1405737704418326
 GameObject:
   m_ObjectHideFlags: 1
@@ -977,6 +977,7 @@ GameObject:
   - component: {fileID: 82521835657468312}
   - component: {fileID: 82324955196309268}
   - component: {fileID: 82923134426574066}
+  - component: {fileID: 114432869704936948}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2760,8 +2761,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
-  m_LocalPosition: {x: -46.66, y: 8.13, z: 22.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.64, z: 6.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -4699,7 +4700,7 @@ BoxCollider:
   m_GameObject: {fileID: 1009230418261484}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.67, y: 0.03, z: 0.13}
   m_Center: {x: 0.14, y: 0, z: 0.015}
@@ -5690,7 +5691,6 @@ MonoBehaviour:
   source: {fileID: 0}
   enemyHitClips: []
   playerHitClip: {fileID: 0}
-  objectHitClip: {fileID: 0}
   anim: {fileID: 95722458717943972}
   swordType: 0
   damage: 0
@@ -5725,7 +5725,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4f2babee6c0f2f74fabf50d85f135b1f, type: 3}
   - {fileID: 8300000, guid: c847d3dc9a567ed48a0a21b076b407f7, type: 3}
   playerHitClip: {fileID: 0}
-  objectHitClip: {fileID: 0}
   anim: {fileID: 95722458717943972}
   swordType: 0
   damage: 10
@@ -5771,7 +5770,6 @@ MonoBehaviour:
   source: {fileID: 0}
   enemyHitClips: []
   playerHitClip: {fileID: 0}
-  objectHitClip: {fileID: 0}
   anim: {fileID: 95127408849487210}
   swordType: 0
   damage: 0
@@ -5799,7 +5797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c609dac584d7a48a51e94976d866bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sources: []
   swordSwing: {fileID: 8300000, guid: b1c14da9afc175b459640786819972ac, type: 3}
   deathSound: {fileID: 8300000, guid: 3d31b2726eafec44d80cd7e2d6b771b7, type: 3}
   dashSound: {fileID: 0}
@@ -5811,9 +5808,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 959a866a41a4bdb4296a8baf5b53c876, type: 3}
   - {fileID: 8300000, guid: b0f4d14d0a5c47748bb67b7d81a03821, type: 3}
   - {fileID: 8300000, guid: a3f3183a3272a3941b96eadbba9d46f3, type: 3}
-  walkingSounds:
-  - {fileID: 8300000, guid: c615335190ea6744a9bf3e6616c5a6eb, type: 3}
-  - {fileID: 8300000, guid: 246e5d8e2d4de194397c314bb52809fd, type: 3}
+  defaultWalkingSounds: []
+  bloodWalkingSounds: []
+  woodWalkingSounds: []
   keySound: {fileID: 8300000, guid: f81ca4f67064b0248a860a2abdda06be, type: 3}
   landingSound: {fileID: 8300000, guid: 73447ed3c02a6504e96a525cfe276cd7, type: 3}
 --- !u!114 &114368279803451146
@@ -5830,7 +5827,6 @@ MonoBehaviour:
   source: {fileID: 0}
   enemyHitClips: []
   playerHitClip: {fileID: 0}
-  objectHitClip: {fileID: 0}
   anim: {fileID: 95740797903228828}
   swordType: 0
   damage: 0
@@ -5845,7 +5841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34b39c7302ea3242b5b5abb106b3b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 82966544810474180}
   rewindClip: {fileID: 8300000, guid: 905de1c4bb980224c8f9a478a8fdb126, type: 3}
   fireClip: {fileID: 8300000, guid: f142482f474ba1c4ea90488ad91429e7, type: 3}
   pushClip: {fileID: 8300000, guid: 8efa8ebc7eb198b42b2f08a2d6d67bca, type: 3}
@@ -5878,6 +5873,33 @@ MonoBehaviour:
   rArmAnim: {fileID: 95740797903228828}
   lameRHand: {fileID: 1360486801121586}
   startWithSword: 1
+--- !u!114 &114406124520007832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404328113946938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f997db146ac673439fce1ead2ef91d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canAttack: 1
+  reach: 3
+  offset: {x: 0, y: 0, z: 0}
+--- !u!114 &114432869704936948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445569227061950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5439655b14dd04fbf2c249ad5aeba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0
+  surfaceType: 
 --- !u!114 &114652977690393738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5937,28 +5959,6 @@ MonoBehaviour:
     type: 2}
   trailPrefab: {fileID: 1099210295391824, guid: b578de8f3abb9d44e8f7d32e7df77154,
     type: 2}
---- !u!114 &114838939053891898
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1009230418261484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 82703373538287278}
-  enemyHitClips:
-  - {fileID: 8300000, guid: 124787033b7b2b34e81a543c5ae346ed, type: 3}
-  - {fileID: 8300000, guid: 726a86cd18dd21b4990b46ea13f595b2, type: 3}
-  - {fileID: 8300000, guid: 4f2babee6c0f2f74fabf50d85f135b1f, type: 3}
-  - {fileID: 8300000, guid: c847d3dc9a567ed48a0a21b076b407f7, type: 3}
-  playerHitClip: {fileID: 0}
-  objectHitClip: {fileID: 8300000, guid: 507f68a124540c146959f900d320793b, type: 3}
-  anim: {fileID: 95740797903228828}
-  swordType: 0
-  damage: 10
 --- !u!114 &114879916634385688
 MonoBehaviour:
   m_ObjectHideFlags: 1
