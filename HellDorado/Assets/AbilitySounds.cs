@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AbilitySounds : MonoBehaviour {
 
-	public AudioSource source;
+	private AudioSource source;
 
 	[Header("Rewind")]
 	public AudioClip rewindClip;

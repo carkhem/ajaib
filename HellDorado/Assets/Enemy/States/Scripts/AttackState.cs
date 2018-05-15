@@ -27,7 +27,8 @@ public class AttackState : State {
 
 	public override void Update (){
 		if (!_controller.anim.GetCurrentAnimatorStateInfo(0).IsName ("Attack")){
-			_controller.TransitionTo<CombatState> ();
+            _controller.GetComponent<EnemySound>().StopPlayAudio();
+            _controller.TransitionTo<CombatState> ();
 		}
 	}
 

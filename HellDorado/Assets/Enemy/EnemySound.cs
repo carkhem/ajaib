@@ -36,4 +36,13 @@ public class EnemySound : MonoBehaviour {
 			}
 		}
 	}
+    
+    public void StopPlayAudio()
+    {
+        foreach (AudioSource s in sources)
+            if (s.isPlaying)
+            {
+                s.Stop();
+            }
+    }
 }
