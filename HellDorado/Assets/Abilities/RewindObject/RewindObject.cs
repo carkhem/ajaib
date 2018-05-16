@@ -17,6 +17,7 @@ public class RewindObject : MonoBehaviour {
     public GameObject trailPrefab;
     private GameObject trail;
     private float timer = 0.7f;
+	public float range = 60f;
 
 	void Update(){
 		//Det här är en ful lösning men vet inte hur jag annars ska kunna avaktiver spökObjektet
@@ -32,10 +33,10 @@ public class RewindObject : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
-		if ((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Interactable")) && hit.collider.GetComponent<ObjectTimeBody> () != null) {
+		if ((Physics.Raycast (ray, out hit, range) && (hit.collider.gameObject.tag == "Interactable")) && hit.collider.GetComponent<ObjectTimeBody> () != null) {
 			activeGameobject = hit.collider.gameObject;
 			hit.collider.gameObject.GetComponent<ObjectTimeBody> ().StartRewind ();
-		}else if((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Enemy"))){
+		}else if((Physics.Raycast (ray, out hit, range) && (hit.collider.gameObject.tag == "Enemy"))){
 			if(hit.collider.gameObject.GetComponent<EnemyController>().dead){
 				hit.collider.gameObject.GetComponent<EnemyTimeBody>().isRewinding = true;
 			}
@@ -46,7 +47,7 @@ public class RewindObject : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 		RaycastHit hit;
 
-		if ((Physics.Raycast (ray, out hit, 50) && (hit.collider.gameObject.tag == "Interactable")) && hit.collider.GetComponent<ObjectTimeBody> () != null) {
+		if ((Physics.Raycast (ray, out hit, range) && (hit.collider.gameObject.tag == "Interactable")) && hit.collider.GetComponent<ObjectTimeBody> () != null) {
             if (!Input.GetButton("Fire2"))
             {
                 if (objectToCloneFrom == null)
