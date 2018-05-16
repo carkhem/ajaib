@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 23465107564653990}
   m_Layer: 0
   m_Name: Blood
-  m_TagString: Untagged
+  m_TagString: Blood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,8 +174,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913580136110624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.995, y: 0, z: 143.82}
+  m_LocalRotation: {x: -0, y: -0.86602557, z: -0, w: 0.4999998}
+  m_LocalPosition: {x: 25.07, y: 0.060718536, z: -0.23999989}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4527948270866840}
