@@ -5808,9 +5808,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 959a866a41a4bdb4296a8baf5b53c876, type: 3}
   - {fileID: 8300000, guid: b0f4d14d0a5c47748bb67b7d81a03821, type: 3}
   - {fileID: 8300000, guid: a3f3183a3272a3941b96eadbba9d46f3, type: 3}
-  defaultWalkingSounds: []
-  bloodWalkingSounds: []
-  woodWalkingSounds: []
+  defaultWalkingSounds:
+  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+  - {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
+  bloodWalkingSounds:
+  - {fileID: 8300000, guid: 642d01dc38be144418da191a05b06e68, type: 3}
+  - {fileID: 8300000, guid: 33088fa1a45f1974a8939f98d64fd3ec, type: 3}
+  - {fileID: 8300000, guid: 897d60c2c9546fc43ab13dd1e7777e9d, type: 3}
+  woodWalkingSounds:
+  - {fileID: 8300000, guid: d3551a96fa587904f85fb15ded376a5b, type: 3}
+  - {fileID: 8300000, guid: f5c366942a16d604389434ed79d35976, type: 3}
+  - {fileID: 8300000, guid: fc6ce25d6c3b2b042a073bfec02427c9, type: 3}
   keySound: {fileID: 8300000, guid: f81ca4f67064b0248a860a2abdda06be, type: 3}
   landingSound: {fileID: 8300000, guid: 73447ed3c02a6504e96a525cfe276cd7, type: 3}
 --- !u!114 &114368279803451146
@@ -5898,7 +5908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5439655b14dd04fbf2c249ad5aeba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0
+  distance: 2
   surfaceType: 
 --- !u!114 &114652977690393738
 MonoBehaviour:
