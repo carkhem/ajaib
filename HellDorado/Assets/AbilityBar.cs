@@ -8,8 +8,8 @@ public class AbilityBar : MonoBehaviour {
     public Sprite RewindIcon;
     public Sprite RewindObject;
     public Sprite FireballIcon;
-    public Sprite forcePushIcon;
-    public Sprite macuahuitl;
+    public Sprite ForcePushIcon;
+    public Sprite Macuahuitl;
     public Image Icon;
     public Image weaponImage;
     public GameObject Ability;
@@ -49,7 +49,7 @@ public class AbilityBar : MonoBehaviour {
                 break;
 
             case 4:
-                Icon.sprite = forcePushIcon;
+                Icon.sprite = ForcePushIcon;
                 break;
 
         }
@@ -57,10 +57,12 @@ public class AbilityBar : MonoBehaviour {
 
     public void ChangeWeapon(int switchCommand)
     {
+        if(weaponImage == null)
+            weaponImage = Weapon.GetComponent<Image>();
         switch (switchCommand)
         {
             case 1:
-                weaponImage.sprite = macuahuitl;
+                weaponImage.sprite = Macuahuitl;
                 break;
         }
     }

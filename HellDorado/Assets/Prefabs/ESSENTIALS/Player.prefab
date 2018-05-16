@@ -493,7 +493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1263919921122912
 GameObject:
   m_ObjectHideFlags: 1
@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 82324955196309268}
   - component: {fileID: 82923134426574066}
   - component: {fileID: 114432869704936948}
+  - component: {fileID: 114873481146231616}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1030,7 +1031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1485320588404346
 GameObject:
   m_ObjectHideFlags: 1
@@ -2761,8 +2762,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 1.64, z: 6.55}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000014603138}
+  m_LocalPosition: {x: -8.32, y: 1.29, z: 4.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -5924,9 +5925,9 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   regenSpeed: 5
-  meleeDamage: 20
+  meleeDamage: 5
   damage: 0
-  sneakDamage: 0
+  sneakDamage: 10
   sneaking: 0
   inCombat: 0
 --- !u!114 &114718242059653216
@@ -5969,6 +5970,20 @@ MonoBehaviour:
     type: 2}
   trailPrefab: {fileID: 1099210295391824, guid: b578de8f3abb9d44e8f7d32e7df77154,
     type: 2}
+  range: 60
+--- !u!114 &114873481146231616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445569227061950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5439655b14dd04fbf2c249ad5aeba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 2
+  surfaceType: 
 --- !u!114 &114879916634385688
 MonoBehaviour:
   m_ObjectHideFlags: 1

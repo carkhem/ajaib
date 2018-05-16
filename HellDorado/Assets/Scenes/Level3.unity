@@ -1747,6 +1747,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19473fdf88aa05343809d6ee54752ff0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &151786340 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1809289870184962, guid: 5acdd9237da3e38468aa13d4462057c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1249209365}
 --- !u!1 &154536104
 GameObject:
   m_ObjectHideFlags: 0
@@ -14942,6 +14947,11 @@ Prefab:
       propertyPath: sneakDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114718242059653216, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: abilityBar
+      value: 
+      objectReference: {fileID: 151786340}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
