@@ -5882,7 +5882,7 @@ MonoBehaviour:
   lArmAnim: {fileID: 95463571114645248}
   rArmAnim: {fileID: 95740797903228828}
   lameRHand: {fileID: 1360486801121586}
-  startWithSword: 1
+  startWithSword: 0
 --- !u!114 &114406124520007832
 MonoBehaviour:
   m_ObjectHideFlags: 1
