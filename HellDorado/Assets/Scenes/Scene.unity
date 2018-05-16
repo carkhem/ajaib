@@ -1282,6 +1282,16 @@ Prefab:
       propertyPath: abilityBar
       value: 
       objectReference: {fileID: 2009985761}
+    - target: {fileID: 114388339974472154, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: startWithSword
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388339974472154, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: GameHands
+      value: 
+      objectReference: {fileID: 1294452762}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
@@ -1774,6 +1784,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1294452762 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1258769325768170, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+    type: 2}
+  m_PrefabInternal: {fileID: 905679314}
 --- !u!4 &1406052518 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4196532892567402, guid: 3041bdeadc4155646a6dbd003b267404,

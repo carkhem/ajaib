@@ -31,8 +31,9 @@ public class PlayerController : Controller{
 	void Start(){
 		movementSpeed = maxSpeed;
 		if (startWithSword) {
-			EquipSword ();
+            EquipSword ();
             CanvasManager.instance.abilityBar.GetComponent<AbilityBar>().ChangeWeapon(1);
+            
         } else {
 			lameRHand.SetActive (true);
 			rArmAnim.gameObject.SetActive (false);

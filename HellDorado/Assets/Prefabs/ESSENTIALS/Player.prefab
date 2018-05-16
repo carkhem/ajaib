@@ -2014,7 +2014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1914643782502130
 GameObject:
   m_ObjectHideFlags: 1
@@ -2762,14 +2762,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000014603138}
-  m_LocalPosition: {x: -8.32, y: 1.29, z: 4.79}
+  m_LocalRotation: {x: -0, y: -0.70285046, z: -0, w: 0.7113377}
+  m_LocalPosition: {x: -32, y: 2.34, z: -0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -89.312004, z: 0}
 --- !u!4 &4309606010673830
 Transform:
   m_ObjectHideFlags: 1
@@ -5314,7 +5314,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1258.0392
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5873,17 +5873,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fad4e948675822d4eb9fd2cc67c26a12, type: 2}
   - {fileID: 11400000, guid: b0798cce945349945b5180ab30f4fef1, type: 2}
   - {fileID: 11400000, guid: 0f2f836b7f667344586d79458e141566, type: 2}
-  - {fileID: 11400000, guid: 4a4e12061ef74064b9e11709c95297f6, type: 2}
+  - {fileID: 11400000, guid: 236edc32fa54b754f849911780a97af6, type: 2}
   CurrentState: {fileID: 0}
   Velocity: {x: 0, y: -1000, z: 0}
-  maxSpeed: 5
+  maxSpeed: 10
   gravity: 40
   movementSpeed: 0
   dashCooldown: 1
   lArmAnim: {fileID: 95463571114645248}
   rArmAnim: {fileID: 95740797903228828}
   lameRHand: {fileID: 1360486801121586}
-  startWithSword: 0
+  GameHands: {fileID: 1258769325768170}
+  startWithSword: 1
 --- !u!114 &114406124520007832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5924,7 +5925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  regenSpeed: 5
+  regenSpeed: 20
   meleeDamage: 5
   damage: 0
   sneakDamage: 10
@@ -5944,7 +5945,7 @@ MonoBehaviour:
   selectedAbility: 0
   isRewinding: 0
   recordTime: 5
-  rewindCost: 5
+  rewindCost: 20
   rewindParticles: {fileID: 198566366563633688}
   fireballPrefab: {fileID: 1144616759694740, guid: d66748d3041cc9849a22ec7e2e0b1bf0,
     type: 2}
