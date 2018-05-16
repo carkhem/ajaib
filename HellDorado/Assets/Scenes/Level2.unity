@@ -11624,7 +11624,7 @@ Transform:
   - {fileID: 65635372}
   - {fileID: 1190163}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &810842317
 MeshRenderer:
@@ -11691,6 +11691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deb141d71390184794352f3eac99fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToFinishLerp: 1
 --- !u!4 &824194412 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4571563175840124, guid: 6e4e108628f4e6f48a5747727dad936f,
@@ -14774,7 +14775,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4671845318009672, guid: d1e8ec53e8927c84a9a93f6b5ac37f76, type: 2}
       propertyPath: m_RootOrder
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1120430867602868, guid: d1e8ec53e8927c84a9a93f6b5ac37f76, type: 2}
       propertyPath: m_Name
@@ -19363,7 +19364,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1372712023
 GameObject:
@@ -21201,7 +21202,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1437708957
 GameObject:
@@ -21474,7 +21475,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4346869128294042, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4346869128294042, guid: 7e2cdb35ac1cc6f4ea3231c289e2ad0b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -23150,7 +23151,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917444391632996, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1336670347079802, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_Name
@@ -23575,6 +23576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deb141d71390184794352f3eac99fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToFinishLerp: 1
 --- !u!1 &1582868077 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1289504049199296, guid: 64ea01dd26c55e74591302d32f47c2e9,
@@ -23591,6 +23593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deb141d71390184794352f3eac99fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToFinishLerp: 1
 --- !u!1001 &1587448288
 Prefab:
   m_ObjectHideFlags: 0

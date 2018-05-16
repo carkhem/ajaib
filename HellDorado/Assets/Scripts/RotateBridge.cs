@@ -10,7 +10,7 @@ public class RotateBridge : MonoBehaviour {
 	private Quaternion startRotation;
 	private float direction;
 
-	private float _timeTakenDuringLerp = 1f;
+	public float timeToFinishLerp = 1f;
 	private float _timeStartedLerping;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,7 @@ public class RotateBridge : MonoBehaviour {
 	void FixedUpdate () {
 		if (isLerping) {
 			float timeSinceStarted = Time.time - _timeStartedLerping;
-			float percentageComplete = timeSinceStarted / _timeTakenDuringLerp;
+			float percentageComplete = timeSinceStarted / timeToFinishLerp;
 
 			transform.rotation = Quaternion.Lerp(startRotation,newRotation,percentageComplete);
 
