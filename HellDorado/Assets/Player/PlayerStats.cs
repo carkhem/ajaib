@@ -72,6 +72,7 @@ public class PlayerStats : MonoBehaviour{
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
 		ChangeDmg(gm.playerLevel);
         UpdateExperienceProgress();
+        LevelUpText();
     }
 
 	public void UpdateExperienceProgress(){
@@ -110,6 +111,7 @@ public class PlayerStats : MonoBehaviour{
 		}
 		gm.playerLevel = newLevel;
 		GameManager.instance.UpdateAbilityList ();
+        LevelIsUp = true;
 	}
 
 	public void LevelUp(){

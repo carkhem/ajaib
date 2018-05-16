@@ -85,6 +85,7 @@ public class PlayerController : Controller{
 	public void EquipSword(){
 		rArmAnim.gameObject.SetActive (true);
 		lameRHand.SetActive (false);
+        CanvasManager.instance.abilityBar.GetComponent<AbilityBar>().ChangeWeapon(1);
 	}
 
 
