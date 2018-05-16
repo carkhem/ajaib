@@ -27,7 +27,7 @@ public class BloodPuzzleManager : MonoBehaviour {
             Debug.Log("777");
             ressing = true;
         }
-        else if(enemy.GetComponent<EnemyController>().health >= 0)
+        else if(enemy.GetComponent<EnemyController>().health > 0)
         {
             ressing = false;
         }
