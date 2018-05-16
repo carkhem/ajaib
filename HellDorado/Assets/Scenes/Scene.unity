@@ -344,19 +344,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114659882099421306, guid: 1a690dc47c5e3124ba09c346bf4ea959,
         type: 2}
-      propertyPath: abilityList
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114659882099421306, guid: 1a690dc47c5e3124ba09c346bf4ea959,
-        type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 297041610}
-    - target: {fileID: 114659882099421306, guid: 1a690dc47c5e3124ba09c346bf4ea959,
-        type: 2}
-      propertyPath: playerLevel
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a690dc47c5e3124ba09c346bf4ea959, type: 2}
   m_IsPrefabParent: 0
@@ -576,19 +566,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1445569227061950, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
     type: 2}
   m_PrefabInternal: {fileID: 905679314}
---- !u!114 &297041628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 297041610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c5439655b14dd04fbf2c249ad5aeba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 2
-  surfaceType: 
 --- !u!1 &382709816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,21 +1245,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: woodWalkingSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: bloodWalkingSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: defaultWalkingSounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4295946911541324, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.93
@@ -1319,57 +1281,7 @@ Prefab:
         type: 2}
       propertyPath: abilityBar
       value: 
-      objectReference: {fileID: 1456854613}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: bloodWalkingSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 642d01dc38be144418da191a05b06e68, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: bloodWalkingSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 33088fa1a45f1974a8939f98d64fd3ec, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: bloodWalkingSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 897d60c2c9546fc43ab13dd1e7777e9d, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: defaultWalkingSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: defaultWalkingSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: woodWalkingSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: d3551a96fa587904f85fb15ded376a5b, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: woodWalkingSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: f5c366942a16d604389434ed79d35976, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: woodWalkingSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: fc6ce25d6c3b2b042a073bfec02427c9, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: defaultWalkingSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
-    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
-        type: 2}
-      propertyPath: defaultWalkingSounds.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
+      objectReference: {fileID: 2009985761}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0
@@ -1867,11 +1779,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4196532892567402, guid: 3041bdeadc4155646a6dbd003b267404,
     type: 2}
   m_PrefabInternal: {fileID: 2031912997}
---- !u!1 &1456854613 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1828747661245346, guid: 5acdd9237da3e38468aa13d4462057c2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1956778003}
 --- !u!1 &1476747384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,6 +2478,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5acdd9237da3e38468aa13d4462057c2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2009985761 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1809289870184962, guid: 5acdd9237da3e38468aa13d4462057c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1956778003}
 --- !u!1001 &2031912997
 Prefab:
   m_ObjectHideFlags: 0
