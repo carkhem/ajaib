@@ -49,7 +49,7 @@ public class PlayerSounds : MonoBehaviour {
     public void TakingDamageSound()
     {
         if (!sources[3].isPlaying)
-            clipIndex = Random.Range(1, takingDamageSounds.Length);
+            clipIndex = Random.Range(0, takingDamageSounds.Length);
         AudioClip clip = takingDamageSounds[clipIndex];
         sources[3].PlayOneShot(clip);
     }
