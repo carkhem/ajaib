@@ -16,7 +16,7 @@ public class PlayerSounds : MonoBehaviour {
     public AudioClip keySound;
     public AudioClip landingSound;
 
-    private AudioSource[] sources; // 0 = death & swordSwing | 1 = dash | 2 = walking | 3 = takingDamage | 4 = jump
+    private AudioSource[] sources; // 0 = death | 1 = dash | 2 = walking | 3 = takingDamage | 4 = jump | 5 = swordSwing
     private string surface;
     private int clipIndex;
 
@@ -38,7 +38,7 @@ public class PlayerSounds : MonoBehaviour {
     public void PlaySwordSwing()
     {
         sources[2].Stop();
-        sources[0].PlayOneShot(swordSwing);
+        sources[5].PlayOneShot(swordSwing);
     }
 
     public void PlayDashSound()
