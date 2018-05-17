@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AbilitySounds : MonoBehaviour {
 
-	private AudioSource source;
-
+	private AudioSource abilitySource;
+    private AudioSource[] sources;
 	[Header("Rewind")]
 	public AudioClip rewindClip;
 	private bool rewinding;
@@ -21,7 +21,8 @@ public class AbilitySounds : MonoBehaviour {
 
 
 	void Start () {
-		source = GetComponent<AudioSource> ();
+        sources = GetComponents<AudioSource>();
+        abilitySource = sources[0];
 	}
 
 	public void PlayAbilitySound(string ability){
@@ -44,26 +45,26 @@ public class AbilitySounds : MonoBehaviour {
 	}
 
 	private void PlayRewind(){
-		if(!source.isPlaying)
-			source.PlayOneShot (rewindClip);
+		if(!abilitySource.isPlaying)
+			abilitySource.PlayOneShot (rewindClip);
 	}
 		
 	private void PlayRewindObject(){
-			source.PlayOneShot (rewindClip);
+			abilitySource.PlayOneShot (rewindClip);
 	}
 
 	private void PlayFireball(){
 		StopPlayingAudio ();
-		if(!source.isPlaying)
-			source.PlayOneShot (fireClip);
+		if(!abilitySource.isPlaying)
+			abilitySource.PlayOneShot (fireClip);
 	}
 
 	private void PlayPush(){
-		if(!source.isPlaying)
-			source.PlayOneShot (pushClip);
+		if(!abilitySource.isPlaying)
+			abilitySource.PlayOneShot (pushClip);
 	}
 
 	public void StopPlayingAudio(){
-		source.Stop ();
+		abilitySource.Stop ();
 	}
 }
