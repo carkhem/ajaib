@@ -25,10 +25,8 @@ public class PlayerStats : MonoBehaviour{
 	public bool inCombat;
 
     [Header("PlayerLevel")]
-//	public int playerLevel = 0;
-//	public float playerEXP;
 //	public float maxEXP {get {return (playerLevel < 1) ? 100  : playerLevel * 100;}}
-	private float maxEXP = 100;
+//	private float maxEXP = 100;
 	private Slider experienceSlider;
 
 	private GameManager gm;
@@ -46,6 +44,7 @@ public class PlayerStats : MonoBehaviour{
         experienceSlider = CanvasManager.instance.experienceSlider;
 		gm = GameManager.instance;
 		_controller = GetComponent<PlayerController> ();
+		print (gm.maxEXP);
     }
 
     void Update(){
@@ -78,8 +77,8 @@ public class PlayerStats : MonoBehaviour{
     }
 
 	public void UpdateExperienceProgress(){
-		experienceSlider.value = gm.playerEXP / maxEXP;
-		if (gm.playerEXP >= maxEXP) {
+		experienceSlider.value = gm.playerEXP / gm.maxEXP;
+		if (gm.playerEXP >= gm.maxEXP) {
 			LevelUp ();
 			GetComponent<PlayerController> ().lArmAnim.SetTrigger ("levelUp");
 		}
@@ -106,8 +105,8 @@ public class PlayerStats : MonoBehaviour{
 	}
 
 	public void ChangePlayerLevel(int newLevel){
-		if (gm.playerEXP >= maxEXP) {
-			gm.playerEXP %= maxEXP;
+		if (gm.playerEXP >= gm.maxEXP) {
+			gm.playerEXP %= gm.maxEXP;
 		} else {
 			gm.playerEXP = 0;
 		}

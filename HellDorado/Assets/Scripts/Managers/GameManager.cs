@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public int playerLevel = 0;
     public float playerEXP;
+	[HideInInspector]
+	public float maxEXP {get {return (playerLevel < 1) ? 100  : playerLevel * 100;}}
+	public int abilityCount = 0;
     public GameObject[] abilityDisplay;
     private GameObject cameraController;
     public GameObject player;
@@ -16,6 +19,23 @@ public class GameManager : MonoBehaviour
     private GameObject CheckPoint;
     private GameObject[] enemies;
 
+
+	void Awake()
+	{
+		DontDestroyOnLoad(gameObject);
+		instance = this;
+		cameraController = Camera.main.transform.parent.gameObject;
+	}
+
+	void Start()
+	{
+		if (stats == null)
+			stats = PlayerStats.instance;
+		UpdateAbilityList();
+		player = stats.transform.gameObject;
+
+		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+	}
 
     void Update()
     {
@@ -38,27 +58,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        instance = this;
-        cameraController = Camera.main.transform.parent.gameObject;
-    }
-
-    void Start()
-    {
-        if (stats == null)
-            stats = PlayerStats.instance;
-        UpdateAbilityList();
-        player = stats.transform.gameObject;
-
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-    }
-
     public void UpdateAbilityList()
     {
         CanvasManager.instance.ClearAbilities();
-        for (int i = 1; i < playerLevel; i++)
+		for (int i = 1; i < abilityCount; i++)
         {
             if (abilityDisplay.Length + 1 > i)
                 CanvasManager.instance.AddAbility(abilityDisplay[i - 1]);
