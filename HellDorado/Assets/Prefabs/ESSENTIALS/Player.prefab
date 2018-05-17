@@ -493,7 +493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1263919921122912
 GameObject:
   m_ObjectHideFlags: 1
@@ -1031,7 +1031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1485320588404346
 GameObject:
   m_ObjectHideFlags: 1
@@ -2762,8 +2762,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: -0, y: -0.70285046, z: -0, w: 0.7113377}
-  m_LocalPosition: {x: -32, y: 2.34, z: -0.9}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000014603138}
+  m_LocalPosition: {x: -8.32, y: 1.29, z: 4.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -5883,8 +5883,7 @@ MonoBehaviour:
   lArmAnim: {fileID: 95463571114645248}
   rArmAnim: {fileID: 95740797903228828}
   lameRHand: {fileID: 1360486801121586}
-  GameHands: {fileID: 1258769325768170}
-  startWithSword: 1
+  startWithSword: 0
 --- !u!114 &114406124520007832
 MonoBehaviour:
   m_ObjectHideFlags: 1
