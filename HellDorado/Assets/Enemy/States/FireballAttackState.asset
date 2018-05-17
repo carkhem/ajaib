@@ -14,3 +14,5 @@ MonoBehaviour:
   Controller: {fileID: 0}
   fireballPrefab: {fileID: 1144616759694740, guid: d66748d3041cc9849a22ec7e2e0b1bf0,
     type: 2}
+  attackTime: 0.5
+  recoverTime: 1.2

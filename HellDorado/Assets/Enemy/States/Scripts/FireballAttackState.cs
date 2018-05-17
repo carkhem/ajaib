@@ -10,6 +10,9 @@ public class FireballAttackState : State {
 	private NavMeshAgent agent;
 	public GameObject fireballPrefab;
 	private bool hasAttacked = false;
+	private float timer;
+	public float attackTime = 1.2f;
+	public float recoverTime = 0.8f;
 
 	public override void Initialize(Controller owner) {
 		_controller = (EnemyController)owner;
@@ -17,10 +20,11 @@ public class FireballAttackState : State {
 	}
 
 	public override void Enter (){
+		timer = 0;
 		hasAttacked = false;
 		_controller.SetAnim ("attack", true);
 		_controller.GetComponent<EnemySound> ().PlaySwingSound ();
-		Instantiate (fireballPrefab, transform.position + transform.forward, transform.rotation);
+
 	}
 
 	public override void Update (){
@@ -29,8 +33,16 @@ public class FireballAttackState : State {
 //			Instantiate (fireballPrefab, transform.position + transform.forward, transform.rotation);
 //			hasAttacked = true;
 //		}
-		if (!_controller.anim.GetCurrentAnimatorStateInfo(0).IsName ("Attack")){
+		timer += Time.deltaTime;
+		Debug.Log (timer);
+
+		if (timer >= recoverTime){
 			_controller.TransitionTo<CombatState> ();
+		}
+		if (timer >= attackTime && !hasAttacked){
+			Debug.Log ("Attack");
+			hasAttacked = true;
+			Instantiate (fireballPrefab, transform.position + transform.forward, transform.rotation);
 		}
 	}
 
