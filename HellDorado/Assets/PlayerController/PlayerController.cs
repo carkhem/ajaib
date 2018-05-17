@@ -25,6 +25,7 @@ public class PlayerController : Controller{
 	public Animator rArmAnim;
 	public GameObject lameRHand;
 	public bool startWithSword;
+	public GameObject gemStone;
 
 	private CharacterController charController;
 

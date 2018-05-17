@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour{
 	private Slider experienceSlider;
 
 	private GameManager gm;
+	private PlayerController _controller;
 
 	void Awake(){
 		instance = this;
@@ -44,6 +45,7 @@ public class PlayerStats : MonoBehaviour{
         healthProcent.text = health + "%";
         experienceSlider = CanvasManager.instance.experienceSlider;
 		gm = GameManager.instance;
+		_controller = GetComponent<PlayerController> ();
     }
 
     void Update(){
@@ -116,6 +118,8 @@ public class PlayerStats : MonoBehaviour{
 
 	public void LevelUp(){
 		ChangePlayerLevel (gm.playerLevel + 1);
+		//LEVEL UP BURST
+		_controller.gemStone.GetComponent<ParticleSystem> ().Emit (20);
 	}
 
 	public void AddExperience(float exp){
