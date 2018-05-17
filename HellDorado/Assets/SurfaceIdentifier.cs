@@ -7,7 +7,7 @@ public class SurfaceIdentifier : MonoBehaviour {
     private Vector3 direction;
     public float distance;
     private RaycastHit hit;
-    public string surfaceType;
+    private string surfaceType;
 
 	// Use this for initialization
 	void Start () {
