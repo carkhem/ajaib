@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.27216494, g: 0.15980673, b: 0.1914494, a: 1}
+  m_IndirectSpecularColor: {r: 0.25486755, g: 0.1556114, b: 0.18492666, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4939,7 +4939,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1445569227061950, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114388339974472154, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
         type: 2}
@@ -4953,11 +4953,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1258769325768170, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1462680143785214, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
         type: 2}
@@ -5530,7 +5530,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1445569227061950, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114652977690393738, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
         type: 2}
@@ -6827,7 +6827,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 4.6627584
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114845190981637052, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &516392815 stripped
@@ -12950,7 +12951,8 @@ Prefab:
       propertyPath: m_Name
       value: Gate (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114845190981637052, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1127737592 stripped
@@ -15364,7 +15366,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 4.6627584
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114845190981637052, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1335642708
