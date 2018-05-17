@@ -14,7 +14,7 @@ public class PressurePlate : MonoBehaviour {
 		foreach (string t in interactableTags) {
 			if (col.transform.CompareTag (t)) {
 				objects++;
-				//GetComponent<Animator> ().SetBool ("activate", true);
+				GetComponent<Animator> ().SetBool ("activate", true);
 				OnPressureEnter.Invoke ();
 				break;
 			}
@@ -25,7 +25,7 @@ public class PressurePlate : MonoBehaviour {
 		foreach (string t in interactableTags) {
 			if (col.transform.CompareTag (t)) {
 				objects--;
-				//GetComponent<Animator> ().SetBool ("activate", false);
+				GetComponent<Animator> ().SetBool ("activate", false);
 				if (objects == 0) {
 					OnPressureExit.Invoke ();
 				}
