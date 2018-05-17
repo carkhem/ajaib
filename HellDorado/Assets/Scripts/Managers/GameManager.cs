@@ -61,10 +61,10 @@ public class GameManager : MonoBehaviour
     public void UpdateAbilityList()
     {
         CanvasManager.instance.ClearAbilities();
-		for (int i = 1; i < abilityCount; i++)
+		for (int i = 0; i < abilityCount; i++)
         {
-            if (abilityDisplay.Length + 1 > i)
-                CanvasManager.instance.AddAbility(abilityDisplay[i - 1]);
+            if (abilityDisplay.Length > i)
+                CanvasManager.instance.AddAbility(abilityDisplay[i]);
         }
     }
 
@@ -117,4 +117,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+	public void NewAbility(){
+		SetAbilityCount (abilityCount + 1);
+	}
+
+	public void SetAbilityCount(int ammount){
+		abilityCount = ammount;
+		UpdateAbilityList ();
+		//HÄR SKA FEEDBACK GES FÖR NY ABILITY
+	}
 }

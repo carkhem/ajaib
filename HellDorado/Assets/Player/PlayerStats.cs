@@ -71,7 +71,7 @@ public class PlayerStats : MonoBehaviour{
             damage = meleeDamage;
 
 		healthProcent.text = (int)(health/maxHealth * 100) + "%";
-		ChangeDmg(gm.playerLevel);
+		UpdateDamage(gm.playerLevel);
         UpdateExperienceProgress();
         LevelUpText();
     }
@@ -111,7 +111,6 @@ public class PlayerStats : MonoBehaviour{
 			gm.playerEXP = 0;
 		}
 		gm.playerLevel = newLevel;
-		GameManager.instance.UpdateAbilityList ();
         LevelIsUp = true;
 	}
 
@@ -132,9 +131,14 @@ public class PlayerStats : MonoBehaviour{
 			health = maxHealth;
     }
 
-    public void ChangeDmg(int level){
-        meleeDamage = level * 2;
-        sneakDamage = meleeDamage * 2;
+    public void UpdateDamage(int level){
+		if (level < 2) {
+			meleeDamage = level * 2;
+			sneakDamage = meleeDamage * 2;
+		} else {
+			meleeDamage = level * 2;
+			sneakDamage = meleeDamage * 2;
+		}
     }
 
     public void LevelUpText()
@@ -176,4 +180,5 @@ public class PlayerStats : MonoBehaviour{
 			}
 		}
 	}
+
 }
