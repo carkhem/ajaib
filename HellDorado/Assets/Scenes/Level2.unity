@@ -2561,7 +2561,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 2.4638975
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114845190981637052, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 48455e0f267dfb745baee19c9792e40e, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &153896756 stripped
@@ -5787,6 +5788,11 @@ Prefab:
     - target: {fileID: 224390633288619372, guid: 5acdd9237da3e38468aa13d4462057c2,
         type: 2}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224219566001118574, guid: 5acdd9237da3e38468aa13d4462057c2,
+        type: 2}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
