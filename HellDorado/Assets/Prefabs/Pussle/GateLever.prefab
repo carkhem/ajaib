@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114730670012645504}
   - component: {fileID: 82988672150207552}
   - component: {fileID: 82536509374995962}
+  - component: {fileID: 95829034823551052}
   m_Layer: 0
   m_Name: LeverHandle
   m_TagString: Interactable
@@ -73,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014201057357318}
   m_LocalRotation: {x: -0, y: 0.71568114, z: -0, w: 0.6984272}
-  m_LocalPosition: {x: -15.825001, y: -1.79, z: -7.13}
+  m_LocalPosition: {x: -10.499735, y: 0.17, z: 10.014822}
   m_LocalScale: {x: 0.5508142, y: 0.68851805, z: 0.55081445}
   m_Children:
   - {fileID: 4571476335823312}
@@ -405,6 +406,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95829034823551052
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986242422788448}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb366c3a63c0cac4496036e199374c2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114730670012645504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,6 +449,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 95829034823551052}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: pull
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,

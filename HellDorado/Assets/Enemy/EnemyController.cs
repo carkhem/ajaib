@@ -140,7 +140,8 @@ public class EnemyController : Controller
     {
         detection = 1;
         detectionTimer = 0;
-        player.GetComponent<PlayerStats>().AddEnemy(gameObject);
+		if (health > 0)
+	        player.GetComponent<PlayerStats>().AddEnemy(gameObject);
 		TransitionTo<CombatState> ();
     }
 

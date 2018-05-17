@@ -25,8 +25,6 @@ public class PlayerStats : MonoBehaviour{
 	public bool inCombat;
 
     [Header("PlayerLevel")]
-//	public float maxEXP {get {return (playerLevel < 1) ? 100  : playerLevel * 100;}}
-//	private float maxEXP = 100;
 	private Slider experienceSlider;
 
 	private GameManager gm;
@@ -160,6 +158,7 @@ public class PlayerStats : MonoBehaviour{
 
 	public void AddEnemy(GameObject enemy){
 		enemies.Add (enemy);
+		Debug.Log ("Added " + enemy.name);
 	}
 
 	public void RemoveEnemy(GameObject enemy){

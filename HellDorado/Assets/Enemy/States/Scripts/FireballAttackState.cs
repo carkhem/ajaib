@@ -34,8 +34,6 @@ public class FireballAttackState : State {
 //			hasAttacked = true;
 //		}
 		timer += Time.deltaTime;
-		Debug.Log (timer);
-
 		if (timer >= recoverTime){
 			_controller.TransitionTo<CombatState> ();
 		}

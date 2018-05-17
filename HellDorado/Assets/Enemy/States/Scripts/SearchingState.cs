@@ -33,5 +33,6 @@ public class SearchingState : State {
 
 	public override void Exit (){
 		_controller.SetAnim ("search", false);
+		_controller.player.GetComponent<PlayerStats> ().RemoveEnemy (transform.gameObject);
 	}
 }
