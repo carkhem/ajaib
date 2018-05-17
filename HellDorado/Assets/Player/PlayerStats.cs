@@ -80,7 +80,6 @@ public class PlayerStats : MonoBehaviour{
 		experienceSlider.value = gm.playerEXP / gm.maxEXP;
 		if (gm.playerEXP >= gm.maxEXP) {
 			LevelUp ();
-			GetComponent<PlayerController> ().lArmAnim.SetTrigger ("levelUp");
 		}
 	}
 
@@ -116,8 +115,6 @@ public class PlayerStats : MonoBehaviour{
 
 	public void LevelUp(){
 		ChangePlayerLevel (gm.playerLevel + 1);
-		//LEVEL UP BURST
-		_controller.gemStone.GetComponent<ParticleSystem> ().Emit (20);
 	}
 
 	public void AddExperience(float exp){

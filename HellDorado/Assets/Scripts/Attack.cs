@@ -24,6 +24,7 @@ public class Attack : MonoBehaviour {
 			}
 			if (hit.transform.CompareTag("Player")){
 				PlayerStats.instance.ChangeHealth (-20);
+				Camera.main.GetComponent<Animator> ().SetTrigger ("hit");
 			}
 		}
 	}

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private PlayerStats stats;
     private GameObject CheckPoint;
     private GameObject[] enemies;
+	private PlayerController _controller;
 
 
 	void Awake()
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
 		player = stats.transform.gameObject;
 
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		_controller = PlayerStats.instance.GetComponent<PlayerController> ();
 	}
 
     void Update()
@@ -124,6 +126,12 @@ public class GameManager : MonoBehaviour
 	public void SetAbilityCount(int ammount){
 		abilityCount = ammount;
 		UpdateAbilityList ();
-		//HÄR SKA FEEDBACK GES FÖR NY ABILITY
+		Invoke ("GemStoneBurst", 0.2f);
+		_controller.lArmAnim.SetTrigger ("levelUp");
+	}
+	private void GemStoneBurst(){
+		_controller.gemStone.GetComponent<ParticleSystem> ().Emit (30);
+		_controller.gemStone.GetComponent<ParticleSystemRenderer> ().renderingLayerMask = 10;
+//		_controller.gemStone.GetComponent<Renderer> ().materials [0].SetColor ("_EmissionColor", Color.red * Mathf.LinearToGammaSpace(1));
 	}
 }
