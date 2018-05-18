@@ -10242,6 +10242,11 @@ Prefab:
       propertyPath: MaxLevel
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114659882099421306, guid: 1a690dc47c5e3124ba09c346bf4ea959,
+        type: 2}
+      propertyPath: levelsCompleted
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a690dc47c5e3124ba09c346bf4ea959, type: 2}
   m_IsPrefabParent: 0
@@ -29378,7 +29383,7 @@ GameObject:
   - component: {fileID: 2098395445}
   - component: {fileID: 2098395448}
   m_Layer: 0
-  m_Name: Cube (42)
+  m_Name: NextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29463,6 +29468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: Scenes/Level3
+  currentLevel: 2
 --- !u!1 &2100069105
 GameObject:
   m_ObjectHideFlags: 0

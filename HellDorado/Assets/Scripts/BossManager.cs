@@ -16,6 +16,7 @@ public class BossManager : MonoBehaviour {
     public GameObject fireBallShooter;
 	public GameObject portal;
 	private Animator anim;
+    public GameObject bloodShield;
 
     // Use this for initialization
     void Start () {
@@ -102,6 +103,7 @@ public class BossManager : MonoBehaviour {
             fireBallShooter.SetActive(false);
             boulderSpawner.SetActive(false);
             Die();
+                Destroy(bloodShield);
             break;
             }
        phase++;

@@ -7,22 +7,16 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour {
 
     public string SceneToLoad;
- //   public int SceneToLoad
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int currentLevel;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Player")
         {
+            if(GameObject.Find("GameManager").GetComponent<GameManager>().levelsCompleted < currentLevel)
+            {
+                GameObject.Find("GameManager").GetComponent<GameManager>().levelsCompleted = currentLevel;
+            }
             SceneManager.LoadScene(SceneToLoad);
         }
     }

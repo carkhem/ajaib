@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private GameObject CheckPoint;
     private GameObject[] enemies;
 	private PlayerController _controller;
+    public int levelsCompleted = 0;
 
 
 	void Awake()
