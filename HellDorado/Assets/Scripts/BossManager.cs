@@ -103,7 +103,7 @@ public class BossManager : MonoBehaviour {
             fireBallShooter.SetActive(false);
             boulderSpawner.SetActive(false);
             Die();
-                Destroy(bloodShield);
+            Destroy(bloodShield);
             break;
             }
        phase++;
