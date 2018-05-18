@@ -5752,6 +5752,7 @@ MonoBehaviour:
   swordSwing: {fileID: 8300000, guid: b1c14da9afc175b459640786819972ac, type: 3}
   deathSound: {fileID: 8300000, guid: 3d31b2726eafec44d80cd7e2d6b771b7, type: 3}
   dashSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
   takingDamageSounds:
   - {fileID: 8300000, guid: fc79155d206e54f4ca82365f29729a8c, type: 3}
   - {fileID: 8300000, guid: 7d1531d82e07ce040bc49a8cc6c1be1b, type: 3}

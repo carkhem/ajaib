@@ -19,6 +19,8 @@ public class DeadState : State {
 		transform.GetComponent<BoxCollider> ().enabled = false;
 		_controller.player.GetComponent<PlayerStats> ().RemoveEnemy (transform.gameObject);
 		_controller.dead = true;
+        _controller.GetComponent<EnemySounds>().StopAllSound();
+        _controller.GetComponent<EnemySounds>().PlayDeathSound();
 	}
 
 	public override void Update (){

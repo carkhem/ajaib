@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSounds : MonoBehaviour {
+public class PlayerSounds : MonoBehaviour
+{
 
     public AudioClip swordSwing;
     public AudioClip deathSound;
     public AudioClip dashSound;
+    public AudioClip hitSound;
     public AudioClip[] takingDamageSounds;
     public AudioClip[] jumpSounds;
     public AudioClip[] defaultWalkingSounds;
@@ -54,6 +56,11 @@ public class PlayerSounds : MonoBehaviour {
         sources[3].PlayOneShot(clip);
     }
 
+    public void PlayHitSound()
+    {
+        sources[0].PlayOneShot(hitSound);
+    }
+
     public void PlayJumpSound()
     {
         clipIndex = Random.Range(1, jumpSounds.Length);
@@ -67,7 +74,8 @@ public class PlayerSounds : MonoBehaviour {
         sources[3].PlayOneShot(keySound);
     }
 
-    public void PlayWalkSound() {
+    public void PlayWalkSound()
+    {
         //Kallas i Headbobber
         if (transform.GetComponent<CharacterController>().isGrounded)
         {
@@ -90,15 +98,16 @@ public class PlayerSounds : MonoBehaviour {
             }
         }
     }
-    
-        public void StopPlayWalkingSound()
+
+    public void StopPlayWalkingSound()
     {
         sources[2].Stop();
     }
 
     public void PlayLandingSound()
     {
-        if(!gameObject.GetComponent<PlayerStats>().sneaking) { 
+        if (!gameObject.GetComponent<PlayerStats>().sneaking)
+        {
             sources[1].PlayOneShot(landingSound);
         }
     }

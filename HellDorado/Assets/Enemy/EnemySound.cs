@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EnemySound : MonoBehaviour {
 
-	public AudioClip swingSound;
+    // Finns kvar pga av ljud vid animeringen i början av level1. Bör ersättas eller göras om.
+    // EnemySounds är den som sköter alla andra ljud för fiender. Ja, namnen är förvirrande lika.
+
+    //public AudioClip swingSound;
 	public AudioClip[] walkingSounds;
-	private AudioSource[] sources;
+   //public AudioClip[] hitSounds;
+    private AudioSource[] sources;
 	private int clipIndex;
 
 	// Use this for initialization
@@ -19,13 +23,15 @@ public class EnemySound : MonoBehaviour {
 		
 	}
 
-	public void PlaySwingSound(){
-		if (!sources[0].isPlaying) {
-			sources[0].PlayOneShot (swingSound);
-		}
-	}
+    //public void PlaySwingSound()
+    //{
+    //    if (!sources[0].isPlaying)
+    //    {
+    //        sources[0].PlayOneShot(swingSound);
+    //    }
+    //}
 
-	public void PlayWalkingSound() {
+    public void PlayWalkingSound() {
 		foreach (AudioSource s in sources) {
 			if (!s.isPlaying) {
 				clipIndex = Random.Range (1, walkingSounds.Length);
@@ -37,8 +43,7 @@ public class EnemySound : MonoBehaviour {
 		}
 	}
     
-    public void StopPlayAudio()
-    {
+    public void StopPlayAudio() {
         foreach (AudioSource s in sources)
             if (s.isPlaying)
             {

@@ -23,7 +23,7 @@ public class FireballAttackState : State {
 		timer = 0;
 		hasAttacked = false;
 		_controller.SetAnim ("attack", true);
-		_controller.GetComponent<EnemySound> ().PlaySwingSound ();
+		_controller.GetComponent<EnemySounds> ().PlayCastSound ();
 
 	}
 

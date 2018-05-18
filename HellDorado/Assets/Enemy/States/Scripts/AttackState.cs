@@ -21,7 +21,7 @@ public class AttackState : State {
 	public override void Enter (){
 		Debug.Log ("ATTACK");
 		_controller.SetAnim ("attack", true);
-		_controller.GetComponent<EnemySound> ().PlaySwingSound ();
+		_controller.GetComponent<EnemySounds> ().PlaySwingSound ();
 		agent.speed = 0;
 		timer = 0;
 	}
@@ -31,7 +31,7 @@ public class AttackState : State {
 		timer += Time.deltaTime;
 		if (timer >= recoverTime){
 			Debug.Log ("TRANSITION");
-			_controller.GetComponent<EnemySound>().StopPlayAudio();
+            _controller.GetComponent<EnemySounds>().StopSwingSound();
             _controller.TransitionTo<CombatState> ();
 		}
 	}

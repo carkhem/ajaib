@@ -33,7 +33,7 @@ public class Sword : MonoBehaviour {
 		}
 	}
 
-	private void PlayEnemyHitSounds(){
+	private void PlayEnemyHitSounds() {
 		if (!source.isPlaying) {
 			clipIndex = Random.Range (0, enemyHitClips.Length);
 			AudioClip clip = enemyHitClips [clipIndex];
