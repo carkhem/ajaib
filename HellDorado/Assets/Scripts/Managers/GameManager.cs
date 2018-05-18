@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int playerLevel = 0;
+    public int playerLevel = 3;
     public float playerEXP;
 	[HideInInspector]
 	public float maxEXP {get {return (playerLevel < 1) ? 100  : playerLevel * 100;}}
@@ -20,22 +20,26 @@ public class GameManager : MonoBehaviour
     private GameObject[] enemies;
 	private PlayerController _controller;
     public int levelsCompleted = 0;
-
+    private float ABSec = 0.0f;
+    private bool keyPressed = true;
 
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
 		instance = this;
 		cameraController = Camera.main.transform.parent.gameObject;
-	}
+        if (abilityCount == 1)
+            abilityCount = 0;
+       // UpdateAbilityList();
+    }
 
 	void Start()
 	{
 		if (stats == null)
 			stats = PlayerStats.instance;
-		UpdateAbilityList();
-		player = stats.transform.gameObject;
-
+        UpdateAbilityList();
+        player = stats.transform.gameObject;
+        
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		_controller = PlayerStats.instance.GetComponent<PlayerController> ();
 	}
@@ -59,16 +63,41 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
                 Respawn();
         }
+        abilityDisplayActive();
+    }
+
+    private void abilityDisplayActive()
+    {
+        if (abilityCount != 0)
+        {
+            if (keyPressed)
+            {
+                ABSec += Time.fixedDeltaTime;
+                if (ABSec >= 1.5f)
+                {
+                    ABSec = 0.0f;
+                    keyPressed = false;
+                }
+                CanvasManager.instance.abilityContent.SetActive(keyPressed);
+            }
+        }
+    }
+    public void keyPress()
+    {
+        ABSec = 0.0f;
+        keyPressed = true;
     }
 
     public void UpdateAbilityList()
     {
-        CanvasManager.instance.ClearAbilities();
-		for (int i = 0; i < abilityCount; i++)
-        {
-            if (abilityDisplay.Length > i)
-                CanvasManager.instance.AddAbility(abilityDisplay[i]);
-        }
+            keyPress();
+            abilityDisplayActive();
+            CanvasManager.instance.ClearAbilities();
+            for (int i = 0; i < abilityCount; i++)
+            {
+                if (abilityDisplay.Length > i)
+                    CanvasManager.instance.AddAbility(abilityDisplay[i]);
+            }
     }
 
     public void GameOver()

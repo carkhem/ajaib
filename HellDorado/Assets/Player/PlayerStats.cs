@@ -109,6 +109,12 @@ public class PlayerStats : MonoBehaviour{
 		}
 		gm.playerLevel = newLevel;
         LevelIsUp = true;
+        
+        if (newLevel <= 4)
+        {
+            gm.keyPress();
+            gm.SetAbilityCount(newLevel);
+        }
 	}
 
 	public void LevelUp(){
