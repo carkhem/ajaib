@@ -34,8 +34,6 @@ public class EnemySounds : MonoBehaviour {
                 clipIndex = Random.Range(1, hitSounds.Length);
                 AudioClip clip = hitSounds[clipIndex];
                 sources[0].PlayOneShot(clip);
-                //sources[1].PlayOneShot(clip);
-                //sources[2].PlayOneShot(clip);
                 hitSounds[clipIndex] = hitSounds[0];
                 hitSounds[0] = clip;
             }

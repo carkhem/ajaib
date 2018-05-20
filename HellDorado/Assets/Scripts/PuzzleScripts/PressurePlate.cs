@@ -8,14 +8,22 @@ public class PressurePlate : MonoBehaviour {
 	public string[] interactableTags = {"Player", "Interactable"};
 	public UnityEvent OnPressureEnter;
 	public UnityEvent OnPressureExit;
-	private int objects = 0;
+    public AudioClip clip;
+    private int objects = 0;
+    private AudioSource source;
 
-	void OnTriggerEnter(Collider col){
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    void OnTriggerEnter(Collider col){
 		foreach (string t in interactableTags) {
 			if (col.transform.CompareTag (t)) {
 				objects++;
-				//GetComponent<Animator> ().SetBool ("activate", true);
-				OnPressureEnter.Invoke ();
+                //GetComponent<Animator> ().SetBool ("activate", true);
+                PlaySound();
+                OnPressureEnter.Invoke ();
 				break;
 			}
 		}
@@ -33,4 +41,10 @@ public class PressurePlate : MonoBehaviour {
 			}
 		}
 	}
+
+    private void PlaySound() {
+        if (!source.isPlaying) {
+            source.PlayOneShot(clip);
+        }
+    }
 }

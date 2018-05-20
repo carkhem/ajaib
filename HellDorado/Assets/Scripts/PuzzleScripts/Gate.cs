@@ -36,21 +36,22 @@ public class Gate : MonoBehaviour {
 	public void OpenGate(){
         delayTime = 0;
         timer = 0;
+        PlaySound();
 		open = true;
 		animOpen (open);
-//		source.PlayOneShot (gateSound);
-	}
+    }
 
 	public void CloseGate(){
 		open = false;
-		animOpen (open);
-//		source.PlayOneShot (gateSound);
+        PlaySound();
+        animOpen (open);
 	}
 
 	public void ToggleGate(){
-		open = !open;
+        source.Stop();
+        open = !open;
 		animOpen (open);
-	}
+    }
 
 	private void animOpen(bool isOpen){
 		anim.SetBool ("open", isOpen);
@@ -60,4 +61,10 @@ public class Gate : MonoBehaviour {
 		print ("yoyo");
 	}
 
+    private void PlaySound() {
+        if(source != null || gateSound != null) {
+            if (!open && !source.isPlaying)
+                source.PlayOneShot(gateSound);
+        }
+    }
 }
