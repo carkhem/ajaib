@@ -23,7 +23,7 @@ public class SpawnSwirly : MonoBehaviour {
             {
                 spawnPosition = hit.point;
                 Instantiate(prefab, spawnPosition, Quaternion.identity);
-                Debug.Log(hit.point);
+       //         Debug.Log(hit.point);
                             }
             
         }
