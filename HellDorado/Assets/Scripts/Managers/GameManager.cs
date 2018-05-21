@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
                 {
                     ABSec = 0.0f;
                     keyPressed = false;
-                    ABBigger = 1.5f;
+                    ABBigger = 3f;
                 }
                 CanvasManager.instance.abilityContent.SetActive(keyPressed);
             }

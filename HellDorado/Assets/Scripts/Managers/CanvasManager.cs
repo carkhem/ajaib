@@ -86,7 +86,7 @@ public class CanvasManager : MonoBehaviour {
         if (newAB)
         {
             ABSec += Time.fixedDeltaTime;
-            if (ABSec > 2)
+            if (ABSec > 3)
             {
                 newAB = false;
                 ABSec = 0;
