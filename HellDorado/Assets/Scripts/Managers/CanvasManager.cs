@@ -53,7 +53,6 @@ public class CanvasManager : MonoBehaviour {
 			enemyHealthSlider.value = currentEnemy.GetComponent<EnemyController> ().GetHealthPercentage ();
 		}
         AbilityText();
-		print (abilityContent == null);
 	}
 
 	public void ChangeAbility(int currentAbility){
