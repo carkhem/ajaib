@@ -3547,6 +3547,7 @@ GameObject:
   - component: {fileID: 196785174}
   - component: {fileID: 196785176}
   - component: {fileID: 196785175}
+  - component: {fileID: 196785177}
   m_Layer: 0
   m_Name: AbilityUp
   m_TagString: Untagged
@@ -3583,8 +3584,8 @@ MonoBehaviour:
   TriggerEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 734678555}
-        m_MethodName: SetAbilityCount
+      - m_Target: {fileID: 196785177}
+        m_MethodName: SetAbility
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3624,6 +3625,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 2.43}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &196785177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 196785173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2ae60b74bd97743a47698558fa0228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &200383139 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4571563175840124, guid: 6e4e108628f4e6f48a5747727dad936f,
