@@ -62,6 +62,7 @@ public class PlayerController : Controller{
 		if ((Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0 || Input.GetAxisRaw ("Horizontal") != 0 && Input.GetAxisRaw ("Vertical") != 0) && ((Input.GetKeyDown(KeyCode.LeftAlt))  || (Input.GetKeyDown(KeyCode.LeftShift))) && canDash) {
 			canDash = false;
 			TransitionTo<DashState> ();
+            GetComponent<PlayerSounds>().PlayDashSound();
 		}
     }
 
