@@ -861,8 +861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e50a6a28cf7779499d46b452b49c937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avalibleSprite: {fileID: 21300000, guid: 50713d44983852640827d41eedb26732, type: 3}
-  activeSprite: {fileID: 21300000, guid: 50713d44983852640827d41eedb26732, type: 3}
+  avalibleSprite: {fileID: 21300000, guid: 9613022a2278d0e4096c661b9f91e7f8, type: 3}
+  activeSprite: {fileID: 21300000, guid: 9613022a2278d0e4096c661b9f91e7f8, type: 3}
 --- !u!114 &114053120539208498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a77d3c48221d1b4ba9099d1a764456f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RewindIcon: {fileID: 21300000, guid: ce0270c9036f76e4b89ea03c4d7f1fb3, type: 3}
+  RewindIcon: {fileID: 21300000, guid: 141c321e14274004fa06a21b0acdefd3, type: 3}
   RewindObject: {fileID: 21300000, guid: 729df69d565adca49baef5c0b20944be, type: 3}
   FireballIcon: {fileID: 21300000, guid: 5680dbe8a1a16e345abdd0471d31d69c, type: 3}
   ForcePushIcon: {fileID: 21300000, guid: b7bc1f37f553a7b488e80372dd503aa2, type: 3}
@@ -1873,7 +1873,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 50713d44983852640827d41eedb26732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9613022a2278d0e4096c661b9f91e7f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
