@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 		if (stats == null)
 			stats = PlayerStats.instance;
         UpdateAbilityList();
-        player = stats.transform.gameObject;
+		player = PlayerStats.instance.transform.gameObject;
         
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		_controller = PlayerStats.instance.GetComponent<PlayerController> ();
