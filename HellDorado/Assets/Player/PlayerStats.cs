@@ -172,6 +172,10 @@ public class PlayerStats : MonoBehaviour{
 		CanvasManager.instance.ExitEnemySlider ();
 	}
 
+	public void ClearEnemies(){
+		enemies.Clear ();
+	}
+
 	public void UpdateCombatFocus(){
 		RaycastHit hit;
 		if (Physics.Raycast (Camera.main.transform.position, Camera.main.transform.forward, out hit, 8)) {

@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour
             ChangeLevel(SceneManager.GetActiveScene().name);
         }
         RespawnEnemies();
+		stats.ClearEnemies ();
     }
 
     private void RespawnEnemies()
