@@ -22,7 +22,8 @@ public class AmbientRandomSounds : MonoBehaviour
     }
 
     private void PlayAmbientSound() {
-        foreach(AudioSource s in sources)
+
+        foreach (AudioSource s in sources)
         {
             if (s.isPlaying)
             {

@@ -2714,8 +2714,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445569227061950}
-  m_LocalRotation: {x: -0, y: -0.70285046, z: -0, w: 0.7113377}
-  m_LocalPosition: {x: -32, y: 2.34, z: -0.9}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000014603138}
+  m_LocalPosition: {x: -8.32, y: 1.29, z: 4.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015471661713908}
@@ -4683,7 +4683,8 @@ AudioSource:
   m_GameObject: {fileID: 1445569227061950}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243013734883677302, guid: db3cb3814944efb4caa9785d1d86d0ad,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5645,6 +5646,7 @@ MonoBehaviour:
   source: {fileID: 0}
   enemyHitClips: []
   playerHitClip: {fileID: 0}
+  clipIndex: 0
   anim: {fileID: 95722458717943972}
   swordType: 0
   damage: 0
@@ -5679,6 +5681,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4f2babee6c0f2f74fabf50d85f135b1f, type: 3}
   - {fileID: 8300000, guid: c847d3dc9a567ed48a0a21b076b407f7, type: 3}
   playerHitClip: {fileID: 0}
+  clipIndex: 0
   anim: {fileID: 95722458717943972}
   swordType: 0
   damage: 10
@@ -5724,6 +5727,7 @@ MonoBehaviour:
   source: {fileID: 0}
   enemyHitClips: []
   playerHitClip: {fileID: 0}
+  clipIndex: 0
   anim: {fileID: 95127408849487210}
   swordType: 0
   damage: 0
@@ -5753,7 +5757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordSwing: {fileID: 8300000, guid: b1c14da9afc175b459640786819972ac, type: 3}
   deathSound: {fileID: 8300000, guid: 3d31b2726eafec44d80cd7e2d6b771b7, type: 3}
-  dashSound: {fileID: 0}
+  dashSound: {fileID: 8300000, guid: 3a39654273d50e047966a3bc6bbd89b6, type: 3}
   hitSound: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
   takingDamageSounds:
   - {fileID: 8300000, guid: fc79155d206e54f4ca82365f29729a8c, type: 3}
@@ -5792,6 +5796,7 @@ MonoBehaviour:
   source: {fileID: 0}
   enemyHitClips: []
   playerHitClip: {fileID: 0}
+  clipIndex: 0
   anim: {fileID: 95740797903228828}
   swordType: 0
   damage: 0
@@ -5837,7 +5842,7 @@ MonoBehaviour:
   lArmAnim: {fileID: 95463571114645248}
   rArmAnim: {fileID: 95740797903228828}
   lameRHand: {fileID: 1360486801121586}
-  startWithSword: 1
+  startWithSword: 0
   gemStone: {fileID: 1263919921122912}
 --- !u!114 &114406124520007832
 MonoBehaviour:
@@ -20091,7 +20096,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0

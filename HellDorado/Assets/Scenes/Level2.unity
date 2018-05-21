@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.123219915, g: 0.15735537, b: 0.23322695, a: 1}
+  m_IndirectSpecularColor: {r: 0.2633674, g: 0.22460353, b: 0.3376121, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19249,6 +19249,11 @@ Prefab:
     - target: {fileID: 1445569227061950, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
       propertyPath: m_Name
       value: Player (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388339974472154, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: startWithSword
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}

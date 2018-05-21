@@ -18,7 +18,7 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip keySound;
     public AudioClip landingSound;
 
-    private AudioSource[] sources; // 0 = death | 1 = dash | 2 = walking | 3 = takingDamage | 4 = jump | 5 = swordSwing
+    private AudioSource[] sources; // 0 = hit & death | 1 = dash | 2 = walking | 3 = takingDamage | 4 = jump | 5 = swordSwing
     private string surface;
     private int clipIndex;
 
