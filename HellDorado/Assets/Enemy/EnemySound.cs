@@ -36,7 +36,7 @@ public class EnemySound : MonoBehaviour {
 //			if (!s.isPlaying) {
 				clipIndex = Random.Range (1, walkingSounds.Length);
 				AudioClip clip = walkingSounds [clipIndex];
-				s.PlayOneShot (clip);
+				sources[0].PlayOneShot (clip);
 				walkingSounds [0] = clip;
 //				break;
 //			}
