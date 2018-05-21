@@ -20,6 +20,7 @@ public class CanvasManager : MonoBehaviour {
     public Slider experienceSlider;
     public Text experienceProgress;
     public Text playerLevelText;
+    public GameObject NewAbilityText;
 
 	[Header("Ability Panel")]
 	public GameObject abilityContent;
@@ -33,6 +34,9 @@ public class CanvasManager : MonoBehaviour {
 
 	[Header("Interact")]
 	public Text interactText;
+
+    public bool newAB = false;
+    private float ABSec = 0;
 
 	void Awake(){
 		instance = this;
@@ -48,6 +52,7 @@ public class CanvasManager : MonoBehaviour {
 		if (currentEnemy != null) {
 			enemyHealthSlider.value = currentEnemy.GetComponent<EnemyController> ().GetHealthPercentage ();
 		}
+        AbilityText();
 	}
 
 	public void ChangeAbility(int currentAbility){
@@ -75,5 +80,20 @@ public class CanvasManager : MonoBehaviour {
 	public void ExitEnemySlider(){
 		enemyHealthSlider.gameObject.SetActive (false);
 	}
+
+    public void AbilityText()
+    {
+        if (newAB)
+        {
+            ABSec += Time.fixedDeltaTime;
+            if (ABSec > 2)
+            {
+                newAB = false;
+                ABSec = 0;
+                
+            }
+            NewAbilityText.SetActive(newAB);
+        }
+    }
 
 }

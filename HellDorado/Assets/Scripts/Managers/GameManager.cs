@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
 	private PlayerController _controller;
     public int levelsCompleted = 0;
     private float ABSec = 0.0f;
+    private float ABBigger = 1.5f;
     private bool keyPressed = true;
+    private bool newAbility = false;
 
 	void Awake()
 	{
@@ -72,11 +74,17 @@ public class GameManager : MonoBehaviour
         {
             if (keyPressed)
             {
+                if (newAbility)
+                {
+                    ABBigger = 3f;
+                    newAbility = false;
+                }
                 ABSec += Time.fixedDeltaTime;
-                if (ABSec >= 1.5f)
+                if (ABSec >= ABBigger)
                 {
                     ABSec = 0.0f;
                     keyPressed = false;
+                    ABBigger = 1.5f;
                 }
                 CanvasManager.instance.abilityContent.SetActive(keyPressed);
             }
@@ -158,7 +166,9 @@ public class GameManager : MonoBehaviour
 		UpdateAbilityList ();
 		Invoke ("GemStoneBurst", 0.2f);
 		_controller.lArmAnim.SetTrigger ("levelUp");
-	}
+        newAbility = true;
+        CanvasManager.instance.newAB = true;
+    }
 	private void GemStoneBurst(){
 		_controller.gemStone.GetComponent<ParticleSystem> ().Emit (30);
 		_controller.gemStone.GetComponent<ParticleSystemRenderer> ().renderingLayerMask = 10;

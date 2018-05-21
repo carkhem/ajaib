@@ -48,7 +48,10 @@ public class AmbientRandomSounds : MonoBehaviour
     {
         if (!sources[0].isPlaying)
         {
-            clipIndex = Random.Range(1, instrumentrual.Length);
+            clipIndex = Random.Range(1, instrumentrual.Length -1);
+            Debug.Log(clipIndex + " är index, medan listans sista position är " + instrumentrual.Length);
+            if (clipIndex > instrumentrual.Length - 1)
+                clipIndex -= 1;
             AudioClip rndClip = instrumentrual[clipIndex];
             sources[0].clip = rndClip;
             float d = Random.Range(minDelay, maxDelay);
@@ -63,6 +66,8 @@ public class AmbientRandomSounds : MonoBehaviour
     {
         if (!sources[1].isPlaying)
         {
+            if (voices.Length == 0)
+                return;
             clipIndex = Random.Range(1, voices.Length);
             AudioClip rndClip = voices[clipIndex];
             sources[1].clip = rndClip;
