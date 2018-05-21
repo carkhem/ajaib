@@ -158,6 +158,7 @@ public class EnemyController : Controller
         TransitionTo<IdleState>();
         detection = 0f;
         transform.position = patrolPoints[0];
+		transform.GetComponent<NavMeshAgent> ().enabled = true;
         GetComponent<NavMeshAgent>().SetDestination(patrolPoints[0]);
 
     }
