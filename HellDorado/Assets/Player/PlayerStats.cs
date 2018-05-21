@@ -42,7 +42,6 @@ public class PlayerStats : MonoBehaviour{
         experienceSlider = CanvasManager.instance.experienceSlider;
 		gm = GameManager.instance;
 		_controller = GetComponent<PlayerController> ();
-		print (gm.maxEXP);
     }
 
     void Update(){
