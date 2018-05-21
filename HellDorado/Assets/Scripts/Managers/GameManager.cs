@@ -32,15 +32,16 @@ public class GameManager : MonoBehaviour
 			instance = this;
 		else if (instance != null && instance != this)
 			Destroy (gameObject);
-		
-		cameraController = Camera.main.transform.parent.gameObject;
-        if (abilityCount == 1)
-            abilityCount = 0;
-        UpdateAbilityList();
     }
 
 	void Start()
 	{
+
+		cameraController = Camera.main.transform.parent.gameObject;
+		if (abilityCount == 1)
+			abilityCount = 0;
+		UpdateAbilityList();
+
 		if (stats == null)
 			stats = PlayerStats.instance;
         UpdateAbilityList();

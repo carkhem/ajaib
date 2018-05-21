@@ -68,13 +68,9 @@ public class CanvasManager : MonoBehaviour {
 	}
 
 	public void ClearAbilities(){
-//		for (int i = 0; i < abilityContent.transform.childCount; i++) {
-//			Destroy(abilityContent.transform.GetChild (i).gameObject);
-//		}
-//		print (abilityContent == null);
-//		foreach (Transform child in abilityContent.transform) {
-//			GameObject.Destroy(child.gameObject);
-//		}
+		for (int i = 0; i < abilityContent.transform.childCount; i++) {
+			Destroy(abilityContent.transform.GetChild (i).gameObject);
+		}
 	}
 
 	public void SetEnemySlider(GameObject enemy){
