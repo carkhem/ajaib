@@ -82,7 +82,7 @@ public class PlayerController : Controller{
 
     private void Crouch(){
 		originalHeight = GetComponent<CharacterController> ().height;
-        GetComponent<CharacterController>().height = 1;
+        GetComponent<CharacterController>().height = 1.5f;
         GetComponent<PlayerStats>().sneaking = true;
 		movementSpeed = crouchSpeed;
     }

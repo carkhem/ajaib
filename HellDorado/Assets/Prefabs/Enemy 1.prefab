@@ -2747,7 +2747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAttack: 1
   reach: 4
-  offset: {x: 0, y: 1.8, z: 0}
+  offset: {x: 0, y: 1.2, z: 0}
 --- !u!114 &114417739919738836
 MonoBehaviour:
   m_ObjectHideFlags: 1
