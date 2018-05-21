@@ -6470,7 +6470,7 @@ Prefab:
     - target: {fileID: 224414241208194984, guid: 5acdd9237da3e38468aa13d4462057c2,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224414241208194984, guid: 5acdd9237da3e38468aa13d4462057c2,
         type: 2}
@@ -11572,7 +11572,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917444391632996, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1336670347079802, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_Name
@@ -44561,7 +44561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8713154fa20ee49883cf84fdb4d1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lit: 0
+  lit: 1
   fire: {fileID: 857758967}
   fireLight: {fileID: 483052419}
   TorchSound: {fileID: 8300000, guid: 6dfe382b979487c4a9d2e7f845d06a4e, type: 3}
@@ -44745,7 +44745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4092618733238220, guid: 05cdf431617c84941853313b079574ac, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4092618733238220, guid: 05cdf431617c84941853313b079574ac, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -63320,7 +63320,7 @@ Transform:
   m_Children:
   - {fileID: 1517448810}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -89.312004, z: 0}
 --- !u!1 &1820703778
 GameObject:
@@ -64073,7 +64073,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4917444391632996, guid: d5c7b5dd9cda6cd48974e18248e53491, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114698912224039340, guid: d5c7b5dd9cda6cd48974e18248e53491,
         type: 2}
@@ -64659,6 +64659,7 @@ GameObject:
   - component: {fileID: 1891560700}
   - component: {fileID: 1891560702}
   - component: {fileID: 1891560701}
+  - component: {fileID: 1891560703}
   m_Layer: 0
   m_Name: AbilityUp
   m_TagString: Untagged
@@ -64695,8 +64696,8 @@ MonoBehaviour:
   TriggerEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1264204367}
-        m_MethodName: SetAbilityCount
+      - m_Target: {fileID: 1891560703}
+        m_MethodName: SetAbility
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64736,6 +64737,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.22, y: 1, z: 6.87}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1891560703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891560699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2ae60b74bd97743a47698558fa0228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &1892359898 stripped
 Light:
   m_PrefabParentObject: {fileID: 108116188595275730, guid: 278a3d66bec8c6a40a7c210971ea4709,

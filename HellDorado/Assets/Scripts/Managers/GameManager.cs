@@ -28,26 +28,18 @@ public class GameManager : MonoBehaviour
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
-		if (instance != this && instance == null)
+		if (instance != this && instance == null) {
+			print ("Set GameManager");
 			instance = this;
-		else if (instance != null && instance != this)
+		} else if (instance != null && instance != this) {
+			print ("Destory GameManager");
+			GameManager.instance.SetStartValues ();
 			Destroy (gameObject);
+		}
     }
 
-	void Start()
-	{
-		cameraController = Camera.main.transform.parent.gameObject;
-		if (abilityCount == 1)
-			abilityCount = 0;
-		UpdateAbilityList();
-
-		if (stats == null)
-			stats = PlayerStats.instance;
-        UpdateAbilityList();
-		player = PlayerStats.instance.transform.gameObject;
-        
-		enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		_controller = PlayerStats.instance.GetComponent<PlayerController> ();
+	void Start(){
+		SetStartValues ();
 	}
 
     void Update()
@@ -71,6 +63,23 @@ public class GameManager : MonoBehaviour
         }
         abilityDisplayActive();
     }
+
+	public void SetStartValues(){
+		cameraController = Camera.main.transform.parent.gameObject;
+
+		if (abilityCount == 1)
+			abilityCount = 0;
+
+		if (stats == null)
+			stats = PlayerStats.instance;
+
+		player = PlayerStats.instance.transform.gameObject;
+
+		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		_controller = PlayerStats.instance.GetComponent<PlayerController> ();
+		UpdateAbilityList();
+		print (SceneManager.GetActiveScene ().name);
+	}
 
     private void abilityDisplayActive()
     {
@@ -100,16 +109,15 @@ public class GameManager : MonoBehaviour
         keyPressed = true;
     }
 
-    public void UpdateAbilityList()
-    {
-            keyPress();
-            abilityDisplayActive();
-            CanvasManager.instance.ClearAbilities();
-            for (int i = 0; i < abilityCount; i++)
-            {
-                if (abilityDisplay.Length > i)
-                    CanvasManager.instance.AddAbility(abilityDisplay[i]);
-            }
+    public void UpdateAbilityList(){
+        keyPress();
+        abilityDisplayActive();
+        CanvasManager.instance.ClearAbilities();
+		for (int i = 0; i < abilityCount; i++){
+			if (abilityDisplay.Length > i)
+            	CanvasManager.instance.AddAbility(abilityDisplay[i]);
+		}
+		stats.GetComponent<AbilityManager> ().ChangeToAbility (abilityCount);
     }
 
     public void GameOver()
