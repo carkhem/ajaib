@@ -28,7 +28,11 @@ public class GameManager : MonoBehaviour
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
-		instance = this;
+		if (instance != this && instance == null)
+			instance = this;
+		else if (instance != null && instance != this)
+			Destroy (gameObject);
+		
 		cameraController = Camera.main.transform.parent.gameObject;
         if (abilityCount == 1)
             abilityCount = 0;
