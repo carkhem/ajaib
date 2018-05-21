@@ -157,7 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsBeatenRequired: 0
-  gamemanager: {fileID: 631215088}
 --- !u!1001 &51115679
 Prefab:
   m_ObjectHideFlags: 0
@@ -870,7 +869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsBeatenRequired: 1
-  gamemanager: {fileID: 631215088}
 --- !u!1 &406526564
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,11 +934,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &631215088 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1022247481970234, guid: 1a690dc47c5e3124ba09c346bf4ea959,
-    type: 2}
-  m_PrefabInternal: {fileID: 1379203190}
 --- !u!1 &1165150577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1292,7 @@ Prefab:
     - target: {fileID: 114659882099421306, guid: 1a690dc47c5e3124ba09c346bf4ea959,
         type: 2}
       propertyPath: levelsCompleted
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a690dc47c5e3124ba09c346bf4ea959, type: 2}
@@ -1538,7 +1531,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a105739ae49d08640878b5972aadbf63, type: 2}
+  - {fileID: 2100000, guid: f25a67dc01de8e64bacec1475c2ad26d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2023,4 +2016,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsBeatenRequired: 2
-  gamemanager: {fileID: 631215088}

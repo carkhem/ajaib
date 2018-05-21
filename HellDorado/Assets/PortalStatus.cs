@@ -5,12 +5,11 @@ using UnityEngine;
 public class PortalStatus : MonoBehaviour {
     private bool active;
     public int levelsBeatenRequired;
-    public GameObject gamemanager;
 
 	// Use this for initialization
 	void Start () {
 
-        if (gamemanager.GetComponent<GameManager>().levelsCompleted >= levelsBeatenRequired)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().levelsCompleted >= levelsBeatenRequired)
         {
             active = true;
         } else
