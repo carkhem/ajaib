@@ -9,7 +9,8 @@ public class AnimatedKey : MonoBehaviour {
 	public Transform hand;
 	private Vector3 endPos = new Vector3 (-13f, 1.6f, -1.7f);
 	public Vector3 dropPos = new Vector3 (-10.8f, 1.9f, 1.1f);
-	private bool dropped = false;
+    public GameObject magicalBox;
+    private bool dropped = false;
 	public void Update(){
 		if (director == null)
 			return;
@@ -38,6 +39,7 @@ public class AnimatedKey : MonoBehaviour {
 			transform.GetComponent<BoxCollider> ().isTrigger = false;
 			PlayerStats.instance.transform.GetComponent<PlayerController> ().enabled = true;
 			Camera.main.GetComponent<Headbobber> ().enabled = true;
+            magicalBox.GetComponent<AudioSource>().Play();
 		}
 	}
 

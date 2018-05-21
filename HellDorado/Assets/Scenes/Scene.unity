@@ -1246,6 +1246,35 @@ Prefab:
       propertyPath: GameHands
       value: 
       objectReference: {fileID: 1294452762}
+    - target: {fileID: 82923134426574066, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243682065091489454, guid: db3cb3814944efb4caa9785d1d86d0ad,
+        type: 2}
+    - target: {fileID: 82521835657468312, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243682065091489454, guid: db3cb3814944efb4caa9785d1d86d0ad,
+        type: 2}
+    - target: {fileID: 82075996703256658, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243841658048694592, guid: db3cb3814944efb4caa9785d1d86d0ad,
+        type: 2}
+    - target: {fileID: 82053838261089770, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243682065091489454, guid: db3cb3814944efb4caa9785d1d86d0ad,
+        type: 2}
+    - target: {fileID: 114362205852985014, guid: 5e7f8fe1b7a66cd4f970f00d3841b070,
+        type: 2}
+      propertyPath: dashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a39654273d50e047966a3bc6bbd89b6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7f8fe1b7a66cd4f970f00d3841b070, type: 2}
   m_IsPrefabParent: 0

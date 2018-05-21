@@ -3860,13 +3860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 242936645}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &242936647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4862,13 +4855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 321119376}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &321119378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9005,13 +8991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 700303283}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &700303285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9085,8 +9064,9 @@ GameObject:
   - component: {fileID: 709116174}
   - component: {fileID: 709116173}
   - component: {fileID: 709116172}
+  - component: {fileID: 709116177}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: MagicalBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9159,6 +9139,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &709116177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709116171}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243729525379635738, guid: db3cb3814944efb4caa9785d1d86d0ad,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2e30ac11ecc33ed4aacf948bbed0ad64, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &716560056
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,7 +9934,7 @@ BoxCollider:
   m_GameObject: {fileID: 778824868}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -9963,8 +10039,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 779242515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.835316, y: 48.215893, z: 19.260233}
-  m_LocalScale: {x: 0.7371972, y: 0.68446976, z: 0.28527862}
+  m_LocalPosition: {x: 13.835316, y: 48.215893, z: 19.863}
+  m_LocalScale: {x: 0.7371976, y: 0.68446976, z: 0.1646589}
   m_Children: []
   m_Father: {fileID: 31595520}
   m_RootOrder: 3
@@ -10601,13 +10677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 871164517}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &871164519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11290,13 +11359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 939040503}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &939040505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11528,6 +11590,30 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 64cac25e6a1473043893cc83b7f2fdfd, type: 2}
+    - target: {fileID: 4931784146271422, guid: 318f123c3d287354f99b34277487322e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.0033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931784146271422, guid: 318f123c3d287354f99b34277487322e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931784146271422, guid: 318f123c3d287354f99b34277487322e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.1745645
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191993332445218, guid: 318f123c3d287354f99b34277487322e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.0033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191993332445218, guid: 318f123c3d287354f99b34277487322e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191993332445218, guid: 318f123c3d287354f99b34277487322e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.1745645
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 318f123c3d287354f99b34277487322e, type: 2}
   m_IsPrefabParent: 0
@@ -11597,7 +11683,7 @@ BoxCollider:
   m_GameObject: {fileID: 966139791}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -13203,11 +13289,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1127737590}
   m_Script: {fileID: 11500000, guid: 067bbfbf76fdd21488c887004ffbea2e, type: 3}
---- !u!95 &1161639164 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95955984727920078, guid: d5c7b5dd9cda6cd48974e18248e53491,
-    type: 2}
-  m_PrefabInternal: {fileID: 1559257261}
 --- !u!1 &1170516461
 GameObject:
   m_ObjectHideFlags: 0
@@ -15092,7 +15173,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1280938890}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -16645,6 +16726,7 @@ MonoBehaviour:
   director: {fileID: 1122700083}
   hand: {fileID: 1122700084}
   dropPos: {x: -10.4, y: 1.9, z: 1.1}
+  magicalBox: {fileID: 709116171}
 --- !u!82 &1455029071
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17973,8 +18055,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580296927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.835316, y: 48.215893, z: 8.158232}
-  m_LocalScale: {x: 0.7371972, y: 0.68446976, z: 0.28527862}
+  m_LocalPosition: {x: 13.835316, y: 48.215893, z: 7.668}
+  m_LocalScale: {x: 0.7371976, y: 0.68446976, z: 0.18727055}
   m_Children: []
   m_Father: {fileID: 31595520}
   m_RootOrder: 2
@@ -20000,7 +20082,7 @@ BoxCollider:
   m_GameObject: {fileID: 1832667687}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -21490,13 +21572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 1947329754}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &1947329756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21768,13 +21843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 1948966384}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &1948966386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22257,13 +22325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 1981722421}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &1981722423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22784,7 +22845,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2055236993}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -23770,13 +23831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05fa307e7418249aae74ad0ba911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 2123755287}
-  enemyHitClips:
-  - {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  playerHitClip: {fileID: 8300000, guid: a554e4df25642fe478de25cdfeb37e78, type: 3}
-  anim: {fileID: 1161639164}
-  swordType: 1
-  damage: 20
 --- !u!65 &2123755289
 BoxCollider:
   m_ObjectHideFlags: 0
