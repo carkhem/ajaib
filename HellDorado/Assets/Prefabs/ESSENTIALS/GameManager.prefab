@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371f239a5dcf8d5468de367ed46bcd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLevel: 3
+  playerLevel: 1
   playerEXP: 0
   abilityCount: 0
   abilityDisplay:
