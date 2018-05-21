@@ -148,6 +148,7 @@ public class EnemyController : Controller
     public void Revive()
     {
         health = maxHealth;
+		player.GetComponent<PlayerStats>().AddEnemy(gameObject);
         TransitionTo<CombatState>();
     }
 

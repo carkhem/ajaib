@@ -53,6 +53,7 @@ public class CanvasManager : MonoBehaviour {
 			enemyHealthSlider.value = currentEnemy.GetComponent<EnemyController> ().GetHealthPercentage ();
 		}
         AbilityText();
+		print (abilityContent == null);
 	}
 
 	public void ChangeAbility(int currentAbility){
@@ -67,9 +68,13 @@ public class CanvasManager : MonoBehaviour {
 	}
 
 	public void ClearAbilities(){
-		for (int i = 0; i < abilityContent.transform.childCount; i++) {
-			Destroy(abilityContent.transform.GetChild (i).gameObject);
-		}
+//		for (int i = 0; i < abilityContent.transform.childCount; i++) {
+//			Destroy(abilityContent.transform.GetChild (i).gameObject);
+//		}
+//		print (abilityContent == null);
+//		foreach (Transform child in abilityContent.transform) {
+//			GameObject.Destroy(child.gameObject);
+//		}
 	}
 
 	public void SetEnemySlider(GameObject enemy){

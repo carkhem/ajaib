@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLevel(string sceneName)
     {
+//		print ("Load Level");
         CheckPoint = null;
         SceneManager.LoadScene(sceneName);
     }
