@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
 
 	void Start()
 	{
-
 		cameraController = Camera.main.transform.parent.gameObject;
 		if (abilityCount == 1)
 			abilityCount = 0;
