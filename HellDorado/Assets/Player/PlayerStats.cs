@@ -136,8 +136,8 @@ public class PlayerStats : MonoBehaviour{
 			meleeDamage = level * 2;
 			sneakDamage = meleeDamage * 2;
 		} else {
-			meleeDamage = level * 2;
-			sneakDamage = meleeDamage * 2;
+			meleeDamage = level * 1.2f;
+			sneakDamage = meleeDamage * 2f;
 		}
     }
 
