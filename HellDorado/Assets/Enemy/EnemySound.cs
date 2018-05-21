@@ -32,15 +32,15 @@ public class EnemySound : MonoBehaviour {
     //}
 
     public void PlayWalkingSound() {
-		foreach (AudioSource s in sources) {
-			if (!s.isPlaying) {
+//		foreach (AudioSource s in sources) {
+//			if (!s.isPlaying) {
 				clipIndex = Random.Range (1, walkingSounds.Length);
 				AudioClip clip = walkingSounds [clipIndex];
 				s.PlayOneShot (clip);
 				walkingSounds [0] = clip;
-				break;
-			}
-		}
+//				break;
+//			}
+//		}
 	}
     
     public void StopPlayAudio() {
