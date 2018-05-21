@@ -17,6 +17,9 @@ public class BossManager : MonoBehaviour {
 	public GameObject portal;
 	private Animator anim;
     public GameObject bloodShield;
+    public AudioClip deathSound;
+    public GameObject drums;
+    private AudioSource source;
 
     // Use this for initialization
     void Start () {
@@ -28,6 +31,7 @@ public class BossManager : MonoBehaviour {
 		fireBallShooter.SetActive(false);
 		CanvasManager.instance.bossHealthSlider.gameObject.SetActive (true);
 		CanvasManager.instance.bossHealthSlider.value = 1;
+        source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -78,6 +82,8 @@ public class BossManager : MonoBehaviour {
 		anim.SetTrigger("die");
 		portal.SetActive (true);
 		Health = 0;
+        source.PlayOneShot(deathSound);
+        drums.SetActive(false);
     }
 
     void EnterNextPhase()
