@@ -57,9 +57,9 @@ public class CanvasManager : MonoBehaviour {
 
 	public void ChangeAbility(int currentAbility){
 		for (int i = 0; i < abilityContent.transform.childCount; i++) {
-			abilityContent.transform.GetChild (i).GetComponent<AbilityDisplay> ().SetActive (false);
+			abilityContent.transform.GetChild (i).GetComponent<AbilityDisplay> ().MakeActive (false);
 		}
-		abilityContent.transform.GetChild (currentAbility).GetComponent<AbilityDisplay> ().SetActive (true);
+		abilityContent.transform.GetChild (currentAbility).GetComponent<AbilityDisplay> ().MakeActive (true);
 	}
 
 	public void AddAbility(GameObject abilityDisplayPrefab){

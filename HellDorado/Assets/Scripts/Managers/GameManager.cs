@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private float ABBigger = 1.5f;
     private bool keyPressed = true;
     private bool newAbility = false;
+//	private int lastSceneIndex = 0;
 
 	void Awake()
 	{
@@ -33,9 +34,9 @@ public class GameManager : MonoBehaviour
 			instance = this;
 		} else if (instance != null && instance != this) {
 			print ("Destory GameManager: " + gameObject.name);
-			Destroy (gameObject);
-			GameManager.instance.SetStartValues ();
 //			Destroy (gameObject);
+//			GameManager.instance.SetStartValues ();
+			Destroy (gameObject);
 		}
     }
 
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+		if (player == null) {
+			GameManager.instance.SetStartValues ();
+		}
+
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             SceneManager.LoadScene("Level1");
@@ -78,6 +83,7 @@ public class GameManager : MonoBehaviour
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		_controller = PlayerStats.instance.GetComponent<PlayerController> ();
 		UpdateAbilityList();
+//		lastSceneIndex = SceneManager.GetActiveScene ().buildIndex;
 	}
 
     private void abilityDisplayActive()
@@ -116,7 +122,6 @@ public class GameManager : MonoBehaviour
 			if (abilityDisplay.Length > i)
             	CanvasManager.instance.AddAbility(abilityDisplay[i]);
 		}
-		stats.GetComponent<AbilityManager> ().ChangeToAbility (abilityCount);
     }
 
     public void GameOver()

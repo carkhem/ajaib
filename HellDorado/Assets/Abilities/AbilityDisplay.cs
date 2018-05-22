@@ -17,7 +17,7 @@ public class AbilityDisplay : MonoBehaviour {
 		image.sprite = avalibleSprite;
 	}
 
-	public void SetActive(bool active){
+	public void MakeActive(bool active){
 		if (active)
 			image.sprite = activeSprite;
 		else
