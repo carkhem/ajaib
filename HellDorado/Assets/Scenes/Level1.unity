@@ -44561,7 +44561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8713154fa20ee49883cf84fdb4d1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lit: 0
+  lit: 1
   fire: {fileID: 857758967}
   fireLight: {fileID: 483052419}
   TorchSound: {fileID: 8300000, guid: 6dfe382b979487c4a9d2e7f845d06a4e, type: 3}
