@@ -32,9 +32,10 @@ public class GameManager : MonoBehaviour
 			print ("Set GameManager");
 			instance = this;
 		} else if (instance != null && instance != this) {
-			print ("Destory GameManager");
-			GameManager.instance.SetStartValues ();
+			print ("Destory GameManager: " + gameObject.name);
 			Destroy (gameObject);
+			GameManager.instance.SetStartValues ();
+//			Destroy (gameObject);
 		}
     }
 
@@ -65,20 +66,18 @@ public class GameManager : MonoBehaviour
     }
 
 	public void SetStartValues(){
+		print ("Set start values");
 		cameraController = Camera.main.transform.parent.gameObject;
 
-		if (abilityCount == 1)
-			abilityCount = 0;
+//		if (abilityCount == 1)
+//			abilityCount = 0;
 
 		if (stats == null)
 			stats = PlayerStats.instance;
-
 		player = PlayerStats.instance.transform.gameObject;
-
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		_controller = PlayerStats.instance.GetComponent<PlayerController> ();
 		UpdateAbilityList();
-		print (SceneManager.GetActiveScene ().name);
 	}
 
     private void abilityDisplayActive()
@@ -89,7 +88,7 @@ public class GameManager : MonoBehaviour
             {
                 if (newAbility)
                 {
-                    ABBigger = 3f;
+                    ABBigger = 5f;
                     newAbility = false;
                 }
                 ABSec += Time.fixedDeltaTime;
